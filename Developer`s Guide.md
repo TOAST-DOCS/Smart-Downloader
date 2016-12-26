@@ -10,7 +10,7 @@ DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게
 
  아래와 같은 게임 데이터를 다운로드 받을 폴더 구조라고 가정하자.
 
-![]dlc folder tree구조 그림 들어가야 함!
+![](http://static.toastoven.net/prod_dlc/img_01.jpg)
 
 해당 폴더의 위치에서 윈도우 커맨드 라인 명령 프로그램을 수행한다. DLCPublisher는 총 네 가지 실행 옵션을 제공한다.
 
@@ -23,7 +23,7 @@ DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게
 
 예제에서는 DLCPublisher.exe와 게임데이터 폴더를 같은 레벨에 위치시키고 수행하도록 한다.
 
-![]커맨드 라인에서 DLCPublisher.exe 실행하는 그림 들어가야 함!
+![](http://static.toastoven.net/prod_dlc/img_02.jpg)
 
 위와 같이 실행을 시키면 (--inputDir, --outputFile option지정 없이 수행)DLCPublisher.exe와 같은 레벨에 metafile.json이라는 메타파일이 생기게 되고,
 같은 레벨에 OUTPUT 폴더 아래에 --projectName으로 지정했던 DLCTest 이름의 폴더가 생성되고, 그 폴더에 원본 폴더와 같은 트리구조대로 폴더가 생성되며,
@@ -216,3 +216,20 @@ public enum DLCErrorCode
     DLC_ERR_SOCKET_TIMEOUT = 13
 }
 ```
+
+| 에러코드 | 설명 |
+|--------|-------|
+| DLC_ERR_OK | 다운로드가 성공적으로 끝난 후 리턴하는 값이다. |
+| DLC_ERR_CANCEL | 추후 사용 예정 |
+| DLC_ERR_NO_DIFF | 이미 리소스를 다운로드 받은 후에 다시 다운로드 시에 로컬 파일과 CDN의 파일들이 변한 것이 없을때 리턴하는 값이다. 이 값도 성공으로 간주하고 구현을 진행하면 된다.  |
+| DLC_ERR_APP_KEY_AUTH_FAILED | DLC 상품 이용시에 할당 받은 appkey로 상품 인증을 하는데, 그 인증이 실패 했을 때 리턴하는 값이다. |
+| DLC_ERR_METAFILE_PARSE_ERROR | CDN에서 메타파일 데이터를 읽어온 후에 파싱을 해야 하는데 해당 파싱이 실패 했을 때 리턴하는 값이다. |
+| DLC_ERR_FILE_INITIALIZE | 추후 사용 예정 |
+| DLC_ERR_FILE_READ | 추후 사용 예정 |
+| DLC_ERR_FILE_WRITE | 추후 사용 예정 |
+| DLC_ERR_UNZIP_FAILED | 파일 다운로드 이후에 압축 해제가 실패했을때 리턴하는 값이다. |
+| DLC_ERR_THREAD_VANISHED | 멀티 스레드로 다운로드 할 경우 특정 스레드에서 다운로드 실패 했을때 리턴하는 값이다. |
+| DLC_ERR_INTERNET_CONNECT | DLC를 사용하는 디바이스나 데스크탑 환경이 인터넷 연결이 되어 있지 않거나 실패 했을때 리턴하는 값이다. |
+| DLC_ERR_SOCKET_CLOSED | 외부 요인(망 변경, 인터넷 끊김 등)에 의해서 Socket이 닫혔을때 리턴하는 값이다. |
+| DLC_ERR_SOCKET_CONNECT_FAILED | Socket연결에 실패 했을떄 리턴하는 값이다. |
+| DLC_ERR_SOCKET_TIMEOUT | Socket 연결 시도 후에 타임아웃이 발생 했을때 리턴하는 값이다. |
