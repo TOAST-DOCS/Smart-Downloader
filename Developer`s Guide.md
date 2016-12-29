@@ -1,29 +1,29 @@
 ## Upcoming Products > Smart Downloader > Developer's Guide
 
-## DLCPublisher
+## Smart Downloader Publisher
 
-우선 DLCClientSDK를 사용하기 전에 DLCClientSDK가 다운로드를 수행할 원본 서버 및 CDN이 준비되어 있어야 한다. 그리고 해당 CDN에 DLCPublisher를 통해 생성된 게임데이터의 개별압축본과 메타파일이 존재해야 한다.
+우선 Smart Downloader ClientSDK를 사용하기 전에 Smart Downloader ClientSDK가 다운로드를 수행할 원본 서버 및 CDN이 준비되어 있어야 한다. 그리고 해당 CDN에 DLCPublisher를 통해 생성된 게임데이터의 개별압축본과 메타파일이 존재해야 한다.
 DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게임데이터의 폴더 트리 구조 그대로 개별 압축파일을 같은 폴더 트리 구조로 만들어내며, 
 해당 폴더 내에 파일이름, 파일 사이즈, 파일 압축사이즈, 파일 버전(추후 사용 예정), 파일 체크섬을 json 형태로 나열하는 메타파일을 만들어낸다.
 
-## DLCPublisher 사용방법
+## Smart DownloaderPublisher 사용방법
 
- 아래와 같은 게임 데이터를 다운로드 받을 폴더 구조라고 가정하자.
+아래와 같은 게임 데이터를 다운로드 받을 폴더 구조라고 가정하자.
 
-![](http://static.toastoven.net/prod_dlc/img_01.jpg)
+![](http://static.toastoven.net/prod_smartdownloader/img_01.jpg)
 
-해당 폴더의 위치에서 윈도우 커맨드 라인 명령 프로그램을 수행한다. DLCPublisher는 총 네 가지 실행 옵션을 제공한다.
+해당 폴더의 위치에서 윈도우 커맨드 라인 명령 프로그램을 수행한다. Smart Downloader Publisher는 총 네 가지 실행 옵션을 제공한다.
 
 | 실행 옵션 | 설명 |
 |--------|-------|
 | --projectName(필수) | 현재 지정하려는 게임 프로젝트 이름을 지정하면 되나, 위의 그림에서 가장 상위 폴더 이름이랑 같아야 한다. |
 | --inputDir(선택) | 위의 게임 데이터 폴더 위치를 지정할 수 있다. 지정되지 않으면 DLCPublisher.exe와 같은 레벨의 projectName을 지정해서 수행한다. |
 | --outputFile(선택) | output으로 나오는 메타파일의 path & name을 지정할 수 있다. 지정하지 않으면 default는 metafile.json으로 DLCPublisher.exe와 같은 레벨에 위치하게 된다. |
-| --threadCount(필수) | 실제 DLCClientSDK가 몇 개의 스레드로 게임 데이터를 다운로드 받을지 지정한다. 1이상의 값을 반드시 지정해야 한다. |
+| --threadCount(필수) | 실제 Smart Downloader ClientSDK가 몇 개의 스레드로 게임 데이터를 다운로드 받을지 지정한다. 1이상의 값을 반드시 지정해야 한다. |
 
 예제에서는 DLCPublisher.exe와 게임데이터 폴더를 같은 레벨에 위치시키고 수행하도록 한다.
 
-![](http://static.toastoven.net/prod_dlc/img_02.jpg)
+![](http://static.toastoven.net/prod_smartdownloader/img_02.jpg)
 
 위와 같이 실행을 시키면 (--inputDir, --outputFile option지정 없이 수행)DLCPublisher.exe와 같은 레벨에 metafile.json이라는 메타파일이 생기게 되고,
 같은 레벨에 OUTPUT 폴더 아래에 --projectName으로 지정했던 DLCTest 이름의 폴더가 생성되고, 그 폴더에 원본 폴더와 같은 트리구조대로 폴더가 생성되며,
@@ -96,13 +96,13 @@ DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게
 
 ```
 
-## DLCClient SDK
+## Smart Downloader Client SDK
 
-DLCClientSDK는 현재 Unity Version으로 개발이 되어 있으며, iOS / Android / Windows / MacOS 플랫폼을 지원하고 있다.
+Smart Downloader ClientSDK는 현재 Unity Version으로 개발이 되어 있으며, iOS / Android / Windows / MacOS 플랫폼을 지원하고 있다.
 
-### **DLCClient SDK Prerequisite**
+### **Smart Downloader Client SDK Prerequisite**
 
-DLCClient SDK는 Chameleon이라는 크로스플랫폼 라이브러리를 사용해서 만들어져 있다. 그렇기 때문에 DLCClientSDK를 사용할 때에도 먼저 Chameleon Library를 사용하도록 Chameleon API를 먼저 호출해 주어야 한다.
+Smart Downloader Client SDK는 Chameleon이라는 크로스플랫폼 라이브러리를 사용해서 만들어져 있다. 그렇기 때문에 Smart Downloader ClientSDK를 사용할 때에도 먼저 Chameleon Library를 사용하도록 Chameleon API를 먼저 호출해 주어야 한다.
 
 ```
 // Awake 또는 Start 함수내에서 사용해준다.
@@ -112,11 +112,11 @@ public void Awake()
 }
 ```
 
-위의 API를 호출해주어야 DLCClientSDK가 Chameleon Library를 사용해서 동작할 수 있는 환경을 제공한다.
+위의 API를 호출해주어야 Smart Downloader ClientSDK가 Chameleon Library를 사용해서 동작할 수 있는 환경을 제공한다.
 
-### **DLCClient SDK API**
+### **Smart Downloader Client SDK API**
 
-DLCClient SDK API는 크게 네 가지가 있다. 각 API에 대해서 차례대로 설명하겠다.
+Smart Downloader Client SDK API는 크게 네 가지가 있다. 각 API에 대해서 차례대로 설명하겠다.
 
 1. 우선, DLCSkin Layer의 객체를 얻어오는 Singleton API가 있다. DLCSkin이라는 객체 생성 후에 다운로드 관련 API를 호출해야 하므로 사용자 클래스에서 멤버로 가지고 셋팅해 두는 것이 좋다.
 
@@ -193,9 +193,9 @@ _skin.StopDownload();
 
 ```
 
-### **DLC Error Code**
+### **Smart Downloader Error Code**
 
-다음은 DLC Error Code에 대한 값 및 설명이다.
+다음은 Smart Downloader Error Code에 대한 값 및 설명이다.
 
 ```
 public enum DLCErrorCode
