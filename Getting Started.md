@@ -1,1 +1,1 @@
-## Game > DLC > Getting Started
+## Upcoming Products > Smart Downloader > Getting Started
