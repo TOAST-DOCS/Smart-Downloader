@@ -130,7 +130,9 @@ _skin = DLCSkin.GetInstance();
 
 ```
 
-2. DLCSkin객체가 생성이 되었으면 Download를 시작하는 API인 StartDownload 가 있다. 이 API를 호출하면 Download가 시작이 되고, 네 번째 parameter로 넘긴 콜백함수로 결과가 리턴이 된다.
+2. DLCSkin객체가 생성이 되었으면 **Getting Started**에서 상품이용시에 받은 AppKey를 setting해주는 단계가 필요하다. AppKey와 zone을 setting후에 API를 사용가능하다. 
+zone은 자체적으로 사용하는 zone을 구별하기 위한 값이다. realZone에서 테스트하기 위하려면 true, realZone이 아닌 zone에서 테스트 하기 위해서면 false 값을 넣어서 API를 호출해준다.
+AppKey setting이 완료되었으면 Download를 시작하는 API인 StartDownload를 사용할 수 있다. 이 API를 호출하면 Download가 시작이 되고, 네 번째 parameter로 넘긴 콜백함수로 결과가 리턴이 된다.
 그리고, 다운로드가 시작된 이후에 다운로드 진행 정보를 가져와 직접 progress bar형태로 사용자에게 진행 상태를 보여줘야 한다. 이 때 사용할 수 있는 GetProgressInfo라는 API가 있다. 
 StartDownload와 GetProgressInfo API를 같이 사용해서 해당 정보를 나타낼 수 있다.
 
@@ -139,6 +141,8 @@ StartDownload와 GetProgressInfo API를 같이 사용해서 해당 정보를 나
 ```
 public void StartDownload()
 {
+    _skin.SetAppKey("appkey", false);
+
     string cdnUrl = "http://example.com";
     string metafileName = "metafile.json";
     string targetPath = "D:\DLCDownloads";                 // 플랫폼별로 다르게 지정(예제에서는 윈도우 파일 시스템으로 지정)
