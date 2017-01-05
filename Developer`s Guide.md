@@ -168,17 +168,27 @@ private IEnumerator UpdateDownloadInfo()
         for (int i = 0; i < fileMapCount; i++)
         {
             var info = progressInfo.fileMap[i];
-            var threadNum = i;                                                                  // 각 thread number
-            var downloadFileName = info.fileName;                                               // 각 thread에서 다운로드 받고 있는 파일 이름
-            var threadPercentage = ((float)info.downloadedBytes / info.totalBytes) * 100.0f;    // 각 thread에서 다운로드 받은 진행율
-            var fileNumber = info.fileNubmer;                                                   // 현재 다운로드 받는 파일의 seqNumber
+            
+            // 각 thread number
+            var threadNum = i;                                                                  
+            // 각 thread에서 다운로드 받고 있는 파일 이름
+            var downloadFileName = info.fileName;                                               
+            // 각 thread에서 다운로드 받은 진행율
+            var threadPercentage = ((float)info.downloadedBytes / info.totalBytes) * 100.0f;    
+            // 현재 다운로드 받는 파일의 seqNumber
+            var fileNumber = info.fileNubmer;                                                   
         }
 
-        var percentage = progressInfo.percentage;                   // 전체 다운로드 진행율
-        var totalReceivedBytes = progressInfo.totalReceivedBytes;   // 현재까지 다운로드 받은 용량(bytes)
-        var totalFileBytes = progressInfo.totalFileBytes;           // 전체 다운로드 받아야 할 용량(bytes)
-        var downloadSpeed = progressInfo.speed;                     // 현재까지 받은 다운로드 용량 대비 속도(bytes/sec로 계산해서 리턴)
-        var totalFileNumber = progressInfo.totalFileNumber;         // 전체 다운로드 받아야 할 총 파일 개수
+        // 전체 다운로드 진행율
+        var percentage = progressInfo.percentage;                   
+        // 현재까지 다운로드 받은 용량(bytes)
+        var totalReceivedBytes = progressInfo.totalReceivedBytes;   
+        // 전체 다운로드 받아야 할 용량(bytes)
+        var totalFileBytes = progressInfo.totalFileBytes;           
+        // 현재까지 받은 다운로드 용량 대비 속도(bytes/sec로 계산해서 리턴)
+        var downloadSpeed = progressInfo.speed;                     
+        // 전체 다운로드 받아야 할 총 파일 개수
+        var totalFileNumber = progressInfo.totalFileNumber;         
 
         yield return new WaitForEndOfFrame();
     }
