@@ -116,7 +116,7 @@ public void Awake()
 
 ### **Smart Downloader Client SDK API**
 
-Smart Downloader Client SDK API는 크게 네 가지가 있다. 각 API에 대해서 차례대로 설명하겠다.
+Smart Downloader Client SDK API는 크게 네 가지가 있다. 
 
 1. 우선, DLCSkin Layer의 객체를 얻어오는 Singleton API가 있다. DLCSkin이라는 객체 생성 후에 다운로드 관련 API를 호출해야 하므로 사용자 클래스에서 멤버로 가지고 셋팅해 두는 것이 좋다.
 
