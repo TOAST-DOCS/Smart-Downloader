@@ -9,7 +9,7 @@ Console에서 **[Game] > [Smart Downloader]** 를 선택한 후, **[상품 이�
 ![](http://static.toastoven.net/prod_smartdownloader/img_02.png)
 
 ## SDK 다운로드 및 Client 개발
-SDK는 [DOCUMENTS] > [Download]에서 내려받을 수 있습니다. 다음과 같이 다운로드 받은 UnityPackage를 열어서 게임 프로젝트에 Import를 합니다. Plugins쪽 DLCClient / Chameleon Library들이 추가되면 됩니다.
+SDK는 [DOCUMENTS] > [Download]에서 내려받을 수 있습니다. 다음과 같이 다운로드 받은 UnityPackage를 열어서 게임 프로젝트에 Import를 합니다. 해당 unitypackage는 Smart Downloader SDK와 Sample Code가 모두 포함되어 있습니다. Sample Code(Example폴더 이하)에는 다운로드 하는 과정을 볼 수 있는 ProgressBar 형태의 코드를 참고할 수 있습니다. Smart Downloader SDK(Plugins폴더 이하)만 사용하기 위해서는 DLCClient / Chameleon Library들이 추가되면 됩니다.
 ![](http://static.toastoven.net/prod_smartdownloader/img_03.png)
 
 ## 다운로드 통계 정보 확인
