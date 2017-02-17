@@ -3,9 +3,9 @@
 
 ### 2017.02.23
 #### 기능 개선/변경
-* [SDK][[Unity-1.1.0](/Download/#upcoming-products-smart-downloader)] 릴리스
-    * class Name 변경(DLCSkin -> SmartDLUnitySkin)
-    * Only static API 제공
+* [SDK][[Unity-1.1.0](/Download/#upcoming-products-smart-downloader)] 릴리스 
+    * class Name 변경(DLCSkin -> SmartDLUnitySkin) 
+    * Only static API 제공 
 
 * [Console] 각 페이지에 접근할 수 있는 탭 추가
 * [Console] 다운로드 상세 검색시 검색 대상 데이터가 너무 많은 경우, 검색 항목을 다시 설정하도록 기능 수정
