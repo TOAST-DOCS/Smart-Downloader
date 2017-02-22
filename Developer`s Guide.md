@@ -100,58 +100,47 @@ DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게
 
 Smart Downloader ClientSDK는 현재 Unity Version으로 개발이 되어 있으며, iOS / Android / Windows / MacOS 플랫폼을 지원하고 있다.
 
-### **Smart Downloader Client SDK Prerequisite**
+### **Smart Downloader Client SDK API**
 
-Smart Downloader Client SDK는 Chameleon이라는 크로스플랫폼 라이브러리를 사용해서 만들어져 있다. 그렇기 때문에 Smart Downloader ClientSDK를 사용할 때에도 먼저 Chameleon Library를 사용하도록 Chameleon API를 먼저 호출해 주어야 한다.
+Smart Downloader Client SDK API는 모두 static version으로 호출할 수 있다. 그리고 Toast.SmartDL 이하의 namespace를 사용하므로 using으로 미리 선언해두는 것을 권장한다.
+
+1. 우선, Smart Downloader의 초기화 과정을 수행하기 위한 Initialize API를 호출해주어야 한다. Awake나 Start 함수 내에서 사용해준다.
+
+[Usage]
 
 ```
 // Awake 또는 Start 함수내에서 사용해준다.
 public void Awake()
 {
-    ChameleonBehaviour.Startup(_ => { });
+    SmartDLUnitySkin.Initialize();
 }
 ```
 
-위의 API를 호출해주어야 Smart Downloader ClientSDK가 Chameleon Library를 사용해서 동작할 수 있는 환경을 제공한다.
-
-### **Smart Downloader Client SDK API**
-
-Smart Downloader Client SDK API는 크게 네 가지가 있다. 
-
-1. 우선, DLCSkin Layer의 객체를 얻어오는 Singleton API가 있다. DLCSkin이라는 객체 생성 후에 다운로드 관련 API를 호출해야 하므로 사용자 클래스에서 멤버로 가지고 셋팅해 두는 것이 좋다.
+2. SmartDLSkin 초기화가 되었으면 **Getting Started**에서 상품이용시에 받은 AppKey를 setting해주는 단계가 필요하다. AppKey를 setting후에 API를 사용가능하다. 
+AppKey setting이 완료되었으면 Download를 시작하는 API인 StartDownload를 사용할 수 있다. 이 API를 호출하면 Download가 시작이 되고, 네 번째 parameter로 넘긴 delegate 콜백함수로 결과가 리턴이 된다.
+리턴되는 SmartDLResult 객체 값으로 결과 값, 메세지 등을 확인해서 결과 처리를 할 수 있다. 그리고, 다운로드가 시작된 이후에 다운로드 진행 정보를 가져와 직접 progress bar형태로 사용자에게 진행 상태를 보여줘야 한다.
+이 때 사용할 수 있는 GetProgressInfo라는 API가 있다. GetProgressInfo API를 통해 SmartDLProgressInfo 객체를 리턴받고 이 객체의 정보들로 진행상태를 표시할 수 있다.
 
 [Usage]
 
 ```
+private void StartDownloadCallback(SmartDLResult result)
+{
+    // SmartDLResult 값으로 결과 값 출력 및 실패 시 에러코드 출력 가능
+    var code = result.ResultCode;
+    var message = result.ResultString;
+}
 
-private DLCSkin _skin;
-
-_skin = DLCSkin.GetInstance();
-
-```
-
-2. DLCSkin객체가 생성이 되었으면 **Getting Started**에서 상품이용시에 받은 AppKey를 setting해주는 단계가 필요하다. AppKey를 setting후에 API를 사용가능하다. 
-AppKey setting이 완료되었으면 Download를 시작하는 API인 StartDownload를 사용할 수 있다. 이 API를 호출하면 Download가 시작이 되고, 네 번째 parameter로 넘긴 콜백함수로 결과가 리턴이 된다.
-그리고, 다운로드가 시작된 이후에 다운로드 진행 정보를 가져와 직접 progress bar형태로 사용자에게 진행 상태를 보여줘야 한다. 이 때 사용할 수 있는 GetProgressInfo라는 API가 있다. 
-StartDownload와 GetProgressInfo API를 같이 사용해서 해당 정보를 나타낼 수 있다.
-
-[Usage]
-
-```
 public void StartDownload()
 {
-    _skin.SetAppKey("appkey");
+    SmartDLUnitySkin.SetAppKey("appKey");
 
     string cdnUrl = "http://example.com";
     string metafileName = "metafile.json";
     string targetPath = "D:\DLCDownloads";                 // 플랫폼별로 다르게 지정(예제에서는 윈도우 파일 시스템으로 지정)
 
-    _skin.StartDownload(cdnUrl, metafileName, targetPath, result =>
-    {
-        // result값으로 결과 값 출력 및 실패 시 에러코드 출력 가능
-        var code = result.code;             // StartDownload의 결과 에러코드
-        var message = result.message;       // 에러코드에 대한 메세지
-    });
+    SmartDLUnitySkin.StartDownloadCallback callback = StartDownloadCallback;
+    SmartDLUnitySkin.StartDownload(cdnUrl, metafileName, targetPath, callback);
     // GetProgressInfo는 API 호출 시점에 다운로드 진행 정보를 리턴하기 때문에 사용자가 지정한 타임 간격(매 프레임이나 매 초)마다 호출해주어야 한다.
     // 그러기 위해서 보통 Unity에서 사용하기 편하게 Coroutine을 제공해서 해당 함수를 사용해서 구현할 수 있다.
     StartCoroutine(UpdateDownloadInfo());
@@ -161,33 +150,33 @@ private IEnumerator UpdateDownloadInfo()
 {
     while (true)
     {
-        var progressInfo = _skin.GetProgressInfo();
+        SmartDLProgressInfo progressInfo = SmartDLUnitySkin.GetProgressInfo();
 
         var fileMapCount = progressInfo.fileMap.Count;
         for (int i = 0; i < fileMapCount; i++)
         {
-            var info = progressInfo.fileMap[i];
+            SmartDLFileStreamInfo info = progressInfo.FileMap[i];
             
             // 각 thread number
             var threadNum = i;                                                                  
             // 각 thread에서 다운로드 받고 있는 파일 이름
-            var downloadFileName = info.fileName;                                               
+            var downloadFileName = info.FileName;                                               
             // 각 thread에서 다운로드 받은 진행율
-            var threadPercentage = ((float)info.downloadedBytes / info.totalBytes) * 100.0f;    
+            var threadPercentage = ((float)info.DownloadedBytes / info.TotalBytes) * 100.0f;    
             // 현재 다운로드 받는 파일의 seqNumber
-            var fileNumber = info.fileNubmer;                                                   
+            var fileNumber = info.FileNubmer;                                                   
         }
 
         // 전체 다운로드 진행율
-        var percentage = progressInfo.percentage;                   
+        var percentage = progressInfo.Percentage;                   
         // 현재까지 다운로드 받은 용량(bytes)
-        var totalReceivedBytes = progressInfo.totalReceivedBytes;   
+        var totalReceivedBytes = progressInfo.TotalReceivedBytes;   
         // 전체 다운로드 받아야 할 용량(bytes)
-        var totalFileBytes = progressInfo.totalFileBytes;           
+        var totalFileBytes = progressInfo.TotalFileBytes;           
         // 현재까지 받은 다운로드 용량 대비 속도(bytes/sec로 계산해서 리턴)
-        var downloadSpeed = progressInfo.speed;                     
+        var downloadSpeed = progressInfo.Speed;                     
         // 전체 다운로드 받아야 할 총 파일 개수
-        var totalFileNumber = progressInfo.totalFileNumber;         
+        var totalFileNumber = progressInfo.TotalFileNumber;         
 
         yield return new WaitForEndOfFrame();
     }
@@ -201,8 +190,7 @@ GetProgressInfo API의 경우 위의 예제 코드에 나열된 모든 정보를
 [Usage]
 
 ```
-
-_skin.StopDownload();
+SmartDLUnitySkin.StopDownload();
 
 ```
 
