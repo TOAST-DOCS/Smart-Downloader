@@ -1,5 +1,19 @@
 ## Upcoming Products > Smart Downloader > Release Notes
 
+### 2017.10.26
+
+#### 기능 개선/변경
+
+* [SDK] Unity SDK v1.2.0 릴리즈
+    * 안정성 강화
+        * 내부 Core SDK 의존도 제거
+        * Native 라이브러리 의존도 감소
+
+#### 버그 수정
+
+* [Server] 인증 관련 버그 수정
+    * 통합 앱키를 삭제해도 인증에 성공하는 버그 수정
+    * 인증 실패시 에러 메시지 변경
 
 ### 2017.02.23
 
