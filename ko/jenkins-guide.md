@@ -1,4 +1,4 @@
-## Game > Smart Downloader > 서드파티 사용 가이드 > Jenkins Plugin 사용 가이드
+## Game > Smart Downloader > 플러그인 가이드
 
 ## Smart Downloader Jenkins Plugin
 Smart Downloader Jenkins Plugin 을 통해 Toast Smart Downloader의 **신규 빌드 업로드 기능** 을 편리하게 사용할 수 있습니다.
