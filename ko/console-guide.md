@@ -17,7 +17,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 <br>
 ## 서비스 관리
 
-#### 서비스 등록
+### 서비스 등록
 Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비스 등록\] > \[빌드 업로드\] > \[CDN 연동\] 3 단계 Wizard 형식으로 진행합니다. \[서비스 등록\] > \[빌드 업로드\] > \[CDN 연동\] 까지 모두 완료되어야 SDK 를 통해 배포본을 다운로드할 수 있습니다.
 <br>
 ##### 서비스 등록
@@ -114,7 +114,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
     	- ![등록 중 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_fail.PNG) : 빌드 등록 실패 상태로 해당 상태가 지속될 시 관리자에게 문의하시면 됩니다.
 
 
-#### 서비스 상세 정보
+### 서비스 상세 정보
 
 ##### 서비스 정보
 서비스 등록 시 입력한 서비스 이름과 서비스 설명값을 보여줍니다.
@@ -188,7 +188,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 	- 빌드의 빌드 상태값으로 각 상태값은 서비스 목록 > 최신 빌드 > 상태 와 동일합니다.
 
 
-#### 서비스 수정
+### 서비스 수정
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
 - 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이거나 CDN 상태가 ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) 이면 서비스를 수정할 수 없습니다.
@@ -214,7 +214,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 	- 내부 CDN 사용 / 외부 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
 
 
-#### 서비스 삭제
+### 서비스 삭제
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 
 - 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이거나 CDN 상태가 ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) 이면 서비스를 삭제할 수 없습니다.
