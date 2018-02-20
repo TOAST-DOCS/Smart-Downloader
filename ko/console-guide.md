@@ -38,6 +38,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 
 **빌드 리소스 업로드 안내.**
+
 ![빌드 리소스 업로드 안내](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_1.PNG)
 - Local machine 업로드
     - Console 페이지를 통해 사용자 Local 에 있는 빌드본을 업로드 할 수 있습니다.
@@ -50,6 +51,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 
 **업로드 된 빌드 정보**
+
 ![업로드 된 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_2.PNG)
 - 원본 리소스
 	- 폴더 찾아보기 윈도우에서 유저가 선택한 폴더의 이름은 빌드의 이름이 됩니다.
@@ -63,6 +65,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 
 **빌드 업로드 취소 기능**
+
 ![빌드 업로드 취소](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_uploading.PNG)
 
 Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 제공합니다.
@@ -75,6 +78,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 **CDN 연동 안내**
 - Smart Downloader CDN 연동.
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
+		
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
         > 부가 설명 추가!!
 	- Smart Downloader CDN 연동은 최대 약 35초의 소요시간이 발생합니다.
@@ -121,6 +125,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 1번 ~ 3번 경우로 나눠서 CDN 연동 안내를 설명합니다.
 
 **1. Smart Downloader CDN 연동**
+
 ![smart downloader cdn](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_info.PNG)
 - CDN 서버
 	- 내부 CDN 사용 버튼이 활성화로 노출됩니다.
@@ -131,6 +136,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 
 
 **2. 외부 CDN 연동**
+
 ![smart downloader cdn](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/external_cdn_info.PNG)
 - CDN 서버
 	- 외부 CDN 사용 버튼이 활성화로 노출됩니다.
@@ -159,6 +165,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
     	- 업로드 된 빌드 정보가 Tree 형태 팝업으로 노출됩니다.
     - 업로드 이력 보기
     	-  서비스 상세 정보 하단에 \[빌드 업로드 History\] 영역이 노출됩니다.
+    	
     	![빌드 업로드 History](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_history.PNG)
 - 최종 업로드 일시
 	- 서비스 목록 > 최신 빌드 영역 정보와 동일합니다.
@@ -196,6 +203,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 
 1. 현재 Smart Downloader CDN 연동인 경우
 	- 외부 CDN 연동으로 수정할 수 있습니다.
+    
     ![외부 CDN 연동](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/modify_external_cdn.PNG)
     - 외부 CDN 서버 주소는 HTTP/HTTPS 프로토콜을 선택해서 입력해야 합니다.
 
