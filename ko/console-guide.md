@@ -7,7 +7,7 @@ Smart Downloader 사용을 위해서 상품 이용 후 서비스를 등록해야
 ## Configuration
 
 ### Smart Downloader 서비스 활성화
-Console 페이지 상단의  ![서비스 선택](http://static.toastoven.net/prod_smartdownloader/web_console/product_enable.PNG) 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화를 합니다.
+Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화를 합니다.
 
 ### AppKey 와 URL 확인.
 Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다.확인된 Appkey는 SDK에 입력하여 사용하게 됩니다.
@@ -55,7 +55,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 ![업로드 된 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_2.PNG)
 - 원본 리소스
 	- 폴더 찾아보기 윈도우에서 유저가 선택한 폴더의 이름은 빌드의 이름이 됩니다.
-	- 빌드 재업로드 버튼 클릭 시, 현재 페이지에서 신규로 빌드를 업로드 할 수 있습니다. (단, 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service_state/build_progressing.PNG) 이면 신규 빌드 업로드를 할 수 없습니다.)
+	- 빌드 재업로드 버튼 클릭 시, 현재 페이지에서 신규로 빌드를 업로드 할 수 있습니다. (단, 빌드 상태가 **등록 중** 이면 신규 빌드 업로드를 할 수 없습니다.)
 
 - 빌드 정보
 	- 업로드 된 빌드의 파일 개수와 전체 파일 크기를 보여줍니다.
@@ -79,7 +79,8 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 - Smart Downloader CDN 연동.
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
 		
-		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
+		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_register.PNG)
+        
         > 부가 설명 추가!!
 	- Smart Downloader CDN 연동은 최대 약 35초의 소요시간이 발생합니다.
 
@@ -100,18 +101,24 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 - CDN
     - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다.)
     - 상태 : Smart Downloader CDN 이용 시에만 알 수 있는 데이터입니다. 외부 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
-		- ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) : Smart Downloader CDN 연동 진행 중.
-		- ![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG) : Smart Downloader CDN 정상 연동.
-		- ![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG) : Smart Downloader CDN 연동 실패로 해당 상태가 지속될 시 관리자에게 문의하시면 됩니다.
+	-   | 상태 | 설명 |
+		|----------|---------|
+		|![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) | Smart Downloader CDN 연동 진행 중.|
+        |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG) |Smart Downloader CDN 정상 연동.|
+        |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG) |Smart Downloader CDN 연동 실패로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다. |
+
 
 - 최신 빌드
     - 업로드 일시 : 최신 빌드가 업로드 된 마지막 업로드 일시.
     - Last Uploader : 최신 빌드를 업로드한 유저 계정. Jenkins 서버로 업로드 한 경우는 Jenkins Plugin 이 설치된 서버 IP.
     - 상태 : 업로드한 빌드에 대한 상태입니다.
-    	- ![등록전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_not_register.PNG) : 빌드 등록을 하지 않은 상태.
-    	- ![등록중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) : 빌드 등록이 진행 중인 상태. 등록 중인 상태에서 신규 빌드 업로드 및 삭제 기능을 이용할 수 없습니다.
-    	- ![등록 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_success.PNG) : 빌드 등록 완료.
-    	- ![등록 중 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_fail.PNG) : 빌드 등록 실패 상태로 해당 상태가 지속될 시 관리자에게 문의하시면 됩니다.
+	-   | 상태 | 설명 |
+		|----------|---------|
+		|![등록전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_not_register.PNG) | 빌드 등록을 하지 않은 상태.|
+        |![등록중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) |빌드 등록이 진행 중인 상태.<br>등록 중인 상태에서 신규 빌드 업로드 및 삭제 기능을 이용할 수 없습니다.|
+        |![등록 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_success.PNG) |빌드 등록 완료 상태. |
+		|![등록 중 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_fail.PNG) |빌드 등록 실패 상태로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
+
 
 
 ### 서비스 상세 정보
@@ -158,14 +165,14 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 
 - 신규 빌드 업로드
 	- 현재 페이지에서 신규 빌드를 업로드 할 수 있습니다.
-	- 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이면 신규 빌드 업로드를 할 수 없습니다.
+	- 빌드 상태가 **등록 중** 이면 신규 빌드 업로드를 할 수 없습니다.
 - 빌드 정보
 	- 업로드 된 빌드의 파일 개수와 전체 파일 크기를 보여줍니다.
     - 상세 정보
     	- 업로드 된 빌드 정보가 Tree 형태 팝업으로 노출됩니다.
     - 업로드 이력 보기
     	-  서비스 상세 정보 하단에 \[빌드 업로드 History\] 영역이 노출됩니다.
-    	
+
     	![빌드 업로드 History](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_history.PNG)
 - 최종 업로드 일시
 	- 서비스 목록 > 최신 빌드 영역 정보와 동일합니다.
@@ -191,7 +198,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 ### 서비스 수정
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
-- 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이거나 CDN 상태가 ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) 이면 서비스를 수정할 수 없습니다.
+- 빌드 상태가 **등록 중** 이거나 CDN 상태가 **작업 중** 이면 서비스를 수정할 수 없습니다.
 
 **서비스 정보**
 
@@ -203,7 +210,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 
 1. 현재 Smart Downloader CDN 연동인 경우
 	- 외부 CDN 연동으로 수정할 수 있습니다.
-    
+
     ![외부 CDN 연동](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/modify_external_cdn.PNG)
     - 외부 CDN 서버 주소는 HTTP/HTTPS 프로토콜을 선택해서 입력해야 합니다.
 
@@ -217,7 +224,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 ### 서비스 삭제
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 
-- 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이거나 CDN 상태가 ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) 이면 서비스를 삭제할 수 없습니다.
+- 빌드 상태가 **등록 중** 이거나 CDN 상태가 **작업 중** 이면 서비스를 삭제할 수 없습니다.
 - 서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Download CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
 
 
