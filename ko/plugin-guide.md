@@ -26,7 +26,7 @@ Jenkins -> Jenkins 관리 -> 플러그인 관리 -> 고급 탭 -> 플러그인 �
 
 ##### 사전 준비
 Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안설정` 이 필요합니다.
-> Toast API 보안설정 : https://toast.com/account/api_settings
+> Toast API 보안설정 : [https://toast.com/account/api_settings](https://toast.com/account/api_settings)
 
 <br>
 ##### 1. 인증 설정
@@ -54,8 +54,8 @@ Jenkins -> Smart Downloader Jenkins Plugin 을 사용 할 프로젝트 선택 ->
 ![그림 3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_03.png)
 <center>[그림 3] 프로젝트 구성</center>
 
-* Toast Credentials [필수] : `1.인증설정` 을 통해 추가한 Toast Credential 을 선택합니다. 잘못 된 인증키가 입력되었을 경우 인증 실패로 플러그인 사용이 불가합니다.
-* Enbale Uplod [필수] : 플러그인 동작의 활성화 / 비활성화 여부를 결정하는 옵션 값 입니다. 플러그인 설정이 저장 된 상태를 유지하면서 플러그인의 동작을 비활성화 시킬 수 있습니다.
+* Toast Credentials [필수] : <b>1.인증설정</b> 을 통해 추가한 Toast Credential 을 선택합니다. 잘못 된 인증키가 입력되었을 경우 인증 실패로 플러그인 사용이 불가합니다.
+* Enable Upload [필수] : 플러그인 동작의 활성화 / 비활성화 여부를 결정하는 옵션 값 입니다. 플러그인 설정이 저장 된 상태를 유지하면서 플러그인의 동작을 비활성화 시킬 수 있습니다.
 * ProjectID [필수] : Smart Dowonloader 를 사용하는 Toast Project ID. 아래 [그림4] 와 같이 Toast 콘솔 프로젝트 설정 메뉴에서 확인이 가능 합니다.
 * Appkey [필수] : Smart Dowonloader Appkey. 아래 [그림5] 와 같이  Toast Smart Dowonloader 콘솔에서 URL & Appkey 화면에서 확인이 가능합니다.
 * Service Name [필수] : 신규 빌드 업로드를 처리 할 Smart Dowonloader 서비스 명을 입력합니다.
