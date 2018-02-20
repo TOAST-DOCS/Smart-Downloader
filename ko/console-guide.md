@@ -9,7 +9,7 @@ Smart Downloader 사용을 위해서 상품 이용 후 서비스를 등록해야
 ### Smart Downloader 서비스 활성화
 Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화를 합니다.
 
-### AppKey 와 URL 확인.
+### AppKey 와 URL 확인
 Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다.확인된 Appkey는 SDK에 입력하여 사용하게 됩니다.
 Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 않으니 주의하시기 바랍니다.
 
@@ -89,7 +89,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 	- 외부 CDN URL은 HTTP/HTTPS 프로토콜을 선택해서 입력합니다.
 
 
-#### 서비스 목록
+### 서비스 목록
 사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
 
 ![서비스 목록](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_list.PNG)
