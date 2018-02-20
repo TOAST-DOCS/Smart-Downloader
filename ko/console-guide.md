@@ -83,8 +83,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 
 - Smart Downloader CDN 연동.
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
-
-		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
+		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_register.PNG)
 		- Service
 			- 서비스 지역 : CDN의 적용 범위에 대해서 선택하는 항목입니다. 서비스 대상 국가에 따라 Korea / Global 중 선택하시면 되며, 기본값은 Korea입니다.
 			- 설명 : CDN에 대한 간략한 설명을 작성하는 항목입니다.
@@ -225,9 +224,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 
 1. 현재 Smart Downloader CDN 연동인 경우
 	- 외부 CDN 연동으로 수정할 수 있습니다.
-
     ![외부 CDN 연동](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/modify_external_cdn.PNG)
-    
     - 외부 CDN 서버 주소는 HTTP/HTTPS 프로토콜을 선택해서 입력해야 합니다.
 
 2. 현재 외부 CDN 연동인 경우
