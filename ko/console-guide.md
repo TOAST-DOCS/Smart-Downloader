@@ -31,14 +31,13 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 - 서비스 설명
 	- 서비스에 대한 부연 설명값을 입력합니다. 최대 100자로 입력을 제한합니다.
 
-<br>
 ##### 빌드 업로드
 `2 단계 : Smart Downloader 를 통해 배포할 빌드 리소스를 업로드하는 단계.`
 - 빌드 업로드는 폴더 업로드를 원칙으로 합니다. (업로드 버튼 클릭 시, 폴더 찾아보기 윈도우가 로딩됩니다.)
 - Internet Explorer 브라우저는 빌드 업로드 기능을 제공하지 않습니다. 빌드 업로드는 Chrome 브라우저를 사용하시기 바랍니다.
 
-<br>
-** 빌드 리소스 업로드 안내. **
+
+**빌드 리소스 업로드 안내.**
 ![빌드 리소스 업로드 안내](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_1.PNG)
 - Local machine 업로드
     - Console 페이지를 통해 사용자 Local 에 있는 빌드본을 업로드 할 수 있습니다.
@@ -49,8 +48,8 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
     - Smart Downloader Jenkins Plugin(ToastCloud SmartDownloader Plugin) 을 통해 빌드를 업로드.
     - ToastCloud SmartDownloader Plugin 에 대한 자세한 가이드는 **서드파티 사용자 가이드 > Jenkins Plugin 사용 가이드** 로 확인할 수 있습니다.
 
-<br>
-** 업로드 된 빌드 정보 **
+
+**업로드 된 빌드 정보**
 ![업로드 된 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_upload_2.PNG)
 - 원본 리소스
 	- 폴더 찾아보기 윈도우에서 유저가 선택한 폴더의 이름은 빌드의 이름이 됩니다.
@@ -62,17 +61,18 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 - 최종 업데이트 : 최신 빌드가 업로드 된 마지막 업로드 일시입니다.
 
-<br>
-** 빌드 업로드 취소 기능 **
+
+**빌드 업로드 취소 기능**
 ![빌드 업로드 취소](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/build_uploading.PNG)
+
 Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 제공합니다.
 업로드 취소 기능이 완료되면 빌드 상태는 업로드 하기 전 상태로 되돌아 가는 점 유의하시기 바랍니다.
 
-<br>
+
 ##### CDN 연동
 `3 단계 : Smart Downloader CDN 혹은 외부 CDN 을 연동하는 단계.`
 
-** CDN 연동 안내 **
+**CDN 연동 안내**
 - Smart Downloader CDN 연동.
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
@@ -85,7 +85,6 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 	- 외부 CDN URL은 HTTP/HTTPS 프로토콜을 선택해서 입력합니다.
 
 
-<br>
 #### 서비스 목록
 사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
 
@@ -111,7 +110,6 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
     	- ![등록 중 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_fail.PNG) : 빌드 등록 실패 상태로 해당 상태가 지속될 시 관리자에게 문의하시면 됩니다.
 
 
-<br>
 #### 서비스 상세 정보
 
 ##### 서비스 정보
@@ -119,11 +117,10 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 - 서비스 이름 : 서비스 등록 시 입력한 서비스 이름값.
 - 서비스 설명 : 서비스 등록 시 입력한 서비스 설명값.
 
-<br>
 ##### CDN 연동 안내
 CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 1번 ~ 3번 경우로 나눠서 CDN 연동 안내를 설명합니다.
 
-** 1. Smart Downloader CDN 연동 **
+**1. Smart Downloader CDN 연동**
 ![smart downloader cdn](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_info.PNG)
 - CDN 서버
 	- 내부 CDN 사용 버튼이 활성화로 노출됩니다.
@@ -133,7 +130,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 	- 정보 확인하기 버튼을 클릭하여 내부 CDN 설정을 확인할 수 있습니다.
 
 
-** 2. 외부 CDN 연동 **
+**2. 외부 CDN 연동**
 ![smart downloader cdn](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/external_cdn_info.PNG)
 - CDN 서버
 	- 외부 CDN 사용 버튼이 활성화로 노출됩니다.
@@ -142,12 +139,13 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 - 원본 서버 URL
 	- 원본 서버 주소로 적용할 리소스 배포 URL을 제공합니다.
 
-** 3. CDN 미 연동 **
+**3. CDN 미 연동**
+
 CDN 연동 안내 가이드 문구가 나타납니다.
 
 ![cdn 가이드](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/cdn_guide.PNG)
 
-<br>
+
 ##### 최신 빌드 정보
 빌드 업로드 완료 시 최신 빌드 정보가 나타납니다.
 빌드 등록 전 상태 시 빌드 정보는 모두 빈 값이 나타납니다. ( \[빌드 정보\] 영역에 상세 정보 버튼은 비활성화. )
@@ -183,16 +181,17 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 	- 빌드의 빌드 상태값으로 각 상태값은 서비스 목록 > 최신 빌드 > 상태 와 동일합니다.
 
 
-<br>
 #### 서비스 수정
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
 - 빌드 상태가 ![등록 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_progressing.PNG) 이거나 CDN 상태가 ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG) 이면 서비스를 수정할 수 없습니다.
 
-** 서비스 정보 **
-- 서비스 이름은 고정된 값으로 수정할 수 없으며 서비스 설명은 수정할 수 있습니다.
+**서비스 정보**
 
-** CDN 정보 **
+서비스 이름은 고정된 값으로 수정할 수 없으며 서비스 설명은 수정할 수 있습니다.
+
+**CDN 정보**
+
 현재 CDN 연동 상태를 아래 1번 ~ 3번 경우로 나눠서 CDN 정보 수정을 안내하겠습니다.
 
 1. 현재 Smart Downloader CDN 연동인 경우
@@ -206,7 +205,7 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 3. 현재 CDN 미 연동인 경우
 	- 내부 CDN 사용 / 외부 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
 
-<br>
+
 #### 서비스 삭제
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 
