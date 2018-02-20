@@ -89,7 +89,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 	- 외부 CDN URL은 HTTP/HTTPS 프로토콜을 선택해서 입력합니다.
 
 
-#### 서비스 목록
+### 서비스 목록
 사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
 
 ![서비스 목록](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_list.PNG)
