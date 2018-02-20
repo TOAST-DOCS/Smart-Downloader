@@ -78,7 +78,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 **CDN 연동 안내**
 - Smart Downloader CDN 연동.
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
-		
+
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
         > 부가 설명 추가!!
 	- Smart Downloader CDN 연동은 최대 약 35초의 소요시간이 발생합니다.
@@ -232,252 +232,141 @@ CDN 연동 안내 가이드 문구가 나타납니다.
 ### 실시간 모니터링
 하루동안 서비스를 다운로드한 유저에 대한 통계정보를 00:00:00 부터 현재까지 10분 주기로 보여줍니다.
 
-#### 조회 조건.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_filter.png)
-1. 서비스
-	* 다운로드 현황을 확인할 서비스를 선택.
-	* 선택한 서비스를 바꾸는 경우 페이지 전체의 차트가 변경.
-<br>
-
-2. 국가
-	* 특정 국가에 대한 통계정보를 확인하고 싶은 경우 선택.
-	* 다운로드 상위 10개 국가만 노출.
-	* 국가를 변경하는 경우 `실시간 다운로드 현황`의 차트 정보만 변경.
-
-#### 실시간 다운로드 현황 - 미니 차트
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_minichart.png)
-`조회 조건`에서 선택한 조건에 해당하는 전체 통계정보를 간략한 차트로 보여줍니다.
+#### 조회 조건
+실시간 다운로드 통계 정보를 검색하기 위한 조건을 선택하기 위한 필터입니다.
+검색 조건은 선택과 동시에 바로 반영됩니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 차트 데이터 수집 시간.
-	* 마지막으로 차트 정보가 수집된 시간.
-<br>
+![실시간-조회조건](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_filter.png)
 
-2. 차트 색상 가이드.
-	* 미니차트 내의 OS 다운로드 횟수에서 사용할 OS별 색상에 대한 가이드.
-<br>
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 서비스 선택 | - 다운로드 현황을 확인할 서비스를 선택. <br> - 선택한 서비스를 바꾸는 경우 페이지 전체의 차트가 변경. |
+| 2 | 국가 선택 | - 특정 국가에 대한 통계정보를 확인하고 싶은 경우 선택.<br> - 다운로드 상위 10개 국가만 노출. <br> - 국가를 변경하는 경우 **실시간 다운로드 현황**의 차트 정보만 변경. |
 
-3. 차트 타이틀.
-	* 어떤 정보에 대한 차트인지 알려주기 위한 제목.
-	* 종류.
-		* Download Total
-			* 다운로드가 실행된 총 횟수.
-		* Full Download Count
-			* 업로드된 리소스 파일 전체를 다운로드 받은 횟수.
-		* Update Download Count
-			* 업로드된 리소스 파일 중, 수정된 일부 파일만 받은 횟수.
-		* Download Success
-			* 다운로드에 성공한 횟수.
-		* Average Download Time
-			* 다운로드 실행시 평균 소요 시간
-<br>
 
-4. 다운로드 횟수
-	* Average Download Time 차트에서는 전체 평균 다운로드 시간을 의미.
-<br>
+#### 실시간 다운로드 현황 - 미니 차트
+**조회 조건**에서 선택한 조건에 해당하는 전체 통계정보를 간략한 차트로 보여줍니다.
+각 항목별 설명은 다음과 같습니다.
 
-5. 전날 동시간 다운로드 횟수와 비교.
-	* Average Download Time 차트에서는 전체 평균 다운로드 시간과 비교.
-<br>
+![실시간-미니차트](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_minichart.png)
 
-6. OS별 다운로드 횟수
-	* Average Download Time 차트에서는 OS 별 평균 소요 시간.
-<br>
-
-7. 성공률.
-	* Download Success 차트에서만 사용.
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 차트 데이터 수집 시간 | - 마지막으로 차트 정보가 수집된 시간. |
+| 2 | 차트 색상 가이드 | - 미니차트 내의 OS 다운로드 횟수에서 사용할 OS별 색상에 대한 가이드. |
+| 3 | 차트 이름 | - 어떤 정보에 대한 차트인지 알려주기 위한 제목. <br> - **종류** <br> -- Download Total : 다운로드가 실행된 총 횟수. <br> -- Full Download Count : 업로드된 리소스 파일 전체를 다운로드 받은 횟수.<br> -- Update Download Count : 업로드된 리소스 파일 중, 수정된 일부 파일만 받은 횟수.<br> -- Download Success : 다운로드에 성공한 횟수.<br> -- Average Download Time : 다운로드 실행시 평균 소요 시간. |
+| 4 | 다운로드 횟수 | Average Download Time 차트에서는 전체 평균 다운로드 시간을 의미. |
+| 5 | 전날 동시간 다운로드 횟수와 비교 | Average Download Time 차트에서는 전체 평균 다운로드 시간과 비교. |
+| 6 | OS별 다운로드 횟수 | Average Download Time 차트에서는 OS 별 평균 소요 시간. |
+| 7 | 성공률 | Download Success 차트에서만 사용. |
 
 
 #### 실시간 다운로드 현황 - OS별 차트
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_oschart.png)
-`조회 조건`에서 선택한 조건에 해당하는 전체 통계 정보를 간략한 차트로 보여줍니다.
+**조회 조건**에서 선택한 조건에 해당하는 전체 통계 정보를 간략한 차트로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. OS 선택 필터.
-	* All(기본값)
-		* 모든 OS에 대한 통계 정보 노출.
-	* iOS / Android / Windows
-		* 선택한 OS에서 다운로드 받은 통계 정보만 노출.
-	* MacOS(선택적)
-	 	* MacOS에서 다운로드 받은 기록이 있는 경우에만 선택 가능.
-		* MacOS에서 다운로드 받은 통계 정보만 노출.
-<br>
+![실시간-OS차트](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_oschart.png)
 
-2. Download Success / Fail
-	* Column Chart (누적).
-	* 10분 단위로 통계 정보 노출.
-	* 다운로드 성공 / 실패 횟수.
-<br>
-
-3. Download Fail Rate
-	* Line Chart.
-	* 다운로드 실패율.
-	* 10분 단위로 통계 정보 노출.
-	* 총 다운로드 수 상위 5개국만 노출.
-<br>
-
-4. Full / Update Install
-	* Column Chart (누적).
-	* 10분 단위로 통계 정보 노출.
-	* 리소스 전체 파일 다운로드 / 수정된 일부 파일 다운로드 횟수.
-	* Unknown 은 업데이트 목록을 다운로드 하는 중에 실패한 경우.
-<br>
-
-5. Average Download Time(sec)
-	* Column Chart.
-	* 10분 단위로 통계 정보 노출.
-	* 평균 다운로드 시간.
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | OS 선택 필터 | - All(기본값) : 모든 OS에 대한 통계 정보 노출.<br> - iOS / Android / Windows : 선택한 OS에서 다운로드 받은 통계 정보만 노출. <br> - MacOS(선택적) : MacOS에서 다운로드 받은 기록이 있는 경우에만 선택 가능. |
+| 2 | Download Success / Fail | - Column Chart (누적).<br> - 10분 단위로 통계 정보 노출.<br> - 다운로드 성공 / 실패 횟수. |
+| 3 | Download Fail Rate | - Line Chart.<br> - 다운로드 실패율.<br> - 10분 단위로 통계 정보 노출.<br> - 총 다운로드 수 상위 5개국만 노출. |
+| 4 | Full / Update Install | - Column Chart (누적).<br> - 10분 단위로 통계 정보 노출.<br> - 리소스 전체 파일 다운로드 / 수정된 일부 파일 다운로드 횟수.<br> - Unknown 은 업데이트 목록을 다운로드 하는 중에 실패한 경우. |
+| 5 | Average Download Time(sec) | - Column Chart.<br> - 10분 단위로 통계 정보 노출. <br> - 평균 다운로드 시간. |
 
 
-#### 국가별 실시간 다운로드.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_countrymap.png)
-`조회 조건`에서 선택한 조건에 해당하는 통계 데이터를 지도 차트로 보여줍니다.
+#### 국가별 실시간 다운로드
+**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 지도 차트로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 차트 데이터 수집 시간.
-	* 마지막으로 차트 정보가 수집된 시간.
-<br>
+![실시간-국가별다운로드지도](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_countrymap.png)
 
-2. 다운로드 필터.
-	* 다운로드 전체(기본값).
-		* 국가별 다운로드 총 횟수를 차트에 노출.
-	* 다운로드 실패.
-		* 국가별 다운로드 실패 횟수를 차트에 노출.
-<br>
-
-3. 국가별 상세 통계 정보.
-	* 특정 국가에 대해 마우스 오버시 툴팁 생성.
-	* 해당 국가의 다운로드 정보가 노출.
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 차트 데이터 수집 시간 | 마지막으로 차트 정보가 수집된 시간. |
+| 2 |  다운로드 필터 | - 다운로드 전체(기본값) : 국가별 다운로드 총 횟수를 차트에 노출.<br>- 다운로드 실패 : 국가별 다운로드 실패 횟수를 차트에 노출. |
+| 3 |  국가별 상세 통계 정보 | - 특정 국가에 대해 마우스 오버시 툴팁 생성.<br> - 해당 국가의 다운로드 정보가 노출. |
 
 
-#### 국가별 다운로드 현황.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_countrygrid.png)
-`조회 조건`에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
+#### 국가별 다운로드 현황
+**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 데이터 저장.
-	* 클릭시 모든 국가별 다운로드 표가 `.csv` 파일로 저장됨.
-<br>
+![실시간-국가별다운로드현황](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/rt_countrygrid.png)
 
-2. 국가별 다운로드 현황 표.
-	* 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.
-	* MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출.
-
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 데이터 저장 | 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
+| 2 |  국가별 다운로드 현황 표 | - 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.<br> - MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출. |
 
 
-### 모니터링 지표.
-#### 조회 조건.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_filter.png)
+
+### 모니터링 지표
+
+#### 조회 조건
 다운로드 지표를 검색하기 위한 조건을 선택하기 위한 필터입니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 조회 기간
-	* 다운로드 통계정보를 검색할 기간.
-	* 검색기간은 일단위로 선택.
-	* 검색 기간은 최초 다운로드를 받은 날부터 검색 당일까지 가능.
-<br>
+![지표-조회조건](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_filter.png)
 
-2. 조회 조건 - 서비스
-	* 다운로드 통계정보를 검색할 서비스를 선택.
-<br>
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 조회 기간 | - 다운로드 통계정보를 검색할 기간.<br>- 검색기간은 일단위로 선택.<br>- 검색 기간은 최초 다운로드를 받은 날부터 검색 당일까지 가능. |
+| 2 | 조회 조건 - 서비스 | - 다운로드 통계정보를 검색할 서비스를 선택. |
+| 3 | 조회 조건 - 국가 | - 다운로드 통계 정보를 검색할 국가를 선택.<br> - 다운로드 상위 10개 국가만 노출. |
+| 4 | 조회 조건 - 다운로드 타입 | - All Type : 조건에 상관없이 모든 다운로드 타입에 대한 통계 검색.<br> - Full Install : 업로드된 리소스 파일을 전체를 다운로드 받은 것에 대한 통계만 검색.<br> - Update Install : 업로드된 리소스 파일 중 수정된 파일만 다운로드 받은 것에 대한 통계만 검색.<br> - Unknown : 업로드된 리소스 파일 목록을 다운로드 하는 중, 문제가 발생하여 파일을 다운로드 하지 못한 것에 대한 통계만 검색. |
+| 5 | 검색 | - 선택한 조건을 기준으로 통계 정보를 검색하기 위한 버튼. |
 
-3. 조회 조건 - 국가
-	* 다운로드 통계 정보를 검색할 국가를 선택.
-	* 다운로드 상위 10개 국가만 노출.
-<br>
-
-4. 조회 조건 - 다운로드 타입
-	* All Type
-		* 조건에 상관없이 모든 다운로드 타입에 대한 통계 검색.
-	* Full Install
-		* 업로드된 리소스 파일을 전체를 다운로드 받은 것에 대한 통계만 검색.
-	* Update Install
-		* 업로드된 리소스 파일 중 수정된 파일만 다운로드 받은 것에 대한 통계만 검색.
-	* Unknown
-		* 업로드된 리소스 파일 목록을 다운로드 하는 중, 문제가 발생하여 파일을 다운로드 하지 못한 것에 대한 통계만 검색.
-<br>
-
-5. 검색
-	* 선택한 조건을 기준으로 통계 정보를 검색하기 위한 버튼.
 
 #### 일별 다운로드 현황.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_dailygrid.png)
-`조회 조건`에서 선택한 조건에 해당하는 일별 통계 데이터를 표로 보여줍니다.
+**조회 조건**에서 선택한 조건에 해당하는 일별 통계 데이터를 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 데이터 저장.
-	* 클릭시 모든 국가별 다운로드 표가 `.csv` 파일로 저장됨.
-<br>
+![지표-일별현황](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_dailygrid.png)
 
-2. 일별 지표.
-	* 각 OS별 전체 다운로드 횟수 및 각 OS별 다운로드 성공 / 실패 / 평균 다운로드 시간을 일별로 노출.
-	* MacOS의 다운로드한 기록이 있는 경우에만 선택적으로 노출.
-	* 한 페이지에 10일간의 통계 정보가 노출됨.
-<br>
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 데이터 저장 | - 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
+| 2 |  일별 지표 | - 각 OS별 전체 다운로드 횟수 및 각 OS별 다운로드 성공 / 실패 / 평균 다운로드 시간을 일별로 노출. <br> - MacOS의 다운로드한 기록이 있는 경우에만 선택적으로 노출.<br> - 한 페이지에 10일간의 통계 정보가 노출됨. |
+| 3 |  페이지 선택 | - 조회할 페이지 선택. |
 
-3. 페이지 선택.
-	* 조회할 페이지 선택.
 
-#### 일별 지표 차트.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_dailychart.png)
-`조회 조건`에서 선택한 조건에 해당하는 통계 데이터를 차트로 보여줍니다.
+#### 일별 지표 차트
+**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 차트로 보여줍니다.
 차트의 종류는 다음과 같습니다.
 
-1. Downalod Total
-	* Column Chart (누적).
-	* 1일 단위로 통계 정보 노출.
-	* 각 OS 별 전체 다운로드 횟수.
-<br>
+![지표-일별차트](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_dailychart.png)
 
-2. Download Fail
-	* Column Chart (누적).
-	* 1일 단위로 통계 정보 노출.
-	* 각 OS 별 다운로드 실패 횟수.
-<br>
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | Downalod Total | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 전체 다운로드 횟수. |
+| 2 |  Download Fail | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 다운로드 실패 횟수. |
+| 3 |  Download Time(sec) | - Column Chart (비교).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 평균 다운로드 시간. |
+| 4 |  OS Info | - Pie Chart.<br> - 조회 기간 전체.<br> - 각 OS별 다운로드 횟수 및 비율. |
+| 5 |  Download Fail Type | - Pie Chart.<br> - 조회 기간 전체.<br> - 다운로드 실패 원인 별 횟수 및 비율. |
 
-3. Download Time(sec)
-	* Column Chart (비교).
-	* 1일 단위로 통계 정보 노출.
-	* 각 OS 별 평균 다운로드 시간.
-<br>
 
-4. OS Info
-	* Pie Chart.
-	* 조회 기간 전체.
-	* 각 OS별 다운로드 횟수 및 비율.
-<br>
-
-5. Download Fail Type
-	* Pie Chart.
-	* 조회 기간 전체.
-	* 다운로드 실패 원인 별 횟수 및 비율.
-
-#### 국가별 다운로드.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_mapchart.png)
-`조회 조건`에서 선택한 조건에 해당하는 통계 데이터를 지도 차트로 보여줍니다.
+#### 국가별 다운로드
+**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 지도 차트로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 다운로드 필터.
-	* 다운로드 전체(기본값).
-		* 국가별 다운로드 총 횟수를 차트에 노출.
-	* 다운로드 실패.
-		* 국가별 다운로드 실패 횟수를 차트에 노출.
-<br>
+![지표-국가별다운로드지도](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_mapchart.png)
 
-2. 국가별 상세 통계 정보.
-	* 특정 국가에 대해 마우스 오버시 툴팁 생성.
-	* 해당 국가의 다운로드 정보가 노출.
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 다운로드 필터 | - 다운로드 전체(기본값) : 국가별 다운로드 총 횟수를 차트에 노출.<br> - 다운로드 실패 : 국가별 다운로드 실패 횟수를 차트에 노출. |
+| 2 |  국가별 상세 통계 정보 | - 특정 국가에 대해 마우스 오버시 툴팁 생성.<br> - 해당 국가의 다운로드 정보가 노출. |
 
 
-#### 국가별 다운로드 현황.
-![](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_countrygrid.png)
-`조회 조건`에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
+#### 국가별 다운로드 현황
+**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
-1. 데이터 저장.
-	* 클릭시 모든 국가별 다운로드 표가 `.csv` 파일로 저장됨.
-<br>
+![지표-국가별다운로드현황](http://static.toastoven.net/prod_smartdownloader/web_console/monitoring/smr_countrygrid.png)
 
-2. 국가별 다운로드 현황 표.
-	* 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.
-	* MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출.
+| 번호 | 항목 | 설명 |
+| --- | --- | --- |
+| 1 | 데이터 저장 | 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
+| 2 |  국가별 다운로드 현황 표 | - 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.<br> - MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출. |
