@@ -80,7 +80,14 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 	- CDN 서비스 생성 팝업을 통해 CDN 설정 정보를 입력합니다.
 
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/cdn/tc_cdn_register.PNG)
-        > 부가 설명 추가!!
+		- Service
+			- 서비스 지역 : CDN의 적용 범위에 대해서 선택하는 항목입니다. 서비스 대상 국가에 따라 Korea / Global 중 선택하시면 되며, 기본값은 Korea입니다.
+			- 설명 : CDN에 대한 간략한 설명을 작성하는 항목입니다.
+		- Cache
+			- Cache 만료 설정 : CDN에 저장되어 있는 파일들을 신규 파일로 교체할 주기를 선택하는 항목입니다. 기본 24시간으로 지정되어 있으며, 필요에 따라서 임의로 설정이 필요한 경우 **사용자 설정 사용**을 선택하면 됩니다.
+			- Cache 만료 설정(초) : **Cache 만료 설정**에서 **사용자 설정 사용**을 선택한 경우 CDN의 Cache 주기를 입력하는 항목입니다. (기본설정을 사용하는 경우 입력 불가)
+			- Refferrers 접근 관리 : CDN에 대한 접근 제한을 어떤 형태로 할 것인지 선택하는 항목입니다. **Blacklist**의 경우 입력한 Referrers만 접근 제한되며, **Whitelist**의 경우 입력한 Refferrers만 접근 가능합니다.
+			- Refferrers : 접근 제한할 Refferrer를 입력하기 위한 항목입니다. Regular Expression를 지원하며, 여러개의 Refferrer 를 입력하기 위해서는 줄을 바꾼후에 입력하시면 됩니다.
 	- Smart Downloader CDN 연동은 최대 약 35초의 소요시간이 발생합니다.
 
 - 외부 CDN 연동.
