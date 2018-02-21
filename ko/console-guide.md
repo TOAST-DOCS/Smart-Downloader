@@ -1,4 +1,4 @@
-## Game > Smart Downloader > Console Guide
+## Game > Smart Downloader > 콘솔 사용 가이드
 
 Smart Downloader 사용을 위해서 상품 이용 후 서비스를 등록해야 합니다.
 서비스 등록은 \[서비스 등록\] > \[빌드 업로드\] > \[CDN 연동\] 3단계 Wizard 형식으로 구성되어 있습니다. 서비스 등록 후 해당 서비스에 대한 실시간 다운로드 현황 및 다운로드 지표 데이터를 다양한 형태의 차트로 제공하며 데이터를 다운로드 할 수 있습니다.

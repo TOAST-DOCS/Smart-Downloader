@@ -1,4 +1,4 @@
-## Upcoming Products > Smart Downloader > Developer's Guide
+## Upcoming Products > Smart Downloader > SDK 사용 가이드
 
 ## Smart Downloader Client SDK
 
