@@ -40,10 +40,11 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 
 | 용어 | 설명 |
 | --- | --- |
-| 서비스 |	Smart Downloader 의 개별 단위|
-| 빌드 | Smart Downloader SDK 를 통해 다운로드 받을 게임 리소스. 서비스 별로 빌드를 관리함 |
-| 내부 CDN | Smart Downloader 내에서 자동으로 생성해주는 CDN |
-| 외부 CDN | 내부 CDN 이 아닌 기존에 사용중인 CDN 이 존재 하는 경우 |
+| 서비스 |	Smart Downloader 의 개별 단위.|
+| 빌드 | Smart Downloader SDK 를 통해 다운로드 받을 게임 리소스. 서비스 별로 관리함. |
+| 배포 파일 | Smart Downloader 에 업로드된 빌드는 자동으로 배포 파일을 생성함. 서비스 별로 관리함. |
+| 내부 CDN | Smart Downloader 내에서 자동으로 생성해주는 CDN. |
+| 외부 CDN | 내부 CDN 이 아닌 기존에 사용중인 CDN 이 존재 하는 경우. |
 
 
 ## 구조
@@ -55,7 +56,7 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 
 | Component 명 | 설명 |
 | --- | --- |
-| SDK | Game Client 에서 SmartDownloader 를 사용하기 위한 Client SDK |
-| API Server | Toast 인증을 처리하고, CDN Download URL 을 Client SDK 로 전달 함 |
-| Console |	Smart Downloader 서비스 등록, 빌드 업로드, 모니터링 기능 제공 |
-| Jenkins Plugin | 콘솔을 통하지 않고 사용자의 빌드서버에서 직접 빌드 업로드 기능을 사용할 수 있도록 제공 |
+| SDK | Game Client 에서 SmartDownloader 를 사용하기 위한 Client SDK. |
+| API Server | Toast 인증을 처리하고, CDN Download URL 을 Client SDK 로 전달 함. |
+| Console |	Smart Downloader 서비스 등록, 빌드 업로드, 모니터링 기능 제공. |
+| Jenkins Plugin | 콘솔을 통하지 않고 사용자의 빌드서버에서 직접 빌드 업로드 기능을 사용할 수 있도록 제공. |
