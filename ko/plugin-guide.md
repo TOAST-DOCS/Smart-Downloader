@@ -15,7 +15,7 @@ Smart Downloader Jenkins Plugin 을 통해 Toast Smart Downloader의 **신규 �
 Download : [smartdl-uploader.hpi](http://static.toastoven.net/toastcloud/sdk_download/Smart Downloader/smartdl-uploader.hpi)
 
 ##### 2. 설치
-Jenkins -> Jenkins 관리 -> 플러그인 관리 -> 고급 탭 -> 플러그인 올리기 메뉴에서 `1. Jenkins Plugin 다운로드` 를 통해 다운받은 **smartdl-uploader.hpi** 파일을 선택 후 올립니다.
+[Jenkins] > [Jenkins 관리] > [플러그인 관리] > [고급 탭] > [플러그인 올리기] 메뉴에서 `1. Jenkins Plugin 다운로드` 를 통해 다운받은 **smartdl-uploader.hpi** 파일을 선택 후 올립니다.
 
 정상적으로 설치가 완료 되면 **설치된 플러그인 목록** 탭에서 아래 [그림 1]와 같이 설치된 내역을 확인할 수 있습니다.
 
@@ -31,7 +31,7 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 <br>
 ##### 1. 인증 설정
 
-Jenkins -> Credentials -> System 메뉴에서 Global credentials 선택 후 Add Credentials 메뉴를 통해 Toast 인증을 추가합니다.
+[Jenkins] > [Credentials] > [System] 메뉴에서 Global credentials 선택 후 Add Credentials 메뉴를 통해 Toast 인증을 추가합니다.
 아래 [그림 2] 와 같이 Kind 를 Toast Credentiasls 로 선택 후 Toast UserID, Toast AccessKeyID, Toast SecretKey 를 입력합니다.
 
 ![그림 2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_02.png)
@@ -48,7 +48,7 @@ Jenkins -> Credentials -> System 메뉴에서 Global credentials 선택 후 Add 
 
 <br>
 ##### 2. 프로젝트 구성
-Jenkins -> Smart Downloader Jenkins Plugin 을 사용 할 프로젝트 선택 -> 구성 -> 빌드 후 조치 메뉴에서 `SmartDL Uploader` 를 추가 합니다.
+[Jenkins] > Smart Downloader Jenkins Plugin 을 사용 할 프로젝트 선택 > [구성] > [빌드 후 조치] 메뉴에서 `SmartDL Uploader` 를 추가 합니다.
 아래 [그림 3] 과 같이 설정 값을 입력 합니다.
 
 ![그림 3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_03.png)
