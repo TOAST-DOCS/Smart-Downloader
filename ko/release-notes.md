@@ -1,5 +1,19 @@
 ## Game > Smart Downloader > 릴리스 노트
 
+### 2018.02.22
+#### 기능 개선/변경
+- Smart Downloader 내 개별 단위인 <b>서비스</b> 가 추가 됨
+- [Console] 사용자 편의성 향상
+    - 신규 빌드 업로드 / 배포 기능 추가
+    - 빌드 배포시 Toast CDN 을 사용할 수 있도록 기능 제공
+    - 실시간 / 모니터링 지표 개선
+    - 다운로드 오류 현황 지표 상세화
+- [SDK] Unity SDK v1.5.0 릴리즈
+    - Core 라이브러리의 의존도 제거
+    - API 변경
+        - 사용성 개선을 위한 API 변경
+- [Jenkins Plugin] 신규 빌드 업로드 기능을 위한 Jenkins Plugin 제공
+
 ### 2017.10.26
 
 #### 기능 개선/변경
