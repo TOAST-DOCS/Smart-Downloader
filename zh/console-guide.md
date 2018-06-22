@@ -52,7 +52,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 - SmartDownloader CDN 연동 선택
 	- \[SmartDownloader CDN 연동.\] 버튼 선택 시 진행됩니다.
-	- \[CDN 서비스 생성 팝업\]을 통해 CDN 설정 정보를 입력합니다.
+	- \[CDN 서비스 생성\] 팝업을 통해 CDN 설정 정보를 입력합니다.
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_register.PNG)
 		- Service
 			- 서비스 지역 : CDN의 적용 범위에 대해서 선택하는 항목입니다. 서비스 대상 국가에 따라 Korea / Global 중 선택하시면 되며, 기본값은 Korea입니다.
@@ -205,9 +205,11 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 리소스 업로드 완료 시 리소스 업로드 정보가 나타납니다.
 배포 상태가 **등록 전** 이라면 리소스 업로드 정보는 모두 빈 값이 나타납니다. ( \[리소스 업로드 정보\] 영역에 상세 정보 버튼은 비활성화. )
 
-> 주의점
+> \[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이면 신규 리소스 업로드를 할 수 없습니다.
 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.
+
+![최신 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/recent_build_info.PNG)
 
 | 항목 | 설명 |
 | --- | --- |
@@ -237,7 +239,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 ### 서비스 수정
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
-> 주의점
+> \[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이거나 SmartDownloader CDN 연동 시 CDN 상태가 **작업 중** 이면 서비스를 수정할 수 없습니다.
 
 ![서비스 수정](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_modify_1.5.3.PNG)
@@ -263,7 +265,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 ### 서비스 삭제
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 
->주의점
+>\[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이거나 CDN 상태가 **작업 중** 이면 서비스를 삭제할 수 없습니다.
 서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Download CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
 
