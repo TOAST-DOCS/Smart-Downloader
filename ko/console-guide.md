@@ -51,7 +51,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 ![CDN 연동](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/cdn_register_view.PNG)
 
 - SmartDownloader CDN 연동 선택
-	- \[SmartDownloader CDN 연동.\] 버튼 선택 시 진행됩니다.
+	- \[SmartDownloader CDN 연동\] 버튼 선택 시 진행됩니다.
 	- \[CDN 서비스 생성\] 팝업을 통해 CDN 설정 정보를 입력합니다.
 		![CDN 설정 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/tc_cdn_register.PNG)
 		- Service
@@ -62,7 +62,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 			- Cache 만료 설정(초) : **Cache 만료 설정**에서 **사용자 설정 사용**을 선택한 경우 CDN의 Cache 주기를 입력하는 항목입니다. (기본설정을 사용하는 경우 입력 불가)
 			- Referrers 접근 관리 : CDN에 대한 접근 제한을 어떤 형태로 할 것인지 선택하는 항목입니다. **Blacklist**의 경우 입력한 Referrers만 접근 제한되며, **Whitelist**의 경우 입력한 Referrers만 접근 가능합니다.
 			- Referrers : 접근 제한할 Referrer를 입력하기 위한 항목입니다. Regular Expression를 지원하며, 여러개의 Referrer를 입력하기 위해서는 줄을 바꾼후에 입력하시면 됩니다.
-	- SmartDownloader CDN 연동은 최대 약 35초의 소요시간이 발생합니다.
+	- SmartDownloader CDN 연동은 최대 약 1분의 소요시간이 발생합니다.
 
 - 고객사 CDN 연동 선택
     - \[고객사 CDN 연동\] 버튼 선택 시 진행됩니다.
@@ -78,7 +78,6 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다. \[서비�
 
 ![CDN 연동 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/cdn_register_complete_1.5.3.PNG)
 
-- 2단계. CDN 등록 완료
 - 등록된 CDN 서버 주소 및 원본 서버 URL을 확인할 수 있습니다. \[다음\] 버튼 클릭 시 서비스 등록 Wizard의 세번째 단계인 \[리소스 업로드\] 단계로 이동합니다.
 
 #### 리소스 업로드
@@ -134,7 +133,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 	- 서비스 등록 시 사용자가 입력한 서비스 이름.
 
 - CDN
-    - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다.)
+    - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다)
     - 상태 : SmartDownloader CDN 이용 시에만 알 수 있는 데이터입니다. 고객사 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
 	-   | 상태 | 설명 |
 		|----------|---------|
@@ -153,7 +152,7 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
         |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
         |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태.|
         |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
-        |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 연동된 CDN 으로 배포 완료된 상태.|
+        |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
         |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
 		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
 
@@ -165,11 +164,6 @@ Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 �
 서비스 등록 시 입력한 서비스 이름과 서비스 설명값을 보여줍니다.
 
 ![서비스 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_detail_serviceInfo.PNG)
-
-| 항목 | 설명 |
-| --- | --- |
-| 서비스 이름 | 서비스 등록 시 입력한 서비스 이름값. |
-| 서비스 설명 | 서비스 등록 시 입력한 서비스 설명값. |
 
 #### CDN 연동 안내
 CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 1번 ~ 3번 경우로 나눠서 CDN 연동 안내를 설명합니다.
@@ -207,7 +201,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 
 > \[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이면 신규 리소스 업로드를 할 수 없습니다.
-배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.
+배포 상태가 **배포 대기** 상태인 경우, 최신 빌드를 CDN에 배포할 수 있습니다.
 
 ![최신 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/recent_build_info.PNG)
 
@@ -231,7 +225,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 항목 | 설명 |
 | --- | --- |
 | 빌드 배포 일시 | \[빌드 배포\] 버튼을 통한 배포가 완료된 일시 입니다. |
-| 최종 배포자| \[빌드 배포\] 버튼을 통한 배포한 유저의 Toast Cloud 계정 정보입니다. |
+| 최종 배포자| \[빌드 배포\] 버튼으로 배포한 유저의 Toast Cloud 계정 정보입니다. |
 | 리소스 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
 | 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
 | 상태 | 최신 빌드의 배포 상태이며 각 상태값은 상단의 \[최신 빌드 정보\] 영역의 \[배포 상태\]와 동일합니다. |
