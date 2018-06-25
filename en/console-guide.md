@@ -1,17 +1,17 @@
 ## Game > Smart Downloader > Console Guide
 
 Smart Downloader 사용을 위해서 서비스 활성화 후 서비스를 등록해야 합니다.
-서비스 등록은 \[서비스 등록\] > \[CDN 연동\] > \[리소스 업로드\] 3단계 Wizard 형식으로 구성되어 있습니다.  \[서비스 등록\] > \[CDN 연동\] > \[리소스 업로드\] 까지 모두 완료되어야 SDK 를 통해 배포본을 다운로드할 수 있습니다.
+서비스 등록은 \[서비스 등록\] > \[CDN 연동\] > \[리소스 업로드\] 3단계 Wizard 형식으로 구성되어 있습니다. 3단계 서비스 등록 Wizard 후 \[빌드 배포\] 까지 모두 완료되어야 SDK 를 통해 배포본을 다운로드할 수 있습니다.
 서비스 등록 후 해당 서비스에 대한 실시간 다운로드 현황 및 다운로드 지표 데이터를 다양한 형태의 차트로 제공하며 데이터를 다운로드 할 수 있습니다.
 <br>
 
 ## Configuration
 
 ### Smart Downloader 서비스 활성화
-Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화를 합니다.
+Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화 합니다.
 
 ### AppKey 와 URL 확인
-Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다.확인된 Appkey는 SDK에 입력하여 사용하게 됩니다.
+Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다. 해당 Appkey는 SDK 에 입력하여 사용하게 됩니다.
 Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 않으니 주의하시기 바랍니다.
 
 ![Appkey 와 URL 확인](http://static.toastoven.net/prod_smartdownloader/web_console/urlAndAppkey_1.5.3.PNG)
@@ -65,7 +65,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다.
 	- SmartDownloader CDN 연동은 최대 약 1분의 소요시간이 발생합니다.
 
 - 고객사 CDN 연동 선택
-	- \[안내\] 팝업으로 고객사 CDN 이용을 위한 Step1, Step2 를 진행합니다.
+	- \[안내\] 팝업이 나타나며 고객사 CDN 이용을 위한 Step1, Step2 를 진행합니다.
         ![고객사 CDN](http://static.toastoven.net/prod_smartdownloader/web_console/service/cdn/external_cdn_register_1.5.3.PNG)
 	    - Step 1
 	        - **원본 서버 주소로 적용할 URL** 을 제공합니다.
@@ -96,7 +96,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다.
 
 - Build Server(원격) 업로드
     - Smart Downloader Jenkins Plugin(ToastCloud SmartDownloader Plugin) 을 통해 리소스를 업로드.
-    - ToastCloud SmartDownloader Plugin 에 대한 자세한 가이드는 **플러그인 사용 가이드** 로 확인할 수 있습니다.
+    - ToastCloud SmartDownloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
 
 **2. 리소스 업로드 완료**
 
