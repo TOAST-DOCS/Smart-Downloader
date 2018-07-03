@@ -126,7 +126,7 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다.
 ### 서비스 목록
 사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
 
-![서비스 목록](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_list_1.5.3.PNG)
+![서비스 목록](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_list_1.5.3.10.PNG)
 
 - 서비스 이름
 	- 서비스 등록 시 사용자가 입력한 서비스 이름.
@@ -142,18 +142,18 @@ Smart Downloader 를 사용하기 위한 서비스를 등록합니다.
 
 
 - 최신 빌드
-    - 업로드 일시 : 최신 빌드가 업로드 된 마지막 업로드 일시.
-    - Last Uploader : 최신 빌드를 업로드한 유저 계정. Jenkins 서버로 업로드 한 경우는 Jenkins Plugin 이 설치된 서버 IP.
-    - 상태 : 업로드한 리소스의 현재 상태입니다.
+    - 빌드 배포 일시 : 최신 빌드의 마지막 배포 일시.
+    - 리소스 업로드 일시 : 최신 빌드의 마지막 업로드 일시.
+    - 상태 : 업로드한 리소스의 현재 상태. **배포 대기** 상태 혹은 **배포 실패** 상태인 경우 \[빌드 배포\] 버튼은 활성화 됩니다.
 	-   | 상태 | 설명 |
 		|----------|---------|
 		|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)  | 리소스 등록을 하지 않은 상태.|
         |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
-        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태.|
+        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태. \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
         |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
         |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
-        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
-		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
+        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
+		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
 
 
 ### 서비스 상세 정보
@@ -200,7 +200,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 
 > \[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이면 신규 리소스 업로드를 할 수 없습니다.
-배포 상태가 **배포 대기** 상태인 경우, 최신 빌드를 CDN에 배포할 수 있습니다.
+배포 상태가 **배포 대기** 상태인 경우, 최신 빌드를 CDN에 배포할 수 있습니다. (**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)
 
 ![최신 빌드 정보](http://static.toastoven.net/prod_smartdownloader/web_console/service/build/recent_build_info.PNG)
 
@@ -213,7 +213,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 최종 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
 | 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
 | 배포 상태 | 최신 빌드의 배포 상태이며 각 상태값은 서비스 목록 > 최신 빌드 영역 정보와 동일합니다. |
-| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.<br>배포 시 SmartDownloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
+| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 SmartDownloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
 
 #### 빌드 배포 이력
 
