@@ -4,7 +4,7 @@
 
 Smart Downloader SDK는 Unity 엔진을 지원합니다.
 
-#### Supported Version
+#### Supported Versions
 
 * 5.6.6 ~ 2018.2.13
 
@@ -40,6 +40,8 @@ Smart Downloader SDK를 사용하려면 Console에서 상품이 활성화되어 
 ```cs
 static void StartDownload(string appKey, string serviceName, string downPath, OnComplete callback)
 static void StartDownload(string appKey, string serviceName, string downPath, DownloadConfig config, OnComplete callback)
+
+delegate void OnComplete(DownloadResult result)
 ```
 
 * appKey
@@ -52,11 +54,7 @@ static void StartDownload(string appKey, string serviceName, string downPath, Do
 * config (선택)
     * 다운로드 환경 설정을 변경할 수 있습니다. 기본값 사용을 권장합니다.
 * callback
-    ```cs
-    delegate void OnComplete(DownloadResult result)
-    ```
-    * 다운로드가 완료(성공 혹은 실패) 되면 처리할 코드를 작성합니다.
-        콜백 함수가 호출되면 DownloadResult 타입의 결과값이 파라미터로 전달됩니다.
+    * 다운로드가 완료(성공 혹은 실패) 되면 처리할 코드를 작성합니다. 콜백 함수가 호출되면 DownloadResult 타입의 결과값이 파라미터로 전달됩니다.
 
 **Example**
 
