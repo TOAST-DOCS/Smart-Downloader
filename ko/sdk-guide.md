@@ -12,8 +12,10 @@ Smart Downloader SDK는 Unity 엔진을 지원합니다.
 
 * iOS
 * Android
-* Windows
-* macOS
+* Standalone
+    * Windows
+    * macOS
+* Editor
 
 
 ## API Guide
