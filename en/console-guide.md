@@ -120,15 +120,14 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
 
 - 서비스 이름
-
-  - 서비스 등록 시 사용자가 입력한 서비스 이름.
+    - 서비스 등록 시 사용자가 입력한 서비스 이름.
 
 - CDN
     - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다)
     - 상태 : SmartDownloader CDN 이용 시에만 알 수 있는 데이터입니다. 고객사 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
 	-   |  상태 | 설명 |
 		|----------|---------|
-		|     ![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| SmartDownloader CDN 연동 진행 중.|
+		|![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| SmartDownloader CDN 연동 진행 중.|
         |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |SmartDownloader CDN 정상 연동.|
         |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |SmartDownloader CDN 연동 실패로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다. |
 
@@ -139,13 +138,13 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
     - 상태 : 업로드한 리소스의 현재 상태. **배포 대기** 상태 혹은 **배포 실패** 상태인 경우 \[빌드 배포\] 버튼이 활성화 됩니다.
 	-   |  상태 | 설명 |
 		|----------|---------|
-		|     ![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
+		|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
         |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
         |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태. \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
         |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
         |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
         |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
-		|     ![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
+		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
 
 
 ### 5. 서비스 상세 정보
