@@ -1,5 +1,12 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2018.11.27
+
+#### 버그 수정
+* [SDK] Unity SDK v1.5.5
+    * IL2CPP 빌드 지원
+    * 간헐적으로 macOS에서 IP Address 획득 실패 수정
+
 ### 2018.10.23
 #### 기능 개선/변경
 * [SDK] Unity SDK v1.5.4
