@@ -24,7 +24,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 - 서비스 이름
     - 서비스를 구분할 수 있는 식별값으로 **필수 입력** 입니다.
-    - 서비스 이름은 식별값으로 사용되기 때문에 한 프로젝트에 동일한 서비스 이름으로 2개 이상 등록할 수 없습니다.
+    - 서비스 이름은 식별값으로 사용되기 때문에 한 프로젝트에 동일한 서비스 이름으로 1개 이상 등록할 수 없습니다.
     - **영문 소문자, 숫자와 특수기호 (_),(-)** 만 사용 가능하며 첫 문자는 **영문 소문자나 숫자**로 시작해야 합니다.
     - 공백으로 시작할 수 없습니다.
     - 최대 30Byte로 입력을 제한합니다.
@@ -44,7 +44,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 ![smartdl_04_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_04_201812.png)
 
-- 2.1.1 SmartDownloader CDN 연동 선택
+- 2.1.1 Smart Downloader CDN 연동 선택
 	- \[CDN 서비스 생성\] 팝업을 통해 CDN 설정 정보를 입력합니다.
 		![smartdl_05_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_05_201812.png)
 		- Service
@@ -55,7 +55,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 			- Cache 만료 설정(초) : **Cache 만료 설정**에서 **사용자 설정 사용**을 선택한 경우 CDN의 Cache 주기를 입력하는 항목입니다. (기본설정을 사용하는 경우 입력 불가)
 			- Referrers 접근 관리 : CDN에 대한 접근 제한을 어떤 형태로 할 것인지 선택하는 항목입니다. **Blacklist**의 경우 입력한 Referrers만 접근 제한되며, **Whitelist**의 경우 입력한 Referrers만 접근 가능합니다.
 			- Referrers : 접근 제한할 Referrer를 입력하기 위한 항목입니다. Regular Expression를 지원하며, 여러개의 Referrer를 입력하기 위해서는 줄을 바꾼후에 입력하시면 됩니다.
-	- SmartDownloader CDN 연동은 최대 약 1분의 소요시간이 발생합니다.
+	- Smart Downloader CDN 연동은 최대 약 1분의 소요시간이 발생합니다.
 
 - 2.1.2 고객사 CDN 연동 선택
 	- \[안내\] 팝업이 나타나며 고객사 CDN 이용을 위한 Step1, Step2 를 진행합니다.
@@ -86,8 +86,8 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 ​    - 업로드가 완료되면 \[3단계. 리소스 업로드 완료\] 페이지로 이동합니다.
 
 - B.  Build Server(원격) 업로드
-​    - Smart Downloader Jenkins Plugin(ToastCloud SmartDownloader Plugin) 을 통해 리소스를 업로드.
-​    - ToastCloud SmartDownloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
+​    - Smart Downloader Jenkins Plugin(ToastCloud Smart Downloader Plugin) 을 통해 리소스를 업로드.
+​    - ToastCloud Smart Downloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
 
 #### 3.2 리소스 업로드 완료
 
@@ -124,12 +124,12 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 - CDN
     - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다)
-    - 상태 : SmartDownloader CDN 이용 시에만 알 수 있는 데이터입니다. 고객사 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
+    - 상태 : Smart Downloader CDN 이용 시에만 알 수 있는 데이터입니다. 고객사 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
 	-   |  상태 | 설명 |
 		|----------|---------|
-		|![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| SmartDownloader CDN 연동 진행 중.|
-        |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |SmartDownloader CDN 정상 연동.|
-        |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |SmartDownloader CDN 연동 실패로 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다. |
+		|![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| Smart Downloader CDN 연동 진행 중.|
+        |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN 정상 연동.|
+        |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Smart Downloader CDN 연동 실패로 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다. |
 
 
 - 최신 빌드
@@ -143,8 +143,8 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
         |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태. \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
         |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
         |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
-        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
-		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 관리자에게 문의하시기 바랍니다.|
+        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
+		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
 
 
 ### 5. 서비스 상세 정보
@@ -156,15 +156,15 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 서비스 등록 시 입력한 서비스 이름과 서비스 설명값을 보여줍니다.
 
 #### 5.2 CDN 연동 안내
-CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 2번 ~ 4번 경우로 나눠서 CDN 연동 안내를 설명합니다.
+CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 A ~ C 경우로 나눠서 CDN 연동 안내를 설명합니다.
 
-**A. SmartDownloader CDN 연동**
+**A. Smart Downloader CDN 연동**
 
 | 항목 | 설명 |
 | --- | --- |
-| CDN 서버 | SmartDownloader CDN 으로 표기됩니다. |
-| CDN 서버 주소 | SmartDownloader CDN 연동 시 자동으로 CDN Downloader URL 이 생성되며 해당 URL 이 노출됩니다. |
-| CDN 설정 정보 | 정보 확인하기 버튼을 클릭하여 SmartDownloader CDN 설정을 확인할 수 있습니다. |
+| CDN 서버 | Smart Downloader CDN 으로 표기됩니다. |
+| CDN 서버 주소 | Smart Downloader CDN 연동 시 자동으로 CDN 다운로드 URL 이 생성되며 해당 URL 이 노출됩니다. |
+| CDN 설정 정보 | 정보 확인하기 버튼을 클릭하여 Smart Downloader CDN 설정을 확인할 수 있습니다. |
 
 **B. 고객사 CDN 연동**
 
@@ -197,7 +197,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 최종 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
 | 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
 | 배포 상태 | 최신 빌드의 배포 상태이며 각 상태값은 서비스 목록 > 최신 빌드 영역 정보와 동일합니다. |
-| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 SmartDownloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
+| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 Smart Downloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
 
 #### 5.4 빌드 배포 이력
 
@@ -217,14 +217,14 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 - \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 >\[주의점\]
 배포 상태가 **업로드 중**, **배포 중** 이거나 CDN 상태가 **작업 중** 이면 서비스를 삭제할 수 없습니다.
-서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Download CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
+서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Downloader CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
 
 
 ### 6. 서비스 수정
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
 > \[주의점\]
-배포 상태가 **업로드 중**, **배포 중** 이거나 SmartDownloader CDN 연동 시 CDN 상태가 **작업 중** 이면 서비스를 수정할 수 없습니다.
+배포 상태가 **업로드 중**, **배포 중** 이거나 Smart Downloader CDN 연동 시 CDN 상태가 **작업 중** 이면 서비스를 수정할 수 없습니다.
 
 ![smartdl_16_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_16_201812.png)
 
@@ -234,15 +234,15 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 #### 6.2 CDN 정보
 현재 CDN 연동 상태를 아래 3가지 경우로 나눠서 CDN 정보 수정을 안내하겠습니다.
 
-**6.2.1 현재 SmartDownloader CDN 연동인 경우**
-​	- SmartDownloader CDN -> 고객사 CDN 연동으로 변경할 수 있습니다.
+**6.2.1 현재 Smart Downloader CDN 연동인 경우**
+​	- Smart Downloader CDN -> 고객사 CDN 연동으로 변경할 수 있습니다.
 ​   - 고객사 CDN 서버 주소는 HTTP/HTTPS 프로토콜을 선택해서 입력해야 합니다.
 
 **6.2.2 현재 고객사 CDN 연동인 경우**
-​	- 고객사 CDN  -> SmartDownloader CDN 연동으로 변경할 수 있습니다.
+​	- 고객사 CDN  -> Smart Downloader CDN 연동으로 변경할 수 있습니다.
 
 **6.2.3 현재 CDN 미 연동인 경우**
-​	- SmartDownloader CDN 사용 / 고객사 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
+​	- Smart Downloader CDN 사용 / 고객사 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
 
 
 ## 실시간 모니터링 Tab
@@ -333,7 +333,7 @@ Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 �
 
 | 번호 | 항목 | 설명 |
 | --- | --- | --- |
-| 1 | Downalod Total | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 전체 다운로드 횟수. |
+| 1 | Download Total | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 전체 다운로드 횟수. |
 | 2 | Download Success | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 다운로드 성공 횟수. |
 | 3 | Download Time(sec) | - Column Chart (비교).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 평균 다운로드 시간. |
 | 4 | Download Fail Type | - Pie Chart.<br> - 조회 기간 전체.<br> - 다운로드 실패 원인 별 횟수 및 비율. |

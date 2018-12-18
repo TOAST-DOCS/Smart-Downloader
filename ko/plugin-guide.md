@@ -48,7 +48,8 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 
 <br>
 ##### 2. 프로젝트 구성
-[Jenkins] > Smart Downloader Jenkins Plugin 을 사용 할 프로젝트 선택 > [구성] > [빌드 후 조치] 메뉴에서 `SmartDL Uploader` 를 추가 합니다.
+
+**[Jenkins]> 프로젝트 선택 > [구성] > [빌드 후 조치]** 메뉴에서 SmartDL Uploader 를 추가 합니다.
 아래 [그림 3] 과 같이 설정 값을 입력 합니다.
 
 ![그림 3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_03.png)
