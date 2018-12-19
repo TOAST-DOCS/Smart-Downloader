@@ -1,4 +1,4 @@
-## Game > Smart Downloader > 개요
+## Game > Smart Downloader > Overview
 
 Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 스레드로 다운로드 해 주는 서비스 입니다.
 클라이언트에서 리소스를 다운로드 해주고 여러 통계 데이터를 수집해서 다양한 정보를 제공합니다.
