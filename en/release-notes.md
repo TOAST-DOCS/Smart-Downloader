@@ -2,9 +2,23 @@
 
 ### 2018.12.27
 
+#### 버그 수정
+* [SDK] Unity SDK v1.5.6
+    * 다운로드 취소 시 결과 콜백이 호출되지 않는 문제 수정.
+
 #### 기능 개선/변경
 * [Console] 공통
     * 페이지의 전체 메세지에 표준어 검수 결과 반영.
+* [SDK] Unity SDK v1.5.6
+    * Common
+        * [ResultCode 리뉴얼](/Game/Smart%20Downloader/en/error-code)
+            * [주의] 기존 SDK에서 업데이트 할 경우 오류 발생
+    * iOS
+        * iOS 12 지원
+    * Standalone(Windows)
+        * DLL 이름 및 경로 변경
+            * smartnative_x86.dll → x86/smartnative.dll
+            * smartnative_x64.dll → x86_64/smartnative.dll
 
 
 ### 2018.11.27
