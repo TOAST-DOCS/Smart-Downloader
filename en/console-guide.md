@@ -1,351 +1,354 @@
 ## Game > Smart Downloader > Console Guide
 
-Smart Downloader 사용을 위해서 서비스 활성화 후 서비스를 등록해야 합니다.
-서비스 등록은 \[서비스 등록\] > \[CDN 연동\] > \[리소스 업로드\] 3단계 Wizard 형식으로 구성되어 있습니다. 3단계 서비스 등록 Wizard 후 \[빌드 배포\] 까지 모두 완료되어야 SDK 를 통해 배포본을 다운로드할 수 있습니다.
-서비스 등록 후 해당 서비스에 대한 실시간 다운로드 현황 및 다운로드 지표 데이터를 다양한 형태의 차트로 제공하며 데이터를 다운로드 할 수 있습니다.
+To use Smart Downloader, the service must be enabled before registered.  
+The service registration is configured in the three-stage Wizard format, such as \[Register Service\] > \[Integrate CDN] > \[Upload Resources\]. After the Wizard service is registered, \[Deploy Build] must be completed, so as to download deployment documents via SDK. 
+After service registration, real-time status and indicators of downloads can be provided in various charts of formats, while data download is enabled.  
 <br>
 
 ## Configuration
 
-### Smart Downloader 서비스 활성화
-Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화 합니다.
+### Enable Smart Downloader 
+Click **Select Services** on top of the Console page, and select Smart Downloader below Game, to enable the service. 
 
-### AppKey 와 URL 확인
-Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다. 해당 Appkey는 SDK 에 입력하여 사용하게 됩니다.
-Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 않으니 주의하시기 바랍니다.
+### Check AppKey and URL 
+Click URL & Appkey on top of the Console page to check issued Appkey. Enter the Appky for SDK. 
+Take note that when Smart Downloader is disabled, an issued Appkey cannot be restored. 
 
 ![smartdl_01_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_01_201812.png)
 
-## 서비스 관리 Tab
+## Service Management Tab
 
-### 1. 서비스 등록
-#### 1.1 서비스 등록
-![smartdl_02_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_02_201812.png)
+### 1. Register Services 
+#### 1.1 Register Services ![smartdl_02_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_02_201812.png)
+- Service Name 
+    - It is a **Required Entry** as it identifies service.
+    - Used as an identifier, same service name cannot be registered more than once for a project. 
+    - Only **Alphabets, numbers, and special characters (_),(-)** are available, while the first letter must start with a **small-case alphabet or number**. 
+    - Cannot start with a space. 
+    - Cannot exceed 30 bytes. 
 
-- 서비스 이름
-    - 서비스를 구분할 수 있는 식별값으로 **필수 입력** 입니다.
-    - 서비스 이름은 식별값으로 사용되기 때문에 한 프로젝트에 동일한 서비스 이름으로 1개 이상 등록할 수 없습니다.
-    - **영문 소문자, 숫자와 특수기호 (_),(-)** 만 사용 가능하며 첫 문자는 **영문 소문자나 숫자**로 시작해야 합니다.
-    - 공백으로 시작할 수 없습니다.
-    - 최대 30Byte로 입력을 제한합니다.
+- Service Description 
+	- Enter description for each service, not exceeding 100 bytes. 
 
-- 서비스 설명
-	- 서비스에 대한 부연 설명값을 입력합니다. 최대 100Byte로 입력을 제한합니다.
+- When service registration is completed, go to \[Phase 1. Service Registration Completed\].
 
-- 서비스 등록이 완료되면 \[1단계. 서비스 등록 완료\] 페이지로 이동합니다.
-
-#### 1.2 서비스 등록 완료 
+#### 1.2 Complete Service Registration 
 ![smartdl_03_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_03_201812.png)
 
-- 등록된 서비스 이름과 설명을 확인할 수 있습니다. \[다음\] 버튼 클릭 시 서비스 등록 Wizard의 2 단계인 \[CDN 연동\] 단계로 이동합니다.
+- Registered service name and description can be found. Click \[Next\] to go to \[Integrate CDN], which is Phase 2 of the service registration Wizard. 
 
-### 2. CDN 연동
-#### 2.1 CDN 연동 안내
+### 2. Integrate CDN 
+#### 2.1 Guide for CDN Integration 
 
 ![smartdl_04_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_04_201812.png)
 
-- 2.1.1 Smart Downloader CDN 연동 선택
-	- \[CDN 서비스 생성\] 팝업을 통해 CDN 설정 정보를 입력합니다.
+- 2.1.1 Select Integration for Smart Downloader CDN
+	- Enter CDN setting information on the \[Creating CDN Service\] pop-up. 
 		![smartdl_05_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_05_201812.png)
 		- Service
-			- 서비스 지역 : CDN의 적용 범위에 대해서 선택하는 항목입니다. 서비스 대상 국가에 따라 Korea / Global 중 선택하시면 되며, 기본값은 Korea입니다.
-			- 설명 : CDN에 대한 간략한 설명을 작성하는 항목입니다.
+			- Service Area: Select the range of CDN application. Choose either Korea or Global; default is Korea. 
+			- Description: Describe briefly about CDN. 
 		- Cache
-			- Cache 만료 설정 : CDN에 저장되어 있는 파일들을 신규 파일로 교체할 주기를 선택하는 항목입니다. 기본 24시간으로 지정되어 있으며, 필요에 따라서 임의로 설정이 필요한 경우 **사용자 설정 사용**을 선택하면 됩니다.
-			- Cache 만료 설정(초) : **Cache 만료 설정**에서 **사용자 설정 사용**을 선택한 경우 CDN의 Cache 주기를 입력하는 항목입니다. (기본설정을 사용하는 경우 입력 불가)
-			- Referrers 접근 관리 : CDN에 대한 접근 제한을 어떤 형태로 할 것인지 선택하는 항목입니다. **Blacklist**의 경우 입력한 Referrers만 접근 제한되며, **Whitelist**의 경우 입력한 Referrers만 접근 가능합니다.
-			- Referrers : 접근 제한할 Referrer를 입력하기 위한 항목입니다. Regular Expression를 지원하며, 여러개의 Referrer를 입력하기 위해서는 줄을 바꾼후에 입력하시면 됩니다.
-	- Smart Downloader CDN 연동은 최대 약 1분의 소요시간이 발생합니다.
+			- Cache Expiration: Select the replacement cycle for files saved in CDN with new ones. Default is set as 24 hours, and if further setting is required, select **User Configuration**.  
+			- Cache Expiration (seconds): Enter cache cycle of CDN, when **User Configuration** is opted for **Cache Expiration** (unavailable for default setting). 
+			- Referrer Access Management: Select the restriction type of access to CDN. **Blacklist** restricts access by entered referrers only, while **Whitelist** allows access by entered referrers only.  
+			- Referrers: Enter referrers to restrict the access. Regular expression is supported, and use line feeds to enter many referrers. 
+	- Integrating Smart Downloader CDN takes about a minute, to the maximum. 
 
-- 2.1.2 고객사 CDN 연동 선택
-	- \[안내\] 팝업이 나타나며 고객사 CDN 이용을 위한 Step1, Step2 를 진행합니다.
+- 2.1.2 Select Integration with External CDN 
+	- \[Guide\] will pop up to proceed with Step 1 and Step 2, to use external CDNs.  
     ​   ![smartdl_06_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_06_201812.png)
 	    - Step 1
-	        - **원본 서버 주소로 적용할 URL** 을 제공합니다.
+	        - Provide **URL to be applied as Original Server Address**.
 	    - Strep 2
-    	    - **사용할 CDN URL** 을 입력하여 Smart Downloader 서비스와 고객사 CDN 이 연동되도록 설정합니다.
-	        - 고객사 CDN URL은 HTTP/HTTPS 프로토콜을 선택해서 입력합니다.
+    	    - Enter **CDN URL to Use** so as to integrate Smart Downloader with an external CDN. 
+	        - Enter external CDN URL by selecting HTTP/HTTPS protocol. 
 
-#### 2.2 CDN 연동 완료
+#### 2.2 Complete CDN Integration 
 
 ![smartdl_07_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_07_201812.png)
 
-- 등록된 CDN 서버 주소 및 원본 서버 URL을 확인할 수 있습니다. \[다음\] 버튼 클릭 시 서비스 등록 Wizard의 3 단계인 \[리소스 업로드\] 단계로 이동합니다.
+- Registered CDN server address and original server URL can be found. Click \[Next\] to go to \[Upload Resources\], which is Phase 3 of the service registration Wizard. 
 
-### 3. 리소스 업로드
-- 리소스 업로드는 폴더 업로드를 원칙으로 합니다. (업로드 버튼 클릭 시, 폴더 찾아보기 윈도우가 로딩됩니다)
-- Internet Explorer 브라우저는 리소스 업로드 기능을 제공하지 않습니다. 리소스 업로드는 Chrome 브라우저를 사용하시기 바랍니다.
+### 3. Upload Resources 
+- Resources are uploaded by folder, on principle. 
+  (Click Upload, and the Search Folders window is loaded.)
+- Internet Explorer does not support uploading resources: Chrome is recommended.  
 
-#### 3.1 리소스 업로드 안내
+#### 3.1 Guide for Resource Uploads 
 
 ![smartdl_08_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_08_201812.png)
 
-- A. Local machine 업로드
-​    - Console 페이지를 통해 사용자 Local PC 에 있는 리소스를 업로드 할 수 있습니다.
-​    - 현재 페이지에서 \[리소스 업로드\] 버튼 클릭으로 진행할 수 있습니다.
-​    - 업로드가 완료되면 \[3단계. 리소스 업로드 완료\] 페이지로 이동합니다.
+- A. Uploads by Local Machine 
+  ​    - Resources on user's local computer can be uploaded via console. 
+  ​    - Click \[Upload Resources\] on this page.  
+  ​    - With uploads completed, it is transferred to \[Phase 3. Complete Resource Uploads].
 
-- B.  Build Server(원격) 업로드
-​    - Smart Downloader Jenkins Plugin(ToastCloud Smart Downloader Plugin) 을 통해 리소스를 업로드.
-​    - ToastCloud Smart Downloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
+- B.  Uploads by Build Server (Remote)
 
-#### 3.2 리소스 업로드 완료
+  - Upload resources via Smart Downloader Jenkins Plugin (ToastCloud Smart Downloader Plugin).
+
+  ​    - For more details on ToastCloud Smart Downloader Plugin, see [User Guide for Plugin](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/).
+
+#### 3.2 Complete Resource Uploads  
 
 ![smartdl_09_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_09_201812.png)
 
-- 서비스 이름
-    - 등록된 서비스 이름입니다.
+- Service Name 
+    - Name of registered service.
 
-- 리소스 업로드 정보
-	- 업로드 된 리소스 파일 개수와 전체 파일 크기를 보여줍니다.
-	- 상세 정보 버튼 클릭 시 업로드 된 리소스 정보가 Tree 형태 팝업으로 노출됩니다.
+- Resource Upload Information  
+	- Shows the number of uploaded resource files and the total file size.
+	- Click details to see uploaded resources on the tree pop-ups.  
 
-- 최종 업로드
-    - 최신 리소스가 업로드 된 마지막 업로드 일시입니다.
+- Final Uploads 
+    - Date and time of the last upload of the latest resources. 
     
-- 배포 상태
-    - 리소스의 현재 상태를 보여줍니다.
-    - 배포 대기 상태인 경우, \[서비스 관리\] - \[서비스 상세\] 페이지에서 \[빌드 배포\] 버튼을 통해 배포할 수 있습니다.
+- Deployment Status
+    - Shows the current status of resources. 
+    - When it is ready for deployment, deployment is available by clicking \[Deploy Builds\] on the \[Service Management\] - \[Service Details\] page. 
 
-**\[리소스 업로드 취소 기능\]**
+**\[Canceling Resource Uploads\]**
 
 ![smartdl_10_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_10_201812.png)
 
-- Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 제공합니다.
-- 업로드 취소 기능이 완료되면 배포 상태는 업로드 하기 전 상태로 되돌아 가는 점 유의하시기 바랍니다.
+- Smart Downloader supports for canceling uploads while they are underway.
+- Take note that, when upload is completely canceled, the deployment status returns to the state before uploaded. (*@업로드 취소 기능이 완료되면* - 업로드 취소가 완료되면??) 
 
-### 4. 서비스 목록
-사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
+### 4. List of Services 
+Shows the list of services registered by user, by 10. Click each row of service, to go to \[Service Details\]. 
 
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
 
-- 서비스 이름
-    - 서비스 등록 시 사용자가 입력한 서비스 이름.
+- Service Name
+
+    - Name of service entered by user when it is registered.
 
 - CDN
-    - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다)
-    - 상태 : Smart Downloader CDN 이용 시에만 알 수 있는 데이터입니다. 고객사 CDN 이용 시에 상태 영역은 **-** 로 표기됩니다.
-	-   |  상태 | 설명 |
-		|----------|---------|
-		|![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| Smart Downloader CDN 연동 진행 중.|
-        |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN 정상 연동.|
-        |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Smart Downloader CDN 연동 실패로 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다. |
+    - Server: CDN download URL. (If CDN download URL is not registered, \[CDN URL is required.\] shows.)
+    - Status: Data is available only when Smart Downloader CDN is used. For external CDNs, the status is shown as **-**. 
+    - | Status | Description |
+      |----------|---------|
+      |![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| Integrating Smart Downloader CDN. |
+      |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN is properly integrated.|
+      |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Failed to integrate Smart Downloader CDN; if it continues, contact Customer Center. |
 
 
-- 최신 빌드
-    - 빌드 배포 일시 : 최신 빌드의 마지막 배포 일시.
-    - 리소스 업로드 일시 : 최신 빌드의 마지막 업로드 일시.
-    - 상태 : 업로드한 리소스의 현재 상태. **배포 대기** 상태 혹은 **배포 실패** 상태인 경우 \[빌드 배포\] 버튼이 활성화 됩니다.
-	-   |  상태 | 설명 |
-		|----------|---------|
-		|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
-        |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
-        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태. \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
-        |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
-        |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
-        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
-		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
+- Latest Builds 
+    - Date and Time of Build Deployment: Last deployment time of the latest build.
+    - Date and Time of Resource Upload: Last uploaded time of the latest build.
+    - Status: Current status of uploaded resources. When the status is **Ready for Deployment** or **Deployment Failed**, \[Deploy Builds\] is enabled.  
+    - | Status | Description |
+      |----------|---------|
+      |![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| Resource is not registered. |
+      |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |Uploading resources. <br>Under the status, uploading or deleting new resources are not available.|
+      |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |Resource has been completely uploaded. Click \[Deploy Builds\] to deploy builds.|
+      |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|Deployment is underway with \[Deploy Builds\].<br>Under the status, uploading, modifying, or deleting new resources are not available.|
+      |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |Uploaded resources are completely deployed to CDN.|
+      |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |Failed to upload resources. If it continues, contact Customer Center.|
+      |![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |Failed to deploy with \[Deploy Builds\]. Redeployment is available, with \[Deploy Builds\].<br>If the status continues, contact Customer Center.|
 
 
-### 5. 서비스 상세 정보
-등록한 서비스의 상세 정보 페이지 입니다. \[서비스 정보\], \[CDN 연동 안내\], \[최신 빌드 정보\], \[빌드 배포 이력\] 영역으로 구성되어 있습니다.
+### 5. Service Details 
+Detail information of registered services can be found. It is comprised of \[Service Information\], \[Guide for CDN Integration\], \[Latest Build Information\], and \[History of Build Deployment\].
 
 ![smartdl_13_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_13_201812.png)
 
-#### 5.1 서비스 정보
-서비스 등록 시 입력한 서비스 이름과 서비스 설명값을 보여줍니다.
+#### 5.1 Service Information 
+Shows the name and description of service, entered for registration.  
 
-#### 5.2 CDN 연동 안내
-CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 A ~ C 경우로 나눠서 CDN 연동 안내를 설명합니다.
+#### 5.2 Guide for CDN Integration 
+Shows CDN information integrated with service, when it is completed. Describes how to integrate CDN, for each case of A to C.   
 
-**A. Smart Downloader CDN 연동**
+**A. Integration with Smart Downloader CDN**
 
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| CDN 서버 | Smart Downloader CDN 으로 표기됩니다. |
-| CDN 서버 주소 | Smart Downloader CDN 연동 시 자동으로 CDN 다운로드 URL 이 생성되며 해당 URL 이 노출됩니다. |
-| CDN 설정 정보 | 정보 확인하기 버튼을 클릭하여 Smart Downloader CDN 설정을 확인할 수 있습니다. |
+| CDN Server | Displayed as Smart Downloader CDN. |
+| CDN Server Address | Download CDN URL is automatically created along with integration with Smart Downloader CDN, with the URL exposed to the public. |
+| CDN Configuration | Click Check Information to find configuration of Smart Downloader CDN. |
 
-**B. 고객사 CDN 연동**
+**B. Integration with External CDNs**
 
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| CDN 서버 | 고객사 CDN 으로 표기됩니다. |
-| CDN 서버 주소 | 고객사 CDN 연동을 위해 유저가 입력한 고객사 CDN URL 이 노출됩니다. 미입력 시 수정 화면으로 이동해 고객사 CDN URL 을 입력해야 합니다. |
-| 원본 서버 URL | 원본 서버 주소로 적용할 URL 이 노출됩니다.|
+| CDN Server | Displayed as External CDN. |
+| CDN Server Address | Shows external CDN URL entered by user for integration. If it is not available, go for modification and enter the URL of external CDN. |
+| Original Server URL | Shows URL to be applied as original server address. |
 
-**C. CDN 미 연동**
+**C. Not Integrated with CDN**
 
-- CDN 연동 안내 가이드 문구가 나타납니다. 수정 버튼을 클릭하여 CDN 정보를 설정할 수 있습니다.
+- Guide for CDN integration shows. Click Modify to configure CDN information. 
 
-#### 5.3 최신 빌드 정보
-리소스 업로드 완료 시 리소스 업로드 정보가 나타납니다.
-배포 상태가 **등록 전** 이라면 리소스 업로드 정보는 모두 빈 값이 나타납니다. ( \[리소스 업로드 정보\] 영역에 상세 정보 버튼은 비활성화)
+#### 5.3 Latest Build Information 
+Uploaded resource information shows when upload is completed. 
+If the deployment status is **Before Registration**, all information is blank (with detail information for \[Resource Upload Information\] disabled)
 
-> \[주의점\]
-배포 상태가 **업로드 중**, **배포 중** 이면 신규 리소스 업로드를 할 수 없습니다.
-배포 상태가 **배포 대기** 상태인 경우, 최신 빌드를 CDN에 배포할 수 있습니다. (**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)
+> \[Caution\]
+If the deployment status is **Uploading, or Deploying**, new resources cannot be uploaded. 
+If the deployment status is **Ready for Deployment**, the latest builds can be deployed to CDN.  (Even for the **Deployment Failed** status, \[Deploy Builds\] is enabled for redeployment.)
 
 ![smartdl_14_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_14_201812.png)
 
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| 신규 리소스 업로드 | 현재 페이지에서 신규 리소스를 업로드 할 수 있습니다.<br> 배포 상태가 **업로드 중**, **배포 중** 이면 신규 리소스 업로드를 할 수 없습니다. |
-| 리소스 업로드 정보 | 업로드 된 리소스의 파일 개수와 전체 파일 크기를 보여줍니다. |
-| 상세 정보 | 업로드 된 리소스 정보가 Tree 형태 팝업으로 노출됩니다. |
-| 배포 이력 보기 | 서비스 상세 정보 하단에 \[빌드 배포 이력\] 영역이 노출됩니다. |
-| 최종 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
-| 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
-| 배포 상태 | 최신 빌드의 배포 상태이며 각 상태값은 서비스 목록 > 최신 빌드 영역 정보와 동일합니다. |
-| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 Smart Downloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
+| Upload New Resources | New resources can be uploaded on this page.<br>If the deployment status is **Uploading or Deploying**, new resources cannot be uploaded. |
+| Resource Upload Information | Shows the number of uploaded resource files and the total file size. |
+| Detail Information | Displays uploaded resource information on the tree pop-ups. |
+| View Deployment History | Shows \[Build Deployment History\] at the bottom of service detail information. |
+| Date/Time of Last Upload | Date and time of user-configured resource uploads. |
+| Last Registrar | TOAST Cloud account information of the user who uploaded resources. |
+| Deployment Status | Deployment status of the latest build, and each status value is same as information on List of Service > Latest Builds. |
+| Deploy Builds | If the latest build is **Ready for Deployment**, such build can be deployed via integrated CDN. (Even for the **Deployment Failed** status, \[Deploy Builds\] is enabled for redeployment.)<br>Deployment for Smart Downloader CDN takes 10 minutes to the maximum, while it may vary for external CDNs depending on the environment. |
 
-#### 5.4 빌드 배포 이력
+#### 5.4 Build Deployment History 
 
 ![smartdl_15_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_15_201812.png)
 
-**배포 성공**, **배포 실패** 상태의 이력정보를 빌드 배포 일시 내림차순으로 보여줍니다.
+History information for **Deployment Successful**, or **Deployment Failed** is displayed in the descending date/time order of build deployment.  
 
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| 빌드 배포 일시 | \[빌드 배포\] 버튼을 통한 배포가 완료된 일시 입니다. |
-| 최종 배포자| \[빌드 배포\] 버튼으로 배포한 유저의 Toast Cloud 계정 정보입니다. |
-| 리소스 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
-| 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
-| 상태 | 최신 빌드의 배포 상태이며 각 상태값은 상단의 \[최신 빌드 정보\] 영역의 \[배포 상태\]와 동일합니다. |
+| Date/Time of Build Deployment | Date and time when deployment is completed with the \[Deploy Builds\] button. |
+| Last Deployer | TOAST Cloud account information of the user who deployed with \[Deploy Builds\]. |
+| Date/Time of Resource Upload | Date and time of user-configured resource uploads. |
+| Last Registrar | TOAST Cloud account information of the user who uploaded resources. |
+| Status | Deployment status of the latest builds, and each status is same as \[Deployment Status\] of \[Latest Build Information\] at the top. |
 
-#### 5.5 서비스 삭제
-- \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
->\[주의점\]
-배포 상태가 **업로드 중**, **배포 중** 이거나 CDN 상태가 **작업 중** 이면 서비스를 삭제할 수 없습니다.
-서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Downloader CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
+#### 5.5 Deleting Services 
+- Service can be deleted by using Delete on the right of the \[Service Detail Information\] page.  
+>\[Caution\]
+>If the deployment status is **Uploading or Deploying**, or if CDN is **Progressing**, service cannot be deleted. 
+>Take note that, if a service is deleted, the original files and deployment files are all deleted, while CDN service is also suspended, for integration with Smart Downloader CDN.  
 
 
-### 6. 서비스 수정
-\[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
+### 6. Modify Service 
+Click Modify on the right of the \[Service Detail Information\] page, to go to Modify Service. 
 
-> \[주의점\]
-배포 상태가 **업로드 중**, **배포 중** 이거나 Smart Downloader CDN 연동 시 CDN 상태가 **작업 중** 이면 서비스를 수정할 수 없습니다.
+> \[Caution\]
+If the deployment status is **Uploading or Deploying**, or if CDN is **Progressing** for integration with Smart Downloader CDN, service cannot be modified. 
 
 ![smartdl_16_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_16_201812.png)
 
-#### 6.1 서비스 정보
-서비스 이름은 고정된 값으로 수정할 수 없으며 서비스 설명은 수정할 수 있습니다.
+#### 6.1 Service Information 
+Service name is a fixed value and cannot be modified, while service description is modifiable. 
 
-#### 6.2 CDN 정보
-현재 CDN 연동 상태를 아래 3가지 경우로 나눠서 CDN 정보 수정을 안내하겠습니다.
+#### 6.2 CDN Information
+Modifying CDN information is guided for three types of current CDN integration as below:  
 
-**6.2.1 현재 Smart Downloader CDN 연동인 경우**
-​	- Smart Downloader CDN -> 고객사 CDN 연동으로 변경할 수 있습니다.
-​   - 고객사 CDN 서버 주소는 HTTP/HTTPS 프로토콜을 선택해서 입력해야 합니다.
+**6.2.1 For Smart Downloader CDN Integration**
+​	- Change of integration is available from Smart Downloader CDN to External CDN.
+​   - Server address of external CDN must be entered by selecting HTTP/HTTPS protocol.  
 
-**6.2.2 현재 고객사 CDN 연동인 경우**
-​	- 고객사 CDN  -> Smart Downloader CDN 연동으로 변경할 수 있습니다.
+**6.2.2 For External CDN Integration**
+​	- Change of integration is available from External CDN  to Smart Downloader CDN. 
 
-**6.2.3 현재 CDN 미 연동인 경우**
-​	- Smart Downloader CDN 사용 / 고객사 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
+**6.2.3 For Non CDN Integration**
+​	- Select either Smart Downloader CDN or External CDN to integrate with CDN. 
 
 
-## 실시간 모니터링 Tab
-하루동안 서비스를 다운로드한 유저에 대한 통계정보를 00:00:00 부터 현재까지 10분 주기로 보여줍니다.
+## Real-Time Monitoring Tab
+Shows statistical data of user who downloaded service throughout the day, up to now, at every 10 minutes, starting from 00:00:00. 
 
-### 1. 실시간 다운로드 현황
-#### 1-1 미니 차트
-**조회 조건**에서 선택한 조건에 해당하는 전체 통계정보를 간략한 차트로 보여줍니다.
-각 항목별 설명은 다음과 같습니다.
+### 1. Status of Real-Time Downloads  
+#### 1-1 Mini Charts 
+Shows the entire statistical information for selected **search conditions** on a simple chart.  
+Each item is described as below: 
+
 
 ![smartdl_21_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_21_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | 서비스 선택 | - 다운로드 현황을 확인할 서비스를 선택. <br> - 선택한 서비스를 바꾸는 경우 페이지 전체의 차트가 변경. |
-| 2 | 국가 선택 | - 특정 국가에 대한 통계정보를 확인하고 싶은 경우 선택.<br> - 다운로드 상위 10개 국가만 노출. <br> - 국가를 변경하는 경우 **실시간 다운로드 현황**의 차트 정보만 변경. |
-| 3 | 차트 데이터 수집 시간 | - 마지막으로 차트 정보가 수집된 시간. |
-| 4 | 차트 이름 | - 어떤 정보에 대한 차트인지 알려주기 위한 제목. <br> - **종류** <br> -- Download Total : 다운로드가 실행된 총 횟수. <br> -- Full Download Count : 업로드된 빌드 파일 전체를 다운로드 받은 횟수.<br> -- Download Success : 다운로드에 성공한 횟수.<br> -- Average Download Time : 다운로드 실행시 평균 소요 시간. |
-| 5 | 다운로드 횟수 | Average Download Time 차트에서는 전체 평균 다운로드 시간을 의미. |
-| 6 | 전날 동시간 다운로드 횟수와 비교 | Average Download Time 차트에서는 전체 평균 다운로드 시간과 비교. |
-| 7 | 다운로드 유형 | 다운로드 횟수중 Full & Update 세분화|
-| 8 | 성공률 | 다운로드 성공률 |
+| 1 | Select Service | - Select a service to check download status. <br> - A change of selected service changes charts on the whole page. |
+| 2 | Select Country | - Select to find statistical data of a particular country.<br> - Shows top 10 downloaded countries only. <br> - A change of the country changes only the chart information on **Real-Time Download Status**. |
+| 3 | Collecting Time of Chart Data | - Last time when the chart information was collected. |
+| 4 | Chart Name | - Title for a chart of information. <br> - **Type** <br> -- Download Total: Total number of downloads. <br> -- Full Download Count: Number of full downloads for uploaded build files.<br> -- Download Success: Number of successful downloads.<br> -- Average Download Time: Average download time. |
+| 5 | Number of Downloads | Refers to the total average download time for the average download time chart. |
+| 6 | Comparison with Downloads at Same Time of Previous Day | Compare with the total average download time for the average download time chart. |
+| 7 | Download Type | Specify full or updated downloads. |
+| 8 | Success Rate | Success rate of downloads |
 
 
-#### 1-2 OS별 차트
-**조회 조건**에서 선택한 조건에 해당하는 전체 통계 정보를 간략한 차트로 보여줍니다.
-각 항목별 설명은 다음과 같습니다.
+#### 1-2 Chart for Each OS 
+Displays the entire statistical data for selected **search conditions** on a simple chart. 
+Each item is described as below: 
 
 ![smartdl_22_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_22_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | OS 선택 필터 | - All(기본값) : 모든 OS에 대한 통계 정보 노출.<br> - iOS / Android / Windows : 선택한 OS에서 다운로드 받은 통계 정보만 노출. <br> - MacOS(선택적) : MacOS에서 다운로드 받은 기록이 있는 경우에만 선택 가능. |
-| 2 | Download Success / Fail | - Column Chart (누적).<br> - 10분 단위로 통계 정보 노출.<br> - 다운로드 성공 / 실패 횟수. |
-| 3 | Full / Update Download | - Column Chart (누적).<br> - 10분 단위로 통계 정보 노출.<br> - 업로드 된 전체 파일 다운로드 횟수 / 수정된 일부 파일 다운로드 횟수.<br> - Unknown 은 업데이트 목록을 다운로드 하는 중에 실패한 경우. |
-| 4 | Average Download Time(sec) | - Column Chart.<br> - 10분 단위로 통계 정보 노출. <br> - 평균 다운로드 시간. |
+| 1 | Select OS | - All (default): Shows statistics for all OS.<br> - iOS / Android / Windows: Shows downloaded statistics only on a selected OS. <br> - MacOS (optional): Selectable only when a download record from MacOS is available. |
+| 2 | Download Success / Fail | - Column Chart (accumulated).<br> - Shows statistics in every 10 minutes.<br> - Number of successful/failed downloads. |
+| 3 | Full / Update Download | - Column Chart (accumulated).<br> - Shows statistics in every 10 minutes.<br> - Number of downloads for total uploaded/some modified files.<br> - Unknown refers to failure during downloading the list of updates. |
+| 4 | Average Download Time(sec) | - Column Chart.<br> - Shows statistics in every 10 minutes. <br> - Average downloading time. |
 
 
-### 2. 국가별 다운로드 현황
-**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
-각 항목별 설명은 다음과 같습니다.
+### 2. Download Status by Country 
+Displays the statistical data for selected **search conditions** for each country on a table.
+Each item is described as below: 
 
 ![smartdl_23_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_23_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | 데이터 저장 | 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
-| 2 | 국가별 다운로드 현황 표 | - 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.<br> - MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출. |
+| 1 | Save Data | Click to download all download tables of each country in **.csv** files. |
+| 2 | Table of Download Status by Country | - Shows top 5 downloaded countries only.<br> - Selectively shows downloaded records only, for MacOS. |
 
 
-## 모니터링 지표 Tab
-Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 현재까지의 사용 통계 정보를 일별로 확인할 수 있습니다.
+## Monitoring Indicator Tab 
+Enable Smart Downloader to find usage statistical data by day, from when it was downloaded, up to now.  
 
-### 1. 조회 조건
-다운로드 지표를 검색하기 위한 조건을 선택하기 위한 필터입니다.
-각 항목별 설명은 다음과 같습니다.
+### 1. Search Conditions 
+Regards to selecting conditions to search for downloading indicators. 
+Each item is described as below: 
 
 ![smartdl_24_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_24_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | 조회 기간 | - 다운로드 통계정보를 검색할 기간.<br>- 검색기간은 일단위로 선택.<br>- 검색 기간은 최초 다운로드를 받은 날부터 검색 당일까지 가능. |
-| 2 | 조회 조건 - 서비스 | - 다운로드 통계정보를 검색할 서비스를 선택. |
-| 3 | 조회 조건 - 국가 | - 다운로드 통계 정보를 검색할 국가를 선택.<br> - 다운로드 상위 10개 국가만 노출. |
-| 4 | 조회 조건 - 다운로드 타입 | - All Type : 조건에 상관없이 모든 다운로드 타입에 대한 통계 검색.<br> - Full Download : 업로드된 빌드 파일 전체를 다운로드 받은 것에 대한 통계만 검색.<br> - Update Download : 업로드된 빌드 파일 중 수정된 파일만 다운로드 받은 것에 대한 통계만 검색.<br> - Unknown : Full / Update Download 여부를 확인하기 위한 메타파일 다운로드 중에 문제가 발생한 경우에 대한 통계만 검색. |
-| 5 | 검색 | - 선택한 조건을 기준으로 통계 정보를 검색하기 위한 버튼. |
+| 1 | Search Period | - Search period for download statistical data.<br>- Selected by day.<br>- Available from initial downloaded day to the current day. |
+| 2 | Search Conditions- Service | - Select a service to search for download statistics. |
+| 3 | Search Conditions- Country | - Select a country to search for download statistics.<br> - Shows top 10 downloaded countries only. |
+| 4 | Search Conditions- Download Type | - All Type: Search statistics for all download types regardless of conditions.<br> - Full Download: Search statistics only for full downloads of uploaded build files.<br> - Update Download: Search statistics only for the downloads of modified uploaded build files.<br> - Unknown: Search statistics only for troubled meta-file downloads to find if the downloads are full or for the updated. |
+| 5 | Search | - Search for statistical data on selected conditions. |
 
 
-### 2. 일별 다운로드 현황
-#### 2-1 일별 통계 데이터
-**조회 조건**에서 선택한 조건에 해당하는 일별 통계 데이터를 표로 보여줍니다.
-각 항목별 설명은 다음과 같습니다.
+### 2. Download Status by Day  
+#### 2-1 Daily Statistical Data 
+Displays daily statistical data for selected **search conditions** on a table. 
+Each item is described as below: 
 
 ![smartdl_25_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_25_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | 데이터 저장 | - 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
-| 2 | 일별 지표 | - 각 OS별 전체 다운로드 횟수 및 각 OS별 다운로드 성공 / 실패 / 평균 다운로드 시간을 일별로 노출. <br> - MacOS의 다운로드한 기록이 있는 경우에만 선택적으로 노출.<br> - 한 페이지에 10일간의 통계 정보가 노출됨. |
-| 3 | 페이지 선택 | - 조회할 페이지 선택. |
+| 1 | Save Data | - Save download tables of each country in **.csv** files. |
+| 2 | Daily Indicator | - Shows the number of full downloads of each OS and successful/failed downloads and average download time by day. <br> - Selectively shows downloaded records only, for MacOS.<br> - Shows 10-day statistical information on a page. |
+| 3 | Select Page | - Select a page to search. |
 
+#### 2-2 Daily Indicator Chart 
 
-#### 2-2 일별 지표 차트
-**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 차트로 보여줍니다.
-차트의 종류는 다음과 같습니다.
+Displays statistical data for selected **search conditions** on a chart. 
+Each chart type is described as below: 
 
 ![smartdl_26_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_26_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | Download Total | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 전체 다운로드 횟수. |
-| 2 | Download Success | - Column Chart (누적).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 다운로드 성공 횟수. |
-| 3 | Download Time(sec) | - Column Chart (비교).<br> - 1일 단위로 통계 정보 노출.<br> - 각 OS 별 평균 다운로드 시간. |
-| 4 | Download Fail Type | - Pie Chart.<br> - 조회 기간 전체.<br> - 다운로드 실패 원인 별 횟수 및 비율. |
+| 1 | Download Total | - Column Chart (accumulated).<br> - Shows statistics by day.<br> - Total number of downloads for each OS. |
+| 2 | Download Success | - Column Chart (accumulated).<br> - Shows statistics by day.<br> - Number of successful downloads for each OS. |
+| 3 | Download Time (sec) | - Column Chart (compared).<br> - Shows statistics by day.<br> - Average download time for each OS. |
+| 4 | Download Fail Type | - Pie Chart.<br> - Whole search period.<br> - Number and rate of failed downloads for each cause of failure. |
 
 
-### 3. 일별 다운로드 현황
-**조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
-각 항목별 설명은 다음과 같습니다.
+### 3. Download Status by Day 
+Displays statistical data by country for selected **search conditions** on a table. 
+Each item is described as below: 
 
 ![smartdl_27_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_27_201812.png)
 
-| 번호 | 항목 | 설명 |
+| No. | Item | Description |
 | --- | --- | --- |
-| 1 | 데이터 저장 | 클릭시 모든 국가별 다운로드 표가 **.csv** 파일로 저장됨. |
-| 2 | 국가별 다운로드 현황 표 | - 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.<br> - MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출. |
+| 1 | Save Data | Click to download all download tables of each country in **.csv** files. |
+| 2 | Table of Download Status by Country | - Shows top 5 downloaded countries only.<br> - Selectively shows downloaded records only, for MacOS. |

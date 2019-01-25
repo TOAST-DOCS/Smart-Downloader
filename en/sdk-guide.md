@@ -1,12 +1,12 @@
-## Game > Smart Downloader > SDK Guide
+## Game > Smart Downloader > SDK User Guide 
 
 ### Environments
 
-Smart Downloader SDK는 Unity 엔진을 지원합니다.
+Smart Downloader SDK supports Unity engines. 
 
 #### Supported Versions
 
-* 5.6.6 ~ 2018.3.1
+* 5.6.6 ~ Feb.19, 2018
 
 #### Supported Platforms
 
@@ -20,20 +20,20 @@ Smart Downloader SDK는 Unity 엔진을 지원합니다.
 
 ## API Guide
 
-SDK에서 제공하는 API는 SmartDl 타입에 정적 메서드로 정의되어 있습니다.
-제공되는 API는 네임스페이스 Toast.SmartDownloader에 정의되어 있으므로 using 지시문을 미리 선언해두는 것을 권장합니다.
+APsI provided by SDK are defined as static methods under the SmartDI type. 
+The provided API is defined in the namespace TOAST.SmartDownloader, so it is recommended to declare using directives in advance.  
 
 
-### 시작하기
+### Getting Started 
 
-Smart Downloader SDK를 사용하려면 Console에서 상품이 활성화되어 있어야 하며 등록된 서비스가 있어야 합니다.
+To use Smart Downloader SDK, products must be enabled in console with registered services. 
 
-[Console Guide](/Game/Smart%20Downloader/en/console-guide)
+[Console Guide](/Game/Smart%20Downloader/ko/console-guide)
 
 
-### 다운로드 시작
+### Start Downloading 
 
-등록된 서비스를 기준으로 다운로드를 수행합니다.
+Execute downloading for registered services.  
 
 **API**
 
@@ -45,16 +45,16 @@ delegate void OnComplete(DownloadResult result)
 ```
 
 * appKey
-    * 발급된 AppKey를 입력합니다. 상품 활성화 시에 발급되며 Console에서 확인할 수 있습니다.
+    * Enter issued AppKey. An AppKey is issued when a product is enabled and can be found in the console. 
 * serviceName
-    * 다운로드 진행할 서비스 이름을 입력합니다. 서비스 이름은 Console에서 확인할 수 있습니다.
+    * Enter a service name to download. The service name can be found in the console. 
 * downPath
-    * 다운로드 받을 경로를 입력합니다. 별도로 권장하고 있는 경로는 없습니다.
-    * 플랫폼에서 별도로 디렉터리를 지정하고 싶은 경우 Unity API인 Application.persistentDataPath, Application.temporaryCachePath를 확인 바랍니다.
-* config (선택)
-    * 다운로드 환경 설정을 변경할 수 있습니다. 기본값 사용을 권장합니다.
+    * Enter path to download. There is no recommended path. 
+    * To specify a directory on a platform, check Unity APIs such as Application.persistentDataPath or Application.temporaryCachePath.  
+* config (optional)
+    * Setting for downloading environment can be changed. Default is recommended, though. 
 * callback
-    * 다운로드가 완료(성공 혹은 실패) 되면 처리할 코드를 작성합니다. 콜백 함수가 호출되면 DownloadResult 타입의 결과값이 파라미터로 전달됩니다.
+    * Write codes to process when downloading is completed (successful or failed). When a callback function is called, the result value of DownloadResult type is delivered to parameters. 
 
 **Example**
 
@@ -63,38 +63,38 @@ SmartDl.StartDownload("AppKey", "ServiceName", "DownloadPath", DownloadConfig.De
 {
     if (result.IsSuccessful)
     {
-        // 성공 코드 작성
+        // Write a success code
     }
     else
     {
-        // 실패 코드 작성
+        // Write a failure code 
     }
 });
 ```
 
 #### DownloadResult
 
-다운로드 결과 콜백으로 전달되는 타입입니다.
+Delivered to download result callbacks.
 
-| 변수명 | 설명 |
+| Parameter | Description |
 | --- | --- |
-| Code | [결과 코드](/Game/Smart%20Downloader/en/error-code) |
-| IsCompleted | 다운로드 완료 여부 |
-| Message | 결과 메시지 |
-| IsSuccessful | 다운로드 성공 여부 |
+| Code | Result code |
+| IsCompleted | If download is completed or not |
+| Message | Result message |
+| IsSuccessful | If download is successful or not |
 
 
 #### DownloadConfig
 
-다운로드에 필요한 설정을 변경할 수 있으며 지정된 경로나 파일만 다운로드 받을 수 있습니다.
-`DownloadConfig.Default`를 통해 기본값 설정을 가져올 수 있습니다.
+Settings required for download can be changed, with only specified paths or files to be downloaded. 
+Default setting can be imported from`DownloadConfig.Default`. 
 
-| 변수명 | 초기값 | 설명 |
+| Parameter | Initial Value | Description |
 | --- | --- | --- |
-| FixedDownloadThreadCount | -1 | 다운로드 시 사용할 쓰레드 개수 고정<br>(0 이하의 값이면 SDK에서 자동으로 설정) |
-| DownloadConnectTimeout | 60 | 다운로드에 대한 연결 타임아웃 |
-| DownloadReadTimeout | 20 | 다운로드에 대한 읽기 타임아웃 |
-| RetryDownloadCountPerFile | 3 | 다운로드 실패시 재시도하는 횟수 |
+| FixedDownloadThreadCount | -1 | Fix the number of threads for downloads <br>(automatically set in SDK for 0 or below) |
+| DownloadConnectTimeout | 60 | Timeout for download connection |
+| DownloadReadTimeout | 20 | Timeout for download reading |
+| RetryDownloadCountPerFile | 3 | Number of retries when download fails |
 
 **Example**
 
@@ -105,7 +105,7 @@ config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
 ```
 
-##### 경로나 파일을 지정하여 다운로드
+##### Download by specifying paths or files 
 
 **API**
 
@@ -118,20 +118,20 @@ void ClearSpecifyPath();
 **Example**
 
 ```cs
-// Characters 경로 하위 모든 파일, Maps/M01 경로 하위 모든 파일, Data/CharacterInfo.txt 파일을 다운로드 받습니다.
+// Download all files below the Characters path and Maps/M01 path, and Data/CharacterIfo.txt fils 
 var downloadConfig = DownloadConfig.Default;
-downloadConfig.AddSpecifyPath("/Characters");
-downloadConfig.AddSpecifyPath("/Maps/M01");
-downloadConfig.AddSpecifyPath("/Data/CharacterInfo.txt");
+downloadConfig.AddSpecifyPath(@"/Characters");
+downloadConfig.AddSpecifyPath(@"/Maps/M01");
+downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
 
 SmartDl.StartDownload(AppKey, ServiceName, DownloadPath, downloadConfig, OnCompleteCallback);
 ```
 
 
-### 다운로드 정지
+### Suspend Downloading
 
-진행 중인 다운로드를 취소합니다.
-StartDownload 콜백이 실패(ResultCode : Cancel)로 반환됩니다.
+Cancel downloads under progress. 
+StartDownload callback is returned as failure (ResultCode : Cancel).
 
 **API**
 
@@ -149,20 +149,20 @@ void StopDownload
 ```
 
 
-### 다운로드 진행 정보 가져오기
+### Import Download Progress Information 
 
-진행 중인 다운로드 정보는 ProgressInfo 타입으로 가져올 수 있습니다.
+Information of progressing download can be imported in the ProgressInfo type. 
 
-| 변수명 | 설명 |
+| Parameter | Description |
 | --- | --- |
-| FileMap | 쓰레드 별 다운로드 중인 파일 정보를 반환 |
-| Percentage | 전체 진행율을 반환 |
-| Speed | 다운로드 시작으로부터 지금까지의 다운로드 속도를 반환 (단위 : 바이트/초)<br>(전체 다운로드 용량 / 다운로드 시작 시간부터 현재 시간) |
-| TotalReceivedBytes | 현재까지 다운로드 받은 바이트 수를 반환 |
-| TotalFileBytes | 다운로드 해야 할 전체 바이트 수를 반환 |
-| CompletedFileCount | 현재까지 다운로드 받은 파일 개수를 반환 |
-| TotalFileNumber | 다운로드 해야 할 전체 파일 개수를 반환 |
-| IsCompleted | 다운로드 완료 여부를 반환 |
+| FileMap | Returns information of files which are currently downloaded by thread |
+| Percentage | Returns the total rate of progress |
+| Speed | Returns download speed from the start, up to now (unit: byte/second) <br>(total download volume /current time from when download started) |
+| TotalReceivedBytes | Returns the number of bytes downloaded up to now |
+| TotalFileBytes | Returns the total number of bytes to download |
+| CompletedFileCount | Returns the number of files downloaded up to now |
+| TotalFileNumber | Returns the total number of files to download |
+| IsCompleted | Returns whether download is complete |
 
 **API**
 
@@ -205,12 +205,10 @@ IEnumerator UpdateProgress()
 
 
 
-### 로그 레벨 설정
+### Setting Log Level 
 
-SDK 내부 동작에 대한 로그를 출력하기 위해 SmartDlLogger 타입을 제공합니다.
-로그 레벨의 기본값은 Error이며, 로그 이벤트를 등록하지 않으면 아무런 동작을 하지 않습니다.
-
-**API**
+SmartDILogger type is provided for log outputs on internal SDK activities. 
+Default log level is Error, and unless a log event is registered, no activities can be found.  
 
 ```cs
 static LogLevel CurrentLevel = LogLevel.Error;
