@@ -1,5 +1,4 @@
-﻿## Game > Smart Downloader > Release Notes
-
+## Game > Smart Downloader > Release Notes
 
 ### 2019.01.29
 

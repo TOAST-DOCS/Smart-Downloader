@@ -1,5 +1,4 @@
-﻿## Game > Smart Downloader > 概要
-
+## Game > Smart Downloader > 概要
 
 Smart Downloaderは、ゲーム起動時にゲームに必要なリソースをマルチスレッドでダウンロードするサービスです。
 クライアントでリソースをダウンロードして、さまざまな統計データを収集して多様な情報を提供します。

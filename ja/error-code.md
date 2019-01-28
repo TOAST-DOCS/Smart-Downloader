@@ -1,5 +1,4 @@
-﻿## Game > Smart Downloader > エラーコード
-
+## Game > Smart Downloader > エラーコード
 
 ## Client SDK
 

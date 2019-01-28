@@ -1,5 +1,4 @@
-﻿## Game > Smart Downloader > SDK使用ガイド
-
+## Game > Smart Downloader > SDK使用ガイド
 
 ### Environments
 
