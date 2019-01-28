@@ -6,7 +6,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 
 #### Supported Versions
 
-* 5.6.6 ~ 2018.2.19
+* 5.6.6 ~ 2018.3.1
 
 #### Supported Platforms
 
