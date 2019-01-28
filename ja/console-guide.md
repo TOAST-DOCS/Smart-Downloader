@@ -1,5 +1,5 @@
-﻿
-## Game > Smart Downloader > Console Guide
+﻿## Game > Smart Downloader > Console Guide
+
 
 Smart Downloaderを使用するために、サービスを有効にした後にサービスを登録する必要があります。
 サービス登録は、\[サービス登録\] > \[CDN連携\] > \[リソースアップロード\] 3ステップのWizard形式で構成されています。3ステップのサービス登録Wizardの後、\[ビルド配布\]まで全て完了すると、SDKを通して配布をダウンロードできます。

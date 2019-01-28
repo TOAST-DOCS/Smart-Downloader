@@ -1,5 +1,6 @@
 ﻿## Game > Smart Downloader > Release Notes
 
+
 ### 2019.01.29
 
 #### 기능 개선/변경

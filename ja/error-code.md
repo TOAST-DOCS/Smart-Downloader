@@ -1,5 +1,6 @@
 ﻿## Game > Smart Downloader > エラーコード
 
+
 ## Client SDK
 
 StartDownload APIコールバックで伝達するDownloadResultのCode値です。
