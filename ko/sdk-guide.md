@@ -148,7 +148,7 @@ downloadConfig.AddSpecifyPath(@"/Characters");
 downloadConfig.AddSpecifyPath(@"/Maps/M01");
 downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
 
-SmartDl.StartDownload(AppKey, ServiceName, DownloadPath, downloadConfig, 
+SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig, 
     (result) =>
     {
         if (result.IsSuccessful)
