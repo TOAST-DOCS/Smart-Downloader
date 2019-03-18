@@ -7,7 +7,7 @@ Smart Downloader SDK를 사용하려면 콘솔에서 상품이 활성화되어 �
 
 ### Environments
 
-Smart Downloader SDK는 Unity 엔진을 지원합니다.
+Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### Supported Versions
 
@@ -38,10 +38,11 @@ Smart Downloader SDK는 Unity 엔진을 지원합니다.
 
 #### 3. SDK 구조
 
-* SDK는 Assets 폴더 내부에 `SmartDL`으로 설치됩니다.
+* SDK는 `Assets/SmartDL` 폴더에 설치됩니다.
 * 전부 임포트하면 Plugins와 Example로 나뉘어 있습니다.
     * Plugins : SDK 사용을 위한 DLL을 비롯한 플러그인을 포함하고 있습니다.
     * Example : SDK 동작을 확인할 수 있도록 샘플 씬과 스크립트를 포함하고 있습니다.
+
 #### 4. SDK API 사용
 
 * SDK에서 제공하는 API는 네임스페이스 `Toast.SmartDownloader`로 정의되어 있습니다.
@@ -119,7 +120,7 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
 
 ### 선택한 리소스 다운로드
 
-다운로드 설정에서 제공하는 API를 이용하여 다운로드할 리소스 폴더나 파일을 추가하여 선택한 리소스만 다운로드할 수 있습니다.
+다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
 파일을 찾지 못하면 오류가 반환됩니다. (결과 코드: ERROR_EMPTY_FILE_LIST)
 
 다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/ko/sdk-guide/#전체%20리소스%20다운로드)를 참고 바랍니다.
@@ -163,7 +164,7 @@ SmartDl.StartDownload(AppKey, ServiceName, DownloadPath, downloadConfig,
 
 ### 다운로드 결과
 
-다운로드가 종료되면 등록된 콜백 함수로 DownloadResult가 전달됩니다.
+다운로드 종료 후 등록한 콜백 함수로 DownloadResult를 전달합니다.
 
 | 변수명 | 설명 |
 | --- | --- |
