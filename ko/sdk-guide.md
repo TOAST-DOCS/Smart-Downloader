@@ -1,12 +1,17 @@
 ## Game > Smart Downloader > SDK 사용 가이드
 
+## 시작하기
+
+Smart Downloader SDK를 사용하려면 콘솔에서 상품이 활성화되어 있어야 하며 등록된 서비스가 있어야 합니다.
+자세한 내용은 [콘솔 사용 가이드](/Game/Smart%20Downloader/ko/console-guide)를 참고 바랍니다.
+
 ### Environments
 
-Smart Downloader SDK는 Unity 엔진을 지원합니다.
+Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### Supported Versions
 
-* 5.6.6 ~ 2018.3.1
+* 5.6.6 ~ 2018.3.8
 
 #### Supported Platforms
 
@@ -18,36 +23,76 @@ Smart Downloader SDK는 Unity 엔진을 지원합니다.
 * Editor
 
 
-## API Guide
+### SDK 
 
-SDK에서 제공하는 API는 SmartDl 타입 하위에 정적 메소드로 정의되어 있습니다.
-제공되는 API는 네임스페이스 Toast.SmartDownloader에 정의되어 있으므로 using 지시문을 미리 선언해두는 것을 권장합니다.
+#### 1. 다운로드
+
+[Download SDK](/Download/#game-smart-downloader)
+
+#### 2. SDK 설치
+
+1. 유니티 프로젝트를 엽니다.
+2. 유니티에서 [Assets > Import Package > Custom Package]를 선택합니다.
+3. 다운로드한 SDK 파일 'Smart-downloader-{Version}.unitypackage'을 선택한 후 임포트 합니다.
+![smartdl_sdk_01.png](https://static.toastoven.net/prod_smartdownloader/sdk/smartdl_sdk_01.png)
+
+#### 3. SDK 구조
+
+* SDK는 `Assets/SmartDL` 폴더에 설치됩니다.
+* 전부 임포트하면 Plugins와 Example로 나뉘어 있습니다.
+    * Plugins : SDK 사용을 위한 DLL을 비롯한 플러그인을 포함하고 있습니다.
+    * Example : SDK 동작을 확인할 수 있도록 샘플 씬과 스크립트를 포함하고 있습니다.
+
+#### 4. SDK API 사용
+
+* SDK에서 제공하는 API는 네임스페이스 `Toast.SmartDownloader`로 정의되어 있습니다.
+* 다운로드 API는 `SmartDl` 클래스를 사용합니다.
 
 
-### 시작하기
+## 다운로드
 
-Smart Downloader SDK를 사용하려면 Console에서 상품이 활성화되어 있어야 하며 등록된 서비스가 있어야 합니다.
+서비스를 선택해서 다운로드를 진행합니다.
+기본적으로 업로드한 리소스 전체를 다운로드하지만 일부 리소스만 선택해서 다운로드할 수 있습니다.
 
-[Console Guide](/Game/Smart%20Downloader/ko/console-guide)
 
+### 다운로드 설정
 
-### 다운로드 시작
+DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
+기본 설정은 `DownloadConfig.Default`를 통해 가져올 수 있습니다.
 
-등록된 서비스를 기준으로 다운로드를 수행합니다.
+| 변수명 | 초기값 | 설명 |
+| --- | --- | --- |
+| FixedDownloadThreadCount | -1 | 다운로드 시 사용할 쓰레드 개수 고정<br>(0 이하의 값이면 SDK에서 자동으로 설정) |
+| DownloadConnectTimeout | 60 | 다운로드에 대한 연결 타임아웃 (단위: 초) |
+| DownloadReadTimeout | 20 | 다운로드에 대한 읽기 타임아웃 (단위: 초) |
+| RetryDownloadCountPerFile | 3 | 다운로드 실패 시 재시도하는 횟수 |
+
+**Example**
+
+```cs
+DownloadConfig config = DownloadConfig.Default;
+config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
+config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
+config.RetryDownloadCountPerFile = 3;
+```
+
+### 전체 리소스 다운로드
+
+다운로드 설정에서 다운로드할 리소스를 선택하지 않았다면, 서비스에 배포된 모든 리소스를 다운로드 합니다.
 
 **API**
 
 ```cs
-static void StartDownload(string appKey, string serviceName, string downPath, OnComplete callback)
-static void StartDownload(string appKey, string serviceName, string downPath, DownloadConfig config, OnComplete callback)
+static void StartDownload(string appkey, string serviceName, string downPath, OnComplete callback)
+static void StartDownload(string appkey, string serviceName, string downPath, DownloadConfig config, OnComplete callback)
 
 delegate void OnComplete(DownloadResult result)
 ```
 
-* appKey
-    * 발급된 AppKey를 입력합니다. 상품 활성화 시에 발급되며 Console에서 확인할 수 있습니다.
+* appkey
+    * 발급된 Appkey를 입력합니다. 상품 활성화 시에 발급되며 콘솔에서 확인할 수 있습니다.
 * serviceName
-    * 다운로드 진행할 서비스 이름을 입력합니다. 서비스 이름은 Console에서 확인할 수 있습니다.
+    * 다운로드 진행할 서비스 이름을 입력합니다. 서비스 이름은 콘솔에서 확인할 수 있습니다.
 * downPath
     * 다운로드 받을 경로를 입력합니다. 별도로 권장하고 있는 경로는 없습니다.
     * 플랫폼에서 별도로 디렉터리를 지정하고 싶은 경우 Unity API인 Application.persistentDataPath, Application.temporaryCachePath를 확인 바랍니다.
@@ -59,22 +104,67 @@ delegate void OnComplete(DownloadResult result)
 **Example**
 
 ```cs
-SmartDl.StartDownload("AppKey", "ServiceName", "DownloadPath", DownloadConfig.Default, result =>
-{
-    if (result.IsSuccessful)
+SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
+    (result) =>
     {
-        // 성공 코드 작성
-    }
-    else
-    {
-        // 실패 코드 작성
-    }
-});
+        if (result.IsSuccessful)
+        {
+            // 성공 코드 작성
+        }
+        else
+        {
+            // 실패 코드 작성
+        }
+    });
 ```
 
-#### DownloadResult
+### 선택한 리소스 다운로드
 
-다운로드 결과 콜백으로 전달되는 타입입니다.
+다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
+파일을 찾지 못하면 오류가 반환됩니다. (결과 코드: ERROR_EMPTY_FILE_LIST)
+
+다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/ko/sdk-guide/#전체%20리소스%20다운로드)를 참고 바랍니다.
+
+**API**
+
+```cs
+class DownloadConfig
+{
+    void AddSpecifyPath(string path);
+    void RemoveSpecifyPath(string path);
+    void ClearSpecifyPath();
+}
+```
+
+**Example**
+
+```cs
+// 사용자가 지정한 파일을 다운로드 합니다.
+// - Characters 경로 하위 모든 파일
+// - Maps/M01 경로 하위 모든 파일
+// - Data/CharacterInfo.txt 파일
+var downloadConfig = DownloadConfig.Default;
+downloadConfig.AddSpecifyPath(@"/Characters");
+downloadConfig.AddSpecifyPath(@"/Maps/M01");
+downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
+
+SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig, 
+    (result) =>
+    {
+        if (result.IsSuccessful)
+        {
+            // 성공 코드 작성
+        }
+        else
+        {
+            // 실패 코드 작성
+        }
+    });
+```
+
+### 다운로드 결과
+
+다운로드 종료 후 등록한 콜백 함수로 DownloadResult를 전달합니다.
 
 | 변수명 | 설명 |
 | --- | --- |
@@ -84,54 +174,10 @@ SmartDl.StartDownload("AppKey", "ServiceName", "DownloadPath", DownloadConfig.De
 | IsSuccessful | 다운로드 성공 여부 |
 
 
-#### DownloadConfig
-
-다운로드에 필요한 설정을 변경할 수 있으며 지정된 경로나 파일만 다운로드 받을 수 있습니다.
-`DownloadConfig.Default`를 통해 기본값 설정을 가져올 수 있습니다.
-
-| 변수명 | 초기값 | 설명 |
-| --- | --- | --- |
-| FixedDownloadThreadCount | -1 | 다운로드 시 사용할 쓰레드 개수 고정<br>(0 이하의 값이면 SDK에서 자동으로 설정) |
-| DownloadConnectTimeout | 60 | 다운로드에 대한 연결 타임아웃 |
-| DownloadReadTimeout | 20 | 다운로드에 대한 읽기 타임아웃 |
-| RetryDownloadCountPerFile | 3 | 다운로드 실패시 재시도하는 횟수 |
-
-**Example**
-
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
-config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
-config.RetryDownloadCountPerFile = 3;
-```
-
-##### 경로나 파일을 지정하여 다운로드
-
-**API**
-
-```cs
-void AddSpecifyPath(string path);
-void RemoveSpecifyPath(string path);
-void ClearSpecifyPath();
-```
-
-**Example**
-
-```cs
-// Characters 경로 하위 모든 파일, Maps/M01 경로 하위 모든 파일, Data/CharacterInfo.txt 파일을 다운로드 받는다.
-var downloadConfig = DownloadConfig.Default;
-downloadConfig.AddSpecifyPath(@"/Characters");
-downloadConfig.AddSpecifyPath(@"/Maps/M01");
-downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
-
-SmartDl.StartDownload(AppKey, ServiceName, DownloadPath, downloadConfig, OnCompleteCallback);
-```
-
-
-### 다운로드 정지
+## 다운로드 취소
 
 진행 중인 다운로드를 취소합니다.
-StartDownload 콜백이 실패(ResultCode : Cancel)로 반환됩니다.
+StartDownload 콜백이 실패로 반환됩니다. (결과 코드 : USER_CANCEL)
 
 **API**
 
@@ -142,14 +188,14 @@ static void StopDownload()
 **Example**
 
 ```cs
-void StopDownload
+void StopDownload()
 {
     SmartDl.StopDownload();
 }
 ```
 
 
-### 다운로드 진행 정보 가져오기
+## 다운로드 진행 정보
 
 진행 중인 다운로드 정보는 ProgressInfo 타입으로 가져올 수 있습니다.
 
@@ -205,7 +251,7 @@ IEnumerator UpdateProgress()
 
 
 
-### 로그 레벨 설정
+## 로그 레벨 설정
 
 SDK 내부 동작에 대한 로그를 출력하기 위해 SmartDlLogger 타입을 제공합니다.
 로그 레벨의 기본값은 Error이며, 로그 이벤트를 등록하지 않으면 아무런 동작을 하지 않습니다.

@@ -1,5 +1,10 @@
 ## Game > Smart Downloader > SDK使用ガイド
 
+## 開始する
+
+Smart Downloader SDK를 사용하려면 콘솔에서 상품이 활성화되어 있어야 하며 등록된 서비스가 있어야 합니다.
+자세한 내용은 [콘솔 사용 가이드](/Game/Smart%20Downloader/jp/console-guide)를 참고 바랍니다.
+
 ### Environments
 
 Smart Downloader SDKはUnityエンジンをサポートします。
@@ -18,34 +23,74 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 * Editor
 
 
-## API Guide
+### SDK 
 
-SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
-提供されるAPIは、名前空間Toast.SmartDownloaderに定義されているため、using宣言を行うことを推奨します。
+#### 1. 다운로드
 
+[Download SDK](/Download/#game-smart-downloader)
 
-### 開始する
+#### 2. SDK 설치
 
-Smart Downloader SDKを使用するには、Consoleでサービスが有効になっている必要があり、登録されたサービスが必要です。
+1. 유니티 프로젝트를 엽니다.
+2. 유니티에서 [Assets > Import Package > Custom Package]를 선택합니다.
+3. 다운로드한 SDK 파일 'Smart-downloader-{Version}.unitypackage'을 선택한 후 임포트 합니다.
+![smartdl_sdk_01.png](https://static.toastoven.net/prod_smartdownloader/sdk/smartdl_sdk_01.png)
 
-[Console Guide](/Game/Smart%20Downloader/ko/console-guide)
+#### 3. SDK 구조
+
+* SDK는 `Assets/SmartDL` 폴더에 설치됩니다.
+* 전부 임포트하면 Plugins와 Example로 나뉘어 있습니다.
+    * Plugins : SDK 사용을 위한 DLL을 비롯한 플러그인을 포함하고 있습니다.
+    * Example : SDK 동작을 확인할 수 있도록 샘플 씬과 스크립트를 포함하고 있습니다.
+
+#### 4. SDK API 사용
+
+* SDK에서 제공하는 API는 네임스페이스 `Toast.SmartDownloader`로 정의되어 있습니다.
+* SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
 
 
 ### ダウンロード開始
 
-登録されたサービスを基準にダウンロードを実行します。
+서비스를 선택해서 다운로드를 진행합니다.
+기본적으로 업로드한 리소스 전체를 다운로드하지만 일부 리소스만 선택해서 다운로드할 수 있습니다.
+
+
+#### DownloadConfig
+
+ダウンロードに必要な設定を変更でき、指定されたパスやファイルのみダウンロードできます。
+`DownloadConfig.Default`からデフォルト値の設定を取得できます。
+
+| 変数名 | 初期値 | 説明 |
+| --- | --- | --- |
+| FixedDownloadThreadCount | -1 | ダウンロード時に使用するスレッドの数を固定<br>(0以下の値ならSDKで自動的に設定) |
+| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (단위: 초) |
+| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (단위: 초) |
+| RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
+
+**Example**
+
+```cs
+DownloadConfig config = DownloadConfig.Default;
+config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
+config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
+config.RetryDownloadCountPerFile = 3;
+```
+
+### 전체 리소스 다운로드
+
+다운로드 설정에서 다운로드할 리소스를 선택하지 않았다면, 서비스에 배포된 모든 리소스를 다운로드 합니다.
 
 **API**
 
 ```cs
-static void StartDownload(string appKey、string serviceName、string downPath、OnComplete callback)
-static void StartDownload(string appKey、string serviceName、string downPath、DownloadConfig config、OnComplete callback)
+static void StartDownload(string appkey, string serviceName, string downPath, OnComplete callback)
+static void StartDownload(string appkey, string serviceName, string downPath, DownloadConfig config, OnComplete callback)
 
 delegate void OnComplete(DownloadResult result)
 ```
 
-* appKey
-    *発行されたAppKeyを入力します。サービス有効時に発行され、Consoleで確認できます。
+* appkey
+    *発行されたAppkeyを入力します。サービス有効時に発行され、Consoleで確認できます。
 * serviceName
     *ダウンロードを進行するサービス名を入力します。サービス名はConsoleで確認できます。
 * downPath
@@ -59,20 +104,65 @@ delegate void OnComplete(DownloadResult result)
 **Example**
 
 ```cs
-SmartDl.StartDownload("AppKey"、"ServiceName"、"DownloadPath"、DownloadConfig.Default、result =>
-{
-    if (result.IsSuccessful)
+SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
+    (result) =>
     {
-        // 成功コードの作成
-    }
-    else
-    {
-        // 失敗コードの作成
-    }
-});
+        if (result.IsSuccessful)
+        {
+            // 成功コードの作成
+        }
+        else
+        {
+            // 失敗コードの作成
+        }
+    });
 ```
 
-#### DownloadResult
+### 선택한 리소스 다운로드 パスやファイルを指定してダウンロード
+
+다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
+파일을 찾지 못하면 오류가 반환됩니다. (Result Code : ERROR_EMPTY_FILE_LIST)
+
+다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/jp/sdk-guide/#전체%20리소스%20다운로드)를 참고 바랍니다.
+
+**API**
+
+```cs
+class DownloadConfig
+{
+    void AddSpecifyPath(string path);
+    void RemoveSpecifyPath(string path);
+    void ClearSpecifyPath();
+}
+```
+
+**Example**
+
+```cs
+// 사용자가 지정한 파일을 다운로드 합니다.
+// - Charactersパスの下にあるすべてのファイル
+// - Maps/M01パスの下にあるすべてのファイル
+// - Data/CharacterInfo.txtファイル
+var downloadConfig = DownloadConfig.Default;
+downloadConfig.AddSpecifyPath(@"/Characters");
+downloadConfig.AddSpecifyPath(@"/Maps/M01");
+downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
+
+SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig, 
+    (result) =>
+    {
+        if (result.IsSuccessful)
+        {
+            // 成功コードの作成
+        }
+        else
+        {
+            // 失敗コードの作成
+        }
+    });
+```
+
+### 다운로드 결과
 
 ダウンロード結果コールバックに渡されるタイプです。
 
@@ -84,54 +174,10 @@ SmartDl.StartDownload("AppKey"、"ServiceName"、"DownloadPath"、DownloadConfig
 | IsSuccessful | ダウンロード成功可否 |
 
 
-#### DownloadConfig
-
-ダウンロードに必要な設定を変更でき、指定されたパスやファイルのみダウンロードできます。
-`DownloadConfig.Default`からデフォルト値の設定を取得できます。
-
-| 変数名 | 初期値 | 説明 |
-| --- | --- | --- |
-| FixedDownloadThreadCount | -1 | ダウンロード時に使用するスレッドの数を固定<br>(0以下の値ならSDKで自動的に設定) |
-| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト |
-| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト |
-| RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
-
-**Example**
-
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
-config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
-config.RetryDownloadCountPerFile = 3;
-```
-
-##### パスやファイルを指定してダウンロード
-
-**API**
-
-```cs
-void AddSpecifyPath(string path);
-void RemoveSpecifyPath(string path);
-void ClearSpecifyPath();
-```
-
-**Example**
-
-```cs
-// Charactersパスの下にあるすべてのファイル、Maps/M01パスの下にあるすべてのファイル、Data/CharacterInfo.txtファイルをダウンロードする。
-var downloadConfig = DownloadConfig.Default;
-downloadConfig.AddSpecifyPath(@"/Characters");
-downloadConfig.AddSpecifyPath(@"/Maps/M01");
-downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
-
-SmartDl.StartDownload(AppKey、ServiceName、DownloadPath、downloadConfig、OnCompleteCallback);
-```
-
-
-### ダウンロード停止
+## ダウンロード취소
 
 進行中のダウンロードをキャンセルします。
-StartDownloadコールバックが失敗(ResultCode : Cancel)を返します。
+StartDownloadコールバックが失敗を返します。(Result Code : USER_CANCEL)
 
 **API**
 
@@ -142,14 +188,14 @@ static void StopDownload()
 **Example**
 
 ```cs
-void StopDownload
+void StopDownload()
 {
     SmartDl.StopDownload();
 }
 ```
 
 
-### ダウンロード進行情報の取得
+## ダウンロード進行情報の取得
 
 進行中のダウンロード情報はProgressInfoタイプで取得できます。
 
@@ -205,7 +251,7 @@ IEnumerator UpdateProgress()
 
 
 
-### ログレベルの設定
+## ログレベルの設定
 
 SDK内部動作のログを出力するためにSmartDlLoggerタイプを提供します。
 ログレベルのデフォルト値はErrorで、ログイベントを登録しなければ何も動作をしません。
