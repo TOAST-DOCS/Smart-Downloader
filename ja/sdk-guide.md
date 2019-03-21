@@ -38,14 +38,14 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 
 #### 3. SDK 구조
 
-* SDK는 `Assets/SmartDL` 폴더에 설치됩니다.
+* SDK는 'Assets/SmartDL' 폴더에 설치됩니다.
 * 전부 임포트하면 Plugins와 Example로 나뉘어 있습니다.
     * Plugins : SDK 사용을 위한 DLL을 비롯한 플러그인을 포함하고 있습니다.
     * Example : SDK 동작을 확인할 수 있도록 샘플 씬과 스크립트를 포함하고 있습니다.
 
 #### 4. SDK API 사용
 
-* SDK에서 제공하는 API는 네임스페이스 `Toast.SmartDownloader`로 정의되어 있습니다.
+* SDK에서 제공하는 API는 네임스페이스 'Toast.SmartDownloader'로 정의되어 있습니다.
 * SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
 
 
@@ -63,8 +63,8 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 | 変数名 | 初期値 | 説明 |
 | --- | --- | --- |
 | FixedDownloadThreadCount | -1 | ダウンロード時に使用するスレッドの数を固定<br>(0以下の値ならSDKで自動的に設定) |
-| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (단위: 초) |
-| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (단위: 초) |
+| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (単位：秒) |
+| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (単位：秒) |
 | RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
 
 **Example**
@@ -118,7 +118,7 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
     });
 ```
 
-### 선택한 리소스 다운로드 パスやファイルを指定してダウンロード
+### 선택한 리소스 다운로드
 
 다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
 파일을 찾지 못하면 오류가 반환됩니다. (Result Code : ERROR_EMPTY_FILE_LIST)
@@ -174,7 +174,7 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
 | IsSuccessful | ダウンロード成功可否 |
 
 
-## ダウンロード취소
+## 다운로드 취소
 
 進行中のダウンロードをキャンセルします。
 StartDownloadコールバックが失敗を返します。(Result Code : USER_CANCEL)
