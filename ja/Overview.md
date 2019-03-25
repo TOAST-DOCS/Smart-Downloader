@@ -49,7 +49,7 @@ Smart Downloaderは、ゲーム起動時にゲームに必要なリソースを�
 
 ## 構造
 
-![図1](http://static.toastoven.net/prod_smartdownloader/overview/overview_img_structure.png)
+![図1](http://static.toastoven.net/prod_smartdownloader/overview/smartdl_overview_structure_en.png)
 <center>[図1] Smart Downloader構造 </center>
 
 <br>
