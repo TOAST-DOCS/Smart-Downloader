@@ -49,7 +49,7 @@ The Client downloads resources and collects statistical data, so as to provide v
 
 ## Structure 
 
-![그림 1](http://static.toastoven.net/prod_smartdownloader/overview/overview_img_structure.png)
+![그림 1](http://static.toastoven.net/prod_smartdownloader/overview/smartdl_overview_structure_en.png)
 <center> [Figure 1] Smart Downloader Structure </center>
 
 <br>
