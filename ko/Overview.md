@@ -49,7 +49,7 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 
 ## 구조
 
-![그림 1](http://static.toastoven.net/prod_smartdownloader/overview/overview_img_structure.png)
+![그림 1](http://static.toastoven.net/prod_smartdownloader/overview/smartdl_overview_structure.png)
 <center>[그림 1] Smart Downloader 구조 </center>
 
 <br>
