@@ -7,8 +7,7 @@ Smart Downloader Jenkins Plugin 을 통해 Toast Smart Downloader의 **신규 �
 
 #### Jenkins 최소 요구사항 버전
 
-**Jenkins 2.60.1** 이후 버전을 요구합니다. Jenkins 2.60.1 은 Java 8 실행이 가능 한 Jenkins LTS 의 첫 번째 릴리스입니다.
-> 참고 : [https://jenkins.io/changelog-stable](https://jenkins.io/changelog-stable)
+**Jenkins 2.145.1** 이후 버전을 요구합니다. 이전 버전 Jenkins에서는 Plugin 기능에 대한 지원이 불가능한 상태이므로 사용 전 버전확인이 필요합니다.
 
 ##### 1. Jenkins Plugin 다운로드
 아래 링크를 통해 **smartdl-uploader.hpi** 파일을 다운로드 합니다.
@@ -72,14 +71,17 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 <br>
 ##### 3. 결과 확인
 프로젝트 빌드 후 로그를 통해 Plugin 실행 결과를 확인할 수 있습니다.
+성공시에는 업로드에 성공한 파일 내역 및 총 업로드 파일 개수, 총 용량, 완료시간, 소요시간 등의 정보를 확인하실 수 있습니다.
+업로드 중 로그를 확인하시면 현재 업로드중인 파일 정보를 실시간으로 확인하실 수도 있습니다.
 
-![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06.png)
+![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_01.png)
+![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_02.png)
 <center>[그림 6] 콘솔 로그</center>
 
 또한 Smart Downloader 콘솔 내 `서비스 상세정보` 페이지에서 빌드 업로드 이력을 확인할 수 있습니다.
-Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin 을 실행시킨 서버 IP 가 표시 됩니다.
+Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin에 등록한 Toast UserID 가 표시됩니다.
 
-![그림 7](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_07.png)
+![그림 7](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_07_v2.png)
 <center>[그림 7] 서비스 상세 정보</center>
 
 Plugin 실행 결과가 실패 일 경우 콘솔 로그의 에러메세지를 참고해주세요.
