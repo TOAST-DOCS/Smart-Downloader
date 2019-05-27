@@ -6,7 +6,7 @@ Below are the code values of DownloadResult, delivered as StartDownload API call
 
 | Error | Error Code | Description |
 |--------|-------|-------|
-| SUCCESS | 0 | Returned when download is successful. |
+| SUCCESS | 0 | Downloaded. |
 | SUCCESS_NO_DIFFERENCE | 1 | Not downloaded as there is no change between local and CDN files. <br>Deemed as successful. |
 | USER_CANCEL | -9 | Download is cancelled. |
 | ALREADY_DOWNLOADING | -10 | Already downloading. |
