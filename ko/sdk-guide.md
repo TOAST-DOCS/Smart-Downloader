@@ -11,7 +11,7 @@ Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### Supported Versions
 
-* 5.6.6 ~ 2018.3.8
+* 5.6.6 ~ 2018.3.12
 
 #### Supported Platforms
 
@@ -123,7 +123,7 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
 다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
 파일을 찾지 못하면 오류가 반환됩니다. (결과 코드: ERROR_EMPTY_FILE_LIST)
 
-다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/ko/sdk-guide/#전체%20리소스%20다운로드)를 참고 바랍니다.
+다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/ko/sdk-guide/#_4)를 참고 바랍니다.
 
 **API**
 

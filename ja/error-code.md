@@ -6,7 +6,7 @@ StartDownload APIコールバックで伝達するDownloadResultのCode値です
 
 | エラー | エラーコード | 説明 |
 |--------|-------|-------|
-| SUCCESS | 0 | ダウンロード成功時に返します。 |
+| SUCCESS | 0 | ダウンロードしました。 |
 | SUCCESS_NO_DIFFERENCE | 1 | ローカルとCDNのファイルを比較し、変更されたファイルがないため、ダウンロードしません。<br>成功とみなします。 |
 | USER_CANCEL | -9 | ダウンロードがキャンセルされました。 |
 | ALREADY_DOWNLOADING | -10 | すでにダウンロード進行中です。 |
