@@ -74,15 +74,10 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 성공시에는 업로드에 성공한 파일 내역 및 총 업로드 파일 개수, 총 용량, 완료시간, 소요시간 등의 정보를 확인하실 수 있습니다.
 업로드 중 로그를 확인하시면 현재 업로드중인 파일 정보를 실시간으로 확인하실 수도 있습니다.
 
-![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_01.png)
-![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_02.png)
+![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_v2.png)
 <center>[그림 6] 콘솔 로그</center>
 
 또한 Smart Downloader 콘솔 내 `서비스 상세정보` 페이지에서 빌드 업로드 이력을 확인할 수 있습니다.
 Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin에 등록한 Toast UserID 가 표시됩니다.
 
-![그림 7](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_07_v2.png)
-<center>[그림 7] 서비스 상세 정보</center>
-
 Plugin 실행 결과가 실패 일 경우 콘솔 로그의 에러메세지를 참고해주세요.
-
