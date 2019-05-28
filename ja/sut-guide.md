@@ -54,8 +54,6 @@ Appkey 항목을 입력하고 [조회]를 클릭하면 Console에서 생성된 �
     * Console에 Smart Downloader 서비스에서 URL & Appkey를 클릭하여 발급된 Appkey를 확인합니다.
     ![console_appkey.png](https://static.toastoven.net/prod_smartdownloader/sut/console_appkey.png)
 
-
-
 ### 리소스 업로드
 
 #### 1. 서비스 선택
@@ -71,7 +69,7 @@ Appkey 항목을 입력하고 [조회]를 클릭하면 Console에서 생성된 �
 업로드할 리소스를 선택하면 [업로드] 버튼이 활성화 됩니다.
 
 > 주의사항
-OS에서 자동으로 생성하는 파일().DS_Store, desktop.ini, thumbs.db) 제외됩니다.
+OS에서 자동으로 생성하는 파일(.DS_Store, desktop.ini, thumbs.db) 제외됩니다.
 리소스 하나의 최대 크기는 5GB로 제한됩니다.
 
 ![sut_upload_step_2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_2.png)
@@ -127,4 +125,4 @@ OS에서 자동으로 생성하는 파일().DS_Store, desktop.ini, thumbs.db) �
 ![sut_settings.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_settings.png)
 
 * 버전 정보 : Unity Tool 버전 정보를 표시합니다.
-* 언어 변경 : 툴을 지원되는 언어로 변경합니다. (지원 언어 : 한국어, 영어, 일본어)
+* 언어 변경 : 툴의 언어를 변경합니다. (지원 언어 : 한국어, 영어, 일본어)
