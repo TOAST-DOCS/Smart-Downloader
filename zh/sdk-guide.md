@@ -2,8 +2,8 @@
 
 ## Getting Started
 
-Smart Downloader SDK를 사용하려면 콘솔에서 상품이 활성화되어 있어야 하며 등록된 서비스가 있어야 합니다.
-자세한 내용은 [콘솔 사용 가이드](/Game/Smart%20Downloader/zh/console-guide)를 참고 바랍니다.
+To use Smart Downloader SDK, service must be enabled on console and a registered service must be available.
+For more details, see [Console Guide](/Game/Smart%20Downloader/zh/console-guide).
 
 ### Environments
 
@@ -11,7 +11,7 @@ Smart Downloader SDK supports Unity engines.
 
 #### Supported Versions
 
-* 5.6.6 ~ 2018.3.8
+* 5.6.6 ~ 2018.3.12
 
 #### Supported Platforms
 
@@ -25,39 +25,39 @@ Smart Downloader SDK supports Unity engines.
 
 ### SDK 
 
-#### 1. 다운로드
+#### 1. Download
 
 [Download SDK](/Download/#game-smart-downloader)
 
-#### 2. SDK 설치
+#### 2. Install SDK
 
-1. 유니티 프로젝트를 엽니다.
-2. 유니티에서 [Assets > Import Package > Custom Package]를 선택합니다.
-3. 다운로드한 SDK 파일 'Smart-downloader-{Version}.unitypackage'을 선택한 후 임포트 합니다.
+1. Open a unity project.
+2. In Unity, select [Assets > Import Package > Custom Package].
+3. Select and import 'Smart-downloader-{Version}.unitypackage', which is a downloaded SDK file.
 ![smartdl_sdk_01.png](https://static.toastoven.net/prod_smartdownloader/sdk/smartdl_sdk_01.png)
 
-#### 3. SDK 구조
+#### 3. SDK Structure
 
-* SDK는 'Assets/SmartDL' 폴더에 설치됩니다.
-* 전부 임포트하면 Plugins와 Example로 나뉘어 있습니다.
-    * Plugins : SDK 사용을 위한 DLL을 비롯한 플러그인을 포함하고 있습니다.
-    * Example : SDK 동작을 확인할 수 있도록 샘플 씬과 스크립트를 포함하고 있습니다.
+* SDK is installed in the 'Asset/SmartDL' folder.
+* Import all, and it is divided into Plugins and Example.
+    * Plugins: Includes plugins, including DLL for the use of SDK.
+    * Example: Includes sample scenes and scripts to check SDK operations.
 
-#### 4. SDK API 사용
+#### 4. Apply SDK API
 
-* SDK에서 제공하는 API는 네임스페이스 'Toast.SmartDownloader'로 정의되어 있습니다.
-* 다운로드 API는 'SmartDl' 클래스를 사용합니다.
+* API provided by SDK is defined as the `Toast.SmartDownloader` namespace.
+* 'SmartDI' class is applied for download API.
 
 
 ## Start Download
 
-서비스를 선택해서 다운로드를 진행합니다.
-기본적으로 업로드한 리소스 전체를 다운로드하지만 일부 리소스만 선택해서 다운로드할 수 있습니다.
+Select a service and download. 
+By default, all uploaded resources are downloaded, but only some resources can be selected for a download.
 
 
-### 다운로드 설정
+### Download Setting
 
-DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
+Download setting can be modified by using DownloadConfig. 
 Default setting can be imported from `DownloadConfig.Default`. 
 
 | Parameter | Initial Value | Description |
@@ -76,9 +76,9 @@ config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
 ```
 
-### 전체 리소스 다운로드
+### Download All Resources
 
-다운로드 설정에서 다운로드할 리소스를 선택하지 않았다면, 서비스에 배포된 모든 리소스를 다운로드 합니다.
+If a resource is not selected from download setting, all resources deployed for service are to be downloaded. 
 
 **API**
 
@@ -118,12 +118,12 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
     });
 ```
 
-### 선택한 리소스 다운로드
+### Download Selected Resources
 
-다운로드 설정에서 다운로드할 리소스를 선택하여, 해당 리소스만 다운로드할 수 있습니다.
-파일을 찾지 못하면 오류가 반환됩니다. (Result Code : ERROR_EMPTY_FILE_LIST)
+Select a resource to download from [Download Setting] so as to download such resource only. 
+If a file is not found, error is returned (result code: ERROR_EMPTY_FILE_LIST)
 
-다운로드 API는 [전체 리소스 다운로드](/Game/Smart%20Downloader/zh/sdk-guide/#전체%20리소스%20다운로드)를 참고 바랍니다.
+For download API, see [Download All Resources](/Game/Smart%20Downloader/zh/sdk-guide/#_4).
 
 **API**
 
@@ -139,7 +139,7 @@ class DownloadConfig
 **Example**
 
 ```cs
-// 사용자가 지정한 파일을 다운로드 합니다.
+// Download user-specified files.
 // - All files below the Characters
 // - all files below the Maps/M01
 // - Data/CharacterInfo.txt file
@@ -162,7 +162,7 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
     });
 ```
 
-### 다운로드 결과
+### Download Result
 
 Delivered to download result callbacks.
 
@@ -174,7 +174,7 @@ Delivered to download result callbacks.
 | IsSuccessful | If download is successful or not |
 
 
-## 다운로드 취소
+## Cancel Download
 
 Cancel downloads under progress. 
 StartDownload callback is returned as failure. (Result Code : USER_CANCEL)
