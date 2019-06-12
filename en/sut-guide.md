@@ -1,4 +1,4 @@
-## Game > Smart Downloader > Unity Tool 가이드
+## Game > Smart Downloader > Unity Tool 사용 가이드
 
 ## 시작하기
 
