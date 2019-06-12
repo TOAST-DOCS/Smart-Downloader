@@ -58,7 +58,7 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 * ProjectID [필수] : Smart Dowonloader 를 사용하는 Toast Project ID. 아래 [그림4] 와 같이 Toast 콘솔 프로젝트 설정 메뉴에서 확인이 가능 합니다.
 * Appkey [필수] : Smart Dowonloader Appkey. 아래 [그림5] 와 같이  Toast Smart Dowonloader 콘솔에서 URL & Appkey 화면에서 확인이 가능합니다.
 * Service Name [필수] : 신규 빌드 업로드를 처리 할 Smart Dowonloader 서비스 명을 입력합니다.
-* Path [필수]  : 업로드할 폴더의 경로를 입력합니다. 폴더 업로드만 지원하며 단일 파일 업로드는 지원하지 않습니다.
+* Path [필수]  : 업로드할 폴더의 경로를 입력합니다. 폴더 업로드만 지원하며 단일 파일 업로드는 지원하지 않습니다. 해당 폴더는 jenkins 내의 workspace 폴더 아래에 위치해야 합니다.
 
 > 참고 : [필수] 로 표시 된 값은 필수 입력 값 입니다. 해당 값이 입력되지 않을 경우 플러그인이 정상적으로 실행되지 않습니다.
 
@@ -68,11 +68,16 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 ![그림 5](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_05.png)
 <center>[그림 5] Smart Downloader Appkey 확인</center>
 
+> **업로드시 유의사항**
+> - OS 에서 자동으로 생성하는 파일 (.DS_Store, desktop.ini, thumbs.db) 은 업로드 시 제외됩니다. 
+> - 업로드 시 최대 용량은 5GB 로 제한합니다.
+
+
 <br>
 ##### 3. 결과 확인
 프로젝트 빌드 후 로그를 통해 Plugin 실행 결과를 확인할 수 있습니다.
 성공시에는 업로드에 성공한 파일 내역 및 총 업로드 파일 개수, 총 용량, 완료시간, 소요시간 등의 정보를 확인하실 수 있습니다.
-업로드 중 로그를 확인하시면 현재 업로드중인 파일 정보를 실시간으로 확인하실 수도 있습니다.
+업로드 중 실시간 로그를 확인하실 경우 현재 업로드중인 파일 정보를 확인할 수 있도록 실시간으로 로그가 남고 있으므로 진행상황을 보다 더 쉽게 확인하실 수 있습니다.
 
 ![그림 6](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_06_v2.png)
 <center>[그림 6] 콘솔 로그</center>
@@ -80,4 +85,7 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `Toast API 보안�
 또한 Smart Downloader 콘솔 내 `서비스 상세정보` 페이지에서 빌드 업로드 이력을 확인할 수 있습니다.
 Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin에 등록한 Toast UserID 가 표시됩니다.
 
-Plugin 실행 결과가 실패 일 경우 콘솔 로그의 에러메세지를 참고해주세요.
+![그림 7](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_07_v2.png)
+<center>[그림 7] 서비스 상세 정보</center>
+
+Plugin 실행 결과가 실패 일 경우 콘솔 로그의 에러메세지를 참고하신 후 담당자에게 문의해 주시면 됩니다.
