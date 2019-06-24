@@ -1,5 +1,24 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2019.06.25
+
+#### 기능 개선/변경
+
+* [SDK] Unity SDK v1.5.7
+    * About 메뉴 추가
+    * 파일 추가
+    * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
+    * 폴더 구조 변경
+        * Assets/SmartDL/ → Assets/TOAST/SmartDL
+* [Unity Tool] v1.0.1
+    * 폴더 구조 변경
+        * Assets/SmartDL/ → Assets/TOAST/SmartDL
+
+### 2019.06.12
+
+* [Unity Tool] v1.0.0
+    * 배포
+
 ### 2019.01.29
 
 #### 기능 개선/변경
