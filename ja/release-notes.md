@@ -1,5 +1,13 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2019.07.29
+
+#### 버그 수정
+
+* [SDK] Unity SDK v1.5.7.1
+    * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
+
+
 ### 2019.06.25
 
 #### 기능 개선/변경
@@ -9,9 +17,11 @@
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
     * 폴더 구조 변경
         * Assets/SmartDL/ → Assets/TOAST/SmartDL
+        * `기존에 설치된 SmartDL 폴더를 삭제 후 임포트 해야 합니다.`
 * [Unity Tool] v1.0.1
     * 폴더 구조 변경
         * Assets/SmartDL/ → Assets/TOAST/SmartDL
+        * `기존에 설치된 SmartDL 폴더를 삭제 후 임포트 해야 합니다.`
 
 ### 2019.06.12
 
