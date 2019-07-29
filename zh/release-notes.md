@@ -4,7 +4,7 @@
 
 #### 버그 수정
 
-* [SDK] Unity SDK v1.5.7.1
+* [SDK] Unity SDK v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
