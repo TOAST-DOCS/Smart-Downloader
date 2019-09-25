@@ -1,8 +1,8 @@
-## Game > Smart Downloader > Unity Tool 사용 가이드
+## Game > Smart Downloader > Unity Toolガイド
 
-## 시작하기
+## はじめに
 
-Smart Downloader Unity Tool(SUT)은 Unity에서 리소스를 업로드하고 배포할 수 있는 툴입니다.
+Smart Downloader Unity Tool(SUT)は、Unityからリソースをアップロードして配布できるツールです。
 
 ### Environments
 
@@ -15,114 +15,112 @@ Smart Downloader Unity Tool(SUT)은 Unity에서 리소스를 업로드하고 배
 [Smart Downloader Unity Tool](/Download/#game-smart-downloader)
 
 
-### Unity Tool 설치
+### Unity Toolのインストール
 
-1. Unity 프로젝트를 엽니다.
-2. Unity에서 **Assets > Import Package > Custom Package**를 선택합니다.
-3. 다운로드한 Unity Tool 파일 'Smart-downloader-unity-tool-{Version}.unitypackage'를 선택한 후 가져옵니다.
+1. Unityプロジェクトを開きます。
+2. Unityで**Assets > Import Package > Custom Package**を選択します。
+3. ダウンロードしたUnity Toolファイル'Smart-downloader-unity-tool-{Version}.unitypackage'を選択し、インポートします。
     ![sut_import.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_import.png)
 
-## Unity Tool 사용
 
-Unity Tool을 사용하려면 메뉴에서 **Tool > Toast > Smart Downloader > Unity Tool**을 선택합니다.
+## Unity Toolの使用
 
-### 인증
+Unity Toolを使用するには、メニューから**Tool > Toast > Smart Downloader > Unity Tool**を選択します。
 
-인증 전이라면 **인증** 탭이 나타납니다.
+### 認証
+
+認証前の場合は、**認証**タブが表示されます。
 
 ![sut_credentials_tab.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_credentials_tab.png)
 
-* User ID: TOAST 클라우드 ID
-* User Access Key ID, Secret Access Key
-    1. [API 보안 설정](https://toast.com/account/api_settings)에서 **User Access Key ID 발급**을 선택합니다.
-    2. Secret Access Key(비밀 키) 발급 완료 창이 나타납니다.
-    3. API 보안 설정 페이지에서 발급된 User Access Key ID 정보와 상태 정보를 확인합니다.
+* User ID：TOASTクラウドID
+* User Access Key ID、Secret Access Key
+    1. [APIセキュリティ設定](https://toast.com/account/api_settings)で、**User Access Key ID発行**を選択します。
+    2. Secret Access Key(シークレットキー)発行完了ウィンドウが表示されます。
+    3. APIセキュリティ設定ページで、発行されたUser Access Key ID情報と状態情報を確認します。
     ![console_api_security_setting.png](https://static.toastoven.net/prod_smartdownloader/sut/console_api_security_setting.png)
 * Project ID
-    * Smart Downloader를 이용 중인 프로젝트 ID로, 콘솔의 **프로젝트 설정**에서 확인할 수 있습니다.
+    * Smart Downloaderを利用中のプロジェクトIDです。コンソールの**プロジェクト設定**で確認できます。
     ![console_project_id.png](https://static.toastoven.net/prod_smartdownloader/sut/console_project_id.png)
 
+### サービス照会
 
-### 서비스 조회
-
-인증이 완료되면 **업로드** 탭이 나타납니다.
-**Appkey**란에 앱키를 입력하고 **조회**를 클릭하면 콘솔에서 생성된 서비스 목록이 나타납니다.
+認証が完了すると、**アップロード**タブが表示されます。
+**Appkey**欄にアプリケーションキーを入力し、**照会**をクリックすると、コンソールで作成されたサービスリストが表示されます。
 
 ![sut_upload_tab_base.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_tab_base.png)
 
 * Appkey
-    * 콘솔의 Smart Downloader 서비스에서 **URL & Appkey**를 클릭하여 발급된 앱키를 확인합니다.
+    * コンソールのSmart Downloaderサービスで**URL & Appkey**をクリックし、発行されたアプリケーションキーを確認します。
     ![console_appkey.png](https://static.toastoven.net/prod_smartdownloader/sut/console_appkey.png)
 
-### 리소스 업로드
+### リソースのアップロード
 
-#### 1. 서비스 선택
+#### 1. サービス選択
 
-서비스 목록에서 업로드할 서비스를 클릭하고 리소스 경로를 선택합니다.
-올바른 경로를 선택하면 **업로드** 버튼이 활성화됩니다.
+サービスリストからアップロードするサービスをクリックし、リソースパスを選択します。
+正しいパスを選択すると、**アップロード**ボタンが有効になります。
 
 ![sut_upload_step_1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_1.png)
 
-#### 2. 업로드 리소스 선택
+#### 2. アップロードするリソースの選択
 
-마지막으로 업로드된 리소스와 선택한 경로의 리소스를 비교하여 변경된 리소스의 정보를 표시합니다.
-업로드할 리소스를 선택하면 **업로드** 버튼이 활성화됩니다.
+最後にアップロードされたリソースと、選択したパスのリソースを比較し、変更されたリソースの情報を表示します。
+アップロードするリソースを選択すると、**アップロード**ボタンが有効になります。
 
-> 주의
-OS에서 자동으로 생성하는 파일(.DS_Store, desktop.ini, thumbs.db)은 제외됩니다.
-리소스 하나의 최대 크기는 5GB로 제한됩니다.
+> 注意
+OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)は除外されます。
+リソース1つの最大サイズは、5GBに制限されます。
 
 ![sut_upload_step_2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_2.png)
 
-#### 3. 리소스 업로드 진행
 
-업로드 진행 상황을 표시합니다.
-업로드 진행 중에 툴을 종료하면 업로드 취소 여부를 묻는 창이 나타납니다.
+#### 3. リソースアップロードの進行
 
-> 주의
-업로드 중에는 Unity를 강제로 종료하지 마십시오.
-강제로 종료하면 업로드 상태로 남게 되며 30분 후 업로드 실패로 변경됩니다.
+アップロード進行状況を表示します。
+アップロード進行中にツールを終了すると、アップロードをキャンセルするかどうかを確認するウィンドウが表示されます。
+
+> 注意
+アップロード中は、Unityを強制終了しないでください。
+強制終了するとアップロード状態で残り、30分後にアップロード失敗に変更されます。
 
 ![sut_upload_step_3.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_3.png)
 
+#### 4. 完了
 
-#### 4. 완료
-
-정상적으로 완료되면 확인 창이 나타납니다.
+正常に完了すると、確認ウィンドウが表示されます。
 
 ![sut_upload_step_4.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_4.png)
 
+### サービス詳細情報
 
-### 서비스 상세 정보
-
-서비스 목록에서 서비스를 선택해 더블클릭하면 **서비스 상세 정보** 화면이 나타납니다.
+サービスリストからサービスを選択してダブルクリックすると、**サービス詳細情報**画面が表示されます。
 
 ![sut_service_detail_info.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info.png)
 
-* 서비스 정보
-    * 서비스 이름: 서비스 등록 시 입력한 서비스 이름입니다.
-    * 서비스 설명: 등록된 서비스 설명입니다.
-    * CDN 주소: CDN 연결이 완료된 주소입니다.
-* 최신 업로드 정보
-    * 업로드 일시: 리소스를 마지막으로 업로드한 일시입니다.
-    * 최종 등록자: 리소스를 업로드한 User ID입니다.
-    * 업로드 리소스 정보: 업로드된 리소스의 개수와 총 크기입니다.
-        * 상세 정보: 업로드된 리소스 정보입니다.
-    * 배포 상태: 배포 상태를 확인할 수 있습니다. 배포 상태는 [콘솔 사용 가이드](http://docs.toast.com/ja/Game/Smart%20Downloader/ja/console-guide/#4)를 참고하시기 바랍니다.
-        * 갱신: 서비스의 상세 정보를 갱신합니다.
-        * 빌드 배포: 빌드를 배포할 수 있는 상태가 되면 활성화되며 최신 빌드를 CDN으로 배포할 수 있습니다.
-* 빌드 배포 이력: 빌드 배포를 진행한 최근 10건의 이력이 표시됩니다.
+* サービス情報
+    * サービス名：サービス登録時に入力したサービス名です。
+    * サービス説明：登録されたサービスの説明です。
+    * CDNアドレス： CDN接続が完了したアドレスです。
+* 最新アップロード情報
+    * アップロード日時：リソースを最後にアップロードした日時です。
+    * 最終登録者：リソースをアップロードしたUser IDです。
+    * アップロードリソース情報：アップロードされたリソースの数と総サイズです。
+        * 詳細情報：アップロードされたリソース情報です。
+    * 配布状態：配布状態を確認できます。配布状態は[コンソール使用ガイド](http://docs.toast.com/ja/Game/Smart%20Downloader/ja/console-guide/#4)を参照してください。
+        * 更新：サービスの詳細情報を更新します。
+        * ビルド配布：ビルドを配布できる状態になると有効になり、最新ビルドをCDNに配布できます。
+* ビルド配布履歴：ビルド配布を行った直近10件の履歴が表示されます。
 
-
-#### 빌드 배포
+#### ビルド配布
 
 ![sut_service_detail_info_deploy.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_deploy.png)
 
-* 배포 상태가 **배포 대기**, **배포 실패** 상태인 경우에만 최신 업로드 리소스를 CDN에 배포할 수 있습니다.
+* 配布状態が**配布待機**、**配布失敗**状態の場合にのみ、最新アップロードリソースをCDNに配布できます。
 
-### 설정
+### 設定
 
 ![sut_settings.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_settings.png)
 
-* 버전 정보: Unity Tool 버전 정보를 표시합니다.
-* 언어 변경: 툴의 언어를 변경합니다. 지원 언어는 한국어, 영어, 일본어입니다.
+* バージョン情報：Unity Toolのバージョン情報を表示します。
+* 言語変更：ツールの言語を変更します。サポート言語は韓国語、英語、日本語です。
