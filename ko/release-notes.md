@@ -1,5 +1,12 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2019.10.29
+
+#### 기능 개선/변경
+
+* [SDK] Unity SDK v1.5.9
+    * 통계 지표 개선
+
 ### 2019.07.29
 
 #### 버그 수정
