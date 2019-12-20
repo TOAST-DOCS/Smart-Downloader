@@ -123,7 +123,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 - 서비스 이름
     
-- 서비스 등록 시 사용자가 입력한 서비스 이름.
+    - 서비스 등록 시 사용자가 입력한 서비스 이름.
     
 - CDN
     - 서버 : CDN download URL. (CDN download URL 이 등록되어 있지 않는 경우에 \[CDN URL 입력이 필요합니다.\] 문구가 노출됩니다)
