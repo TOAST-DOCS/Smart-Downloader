@@ -131,7 +131,7 @@ Shows the list of services registered by user, by 10. Click each row of service,
       |----------|---------|
       |![작업 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| Integrating Smart Downloader CDN. |
       |![정상](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN is properly integrated.|
-      |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Failed to integrate Smart Downloader CDN.<br/>You can make a regeneration request in the CDN details window. |
+      |![생성실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Failed to integrate Smart Downloader CDN; if it continues, contact Customer Center. |
 
 
 - Latest Builds 
