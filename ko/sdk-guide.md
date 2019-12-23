@@ -48,14 +48,7 @@ Smart Downloader SDK는 유니티 엔진을 지원합니다.
 * SDK에서 제공하는 API는 네임스페이스 'Toast.SmartDownloader'로 정의되어 있습니다.
 * 다운로드 API는 'SmartDl' 클래스를 사용합니다.
 
-
-## 다운로드
-
-서비스를 선택해서 다운로드를 진행합니다.
-기본적으로 업로드한 리소스 전체를 다운로드하지만 일부 리소스만 선택해서 다운로드할 수 있습니다.
-
-
-### 다운로드 설정
+## 다운로드 설정
 
 DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
 기본 설정은 `DownloadConfig.Default`를 통해 가져올 수 있습니다.
@@ -75,6 +68,8 @@ config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
 config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
 ```
+
+## 다운로드
 
 ### 전체 리소스 다운로드
 
@@ -96,6 +91,7 @@ delegate void OnComplete(DownloadResult result)
 * downPath
     * 다운로드 받을 경로를 입력합니다. 별도로 권장하고 있는 경로는 없습니다.
     * 플랫폼에서 별도로 디렉터리를 지정하고 싶은 경우 Unity API인 Application.persistentDataPath, Application.temporaryCachePath를 확인 바랍니다.
+        * iOS 경로 설정 참고 : [Unity Manual - iOS - 인앱 구매(IAP)를 위한 애플리케이션 준비](https://docs.unity3d.com/kr/2018.3/Manual/iphone-Downloadable-Content.html)
 * config (선택)
     * 다운로드 환경 설정을 변경할 수 있습니다. 기본값 사용을 권장합니다.
 * callback
@@ -162,6 +158,82 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
     });
 ```
 
+### 다운로드 정보 확인 후 다운로드
+
+다운로드 할 파일의 개수, 총 크기를 확인한 후 다운로드를 진행하는 과정입니다.
+CheckDownload API 호출 후 다운로드 정보를 확인하고, StartDownload를 진행합니다.
+CheckDownload 호출 후 새로 배포가 된다면 StartDownload에서는 오류가 반환되며 다시 CheckDownload API를 진행해야 합니다. (결과 코드: ERROR_CHANGE_METAFILE)
+
+**API**
+
+```cs
+static void CheckDownload(string appkey, string serviceName, string downPath, OnComplete callback)
+static void CheckDownload(string appkey, string serviceName, string downPath, DownloadConfig config, OnComplete callback)
+
+static void StartDownload(OnComplete callback)
+
+delegate void OnComplete(DownloadResult result)
+```
+
+**Example**
+
+```cs
+private void CheckDownload()
+{
+    SmartDl.CheckDownload("Appkey", "ServiceName", "DownloadPath",
+        (result) =>
+        {
+            switch (result.Code)
+            {
+                case ResultCode.SUCCESS:
+                    {
+                        // 다운로드 할 파일이 있고, 여기서 SmartDl.Progress 정보를 통해 다운로드 될 파일 개수(SmartDl.Progress.TotalFileCount), 다운로드 받을 크기(SmartDl.Progress.TotalFileBytes)를 확인할 수 있습니다.
+                        // 사용자에게 정보를 출력 후 다운로드를 진행한다면 SmartDl.StartDownload API를 호출합니다.
+                        StartDownload();
+                        break;
+                    }
+                case ResultCode.SUCCESS_NO_DIFFERENCE:
+                    {
+                        // 다운로드 받을 파일이 없으므로, 다음 스텝으로 진행합니다.
+                        break;
+                    }
+                default:
+                    {
+                        //실패코드 작성
+                        PrintResult(string.Format("Fail to download [{0}]", result));
+                        break;
+                    }
+            }
+        });
+}
+
+private void StartDownload()
+{
+    // SmartDl.CheckDownload 호출 후 수행하는 API로, CheckDownload 이후라면 콜백을 제외한 매개변수는 입력할 필요가 없습니다.
+    SmartDl.StartDownload(
+        (result) => {
+            switch (result.Code)
+            {
+                case ResultCode.SUCCESS:
+                    {
+                        // 다운로드 성공
+                        break;
+                    }
+                case ResultCode.ERROR_CHANGE_METAFILE:
+                    {
+                        // CheckDownload 호출 후 새로운 배포가 발생하여 다시 CheckDownload를 수행해야 합니다.  
+                        break;
+                    }
+                default:
+                    {
+                        // 기타 실패 원인
+                        break;
+                    }
+            }
+        });
+}
+```
+
 ### 다운로드 결과
 
 다운로드 종료 후 등록한 콜백 함수로 DownloadResult를 전달합니다.
@@ -204,10 +276,10 @@ void StopDownload()
 | FileMap | 현재 쓰레드별 다운로드 중인 파일 정보를 반환 |
 | Percentage | 전체 진행율을 반환 |
 | Speed | 다운로드 시작으로부터 지금까지의 다운로드 속도를 반환 (단위 : 바이트/초)<br>(전체 다운로드 용량 / 다운로드 시작 시간부터 현재 시간) |
-| TotalReceivedBytes | 현재까지 다운로드 받은 바이트 수를 반환 |
+| DownloadedBytes | 현재까지 다운로드 받은 바이트 수를 반환 |
 | TotalFileBytes | 다운로드 해야 할 전체 바이트 수를 반환 |
 | CompletedFileCount | 현재까지 다운로드 받은 파일 개수를 반환 |
-| TotalFileNumber | 다운로드 해야 할 전체 파일 개수를 반환 |
+| TotalFileCount | 다운로드 해야 할 전체 파일 개수를 반환 |
 | IsCompleted | 다운로드 완료 여부를 반환 |
 
 **API**
