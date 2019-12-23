@@ -161,8 +161,8 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
 ### 다운로드 정보 확인 후 다운로드
 
 다운로드 할 파일의 개수, 총 크기를 확인한 후 다운로드를 진행하는 과정입니다.
-CheckDownload API 호출 후 다운로드 정보를 확인하고, StartDownload를 진행합니다.
-CheckDownload 호출 후 새로 배포가 된다면 StartDownload에서는 오류가 반환되며 다시 CheckDownload API를 진행해야 합니다. (결과 코드: ERROR_CHANGE_METAFILE)
+CheckDownload를 호출하여 다운로드 정보를 확인하고 StartDownload를 진행합니다. 만약 CheckDownload 후 다운로드를 하지 않는다면 StopDownload를 호출해야 합니다.
+CheckDownload 호출 후 새롭게 배포가 된다면 StartDownload에서는 오류가 반환되며 다시 CheckDownload 호출부터 진행해야 합니다. (결과 코드: ERROR_CHANGE_METAFILE)
 
 **API**
 
