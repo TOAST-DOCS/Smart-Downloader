@@ -120,15 +120,16 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
 
 - サービス名
-    - サービス登録時にユーザーが入力したサービス名。
-
+  
+- サービス登録時にユーザーが入力したサービス名。
+  
 - CDN
     - サーバー：CDN download URL. (CDN download URLが登録されていない場合、\[CDN URLを入力する必要があります。\]という文言が表示されます)
     - 状態：Smart Downloader CDN利用時にのみ知ることができるデータです。顧客社CDN利用時に状態領域は**-**と表示されます。
 	-   | 状態 | 説明 |
 		|----------|---------|
 		|![作業中](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_progressing.PNG)| Smart Downloader CDN連携進行中。|
-        |![正常](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN正常連携|
+        |![正常](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_success.PNG)       |Smart Downloader CDN正常連携。|
         |![作成失敗](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_fail.PNG)   |Smart Downloader CDN連携に失敗しました。この状態が続く場合、サポートへお問い合わせください。 |
 
 
