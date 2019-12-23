@@ -6,6 +6,19 @@
 
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
+* [SDK] Unity SDK v1.6.0
+    * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
+    * API 변경
+        * DownloadResult.IsSuccessful (Obsolete) -> DownloadResult.Code
+        * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
+        * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
+* [Unity Tool] v1.0.2
+    * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
+
+#### 버그 수정
+
+* [Unity Tool] v1.0.2
+    * 폴더명과 하위의 파일명이 동일한 경우 업로드 리소스 선택 화면에서 리소스 출력이 정상적이지 않은 문제 수정
 
 ### October.29, 2019
 

@@ -13,7 +13,7 @@
         * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
         * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
 * [Unity Tool] v1.0.2
-    * 리소스 트리 뷰에서 파일명으로 정렬해서 보여주도록 수정
+    * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
 #### 버그 수정
 
