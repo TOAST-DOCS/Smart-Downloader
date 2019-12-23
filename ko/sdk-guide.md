@@ -11,7 +11,7 @@ Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### Supported Versions
 
-* 5.6.6 ~ 2019.2.10
+* 5.6.6 ~ 2019.2.17
 
 #### Supported Platforms
 
@@ -103,7 +103,7 @@ delegate void OnComplete(DownloadResult result)
 SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
     (result) =>
     {
-        if (result.IsSuccessful)
+        if (result.Code == ResultCode.SUCCESS || result.Code == ResultCode.SUCCESS_NO_DIFFERENCE)
         {
             // 성공 코드 작성
         }
@@ -147,7 +147,7 @@ downloadConfig.AddSpecifyPath(@"/Data/CharacterInfo.txt");
 SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig, 
     (result) =>
     {
-        if (result.IsSuccessful)
+        if (result.Code == ResultCode.SUCCESS || result.Code == ResultCode.SUCCESS_NO_DIFFERENCE)
         {
             // 성공 코드 작성
         }
@@ -243,8 +243,6 @@ private void StartDownload()
 | Code | 결과 코드 |
 | IsCompleted | 다운로드 완료 여부 |
 | Message | 결과 메시지 |
-| IsSuccessful | 다운로드 성공 여부 |
-
 
 ## 다운로드 취소
 
