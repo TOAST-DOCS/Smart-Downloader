@@ -1,17 +1,24 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020.01.21
+
+#### 버그 수정
+
+* [Unity SDK] v1.6.1
+    * 부분 다운로드 중 다운로드 파일을 찾지 못한 경우 예외가 발생하지 않도록 수정
+
 ### 2019.12.24
 
 #### 기능 개선/변경
 
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
-* [SDK] Unity SDK v1.6.0
+* [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
-        * DownloadResult.IsSuccessful (Obsolete) -> DownloadResult.Code
-        * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
-        * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
+        * DownloadResult.IsSuccessful (Obsolete) → DownloadResult.Code
+        * ProgressInfo.TotalFileNumber (Obsolete) → ProgressInfo.TotalFileCount
+        * ProgressInfo.TotalReceivedBytes (Obsolete) → ProgressInfo.DownloadedBytes
 * [Unity Tool] v1.0.2
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
@@ -25,14 +32,14 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.9
+* [Unity SDK] v1.5.9
     * 통계 지표 개선
 
 ### 2019.07.29
 
 #### 버그 수정
 
-* [SDK] Unity SDK v1.5.8
+* [Unity SDK] v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
@@ -40,7 +47,7 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.7
+* [Unity SDK] v1.5.7
     * About 메뉴 추가
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
     * 폴더 구조 변경
@@ -65,13 +72,13 @@
 ### 2018.12.27
 
 #### 버그 수정
-* [SDK] Unity SDK v1.5.6
+* [Unity SDK] v1.5.6
     * 다운로드 취소 시 결과 콜백이 호출되지 않는 문제 수정.
 
 #### 기능 개선/변경
 * [Console] 공통
     * 페이지의 전체 메세지에 표준어 검수 결과 반영.
-* [SDK] Unity SDK v1.5.6
+* [Unity SDK] v1.5.6
     * Common
         * [ResultCode 리뉴얼](/Game/Smart%20Downloader/ko/error-code)
             * [주의] 기존 SDK에서 업데이트 할 경우 오류 발생
@@ -85,21 +92,21 @@
 ### 2018.11.27
 
 #### 버그 수정
-* [SDK] Unity SDK v1.5.5
+* [Unity SDK] v1.5.5
     * IL2CPP 빌드 지원.
     * 간헐적으로 macOS에서 IP Address 획득 실패 수정.
 
 
 ### 2018.10.23
 #### 기능 개선/변경
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * 유니티 2018.2 지원.
     * 경로 및 파일을 선택해서 다운로드 하는 기능 제공.
     * 다운로드 파일 크기 계산 개선.
     * 예제 코드 네임스페이스 추가.
 
 #### 버그 수정
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * iOS에서 파일명에 한글 포함 시 다운로드 되지 않는 이슈 수정.
     * 파일명과 디렉터리명에 일부 특수문자 포함 시 다운로드 되지 않는 이슈 수정.
 * [Console] 서비스 관리
@@ -143,7 +150,7 @@
 
 ### 2018.06.05
 #### 기능 개선/변경
-* [SDK] Unity SDK v1.5.3
+* [Unity SDK] v1.5.3
     * 재시도 로직 추가.
     * 연결 타임아웃 / 읽기 타임아웃 분리.
 
@@ -165,7 +172,7 @@
 
 ### 2018.04.18
 #### 버그 수정.
-* [SDK] Unity SDK v1.5.1
+* [Unity SDK] v1.5.1
     * 유니티 최적화 옵션 설정으로 인해 발생하는 링크 오류 수정.
 
 
@@ -198,7 +205,7 @@
     * 빌드 배포시 Toast CDN 을 사용할 수 있도록 기능 제공.
     * 실시간 / 모니터링 지표 개선.
     * 다운로드 오류 현황 지표 상세화.
-* [SDK] Unity SDK v1.5.0 릴리즈.
+* [Unity SDK] v1.5.0 릴리즈.
     * Core 라이브러리의 의존도 제거.
     * API 변경.
         * 사용성 개선을 위한 API 변경.
@@ -208,7 +215,7 @@
 
 ### 2017.10.26
 #### 기능 개선/변경
-* [SDK] Unity SDK v1.2.0 릴리즈.
+* [Unity SDK] v1.2.0 릴리즈.
     * 안정성 강화.
         * 내부 Core SDK 의존도 제거.
         * Native 라이브러리 의존도 감소.
