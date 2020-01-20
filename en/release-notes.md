@@ -1,17 +1,24 @@
 ## Game > Smart Downloader > Release Notes
 
+### January.21, 2020
+
+#### 버그 수정
+
+* [Unity SDK] v1.6.1
+    * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
+
 ### December.24, 2019
 
 #### 기능 개선/변경
 
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
-* [SDK] Unity SDK v1.6.0
+* [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
-        * DownloadResult.IsSuccessful (Obsolete) -> DownloadResult.Code
-        * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
-        * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
+        * DownloadResult.IsSuccessful (Obsolete) → DownloadResult.Code
+        * ProgressInfo.TotalFileNumber (Obsolete) → ProgressInfo.TotalFileCount
+        * ProgressInfo.TotalReceivedBytes (Obsolete) → ProgressInfo.DownloadedBytes
 * [Unity Tool] v1.0.2
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 

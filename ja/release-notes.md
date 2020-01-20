@@ -1,17 +1,24 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020.01.21
+
+#### 버그 수정
+
+* [Unity SDK] v1.6.1
+    * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
+
 ### 2019.12.24
 
 #### 기능 개선/변경
 
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
-* [SDK] Unity SDK v1.6.0
+* [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
-        * DownloadResult.IsSuccessful (Obsolete) -> DownloadResult.Code
-        * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
-        * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
+        * DownloadResult.IsSuccessful (Obsolete) → DownloadResult.Code
+        * ProgressInfo.TotalFileNumber (Obsolete) → ProgressInfo.TotalFileCount
+        * ProgressInfo.TotalReceivedBytes (Obsolete) → ProgressInfo.DownloadedBytes
 * [Unity Tool] v1.0.2
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
@@ -24,14 +31,14 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.9
+* [Unity SDK] v1.5.9
     * 통계 지표 개선
 
 ### 2019.07.29
 
 #### 버그 수정
 
-* [SDK] Unity SDK v1.5.8
+* [Unity SDK] v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
@@ -39,7 +46,7 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.7
+* [Unity SDK] v1.5.7
     * About 메뉴 추가
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
     * 폴더 구조 변경
@@ -72,21 +79,21 @@
 ### 2018.11.27
 
 #### バグ修正
-* [SDK] Unity SDK v1.5.5
+* [Unity SDK] v1.5.5
     * IL2CPPビルドサポート
     *断続的にmacOSでIP Address獲得に失敗する問題を修正
 
 
 ### 2018.10.23
 #### 機能改善/変更
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * Unity 2018.2サポート。
     *パスおよびファイルを選択してダウンロードする機能を提供。
     *ダウンロードファイルサイズ計算の改善。
     *サンプルコードの名前空間を追加。
 
 #### バグ修正
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * iOSでファイル名にハングルが含まれていると、ダウンロードされない問題を修正。
     *ファイル名とディレクトリ名に一部の特殊文字が含まれていると、ダウンロードされない問題を修正。
 
@@ -131,7 +138,7 @@
 
 ### 2018.06.05
 #### 機能改善/変更
-* [SDK] Unity SDK v1.5.3
+* [Unity SDK] v1.5.3
     *再試行ロジックを追加。
     *接続タイムアウト / 読み取りタイムアウトを分離。
 
@@ -153,7 +160,7 @@
 
 ### 2018.04.18
 #### バグ修正。
-* [SDK] Unity SDK v1.5.1
+* [Unity SDK] v1.5.1
     * Unity最適化オプション設定により発生するリンクエラーを修正。
 
 
@@ -186,7 +193,7 @@
     *ビルド配布時にToast CDNを使用できるように機能を提供。
     *リアルタイム / モニタリング指標を改善。
     *ダウンロードエラーの現況指標を詳細化。
-* [SDK] Unity SDK v1.5.0リリース。
+* [Unity SDK] v1.5.0リリース。
     * Coreライブラリの依存度を除去。
     * API変更。
         *ユーザビリティを改善するためにAPIを変更。
@@ -196,7 +203,7 @@
 
 ### 2017.10.26
 #### 機能改善/変更
-* [SDK] Unity SDK v1.2.0リリース。
+* [Unity SDK] v1.2.0リリース。
     *安定性を強化。
         *内部Core SDKの依存度を除去。
         * Nativeライブラリの依存度を減らす。
