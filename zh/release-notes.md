@@ -1,17 +1,24 @@
 ## Game > Smart Downloader > Release Notes
 
+### January.21, 2020
+
+#### 버그 수정
+
+* [Unity SDK] v1.6.1
+    * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
+
 ### December.24, 2019
 
 #### 기능 개선/변경
 
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
-* [SDK] Unity SDK v1.6.0
+* [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
-        * DownloadResult.IsSuccessful (Obsolete) -> DownloadResult.Code
-        * ProgressInfo.TotalFileNumber (Obsolete) -> ProgressInfo.TotalFileCount
-        * ProgressInfo.TotalReceivedBytes (Obsolete) -> ProgressInfo.DownloadedBytes
+        * DownloadResult.IsSuccessful (Obsolete) → DownloadResult.Code
+        * ProgressInfo.TotalFileNumber (Obsolete) → ProgressInfo.TotalFileCount
+        * ProgressInfo.TotalReceivedBytes (Obsolete) → ProgressInfo.DownloadedBytes
 * [Unity Tool] v1.0.2
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
@@ -24,7 +31,7 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.9
+* [Unity SDK] v1.5.9
     * 통계 지표 개선
 
 
@@ -32,7 +39,7 @@
 
 #### 버그 수정
 
-* [SDK] Unity SDK v1.5.8
+* [Unity SDK] v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
@@ -40,7 +47,7 @@
 
 #### 기능 개선/변경
 
-* [SDK] Unity SDK v1.5.7
+* [Unity SDK] v1.5.7
     * About 메뉴 추가
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
     * 폴더 구조 변경
@@ -74,21 +81,21 @@
 ### Nov.27, 2018
 
 #### Bug Fixes 
-* [SDK] Unity SDK v1.5.5
+* [Unity SDK] v1.5.5
     * Support IL2CPP build  
     * Modified infrequently-failed acquisition of IP Address on MacOS 
 
 
 ### Oct.23, 2018
 #### Feature Updates 
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * Support Unity Feb.2018.
     * Allowed downloads by selecting paths and files.  
     * Improved calculating download file sizes. 
     * Added example code namespace.  
 
 #### Bug Fixes 
-* [SDK] Unity SDK v1.5.4
+* [Unity SDK] v1.5.4
     * Fixed the issue of download failure when Korean is included to file name on iOS. 
     * Fixed the issue of download failure when file name or directory name includes some special characters.
 
@@ -133,7 +140,7 @@
 
 ### June 05, 2018
 #### Feature Updates
-* [SDK] Unity SDK v1.5.3
+* [Unity SDK] v1.5.3
     * Added the logic of retries.
     * Separated timeouts for connection from read.
 
@@ -155,7 +162,7 @@
 
 ### April 18, 2018
 #### Bug Fixes
-* [SDK] Unity SDK v1.5.1
+* [Unity SDK] v1.5.1
     * Fixed the error in links, occurred due to Unity optimization option settings.
 
 
@@ -188,7 +195,7 @@
     * Allowed to use TOAST CDN for build deployment.
     * Improved real-time/monitoring indicators. 
     * Specified status indicators for download errors.
-* [SDK] Unity SDK v1.5.0 Release 
+* [Unity SDK] v1.5.0 Release 
     * Removed dependency on the core library.  
     * Change API
         * Changed API for improved usability. 
@@ -198,7 +205,7 @@
 
 ### Oct.26, 2017
 #### Feature Updates
-* [SDK] Unity SDK v1.2.0 Release
+* [Unity SDK] v1.2.0 Release
     * Improved Stability 
         * Removed dependency on internal core SDKs.
         * Reduced dependency on native libraries.
