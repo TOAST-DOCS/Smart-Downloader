@@ -5,7 +5,10 @@
 #### 기능 개선/변경
 
 * [Unity SDK] v1.6.2
-    * Android OBB 내 Streaming Assets 리소스와 업로드 된 리소스를 비교하여 다운로드 받는 기능 추가
+    * Android - Split Application Binary(OBB) 지원
+        * OBB에 포함된 Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
+        * API 추가
+            * DownloadConfig.CheckAndroidObb
 
 ### 2020.01.21
 

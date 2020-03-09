@@ -79,7 +79,7 @@ config.RetryDownloadCountPerFile = 3;
 
 ### APK 拡張ファイル (OBB) のサポート
 
-유니티 'Project Settings > Android > Publish Settings > Split Application Binary' 설정이 활성화하고 Android 빌드를 하면 APK 파일과 확장 파일인 OBB 파일로 나누어집니다. ([Unity Manual - APK 拡張ファイル (OBB) のサポート](https://docs.unity3d.com/ja/current/Manual/android-OBBsupport.html))
+'Project Settings > Android > Publish Settings > Split Application Binary' 설정을 활성화하고 빌드를 하면 APK 파일과 확장 파일인 OBB 파일로 나누어집니다. ([Unity Manual - APK 拡張ファイル (OBB) のサポート](https://docs.unity3d.com/ja/current/Manual/android-OBBsupport.html))
 
 DownloadConfig.CheckAndroidObb 값이 true로 설정되면, OBB 파일이 있다고 판단하여 OBB에 포함된 Streaming Assets의 경로와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
 
