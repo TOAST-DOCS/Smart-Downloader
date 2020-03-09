@@ -1,5 +1,15 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020.03.10
+
+#### 기능 개선/변경
+
+* [Unity SDK] v1.6.2
+    * Android - Split Application Binary(OBB) 지원
+        * OBB에 포함된 Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
+        * API 추가
+            * DownloadConfig.CheckAndroidObb
+
 ### 2020.01.21
 
 #### 버그 수정
