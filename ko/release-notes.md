@@ -1,26 +1,28 @@
 ## Game > Smart Downloader > Release Notes
 
-### 2020.03.10
-
+### 2020.03.24
 #### 기능 개선/변경
+* [Console] Smart Downloader CDN 연동.
+    * CDN 서비스 지역을 선택하는 기능 제거.
 
+
+### 2020.03.10
+#### 기능 개선/변경
 * [Unity SDK] v1.6.2
     * Android - Split Application Binary(OBB) 지원
         * OBB에 포함된 Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
         * API 추가
             * DownloadConfig.CheckAndroidObb
 
+
 ### 2020.01.21
-
 #### 버그 수정
-
 * [Unity SDK] v1.6.1
     * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
 
+
 ### 2019.12.24
-
 #### 기능 개선/변경
-
 * [Console] 서비스 관리.
     * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
 * [Unity SDK] v1.6.0
@@ -33,30 +35,24 @@
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
 #### 버그 수정
-
 * [Unity Tool] v1.0.2
     * 폴더명과 하위의 파일명이 동일한 경우 업로드 리소스 선택 화면에서 리소스 출력이 정상적이지 않은 문제 수정
 
 
 ### 2019.10.29
-
 #### 기능 개선/변경
-
 * [Unity SDK] v1.5.9
     * 통계 지표 개선
 
+
 ### 2019.07.29
-
 #### 버그 수정
-
 * [Unity SDK] v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
 ### 2019.06.25
-
 #### 기능 개선/변경
-
 * [Unity SDK] v1.5.7
     * About 메뉴 추가
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
@@ -68,19 +64,19 @@
         * Assets/SmartDL/ → Assets/TOAST/SmartDL
         * `기존에 설치된 SmartDL 폴더를 삭제 후 임포트 해야 합니다.`
 
-### 2019.06.12
 
+### 2019.06.12
 * [Unity Tool] v1.0.0
     * 배포
 
-### 2019.01.29
 
+### 2019.01.29
 #### 기능 개선/변경
 * [Console] 공통
     * 페이지의 전체 메세지에 다국어(영어, 일어) 반영
 
-### 2018.12.27
 
+### 2018.12.27
 #### 버그 수정
 * [Unity SDK] v1.5.6
     * 다운로드 취소 시 결과 콜백이 호출되지 않는 문제 수정.
@@ -99,8 +95,8 @@
             * smartnative_x86.dll → x86/smartnative.dll
             * smartnative_x64.dll → x86_64/smartnative.dll
 
-### 2018.11.27
 
+### 2018.11.27
 #### 버그 수정
 * [Unity SDK] v1.5.5
     * IL2CPP 빌드 지원.
