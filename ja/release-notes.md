@@ -1,5 +1,13 @@
 ﻿## Game > Smart Downloader > リリースノート
 
+### 2020. 04. 14.
+#### 기능 개선/변경.
+* [Console] Smart Downloader CDN修正
+    * CDNベンダー社を変更するための移行作業を支援するためCDN修正が不可能に変更
+* [Console] ファイルのアップロード
+    * ファイルのアップロード制限を全体5GB以下で、単一のファイル5GB以下に変更
+
+
 ### 2020. 03. 24.
 #### 機能改善/変更
 * [Console] Smart Downloader CDN連携

@@ -1,5 +1,12 @@
 ## Game > Smart Downloader > 릴리스 노트
 
+### 2020. 04. 14.
+#### 기능 개선/변경.
+* [Console] Smart Downloader CDN 수정
+    * CDN 밴더사 변경을 위한 마이그레이션 작업 지원을 위해 CDN 수정이 불가능하게 변경
+* [Console] 파일 업로드
+    * 파일 업로드 제한을 전체 5GB 이하에서 단일 파일 5GB 이하로 변경
+
 ### 2020. 03. 24.
 #### 기능 개선/변경
 * [Console] Smart Downloader CDN 연동
