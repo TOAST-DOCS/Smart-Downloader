@@ -1,9 +1,17 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020. 04. 14.
+#### 기능 개선/변경.
+* [Console] Smart Downloader CDN 수정
+    * CDN 밴더사 변경을 위한 마이그레이션 작업 지원을 위해 CDN 수정이 불가능하게 변경
+* [Console] 파일 업로드
+    * 파일 업로드 제한을 전체 5GB 이하에서 단일 파일 5GB 이하로 변경
+
+
 ### 2020.03.24
 #### 기능 개선/변경
-* [Console] Smart Downloader CDN 연동.
-    * CDN 서비스 지역을 선택하는 기능 제거.
+* [Console] Smart Downloader CDN 연동
+    * CDN 서비스 지역을 선택하는 기능 제거
 
 
 ### 2020.03.10
@@ -23,8 +31,8 @@
 
 ### 2019.12.24
 #### 기능 개선/변경
-* [Console] 서비스 관리.
-    * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
+* [Console] 서비스 관리
+    * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가
 * [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
