@@ -73,8 +73,6 @@ config.CheckOption = PatchCheckOption.NONE;
 
 ### Streaming Assets 리소스 지원
 
-유니티에서 제공하는 Streaming Assets과 리소스를 직접 비교할 수 있습니다.
-
 DownloadConfig.CheckOption 값에 PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS 플래그가 설정되면,
 Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
 
