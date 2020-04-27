@@ -1,5 +1,15 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020.04.28
+
+#### 기능 개선/변경
+
+* [Unity SDK] v1.6.3
+    * Streaming Assets 지원
+        * Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
+        * API 변경
+            * DownloadResult.CheckAndroidObb (Obsolete) → DownloadResult.CheckOption
+            
 ### 2020.03.10
 
 #### 기능 개선/변경

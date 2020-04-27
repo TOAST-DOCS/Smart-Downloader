@@ -11,7 +11,7 @@ Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### Supported Versions
 
-* 5.6.6 ~ 2019.3.4
+* 2017.4.16 ~ 2019.3.10
 
 #### Supported Platforms
 
@@ -59,7 +59,7 @@ DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
 | DownloadConnectTimeout | 60 | 다운로드에 대한 연결 타임아웃 (단위: 초) |
 | DownloadReadTimeout | 20 | 다운로드에 대한 읽기 타임아웃 (단위: 초) |
 | RetryDownloadCountPerFile | 3 | 다운로드 실패 시 재시도하는 횟수 |
-| CheckAndroidObb | false | 유니티에서 제공하는 APK 확장파일 지원을 활성화 했을 때, OBB 내부에 Streaming Assets의 리소스와 업로드 된 리소스를 비교하여 변경된 리소스를 다운로드 받을 수 있도록 제공합니다. |
+| CheckOption | PatchCheckOption.NONE | 리소스 검사 옵션 |
 
 **Example**
 
@@ -68,19 +68,30 @@ DownloadConfig config = DownloadConfig.Default;
 config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
 config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
+config.CheckOption = PatchCheckOption.NONE;
 ```
 
-### APK 확장 파일 지원
+### Streaming Assets 리소스 지원
 
-'Project Settings > Android > Publish Settings > Split Application Binary' 설정을 활성화하고 빌드를 하면 APK 파일과 확장 파일인 OBB 파일로 나누어집니다. ([Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+유니티에서 제공하는 Streaming Assets과 리소스를 직접 비교할 수 있습니다.
 
-DownloadConfig.CheckAndroidObb 값이 true로 설정되면, OBB 파일이 있다고 판단하여 OBB에 포함된 Streaming Assets의 경로와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
+DownloadConfig.CheckOption 값에 PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS 플래그가 설정되면,
+Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
 
+**주의**
 * Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
 * 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
-* 업로드 된 리소스가 OBB 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 OBB 내 파일을 사용하면 됩니다.
-* OBB가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
-* DownloadConfig.CheckAndroidObb 값이 활성화되었지만, 디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다.
+* 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 OBB 내 파일을 사용하면 됩니다.
+* Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
+* Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
+    디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+
+**Example**
+
+```cs
+DownloadConfig config = DownloadConfig.Default;
+config.CheckOption = PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS;
+```
 
 ## 다운로드
 
