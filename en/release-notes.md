@@ -1,38 +1,45 @@
 ## Game > Smart Downloader > Release Notes
 
-### April.28, 2020
-
+### 2020.04.28
 #### 기능 개선/변경
-
 * [Unity SDK] v1.6.3
     * Streaming Assets 지원
         * Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
         * API 변경
             * DownloadResult.CheckAndroidObb (Obsolete) → DownloadResult.CheckOption
 
-### March.10, 2020
+### 2020.04.14
+#### 기능 개선/변경.
+* [Console] Smart Downloader CDN 수정
+    * CDN 밴더사 변경을 위한 마이그레이션 작업 지원을 위해 CDN 수정이 불가능하게 변경
+* [Console] 파일 업로드
+    * 파일 업로드 제한을 전체 5GB 이하에서 단일 파일 5GB 이하로 변경
 
+### 2020.03.24
 #### 기능 개선/변경
+* [Console] Smart Downloader CDN 연동
+    * CDN 서비스 지역을 선택하는 기능 제거
 
+
+### 2020.03.10
+#### 기능 개선/변경
 * [Unity SDK] v1.6.2
     * Android - Split Application Binary(OBB) 지원
         * OBB에 포함된 Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
         * API 추가
             * DownloadConfig.CheckAndroidObb
 
-### January.21, 2020
 
+### 2020.01.21
 #### 버그 수정
-
 * [Unity SDK] v1.6.1
     * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
 
-### December.24, 2019
 
+### 2019.12.24
 #### 기능 개선/변경
-
 * [Console] 서비스 관리.
-    * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가.
+    * CDN의 생성에 실패한 경우, 실패한 CDN을 삭제하고 새로운 CDN을 생성하기 위한 기능 추가
 * [Unity SDK] v1.6.0
     * 사전 다운로드 용량을 확인하기 위해 API 추가 (CheckDownload)
     * API 변경
@@ -43,31 +50,25 @@
     * 리소스 트리 뷰에서 파일명으로 오름차순 정렬해서 보여주도록 수정
 
 #### 버그 수정
-
 * [Unity Tool] v1.0.2
     * 폴더명과 하위의 파일명이 동일한 경우 업로드 리소스 선택 화면에서 리소스 출력이 정상적이지 않은 문제 수정
 
-### October.29, 2019
 
+### 2019.10.29
 #### 기능 개선/변경
-
-* [SDK] Unity SDK v1.5.9
+* [Unity SDK] v1.5.9
     * 통계 지표 개선
 
 
-### July.29, 2019
-
+### 2019.07.29
 #### 버그 수정
-
-* [SDK] Unity SDK v1.5.8
+* [Unity SDK] v1.5.8
     * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
-### Jun.25, 2019
-
+### 2019.06.25
 #### 기능 개선/변경
-
-* [SDK] Unity SDK v1.5.7
+* [Unity SDK] v1.5.7
     * About 메뉴 추가
     * 전체 리소스 다운로드 시 다운로드 받을 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
     * 폴더 구조 변경
@@ -78,177 +79,188 @@
         * Assets/SmartDL/ → Assets/TOAST/SmartDL
         * `기존에 설치된 SmartDL 폴더를 삭제 후 임포트 해야 합니다.`
 
-### Jun.12, 2019
 
+### 2019.06.12
 * [Unity Tool] v1.0.0
     * 배포
-    
-### Jan.29, 2019
 
+
+### 2019.01.29
 #### 기능 개선/변경
 * [Console] 공통
     * 페이지의 전체 메세지에 다국어(영어, 일어) 반영
 
 
-### Dec.27, 2018
+### 2018.12.27
+#### 버그 수정
+* [Unity SDK] v1.5.6
+    * 다운로드 취소 시 결과 콜백이 호출되지 않는 문제 수정.
 
-#### Feature Updates 
-* [Console] Common
-    * Applied the result of language correction throughout the whole pages.
+#### 기능 개선/변경
+* [Console] 공통
+    * 페이지의 전체 메세지에 표준어 검수 결과 반영.
+* [Unity SDK] v1.5.6
+    * Common
+        * [ResultCode 리뉴얼](/Game/Smart%20Downloader/ko/error-code)
+            * [주의] 기존 SDK에서 업데이트 할 경우 오류 발생
+    * iOS
+        * iOS 12 지원
+    * Standalone(Windows)
+        * DLL 이름 및 경로 변경
+            * smartnative_x86.dll → x86/smartnative.dll
+            * smartnative_x64.dll → x86_64/smartnative.dll
 
 
-### Nov.27, 2018
+### 2018.11.27
+#### 버그 수정
+* [Unity SDK] v1.5.5
+    * IL2CPP 빌드 지원.
+    * 간헐적으로 macOS에서 IP Address 획득 실패 수정.
 
-#### Bug Fixes 
-* [SDK] Unity SDK v1.5.5
-    * Support IL2CPP build  
-    * Modified infrequently-failed acquisition of IP Address on MacOS 
 
+### 2018.10.23
+#### 기능 개선/변경
+* [Unity SDK] v1.5.4
+    * 유니티 2018.2 지원.
+    * 경로 및 파일을 선택해서 다운로드 하는 기능 제공.
+    * 다운로드 파일 크기 계산 개선.
+    * 예제 코드 네임스페이스 추가.
 
-### Oct.23, 2018
-#### Feature Updates 
-* [SDK] Unity SDK v1.5.4
-    * Support Unity Feb.2018.
-    * Allowed downloads by selecting paths and files.  
-    * Improved calculating download file sizes. 
-    * Added example code namespace.  
-
-#### Bug Fixes 
-* [SDK] Unity SDK v1.5.4
-    * Fixed the issue of download failure when Korean is included to file name on iOS. 
-    * Fixed the issue of download failure when file name or directory name includes some special characters.
-
-* [Console] Service Management
-    * Fixed the issue of download failure when the number of resource files to upload exceeds 10 thousand.
+#### 버그 수정
+* [Unity SDK] v1.5.4
+    * iOS에서 파일명에 한글 포함 시 다운로드 되지 않는 이슈 수정.
+    * 파일명과 디렉터리명에 일부 특수문자 포함 시 다운로드 되지 않는 이슈 수정.
+* [Console] 서비스 관리
+    * 업로드 하는 리소스 파일의 개수가 1만개 이상일 경우 정상적으로 업로드 되지 않는 이슈 수정.
     
 
-### July 5, 2018.07.05
-#### Feature Updates
-* [Console] Common
-    * [Deploy Builds] Button
-        * Updated to enable [Deploy Builds] when the latest build is **Ready for Deployment** or **Deployment Failed**.
-* [Console] Service List 
-    * Updated Recent Build Area
-        * Before Updated: Showed date/time of uploads and last uploader, as well as status data.
-        * After Updated: Shows date/time of build deployment and resource uploads, and status data. The [Deploy Builds] button is available in the status area of service list.
+### 2018.07.05
+#### 기능 개선/변경
+* [Console] 공통
+    * [빌드 배포] 버튼
+        * 최신 빌드의 상태가 **배포 대기** 혹은 **배포 실패** 상태인 경우, [빌드 배포] 버튼을 활성화하도록 수정.
+* [Console] 서비스 목록
+    * 최신 빌드 영역 수정.
+        * 기존 : 업로드 일시, Last Uploader, 상태 데이터 노출.
+        * 수정 : 빌드 배포 일시, 리소스 업로드 일시, 상태 데이터 노출. 서비스 목록의 상태 영역에서 [빌드 배포] 버튼 사용 가능.
 
 
-### June 26, 2018.06.26
-#### Feature Updates
-* [Console] Common
-    * Added pop-ups to allow easy recognition when network is disconnected. 
-    * Modified Phrases.
-        * Resource Deployment URL -> Original Server URL
-        * Internal CDN -> Smart Downloader CDN
-        * External CDN -> External CDN (@*영어로는 기존과 같게 표기하고 있습니다*.)
-* [Console] Service Management
-    * Separate Upload Builds from Deploy Builds.
-        * Before Updated: Resources, after immediately uploaded, were deployed to users.
-        * After Updated: Resources, after uploaded, are deployed by clicking [Deploy Builds] from View Service Details.
-    * Allowed the change of the task order for resource file uploads and CDN registration, when executed within the service registration wizard. 
-    * Added a feature to disallow change in service and integration CDN when service is deployed.
-    * Changed View Upload History into View Deployment History, within View Service Details.
+### 2018.06.26
+#### 기능 개선/변경
+* [Console] 공통
+    * 네트워크가 연결이 끊겼을 경우, 사용자가 인지할 수 있도록 팝업 추가.
+    * 문구 수정.
+        * 리소스 배포 URL -> 원본 서버 URL
+        * 내부 CDN -> Smart Downloader CDN
+        * 외부 CDN -> 고객사 CDN
+* [Console] 서비스 관리
+    * 빌드 업로드 / 배포 기능 분리.
+        * 기존 : 리소스 업로드 시, 즉시 업로드된 리소스가 유저에게 배포됨.
+        * 수정 : 리소스 업로드 후, 서비스 상세 보기에서 [빌드 배포] 버튼 클릭을 통해 업로드된 리소스 배포.
+    * 서비스 등록 위저드 내 실행시 리소스 파일 업로드와 CDN 등록의 작업 순서 변경.
+    * 서비스 배포시 서비스 및 연동 CDN에 대한 변경이 불가능하도록 기능 추가.
+    * 서비스 상세 보기 내, 업로드 이력 보기를 배포 이력 보기로 변경.
 
-#### Bug Fixes 
-* [Console] Service Management
-    * Fixed some errors that occur during resource uploads.
-    * Fixed some errors that occur during CDN configuration.
-    * Fixed the issue of a long URL of external CDN that extends beyond the pop-up window.
-    * Fixed the issue of concurrent movement of horizontal and vertical scrolls, on View Build Details in Explorer.
-
-
-### June 05, 2018
-#### Feature Updates
-* [SDK] Unity SDK v1.5.3
-    * Added the logic of retries.
-    * Separated timeouts for connection from read.
-
-### April 24, 2018
-#### Feature Updates
-* [Console] Common
-    * Added a feature to show error pop-ups on the Service List page, not on Error Page, when error occurs on a server.
-* [Console] Service Management 
-    * Added a feature not to redundantly create Smart Dowloader CDN for a single service.
-
-#### Bug Fixes
-* [Console] Service Management
-    * Fixed the issue of failed file uploads on Mac Chrome.
-    * Fixed the issue of failure, due to errors occurred in file depository or CDN, when service is disabled. 
-* [Console] Monitoring 
-    * Fixed the errors that occur on the monitoring page, when service is not registered.
+#### 버그 수정
+* [Console] 서비스 관리
+    * 리소스 업로드 중에 발생하는 일부 오류 수정.
+    * CDN 설정 중 발생하는 일부 오류 수정.
+    * 고객사 CDN의 URL 이 너무 긴 경우, 확인용 URL이 팝업창의 영역을 넘어가는 이슈 수정.
+    * Explorer 에서 빌드 상세 정보 보기에서 가로, 세로 스크롤이 동시에 움직이는 현상 수정.
 
 
+### 2018.06.05
+#### 기능 개선/변경
+* [Unity SDK] v1.5.3
+    * 재시도 로직 추가.
+    * 연결 타임아웃 / 읽기 타임아웃 분리.
 
-### April 18, 2018
-#### Bug Fixes
-* [SDK] Unity SDK v1.5.1
-    * Fixed the error in links, occurred due to Unity optimization option settings.
+### 2018.04.24
+#### 기능 개선/변경
+* [Console] 공통.
+    * 서버내 에러 발생시 ERROR 페이지가 아닌 Service 목록 페이지로 이동한 후 에러 팝업이 노출되도록 기능 추가.
+* [Console] 서비스 관리
+    * 하나의 서비스에서 Smart Downloader CDN을 중복으로 생성할 수 없도록 기능 추가.
+
+#### 버그 수정
+* [Console] 서비스 관리.
+    * 맥용 크롬에서 간혹 파일 업로드가 실패하는 오류 수정.
+    * 서비스 Disable 시에 파일 저장소나 CDN에서 발생하는 오류로 인해 실패하는 현상 수정.
+* [Console] 모니터링.
+    * 서비스가 등록되지 않은 경우 모니터링 페이지에서 발생하는 오류 수정.
 
 
 
-### March 22, 2018
-#### Feature Updates
-* [Console] Service Management
-    * Allowed to enter many domains (including regex) among entry values for CDN integration, for Referrers.
-
-#### Bug Fixes
-* [Console] Common
-    * Fixed the issue of error page displayed, when the language option is selected for others, except Korean. 
-    * Fixed the redundant creation of the login page within service area of the web console, when it was logged out from another tab. 
-* [Console] Service Management
-    * Fixed the issue of continued display of the build status as Registering, when the window is closed or refreshed, during build uploads.
-    * Fixed the issue of concurrent movement of horizontal and vertical scrolls when build details are queried.
-* [Console] Monitoring.
-    * Fixed the issue of failure in selecting services to search in the monitoring page, as the list is hidden by the chart area.
-    * Fixed the display of the search condition field, upon pop-ups for monitoring page.
-    * Fixed a map chart issue, where a tool-tip for particular countries, is created way below as it is larger than a mouse cursor.
-    * Fixed UI errors that occur in IE 10, 11, or Edge.
+### 2018.04.18
+#### 버그 수정.
+* [Unity SDK] v1.5.1
+    * 유니티 최적화 옵션 설정으로 인해 발생하는 링크 오류 수정.
 
 
 
-### Feb. 22, 2018
-#### Feature Updates
-* Added **Service**, as an individual unit within Smart Downloader.
-* [Console] Improved user convenience. 
-    * Added uploading/deploying new builds.
-    * Allowed to use TOAST CDN for build deployment.
-    * Improved real-time/monitoring indicators. 
-    * Specified status indicators for download errors.
-* [SDK] Unity SDK v1.5.0 Release 
-    * Removed dependency on the core library.  
-    * Change API
-        * Changed API for improved usability. 
-* [Jenkins Plugin] Provided Jenkins Plugin to enable new build uploads.
+### 2018.03.22
+#### 기능 개선/변경
+* [Console] 서비스 관리.
+    * CDN 연동을 위한 입력값 중, Referrers 항목에 여러개의 도메인 정보(정규식 포함)를 입력 가능하도록 수정.
+
+#### 버그 수정
+* [Console] 공통.
+    * 한국어 외의 다른 언어를 선택했을 때, 오류 페이지가 노출되는 현상 수정.
+    * 다른 탭에서 로그아웃되었을 때, 로그인 페이지가 웹콘솔의 서비스 영역 내에 중복으로 생성되는 현상 수정.
+* [Console] 서비스 관리.
+    * 빌드 업로드 중에 브라우저 창을 닫거나, 새로고침 하는 경우 빌드 상태가 등록 중으로 지속되는 현상 수정.
+    * 빌드 상세 정보 조회시 가로, 세로 스크롤바가 동시에 이동하는 현상 수정.
+* [Console] 모니터링.
+    * 모니터링 페이지의 검색을 위한 서비스 목록이 차트영역에 가려져 선택안되는 현상 수정.
+    * 모니터링 페이지에 생성되는 팝업위에 검색 조건 필드가 노출되는 현상 수정.
+    * 지도차트에서 특정 국가에 대한 툴팁이 마우스 커서보다 한참 아랫부분에 생성되는 현상 수정.
+    * IE 10 / 11 / Edge 에서 발생하는 UI 오류 수정.
 
 
 
-### Oct.26, 2017
-#### Feature Updates
-* [SDK] Unity SDK v1.2.0 Release
-    * Improved Stability 
-        * Removed dependency on internal core SDKs.
-        * Reduced dependency on native libraries.
-
-#### Bug Fixes
-* [Server] Fixed Authentication Issue.
-    * Fixed the bug of successful authentication even after common Appkey is deleted.  
-    * Updated the error message for failed authentication.
-
-
-
-### Feb. 23, 2017
-#### Feature Updates 
-* [Console] Added a tab to access each page.  
-* [Console] Allowed to re-configure search, if there is too much data to search of download details.
-* [Console] Disabled selecting the 'Download Time/Speed' item, when only Download Failed is selected to search download details.
-* [SDK][[Unity-1.1.0] (/Download/#upcoming-products-smart-downloader)] Release.
-    * Changed the class name (DLCSkin -> SmartDLUnitySkin).
-    * Provided only static API.
+### 2018.02.22
+#### 기능 개선/변경
+* Smart Downloader 내 개별 단위인 <b>서비스</b> 가 추가 됨.
+* [Console] 사용자 편의성 향상.
+    * 신규 빌드 업로드 / 배포 기능 추가.
+    * 빌드 배포시 Toast CDN 을 사용할 수 있도록 기능 제공.
+    * 실시간 / 모니터링 지표 개선.
+    * 다운로드 오류 현황 지표 상세화.
+* [Unity SDK] v1.5.0 릴리즈.
+    * Core 라이브러리의 의존도 제거.
+    * API 변경.
+        * 사용성 개선을 위한 API 변경.
+* [Jenkins Plugin] 신규 빌드 업로드 기능을 위한 Jenkins Plugin 제공.
 
 
 
-### Jan.19, 2017
-#### Release of New Products 
-* Release of Smart Downloader 
-    * Smart Downloader is an efficient downloading service for game resources.
-    * A variety of statistical data is provided based on downloaded game data.
+### 2017.10.26
+#### 기능 개선/변경
+* [Unity SDK] v1.2.0 릴리즈.
+    * 안정성 강화.
+        * 내부 Core SDK 의존도 제거.
+        * Native 라이브러리 의존도 감소.
+
+#### 버그 수정
+* [Server] 인증 관련 버그 수정.
+    * 통합 앱키를 삭제해도 인증에 성공하는 버그 수정.
+    * 인증 실패시 에러 메시지 변경.
+
+
+
+### 2017.02.23
+#### 기능 개선/변경
+* [Console] 각 페이지에 접근할 수 있는 탭 추가.
+* [Console] 다운로드 상세 검색시 검색 대상 데이터가 너무 많은 경우, 검색 항목을 다시 설정하도록 기능 수정.
+* [Console] 다운로드 상세 검색시 다운로드 실패만 선택한 경우 '다운로드 시간/속도' 항목은 선택 안되도록 수정.
+* [SDK][[Unity-1.1.0](/Download/#upcoming-products-smart-downloader)] 릴리스.
+    * class Name 변경(DLCSkin -> SmartDLUnitySkin).
+    * Only static API 제공.
+
+
+
+### 2017.01.19
+#### 신규 상품 출시
+* Smart Downloader 상품 출시.
+    * Smart Downloader는 게임에 필요한 리소스를 효율적으로 다운로드 해주는 서비스 입니다.
+    * 게임 다운로드 데이터를 기반으로 다양한 통계 데이터를 제공하고 있습니다.
