@@ -4,8 +4,8 @@
 #### 기능 개선/변경
 * [Unity SDK] v1.6.4
     * 리소스 검사 옵션 추가
-        * API 추가
-            * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA
+        * API 변경
+            * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 추가
 
 ### 2020. 04. 28.
 #### 기능 개선/변경
