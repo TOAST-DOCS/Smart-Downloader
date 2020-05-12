@@ -108,6 +108,7 @@ Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비�
 * Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
 * Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
     디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션과 중복 적용은 불가능 합니다.
 
 **Example**
 
