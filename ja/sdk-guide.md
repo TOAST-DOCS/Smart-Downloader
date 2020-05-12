@@ -78,9 +78,34 @@ config.RetryDownloadCountPerFile = 3;
 config.CheckOption = PatchCheckOption.NONE;
 ```
 
-### Streaming Assetsのサポート
+### Check Download 검사 옵션
 
-DownloadConfig.CheckOption 값에 PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS 플래그가 설정되면,
+#### PatchCheckOption.DEFAULT
+
+기본 옵션으로 리소스 검사 시 다운로드된 모든 리소스의 CRC를 계산하여 업로드된 리소스와 비교합니다.
+
+**특징**
+* 리소스 무결성 보장
+    * 리소스 누락 및 변조를 감지하여 업로드된 리소스를 다운로드 합니다.
+
+#### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA
+
+해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교합니다.
+
+**특징**
+* 리소스 검사 속도가 빠릅니다.
+
+**취약점**
+* 리소스 누락 및 변조를 감지할 수 없습니다.
+    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+
+```cs
+DownloadConfig config = DownloadConfig.Default;
+config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
+```
+
+#### PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS
+
 Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
 
 **주의**
@@ -90,12 +115,13 @@ Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비�
 * Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
 * Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
     디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션과 중복 적용은 불가능 합니다.
 
 **Example**
 
 ```cs
 DownloadConfig config = DownloadConfig.Default;
-config.CheckOption = PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS;
+config.CheckOption |= PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS;
 ```
 
 ### 全リソースのダウンロード
