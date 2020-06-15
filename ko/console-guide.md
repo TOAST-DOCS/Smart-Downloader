@@ -10,6 +10,8 @@ Smart Downloader 사용을 위해서 서비스 활성화 후 서비스를 등록
 ### Smart Downloader 서비스 활성화
 Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화 합니다.
 
+![project_enabeld.png](http://static.toastoven.net/prod_smartdownloader/web_console/project_enabled.png)
+
 ### AppKey 와 URL 확인
 Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다. 해당 Appkey는 SDK 에 입력하여 사용하게 됩니다.
 Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 않으니 주의하시기 바랍니다.
@@ -122,7 +124,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
 
 - 서비스 이름
-    
+  
     - 서비스 등록 시 사용자가 입력한 서비스 이름.
     
 - CDN
@@ -137,18 +139,27 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 - 최신 빌드
     - 빌드 배포 일시 : 최신 빌드의 마지막 배포 일시.
+    
     - 리소스 업로드 일시 : 최신 빌드의 마지막 업로드 일시.
-    - 상태 : 업로드한 리소스의 현재 상태. **배포 대기** 상태 혹은 **배포 실패** 상태인 경우 \[빌드 배포\] 버튼이 활성화 됩니다.
-	-   |  상태 | 설명 |
-		|----------|---------|
-		|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
+	
+	- 상태 : 업로드한 리소스의 현재 상태. **배포 대기** 상태 혹은 **배포 실패** 상태인 경우 \[빌드 배포\] 버튼이 활성화 됩니다.
+	
+    -   |  상태 | 설명 |
+    	|----------|---------|
+    	|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
         |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
-        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태. \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
-        |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
+        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태.<br> \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
+	    |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
         |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
-        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태. 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
-		|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. \[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
-
+        |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태.<br> 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
+    	|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. <br>\[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
+    	
+    - | 버튼                                                         | 설명                                                         |
+      | ------------------------------------------------------------ | ------------------------------------------------------------ |
+      | ![배포가능](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_enabled.png) | 빌드 배포가 가능한 상태.<br>서비스 상태가 [배포 대기] 혹은 [배포 실패]일 때, 활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스에서 빌드 배포를 실행하면, CDN 캐시 재배포 작업으로 인해 버튼 클릭 후 5분동안 버튼은 무조건 비활성화 처리됩니다. |
+      | ![배포불가](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_disabled.png) | 빌드 배포가 불가능한 상태.<br>서비스 상태가 [배포 대기]와 [배포 실패] 이외의 상태일 때, 비활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스에서 빌드 배포를 실행하면, 기존 배포를 진행한지 5분이 지나지 않은 경우에도 비활성화 처리됩니다. |
+      
+      
 
 ### 5. 서비스 상세 정보
 등록한 서비스의 상세 정보 페이지 입니다. \[서비스 정보\], \[CDN 연동 안내\], \[최신 빌드 정보\], \[빌드 배포 이력\] 영역으로 구성되어 있습니다.
