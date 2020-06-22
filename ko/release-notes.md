@@ -1,5 +1,10 @@
 ## Game > Smart Downloader > 릴리스 노트
 
+### 2020. 06. 23.
+#### 버그 수정
+* [Unity SDK] v1.6.5
+    * 실행환경에 따라 OverflowException이 발생하는 오류 수정
+    
 ### 2020. 06. 11.
 #### 기능 개선/변경
 * [Console] 빌드배포 기능 수정.
