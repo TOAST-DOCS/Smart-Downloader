@@ -11,7 +11,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 
 #### Supported Versions
 
-* 2017.4.16 ~ 2019.4.1
+* 2017.4.16 ~ 2019.4.2
 
 #### Supported Platforms
 
@@ -47,6 +47,38 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 
 * SDKで提供するAPIは、名前空間`Toast.SmartDownloader`に定義されています。
 * SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
+
+### Android 네트워크 보안 구성
+
+* CDN을 HTTP로 사용하고 Android 9.0 이상에서 target API 28을 사용하는 경우, HTTP 허용 설정이 필요합니다.
+* 자세한 내용은 [네트워크 보안 구성](https://developer.android.com/training/articles/security-config?hl=ja)을 참고 바랍니다.
+
+#### 1. AndroidManifest.xml 설정
+
+* AndroidManifest.xml 내 application에 android:networkSecurityConfig 설정을 추가합니다.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+    <application android:networkSecurityConfig="@xml/network_security_config"
+    ... >
+        ...
+    </application>
+</manifest>
+```
+
+#### 2. network_security_config.xml 추가
+
+* Plugins/Android/res/xml/network_security_config.xml을 추가합니다.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">cdn.toastcloud.com</domain>
+  </domain-config>
+</network-security-config>
+```
 
 
 ### ダウンロード開始
@@ -85,6 +117,7 @@ config.CheckOption = PatchCheckOption.NONE;
 기본 옵션으로 리소스 검사 시 다운로드된 모든 리소스의 CRC를 계산하여 업로드된 리소스와 비교합니다.
 
 **특징**
+
 * 리소스 무결성 보장
     * 리소스 누락 및 변조를 감지하여 업로드된 리소스를 다운로드 합니다.
 
@@ -93,9 +126,11 @@ config.CheckOption = PatchCheckOption.NONE;
 해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교합니다.
 
 **특징**
+
 * 리소스 검사 속도가 빠릅니다.
 
 **취약점**
+
 * 리소스 누락 및 변조를 감지할 수 없습니다.
     * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
 
@@ -109,6 +144,7 @@ config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
 Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
 
 **주의**
+
 * Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
 * 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
 * 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 Streaming Assets 경로의 파일을 사용하면 됩니다.
