@@ -147,17 +147,20 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
     -   |  상태 | 설명 |
     	|----------|---------|
     	|![등록 전](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_not_register.PNG)| 리소스 등록을 하지 않은 상태.|
+    	|![CDN 생성 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/cdn_create.png) | Smart Downloader CDN을 생성하고 CDN Purge가 가능할 때까지 대기 중인 상태. |
         |![업로드 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/resource_uploading.PNG)  |리소스 업로드가 진행 중인 상태.<br>업로드 중인 상태에서 신규 리소스 업로드 및 삭제 기능을 이용할 수 없습니다.|
-        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태.<br> \[빌드 배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
-	    |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[빌드 배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
+        |![배포 대기](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/build_complete.PNG)    |리소스 업로드가 완료 상태.<br> \[배포\] 버튼을 통해 빌드를 배포할 수 있습니다.|
+	    |![배포 중](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploying.PNG)|\[배포\] 버튼을 통해 배포가 진행 중인 상태.<br>배포 중인 상태에서 신규 리소스 업로드, 수정, 삭제 기능을 이용할 수 없습니다.|
         |![배포 완료](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_complete.PNG)   |업로드한 리소스가 CDN 에 배포 완료된 상태.|
         |![업로드 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/upload_fail.PNG)   |리소스 업로드가 실패한 상태.<br> 해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
-    	|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[빌드 배포\] 버튼을 통한 배포가 실패한 상태. <br>\[빌드 배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
+    	|![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |배포가 실패한 상태. <br>\[재배포\] 버튼을 통해 재배포 할 수 있습니다.<br>해당 상태가 지속될 시 고객센터로 문의하시기 바랍니다.|
     	
     - | 버튼                                                         | 설명                                                         |
       | ------------------------------------------------------------ | ------------------------------------------------------------ |
-      | ![배포가능](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_enabled.png) | 빌드 배포가 가능한 상태.<br>서비스 상태가 [배포 대기] 혹은 [배포 실패]일 때, 활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스에서 빌드 배포를 실행하면, CDN 캐시 재배포 작업으로 인해 버튼 클릭 후 5분동안 버튼은 무조건 비활성화 처리됩니다. |
-      | ![배포불가](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_disabled.png) | 빌드 배포가 불가능한 상태.<br>서비스 상태가 [배포 대기]와 [배포 실패] 이외의 상태일 때, 비활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스에서 빌드 배포를 실행하면, 기존 배포를 진행한지 5분이 지나지 않은 경우에도 비활성화 처리됩니다. |
+      | ![배포 가능](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_deploy.png) | 리소스 배포가 가능한 상태.<br>서비스 상태가 [배포 대기]일 때, 활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스인 경우 프로젝트 내 Smart Downloader CDN을 사용하는 다른 서비스가 빌드 배포를 실행하면, CDN 캐시 재배포 작업으로 인해 버튼 클릭 후 5분동안 버튼은 무조건 [배포 불가] 처리됩니다. |
+      | ![재배포](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_redeploy.png) | 리소스 배포가 가능한 상태.<br>서비스 상태가 [배포 실패]일 때, 활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스인 경우 프로젝트 내 Smart Downloader CDN을 사용하는 다른 서비스가 빌드 배포를 실행하면, CDN 캐시 재배포 작업으로 인해 버튼 클릭 후 5분동안 버튼은 무조건 [배포 불가] 처리됩니다. |
+      | ![배포 불가](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_deploy_disabled.png) | 리소스 배포가 불가능한 상태.<br>서비스 상태가 [배포 대기]와 [배포 실패], [배포 완료] 이외의 상태일 때 활성화 됩니다.<br>Smart Downloader CDN을 사용하는 서비스에서 빌드 배포를 실행하면, 기존 배포를 진행한지 5분이 지나지 않은 경우에도 활성화 됩니다. |
+      | ![배포 완료](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_complete.png) | 리소스 배포가 불가능한 상태.<br>서비스 상태가 [배포 완료]일 때 활성화 됩니다. |
       
       
 
@@ -211,7 +214,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 최종 업로드 일시 | 유저가 지정한 리소스가 업로드된 일시입니다. |
 | 최종 등록자 | 리소스를 업로드한 유저의 Toast Cloud 계정 정보입니다. |
 | 배포 상태 | 최신 빌드의 배포 상태이며 각 상태값은 서비스 목록 > 최신 빌드 영역 정보와 동일합니다. |
-| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 Smart Downloader CDN 의 경우 최대 10분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다.  |
+| 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 Smart Downloader CDN 의 경우 최대 60분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다. |
 
 #### 5.4 빌드 배포 이력
 
