@@ -23,6 +23,7 @@ StartDownload APIコールバックで伝達するDownloadResultのCode値です
 | ERROR_UNZIP | -296 | 圧縮ファイルの解凍に失敗しました。 |
 | ERROR_ENOUGH_DISK_SPACE | -295 | ディスクスペースが不足しています。 |
 | ERROR_NOT_ACCESS_DIRECTORY | -294 | フォルダにアクセスできません。 |
+| ERROR_CHECK_DISK_SPACE | -293 | 디스크 공간 확인 시 실패했습니다.<br>자세한 내용은 메세지를 확인 바랍니다. |
 | ERROR_SOCKET_CONNECT | -399 | ネットワークイシューにより、ソケット接続が切断されました。 |
 | ERROR_SOCKET_TIMEOUT | -398 | ネットワーク接続中にタイムアウトが発生しました。 |
 | ERROR_HTTP_STATUS_CODE | -397 | HTTP要請が失敗しました。<br>詳細はメッセージを確認してください。 |

@@ -23,8 +23,9 @@ StartDownload API 콜백으로 전달받는 DownloadResult의 Code 값입니다.
 | ERROR_UNZIP | -296 | 압축 파일 해제에 실패했습니다. |
 | ERROR_ENOUGH_DISK_SPACE | -295 | 디스크 공간이 부족합니다. |
 | ERROR_NOT_ACCESS_DIRECTORY | -294 | 폴더 접근이 되지 않습니다. |
+| ERROR_CHECK_DISK_SPACE | -293 | 디스크 공간 확인 시 실패했습니다.<br>자세한 내용은 메세지를 확인 바랍니다. |
 | ERROR_SOCKET_CONNECT | -399 | 네트워크 이슈로 소켓 연결이 끊어졌습니다. |
 | ERROR_SOCKET_TIMEOUT | -398 | 네트워크 연결 중 타임아웃이 발생했습니다. |
-| ERROR_HTTP_STATUS_CODE | -397 | HTTP 요청이 실패 했습니다.<br>자세한 내용은 메시지 확인 바랍니다. |
+| ERROR_HTTP_STATUS_CODE | -397 | HTTP 요청이 실패 했습니다.<br>자세한 내용은 메세지를 확인 바랍니다. |
 | ERROR_SOCKET_CONNECT_TIMEOUT | -396 | 소켓 연결 과정에서 타임아웃이 발생했습니다. |
 | ERROR_RAW_SOCKET | -395 | Raw 소켓 에러가 발생했습니다. |
