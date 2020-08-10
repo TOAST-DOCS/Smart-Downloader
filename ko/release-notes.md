@@ -1,5 +1,16 @@
 ## Game > Smart Downloader > 릴리스 노트
 
+### 2020. 08. 11.
+#### 기능 개선/변경
+* [Unity SDK] v1.6.7
+    * 리소스 검사 로직 개선
+    * 리소스 검사 옵션 추가
+        * API 추가
+            * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_AND_LOCAL_SCAN
+    * 압축 해제 기능 제외
+        * API 변경
+            * ResultCode.ERROR_UNZIP (Obsolete)
+
 ### 2020. 07. 14.
 #### 기능 개선/변경
 * [Unity SDK] v1.6.6
