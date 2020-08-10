@@ -139,7 +139,7 @@ config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
 
 **특징**
 
-* 리소스 검사 속도가 PatchCheckOption.DEFAULT 옵션에 비해 빠르고,<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션보다 조금 느리지만 검사 시 리소스가 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
+* 리소스 검사 속도가 PatchCheckOption.DEFAULT 옵션에 비해 빠르고,<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션보다 조금 느리지만 검사 시 리소스 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
 
 **취약점**
 
