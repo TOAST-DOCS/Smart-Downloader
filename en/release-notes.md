@@ -1,5 +1,16 @@
 ## Game > Smart Downloader > Release Notes
 
+### 2020. 08. 11.
+#### 기능 개선/변경
+* [Unity SDK] v1.6.7
+    * 리소스 검사 로직 개선
+    * 리소스 검사 옵션 추가
+        * API 추가
+            * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_AND_LOCAL_SCAN
+    * 압축 해제 기능 제외
+        * API 변경
+            * ResultCode.ERROR_UNZIP (Obsolete)
+
 ### 2020. 07. 14.
 #### 기능 개선/변경
 * [Unity SDK] v1.6.6
@@ -7,6 +18,7 @@
 * [Console] 빌드배포 기능 수정.
     * 빌드배포시 5분간 같은 프로젝트의 Smart Downloader CDN을 사용하는 서비스의 배포가 불가능하도록 수정.
     * 배포 버튼의 명칭을 서비스의 상태에 맞게 노출하도록 기능 수정.
+
 ### 2020. 06. 23.
 #### 버그 수정
 * [Unity SDK] v1.6.5
