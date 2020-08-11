@@ -23,6 +23,7 @@ Below are the code values of DownloadResult, delivered as StartDownload API call
 | ERROR_UNZIP | -296 | Failed to unzip files. |
 | ERROR_ENOUGH_DISK_SPACE | -295 | Disk space is not enough. |
 | ERROR_NOT_ACCESS_DIRECTORY | -294 | Cannot access folder. |
+| ERROR_CHECK_DISK_SPACE | -293 | 디스크 공간 확인 시 실패했습니다.<br>자세한 내용은 메세지를 확인 바랍니다. |
 | ERROR_SOCKET_CONNECT | -399 | Socket is disconnected due to network issues. |
 | ERROR_SOCKET_TIMEOUT | -398 | Timeout has occurred during network connection. |
 | ERROR_HTTP_STATUS_CODE | -397 | Failed to request for HTTP.  <br>Check message for details. |
