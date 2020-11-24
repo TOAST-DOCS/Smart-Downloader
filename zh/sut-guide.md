@@ -8,7 +8,7 @@ Smart Downloader Unity Tool, or SUT is a tool to upload and deploy resources for
 
 #### Supported Unity Versions
 
-* 2017.4.16 ~ 2019.3.10
+* 2017.4.16 ~ 2020.1.14
 
 ### Download
 
@@ -96,7 +96,7 @@ When it is normally completed, a windows pops up to confirm.
 
 Select service from the list and double-click to show **Service Details**. 
 
-![sut_service_detail_info.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info.png)
+![sut_service_detail_info_window.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window.png)
 
 * Service Information
     * Service Name: Name of service entered for service registration.
@@ -107,17 +107,42 @@ Select service from the list and double-click to show **Service Details**.
     * Last Registrant: User ID uploading resources.
     * Upload Resource Information: Number and total size of uploaded resources.
         * Detail Information: Uploaded resource information.
+    * 빌드 배포 일시: 마지막으로 빌드 배포된 일시입니다. 배포 상태가 **배포 예약 중** 상태인 경우 예약 배포되는 일시입니다.
     * Deployment Status: Check status of deployment. See [Console User Guide](http://docs.toast.com/zh/Game/Smart%20Downloader/zh/console-guide/#4-list-of-services) for deployment status. 
         * Updates: Upload service details.  
         * Build Deployment: To be activated when build is ready to be deployed, with the latest build deployed by CDN. 
-* Build Deployment History: Shows the history of the most recent 10 build deployment cases.  
+* Build Deployment History: Shows the history of the most recent 10 build deployment cases.
 
 
 #### Build Deployment 
 
-![sut_service_detail_info_deploy.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_deploy.png)
+Only when the deployment status is **Ready for Deployment, or Deployment Failed**, the most updated upload resources can be deployed to CDN.  
 
-* Only when the deployment status is **Ready for Deployment, or Deployment Failed**, the most updated upload resources can be deployed to CDN.  
+![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
+
+**빌드 배포** 버튼을 누르면 아래와 같은 창이 출력됩니다.
+
+![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
+
+* 즉시 배포 : 지금 즉시 배포를 시도합니다.
+* 예약 배포 : 사용자가 지정한 시간에 배포를 시도합니다.
+
+#### 예약 배포
+
+**예약 배포** 를 선택하면 아래와 같은 화면이 출력됩니다.
+
+![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
+
+* 시간대 : 배포할 기준 시간대를 지정합니다.
+* 배포 시간 : 배포 시간을 지정합니다.
+
+예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
+
+![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
+
+배포 예약이 완료되면 배포 상태가 **예약 상태 중** 으로 변경되며 빌드 배포 일시가 예약된 시간으로 변경됨을 확인하실 수 있습니다.
+**배포 예약 중** 상태에서는 우측에 **배포 취소** 버튼을 눌러 예약을 취소할 수 있습니다.
+
 
 ### Settings 
 
