@@ -8,7 +8,7 @@ Smart Downloader Unity Tool(SUT)は、Unityからリソースをアップロー�
 
 #### Unity Supported Versions
 
-* 2017.4.16 ~ 2019.3.10
+* 2017.4.16 ~ 2020.1.14
 
 ### Download
 
@@ -92,11 +92,12 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 
 ![sut_upload_step_4.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_4.png)
 
+
 ### サービス詳細情報
 
 サービスリストからサービスを選択してダブルクリックすると、**サービス詳細情報**画面が表示されます。
 
-![sut_service_detail_info.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info.png)
+![sut_service_detail_info_window.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window.png)
 
 * サービス情報
     * サービス名：サービス登録時に入力したサービス名です。
@@ -107,6 +108,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
     * 最終登録者：リソースをアップロードしたUser IDです。
     * アップロードリソース情報：アップロードされたリソースの数と総サイズです。
         * 詳細情報：アップロードされたリソース情報です。
+    * 빌드 배포 일시: 마지막으로 빌드 배포된 일시입니다. 배포 상태가 **배포 예약 중** 상태인 경우 예약 배포되는 일시입니다.
     * 配布状態：配布状態を確認できます。配布状態は[コンソール使用ガイド](http://docs.toast.com/ja/Game/Smart%20Downloader/ja/console-guide/#4)を参照してください。
         * 更新：サービスの詳細情報を更新します。
         * ビルド配布：ビルドを配布できる状態になると有効になり、最新ビルドをCDNに配布できます。
@@ -114,9 +116,33 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 
 #### ビルド配布
 
-![sut_service_detail_info_deploy.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_deploy.png)
+配布状態が**配布待機**、**配布失敗**状態の場合にのみ、最新アップロードリソースをCDNに配布できます。
 
-* 配布状態が**配布待機**、**配布失敗**状態の場合にのみ、最新アップロードリソースをCDNに配布できます。
+![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
+
+**빌드 배포** 버튼을 누르면 아래와 같은 창이 출력됩니다.
+
+![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
+
+* 즉시 배포 : 지금 즉시 배포를 시도합니다.
+* 예약 배포 : 사용자가 지정한 시간에 배포를 시도합니다.
+
+#### 예약 배포
+
+**예약 배포** 를 선택하면 아래와 같은 화면이 출력됩니다.
+
+![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
+
+* 시간대 : 배포할 기준 시간대를 지정합니다.
+* 배포 시간 : 배포 시간을 지정합니다.
+
+예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
+
+![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
+
+배포 예약이 완료되면 배포 상태가 **예약 상태 중** 으로 변경되며 빌드 배포 일시가 예약된 시간으로 변경됨을 확인하실 수 있습니다.
+**배포 예약 중** 상태에서는 우측에 **배포 취소** 버튼을 눌러 예약을 취소할 수 있습니다.
+
 
 ### 設定
 

@@ -8,7 +8,7 @@ Smart Downloader Unity Tool(SUT)은 Unity에서 리소스를 업로드하고 배
 
 #### Unity Supported Versions
 
-* 2017.4.16 ~ 2019.3.10
+* 2017.4.16 ~ 2020.1.14
 
 ### Download
 
@@ -97,7 +97,7 @@ OS에서 자동으로 생성하는 파일(.DS_Store, desktop.ini, thumbs.db)은 
 
 서비스 목록에서 서비스를 선택해 더블클릭하면 **서비스 상세 정보** 화면이 나타납니다.
 
-![sut_service_detail_info.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info.png)
+![sut_service_detail_info_window.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window.png)
 
 * 서비스 정보
     * 서비스 이름: 서비스 등록 시 입력한 서비스 이름입니다.
@@ -108,6 +108,7 @@ OS에서 자동으로 생성하는 파일(.DS_Store, desktop.ini, thumbs.db)은 
     * 최종 등록자: 리소스를 업로드한 User ID입니다.
     * 업로드 리소스 정보: 업로드된 리소스의 개수와 총 크기입니다.
         * 상세 정보: 업로드된 리소스 정보입니다.
+    * 빌드 배포 일시: 마지막으로 빌드 배포된 일시입니다. 배포 상태가 **배포 예약 중** 상태인 경우 예약 배포되는 일시입니다.
     * 배포 상태: 배포 상태를 확인할 수 있습니다. 배포 상태는 [콘솔 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/console-guide/#4)를 참고하시기 바랍니다.
         * 갱신: 서비스의 상세 정보를 갱신합니다.
         * 빌드 배포: 빌드를 배포할 수 있는 상태가 되면 활성화되며 최신 빌드를 CDN으로 배포할 수 있습니다.
@@ -116,9 +117,33 @@ OS에서 자동으로 생성하는 파일(.DS_Store, desktop.ini, thumbs.db)은 
 
 #### 빌드 배포
 
-![sut_service_detail_info_deploy.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_deploy.png)
+배포 상태가 **배포 대기**, **배포 실패** 상태인 경우에만 최신 업로드 리소스를 CDN에 배포할 수 있습니다.
 
-* 배포 상태가 **배포 대기**, **배포 실패** 상태인 경우에만 최신 업로드 리소스를 CDN에 배포할 수 있습니다.
+![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
+
+**빌드 배포** 버튼을 누르면 아래와 같은 창이 출력됩니다.
+
+![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
+
+* 즉시 배포 : 지금 즉시 배포를 시도합니다.
+* 예약 배포 : 사용자가 지정한 시간에 배포를 시도합니다.
+
+#### 예약 배포
+
+**예약 배포** 를 선택하면 아래와 같은 화면이 출력됩니다.
+
+![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
+
+* 시간대 : 배포할 기준 시간대를 지정합니다.
+* 배포 시간 : 배포 시간을 지정합니다.
+
+예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
+
+![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
+
+배포 예약이 완료되면 배포 상태가 **예약 상태 중** 으로 변경되며 빌드 배포 일시가 예약된 시간으로 변경됨을 확인하실 수 있습니다.
+**배포 예약 중** 상태에서는 우측에 **배포 취소** 버튼을 눌러 예약을 취소할 수 있습니다.
+
 
 ### 설정
 
