@@ -25,7 +25,7 @@ Smart Downloader Unity Tool(SUT)は、Unityからリソースをアップロー�
 
 ## Unity Toolの使用
 
-Unity Toolを使用するには、メニューから**Tool > Toast > Smart Downloader > Unity Tool**を選択します。
+Unity Toolを使用するには、メニューから**Tool > NHN Cloud > Smart Downloader > Unity Tool**を選択します。
 
 ### 認証
 
@@ -33,7 +33,7 @@ Unity Toolを使用するには、メニューから**Tool > Toast > Smart Downl
 
 ![sut_credentials_tab.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_credentials_tab.png)
 
-* User ID：TOASTクラウドID
+* User ID：NHN CloudクラウドID
 * User Access Key ID、Secret Access Key
     1. [APIセキュリティ設定](https://toast.com/account/api_settings)で、**User Access Key ID発行**を選択します。
     2. Secret Access Key(シークレットキー)発行完了ウィンドウが表示されます。

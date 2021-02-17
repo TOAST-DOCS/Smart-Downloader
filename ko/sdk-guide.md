@@ -45,7 +45,7 @@ Smart Downloader SDK는 유니티 엔진을 지원합니다.
 
 #### 4. SDK API 사용
 
-* SDK에서 제공하는 API는 네임스페이스 'NHN Cloud.SmartDownloader'로 정의되어 있습니다.
+* SDK에서 제공하는 API는 네임스페이스 'Toast.SmartDownloader'로 정의되어 있습니다.
 * 다운로드 API는 'SmartDl' 클래스를 사용합니다.
 
 ### Android 네트워크 보안 구성

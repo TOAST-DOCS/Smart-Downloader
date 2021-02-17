@@ -57,6 +57,6 @@ The Client downloads resources and collects statistical data, so as to provide v
 | Component Name | Description |
 | --- | --- |
 | SDK | A client SDK to use SmartDownloader for a game client. |
-| API Server | Processes TOAST authentication and delivers CDN Download URL to a client SDK. |
+| API Server | Processes NHN Cloud authentication and delivers CDN Download URL to a client SDK. |
 | Console |	Allows to register Smart Downloader, or to upload or monitor builds. |
 | Jenkins Plugin | Provided to directly upload builds on user's build server, not via console. |
