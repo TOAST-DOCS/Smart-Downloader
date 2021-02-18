@@ -64,7 +64,7 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `NHN Cloud API 보
 
 <br>
 ![그림 4](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_04.png)
-<center>[그림 4] Toast 프로젝트 설정</center>
+<center>[그림 4] NHN Cloud 프로젝트 설정</center>
 ![그림 5](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_05.png)
 <center>[그림 5] Smart Downloader Appkey 확인</center>
 
