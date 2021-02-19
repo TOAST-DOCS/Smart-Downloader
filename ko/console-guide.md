@@ -89,8 +89,8 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 ​    - 현재 페이지에서 \[리소스 업로드\] 버튼 클릭으로 진행할 수 있습니다.
 ​    - 업로드가 완료되면 \[3단계. 리소스 업로드 완료\] 페이지로 이동합니다.
 - B.  빌드 서버(원격) 업로드
-​    - Smart Downloader Jenkins Plugin(ToastCloud Smart Downloader Plugin) 을 통해 리소스를 업로드.
-​    - ToastCloud Smart Downloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
+​    - Smart Downloader Jenkins Plugin(NHN CloudCloud Smart Downloader Plugin) 을 통해 리소스를 업로드.
+​    - NHN CloudCloud Smart Downloader Plugin 에 대한 자세한 가이드는 [플러그인 사용 가이드](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/) 로 확인할 수 있습니다.
 - C. 유니티 에디터 플러그인 업로드
     - 유니티 에디터로 수정하고 빌드한 리소스 파일을 에디터에 내장된 플러그인을 통해 업로드.
         - 유니티 에디터 플러그인에 대한 자세한 가이드는 [Unity Tool 사용 가이드](https://docs.toast.com/ko/Game/Smart%20Downloader/ko/sut-guide/)로 확인할 수 있습니다.

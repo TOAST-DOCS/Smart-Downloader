@@ -197,7 +197,7 @@ If the deployment status is **Ready for Deployment**, the latest builds can be d
 | Detail Information | Displays uploaded resource information on the tree pop-ups. |
 | View Deployment History | Shows \[Build Deployment History\] at the bottom of service detail information. |
 | Date/Time of Last Upload | Date and time of user-configured resource uploads. |
-| Last Registrar | TOAST Cloud account information of the user who uploaded resources. |
+| Last Registrar | NHN Cloud Cloud account information of the user who uploaded resources. |
 | Deployment Status | Deployment status of the latest build, and each status value is same as information on List of Service > Latest Builds. |
 | Deploy Builds | If the latest build is **Ready for Deployment**, such build can be deployed via integrated CDN. (Even for the **Deployment Failed** status, \[Deploy Builds\] is enabled for redeployment.)<br>Deployment for Smart Downloader CDN takes 10 minutes to the maximum, while it may vary for external CDNs depending on the environment. |
 
@@ -210,9 +210,9 @@ History information for **Deployment Successful**, or **Deployment Failed** is d
 | Item | Description |
 | --- | --- |
 | Date/Time of Build Deployment | Date and time when deployment is completed with the \[Deploy Builds\] button. |
-| Last Deployer | TOAST Cloud account information of the user who deployed with \[Deploy Builds\]. |
+| Last Deployer | NHN Cloud Cloud account information of the user who deployed with \[Deploy Builds\]. |
 | Date/Time of Resource Upload | Date and time of user-configured resource uploads. |
-| Last Registrar | TOAST Cloud account information of the user who uploaded resources. |
+| Last Registrar | NHN Cloud Cloud account information of the user who uploaded resources. |
 | Status | Deployment status of the latest builds, and each status is same as \[Deployment Status\] of \[Latest Build Information\] at the top. |
 
 #### 5.5 Deleting Services 
