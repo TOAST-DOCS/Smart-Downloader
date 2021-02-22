@@ -57,6 +57,6 @@ Smart Downloaderは、ゲーム起動時にゲームに必要なリソースを�
 | Component名 | 説明 |
 | --- | --- |
 | SDK | Game ClientでSmartDownloaderを使用するためのClient SDK。 |
-| API Server | TOAST認証を処理し、CDN Download URLをClient SDKに伝達する。 |
+| API Server | NHN Cloud認証を処理し、CDN Download URLをClient SDKに伝達する。 |
 | Console |	 Smart Downloaderサービス登録、ビルドアップロード、モニタリング機能を提供。 |
 | Jenkins Plugin | コンソールを通さずに、ユーザーのビルドサーバーから直接ビルドアップロード機能を使用できるように提供。 |

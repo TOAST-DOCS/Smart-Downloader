@@ -24,7 +24,7 @@ Smart Downloader Unity Tool, or SUT is a tool to upload and deploy resources for
 
 ## Enabling Unity Tool  
 
-To enable Unity Tool, go to menu and select **Tool > Toast > Smart Downloader > Unity Tool**. 
+To enable Unity Tool, go to menu and select **Tool > NHN Cloud > Smart Downloader > Unity Tool**. 
 
 ### Authenticate 
 
@@ -32,7 +32,7 @@ The **Authentication** tab shows if it is not yet authenticated.
 
 ![sut_credentials_tab.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_credentials_tab.png)
 
-* User ID: TOAST Cloud ID
+* User ID: NHN Cloud Cloud ID
 * User Access Key ID, Secret Access Key
     1. Select **Issue User Access Key ID** from [API Security Setting](https://toast.com/account/api_settings).
     2. A window shows that Secret Access Key has been issued. 

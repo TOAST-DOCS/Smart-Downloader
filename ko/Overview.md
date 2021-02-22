@@ -57,6 +57,6 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 | Component 명 | 설명 |
 | --- | --- |
 | SDK | Game Client 에서 SmartDownloader 를 사용하기 위한 Client SDK. |
-| API Server | Toast 인증을 처리하고, CDN Download URL 을 Client SDK 로 전달 함. |
+| API Server | NHN Cloud 인증을 처리하고, CDN Download URL 을 Client SDK 로 전달 함. |
 | Console |	Smart Downloader 서비스 등록, 빌드 업로드, 모니터링 기능 제공. |
 | Jenkins Plugin | 콘솔을 통하지 않고 사용자의 빌드서버에서 직접 빌드 업로드 기능을 사용할 수 있도록 제공. |
