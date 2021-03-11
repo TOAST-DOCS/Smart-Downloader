@@ -51,7 +51,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 ### Androidネットワークセキュリティ構成
 
 * CDNをHTTPとして使用し、Android 9.0以上でtarget API 28を使用する場合、HTTP許容設定が必要です。
-* 詳細内容は [ネットワークセキュリティ構成]](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
+* 詳細内容は [ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
 
 #### 1. AndroidManifest.xml 設定
 
