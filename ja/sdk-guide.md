@@ -48,14 +48,14 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 * SDKで提供するAPIは、名前空間`Toast.SmartDownloader`に定義されています。
 * SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
 
-### Android 네트워크 보안 구성
+### Androidネットワークセキュリティ構成
 
-* CDN을 HTTP로 사용하고 Android 9.0 이상에서 target API 28을 사용하는 경우, HTTP 허용 설정이 필요합니다.
-* 자세한 내용은 [네트워크 보안 구성](https://developer.android.com/training/articles/security-config?hl=ja)을 참고 바랍니다.
+* CDNをHTTPとして使用し、Android 9.0以上でtarget API 28を使用する場合、HTTP許容設定が必要です。
+* 詳細内容は [ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
 
-#### 1. AndroidManifest.xml 설정
+#### 1. AndroidManifest.xml 設定
 
-* AndroidManifest.xml 내 application에 android:networkSecurityConfig 설정을 추가합니다.
+* AndroidManifest.xml 内の applicationで android:networkSecurityConfig 設定を追加します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -67,9 +67,9 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </manifest>
 ```
 
-#### 2. network_security_config.xml 추가
+#### 2. network_security_config.xml 追加
 
-* Plugins/Android/res/xml/network_security_config.xml을 추가합니다.
+* Plugins/Android/res/xml/network_security_config.xmlを追加します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,7 +98,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 | DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (単位：秒) |
 | DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (単位：秒) |
 | RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
-| CheckOption | PatchCheckOption.NONE | 리소스 검사 옵션 |
+| CheckOption | PatchCheckOption.NONE | リソースを検査するオプション |
 
 **Example**
 
@@ -110,29 +110,29 @@ config.RetryDownloadCountPerFile = 3;
 config.CheckOption = PatchCheckOption.NONE;
 ```
 
-### Check Download 검사 옵션
+### Check Downloadによる検査オプション
 
 #### PatchCheckOption.DEFAULT
 
-기본 옵션으로 리소스 검사 시 다운로드된 모든 리소스의 CRC를 계산하여 업로드된 리소스와 비교합니다.
+デフォルト設定で、リソースチェック時にダウンロードされたすべてのリソースのCRCを計算し、アップロードされたリソースと比較します。
 
-**특징**
+**特徴**
 
-* 리소스 무결성 보장
-    * 리소스 누락 및 변조를 감지하여 업로드된 리소스를 다운로드 합니다.
+* リソース完全性保障
+    * リソースの漏れおよび改変を感知して、アップロードされたリソースをダウンロードします。
 
 #### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA
 
-해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교합니다.
+このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較します。
 
-**특징**
+**特徴**
 
-* 리소스 검사 속도가 빠릅니다.
+* スピードの速いリソーススキャンが行えます。
 
-**취약점**
+**短所**
 
-* 리소스 누락 및 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+* リソースの漏れや改造を感知できません。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更し、再ダウンロードを行い復旧することができます。
 
 ```cs
 DownloadConfig config = DownloadConfig.Default;
@@ -141,16 +141,16 @@ config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
 
 #### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN
 
-해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교하고 디바이스에 실제 리소스가 존재하는지 간단한 검사를 진행합니다.
+このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較し、デバイスに実際にリソースが存在するのか簡単なスキャンを行います。
 
-**특징**
+**特徴**
 
-* 리소스 검사 속도가 PatchCheckOption.DEFAULT 옵션에 비해 빠르고,<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션보다 조금 느리지만 검사 시 리소스 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
+* PatchCheckOption.DEFAULTに比べて、処理スピードが速く、<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATAオプションより少し遅いですが、検査時にリソースの存在有無とアップロードリソース、ダウンロードされたリソースの大きさを測定し、リソース漏れ防止および簡単なスキャンを行います。
 
-**취약점**
+**短所**
 
-* 리소스 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+* リソースの改造を検知できません。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更して再ダウンロードを行い復旧することができます。
 
 ```cs
 DownloadConfig config = DownloadConfig.Default;
@@ -159,17 +159,17 @@ config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN;
 
 #### PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS
 
-Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
+Streaming Assets 内部のリソースとアップロードされたリソースのパスを比較して、変更されたリソースをダウンロードします。
 
-**주의**
+**注意**
 
-* Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
-* 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
-* 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 Streaming Assets 경로의 파일을 사용하면 됩니다.
-* Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
-* Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
-    디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
-* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA, PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN 옵션과 중복 적용은 불가능 합니다.
+* Smart Downloaderにアップロードされたデータは常に最新であることを保障しなければなりません。
+* UnityプロジェクトのStreaming Assetsパスを基準にアップロードされたリソースパスを比較します。
+* アップロードされたリソースがStreaming Assets内のファイルと異なるか、新規リソースがある場合は、ダウンロード時に指定したDown Pathに該当するファイルをダウンロードします。<br>ユーザはリソースを使用するときに指定したDownPathにファイルがあるか確認して、ファイルがある場合はDownPathパスのファイルを、ない場合はStreamingAssetsパスのファイルを使用してください。
+* Streaming Assetsがアップデートされ Down Pathのファイルと同じなら Down Pathのファイルは削除されます。
+* Androidの場合 `Split Application Binary` 設定が有効になると、APK拡張ファイルであるOBBファイルにStreaming Assetsが含まれますが、このとき自動的にデバイスでOBBファイルを検索します。
+     デバイスにOBBファイルがない場合は、アップロードされたすべてのリソースをダウンロードします。(参考 : [Unity Manual - APK 拡張ファイル対応](https://docs.unity3d.com/jp/current/Manual/android-OBBsupport.html))
+* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA, PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCANオプションとの重複適用はできません。
 
 **Example**
 
