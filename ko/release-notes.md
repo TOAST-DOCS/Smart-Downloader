@@ -1,5 +1,18 @@
 ## Game > Smart Downloader > 릴리스 노트
 
+### 2021. 04. 13.
+#### 기능 개선/변경
+
+* [Unity SDK] v1.6.8
+    * 제외된 리소스 제거 옵션 추가
+        * API 추가
+            * DownloadConfig.ClearUnusedResources
+    * DownloadConfig API 개선
+        * API 변경
+            * DownloadConfig.CheckOption (Obsolete) → DownloadConfig.UseStreamingAssets, DownloadConfig.PatchCompareFunction 사용
+    * 실패율 정보를 확인을 위한 로그 개선
+
+
 ### 2020. 11. 24.
 #### 기능 개선/변경
 ```
@@ -58,7 +71,7 @@ Unity Tool v1.0.2 이하 버전을 사용하시는 경우 업데이트가 필요
     * Streaming Assets 지원
         * Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
         * API 변경
-            * DownloadResult.CheckAndroidObb (Obsolete) → DownloadResult.CheckOption
+            * DownloadConfig.CheckAndroidObb (Obsolete) → DownloadConfig.CheckOption
 
 ### 2020. 04. 14.
 #### 기능 개선/변경.
