@@ -94,7 +94,7 @@ DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
 | RetryDownloadCountPerFile | 3 | 다운로드 실패 시 재시도하는 횟수 |
 | UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
 | PatchCompareFunction | PatchCompareType.INTERGRITY | 리소스 검사 옵션 |
-| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(이전에 다운로드 받은 리소스 정보와 CDN 리소스를 비교하여 CDN 리소스 목록에서 제거된 경우 제거) |
+| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(현재 CDN에 없는 이전에 다운로드한 리소스 제거) |
 
 **Example**
 
@@ -145,7 +145,7 @@ UseStreamingAssets의 값을 활성화 하면 Streaming Assets 내부의 리소�
 **취약점**
 
 * 리소스 누락 및 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 INTERGRITY로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
 
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
@@ -158,7 +158,7 @@ UseStreamingAssets의 값을 활성화 하면 Streaming Assets 내부의 리소�
 **취약점**
 
 * 리소스 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 INTERGRITY로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
 
 
 ## 다운로드

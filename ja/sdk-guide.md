@@ -100,7 +100,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 | RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
 | UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
 | PatchCompareFunction | PatchCompareType.INTERGRITY | リソースを検査するオプション |
-| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(이전에 다운로드 받은 리소스 정보와 CDN 리소스를 비교하여 CDN 리소스 목록에서 제거된 경우 제거) |
+| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(현재 CDN에 없는 이전에 다운로드한 리소스 제거) |
 
 **Example**
 
@@ -151,7 +151,7 @@ Streaming Assets 内部のリソースとアップロードされたリソース
 **短所**
 
 * リソースの漏れや改造を感知できません。
-    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更し、再ダウンロードを行い復旧することができます。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更し、再ダウンロードを行い復旧することができます。
 
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
@@ -164,7 +164,7 @@ Streaming Assets 内部のリソースとアップロードされたリソース
 **短所**
 
 * リソースの改造を検知できません。
-    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更して再ダウンロードを行い復旧することができます。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更して再ダウンロードを行い復旧することができます。
 
 
 ### 全リソースのダウンロード
