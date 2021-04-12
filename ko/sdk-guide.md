@@ -92,7 +92,9 @@ DownloadConfig를 통해 다운로드 설정을 변경할 수 있습니다.
 | DownloadConnectTimeout | 60 | 다운로드에 대한 연결 타임아웃 (단위: 초) |
 | DownloadReadTimeout | 20 | 다운로드에 대한 읽기 타임아웃 (단위: 초) |
 | RetryDownloadCountPerFile | 3 | 다운로드 실패 시 재시도하는 횟수 |
-| CheckOption | PatchCheckOption.DEFAULT | 리소스 검사 옵션 |
+| UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
+| PatchCompareFunction | PatchCompareType.INTERGRITY | 리소스 검사 옵션 |
+| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(이전에 다운로드 받은 리소스 정보와 CDN 리소스를 비교하여 CDN 리소스 목록에서 제거된 경우 제거) |
 
 **Example**
 
@@ -101,12 +103,29 @@ DownloadConfig config = DownloadConfig.Default;
 config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
 config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
-config.CheckOption = PatchCheckOption.DEFAULT;
+config.UseStreamingAssets = false;
+config.PatchCompareFunction = PatchCompareType.INTERGRITY;
+config.ClearUnusedResources = false;
 ```
 
-### Check Download 검사 옵션
+### Streaming Assets 리소스와 비교하기
 
-#### PatchCheckOption.DEFAULT
+UseStreamingAssets의 값을 활성화 하면 Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
+
+**주의**
+
+* Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
+* 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
+* 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 Streaming Assets 경로의 파일을 사용하면 됩니다.
+* Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
+* Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
+    디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+* PatchCompareFunction 옵션은 PatchCompareType.INTERGRITY 값으로 고정됩니다.
+
+
+### 리소스 검사 옵션
+
+#### PatchCompareType.INTERGRITY
 
 기본 옵션으로 리소스 검사 시 다운로드된 모든 리소스의 CRC를 계산하여 업로드된 리소스와 비교합니다.
 
@@ -115,7 +134,7 @@ config.CheckOption = PatchCheckOption.DEFAULT;
 * 리소스 무결성 보장
     * 리소스 누락 및 변조를 감지하여 업로드된 리소스를 다운로드 합니다.
 
-#### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA
+#### PatchCompareType.SAVED_INFORMATION
 
 해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교합니다.
 
@@ -128,49 +147,19 @@ config.CheckOption = PatchCheckOption.DEFAULT;
 * 리소스 누락 및 변조를 감지할 수 없습니다.
     * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
 
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
-```
-
-#### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN
+#### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
 해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교하고 디바이스에 실제 리소스가 존재하는지 간단한 검사를 진행합니다.
 
 **특징**
 
-* 리소스 검사 속도가 PatchCheckOption.DEFAULT 옵션에 비해 빠르고,<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 옵션보다 조금 느리지만 검사 시 리소스 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
+* 리소스 검사 속도가 PatchCompareType.INTERGRITY 옵션에 비해 빠르고,<br>PatchCompareType.SAVED_INFORMATION 옵션보다 조금 느리지만 검사 시 리소스 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
 
 **취약점**
 
 * 리소스 변조를 감지할 수 없습니다.
     * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 DEFAULT로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
 
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN;
-```
-
-#### PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS
-
-Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
-
-**주의**
-
-* Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
-* 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
-* 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 Streaming Assets 경로의 파일을 사용하면 됩니다.
-* Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
-* Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
-    디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
-* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA, PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN 옵션과 중복 적용은 불가능 합니다.
-
-**Example**
-
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS;
-```
 
 ## 다운로드
 
@@ -465,3 +454,16 @@ void Initialize()
     };
 }
 ```
+
+## API Deprecate Governance
+
+Smart Downloader SDK에서 더 이상 지원하지 않는 API는 Deprecate 처리합니다.
+Deprecated된 API는 다음 조건 충족 시 사전 공지 없이 삭제될 수 있습니다.
+
+* 5회 이상의 마이너 버전 업데이트
+    * Smart Downloader Version Format - XX.YY.ZZ
+        * XX : Major
+        * YY : Minor
+        * ZZ : Hotfix
+
+* 최소 5개월 경과
