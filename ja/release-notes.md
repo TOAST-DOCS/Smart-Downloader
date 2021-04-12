@@ -1,4 +1,16 @@
-## Game > Smart Downloader > リリースノート
+﻿## Game > Smart Downloader > リリースノート
+
+### 2021. 04. 13.
+#### 기능 개선/변경
+
+* [Unity SDK] v1.6.8
+    * 제외된 리소스 제거 옵션 추가
+        * API 추가
+            * DownloadConfig.ClearUnusedResources
+    * DownloadConfig API 개선
+        * API 변경
+            * DownloadConfig.CheckOption (Obsolete) → DownloadConfig.UseStreamingAssets, DownloadConfig.PatchCompareFunction 사용
+    * 실패율 정보를 확인을 위한 로그 개선
 
 ### 2020. 11. 24.
 #### 기능 개선/변경
