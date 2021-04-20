@@ -110,8 +110,8 @@
     * iOS 12 지원
 * Standalone(Windows)
     * DLL 이름 및 경로 변경
-    * smartnative_x86.dll → x86/smartnative.dll
-    * smartnative_x64.dll → x86_64/smartnative.dll
+        * smartnative_x86.dll → x86/smartnative.dll
+        * smartnative_x64.dll → x86_64/smartnative.dll
 
 
 ### 1.5.5 (2018.11.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.5.unitypackage)
