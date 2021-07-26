@@ -1,5 +1,11 @@
 ## Game > Smart Downloader > Release Notes > Unity SDK
 
+### 1.6.9 (2021.07.27) [Download SDK](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.9.unitypackage)
+
+#### Feature Updates
+* Unity 최소 지원 버전을 2018.4.0으로 변경
+* Unity 2020.2 이후 버전에서 발생하는 Warning 제거
+
 
 ### 1.6.8 (2021.04.13) [Download SDK](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.8.unitypackage)
 

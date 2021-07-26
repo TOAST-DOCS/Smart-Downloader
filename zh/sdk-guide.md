@@ -11,7 +11,7 @@ Smart Downloader SDK supports Unity engines.
 
 #### Supported Versions
 
-* 2017.4.16 ~ 2020.3.3
+* 2018.4.0 ~ 2021.1.15
 
 #### Supported Platforms
 
@@ -78,6 +78,30 @@ Smart Downloader SDK supports Unity engines.
     <domain includeSubdomains="true">cdn.toastcloud.com</domain>
   </domain-config>
 </network-security-config>
+```
+
+### iOS 네트워크 보안 구성
+
+* CDN을 HTTP로 사용하는 경우 HTTP 허용 설정이 필요합니다.
+
+#### Info.plist 설정
+
+* Info.plist에서 App Transport Security Settings를 추가합니다.
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>toastcdn.net</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
 ```
 
 
