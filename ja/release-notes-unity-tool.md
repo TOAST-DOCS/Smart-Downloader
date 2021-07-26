@@ -1,5 +1,13 @@
 ## Game > Smart Downloader > リリースノート > Unity Tool
 
+### 1.0.4 (2021.07.27) [ダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.4/SmartDownloaderUnityTool.zip)
+
+#### 機能改善/変更
+
+* Unity 최소 지원 버전을 2018.4.0으로 변경
+* Unity 2020.1 이후 버전에서 업로드가 진행되지 않는 문제 수정
+* Unity 2020.2 이후 버전에서 발생하는 Warning 제거
+
 
 ### 1.0.3 (2020.11.24) [ダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.3/SmartDownloaderUnityTool.zip)
 
