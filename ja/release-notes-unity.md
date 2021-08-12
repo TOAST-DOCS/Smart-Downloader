@@ -3,59 +3,59 @@
 ### 1.6.9 (2021.07.27) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.9.unitypackage)
 
 #### 機能改善/変更
-* Unity 최소 지원 버전을 2018.4.0으로 변경
-* Unity 2020.2 이후 버전에서 발생하는 Warning 제거
+* Unity最小サポートバージョンを2018.4.0に変更
+* Unity 2020.2以降のバージョンで発生するWarningを除去
 
 
 ### 1.6.8 (2021.04.13) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.8.unitypackage)
 
 #### 機能改善/変更
-* 제외된 리소스 제거 옵션 추가
-    * API 추가
+* 除外されたリソース除去オプションを追加
+    * API追加
         * DownloadConfig.ClearUnusedResources
-* DownloadConfig API 개선
-    * API 변경
-        * DownloadConfig.CheckOption (Obsolete) → DownloadConfig.UseStreamingAssets, DownloadConfig.PatchCompareFunction 사용
-* 실패율 정보를 확인을 위한 로그 개선
+* DownloadConfig API改善
+    * API変更
+        * DownloadConfig.CheckOption (Obsolete) → DownloadConfig.UseStreamingAssets, DownloadConfig.PatchCompareFunction使用
+* 失敗率情報を確認するためのログ改善
 
 
 ### 1.6.7 (2020.08.11) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.7.unitypackage)
 
 #### 機能改善/変更
-* 리소스 검사 로직 개선
-* 리소스 검사 옵션 추가
-    * API 추가
+* リソースチェックロジックを改善
+* リソースチェックオプションを追加
+    * API追加
         * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_AND_LOCAL_SCAN
-* 압축 해제 기능 제외
-    * API 변경
+* 解凍機能除外
+    * API変更
         * ResultCode.ERROR_UNZIP (Obsolete)
 
 
 ### 1.6.6 (2020.07.14) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.6.unitypackage)
 
 #### 機能改善/変更
-* 디스크 여유 공간 확인 방법 개선
+* ディスクの空き容量確認方法を改善
 
 
 ### 1.6.5 (2020.06.23) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.5.unitypackage)
 
 #### バグ修正
-* 실행환경에 따라 OverflowException이 발생하는 오류 수정
+* 実行環境によってはOverflowExceptionが発生するエラーを修正
 
 
 ### 1.6.4 (2020.05.12) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.4.unitypackage)
 
 #### 機能改善/変更
-* 리소스 검사 옵션 추가
-    * API 변경
-        * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 추가
+* リソースチェックオプションを追加
+    * API変更
+        * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA追加
 
 ### 1.6.3 (2020.04.28) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.3.unitypackage)
 
 #### 機能改善/変更
-* Streaming Assets 지원
-    * Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
-    * API 변경
+* Streaming Assetsサポート
+    * Streaming Assetsリソースとアップロードされたリソースを比較ダウンロードする機能を追加
+    * API変更
         * DownloadConfig.CheckAndroidObb (Obsolete) → DownloadConfig.CheckOption
 
 
@@ -175,4 +175,3 @@
 #### 機能改善/変更
 * class Name変更(DLCSkin -> SmartDLUnitySkin).
 * 静的APIのみ提供
-
