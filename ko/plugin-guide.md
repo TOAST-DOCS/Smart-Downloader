@@ -11,7 +11,7 @@ Smart Downloader Jenkins Plugin 을 통해 NHN Cloud Smart Downloader의 **신�
 
 ##### 1. Jenkins Plugin 다운로드
 아래 링크를 통해 **smartdl-uploader.hpi** 파일을 다운로드 합니다.
-Download : [smartdl-uploader.hpi](http://static.toastoven.net/toastcloud/sdk_download/Smart Downloader/smartdl-uploader.hpi)
+Download : [smartdl-uploader.hpi](https://static.toastoven.net/toastcloud/sdk_download/Smart Downloader/smartdl-uploader.hpi)
 
 ##### 2. 설치
 **[Jenkins] > [Jenkins 관리] > [플러그인 관리] > [고급 탭] > [플러그인 올리기]** 메뉴에서 `1. Jenkins Plugin 다운로드` 를 통해 다운받은 **smartdl-uploader.hpi** 파일을 선택 후 올립니다.
