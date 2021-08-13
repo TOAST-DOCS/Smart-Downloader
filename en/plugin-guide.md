@@ -14,7 +14,7 @@ Jenkins 2.60.1 is the first release of Jenkins Long-term Support (LTS) enabled f
 
 ##### 1. Download Jenkins Plugin
 Go to the below link and download **smartdl-uploader.hpi**.  
-To download : [smartdl-uploader.hpi](http://static.toastoven.net/toastcloud/sdk_download/Smart Downloader/smartdl-uploader.hpi)
+To download : [smartdl-uploader.hpi](https://static.toastoven.net/toastcloud/sdk_download/Smart Downloader/smartdl-uploader.hpi)
 
 ##### 2. Install 
 Go to **[Jenkins] > [Manage Jenkins] > [Plugin Management] > [Advanced Tab] > [Uploading Plugins]**, select and upload the **smartdl-uploader.hpi** file downloaded from  `1.Download Jenkins Plugin`.

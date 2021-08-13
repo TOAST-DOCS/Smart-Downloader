@@ -4,21 +4,21 @@
 
 #### 機能改善/変更
 
-* Unity 최소 지원 버전을 2018.4.0으로 변경
-* Unity 2020.1 이후 버전에서 업로드가 진행되지 않는 문제 수정
-* Unity 2020.2 이후 버전에서 발생하는 Warning 제거
+* Unity最小サポートバージョンを2018.4.0に変更
+* Unity 2020.1以降のバージョンでアップロードが進まない問題を修正
+* Unity 2020.2以降のバージョンで発生するWarningを除去
 
 
 ### 1.0.3 (2020.11.24) [ダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.3/SmartDownloaderUnityTool.zip)
 
 #### 機能改善/変更
 ```
-Unity Tool v1.0.2 이하 버전을 사용하시는 경우 업데이트가 필요합니다.
-이전 버전의 Unity Tool은 사용하실 수 없습니다.
+Unity Tool v1.0.2以下のバージョンを使用する場合はアップデートが必要です。
+以前のバージョンのUnity Toolは使用できません。
 ```
 
-* 예약 배포 기능 추가
-* Unity 2019.3 에디터 UI 대응
+* 予約配布機能を追加
+* Unity 2019.3エディタUI対応
 
 
 ### 1.0.2 (2019.12.24) [ダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.2/SmartDownloaderUnityTool.zip)
@@ -42,5 +42,3 @@ Unity Tool v1.0.2 이하 버전을 사용하시는 경우 업데이트가 필요
 
 
 * 配布
-
-

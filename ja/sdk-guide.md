@@ -51,11 +51,11 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 ### Androidネットワークセキュリティ構成
 
 * CDNをHTTPとして使用し、Android 9.0以上でtarget API 28を使用する場合、HTTP許容設定が必要です。
-* 詳細内容は [ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
+* 詳細内容は[ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
 
-#### 1. AndroidManifest.xml 設定
+#### 1. AndroidManifest.xml設定
 
-* AndroidManifest.xml 内の applicationで android:networkSecurityConfig 設定を追加します。
+* AndroidManifest.xml内のapplicationでandroid:networkSecurityConfig設定を追加します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -67,7 +67,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </manifest>
 ```
 
-#### 2. network_security_config.xml 追加
+#### 2. network_security_config.xml追加
 
 * Plugins/Android/res/xml/network_security_config.xmlを追加します。
 
@@ -80,13 +80,13 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </network-security-config>
 ```
 
-### iOS 네트워크 보안 구성
+### iOSネットワークセキュリティ構成
 
-* CDN을 HTTP로 사용하는 경우 HTTP 허용 설정이 필요합니다.
+* CDNをHTTPで使用する場合、HTTP許可設定が必要です。
 
-#### Info.plist 설정
+#### Info.plist設定
 
-* Info.plist에서 App Transport Security Settings를 추가합니다.
+* Info.plistでApp Transport Security Settingsを追加します。
 
 ```
 <key>NSAppTransportSecurity</key>
@@ -119,12 +119,12 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 | 変数名 | 初期値 | 説明 |
 | --- | --- | --- |
 | FixedDownloadThreadCount | -1 | ダウンロード時に使用するスレッドの数を固定<br>(0以下の値ならSDKで自動的に設定) |
-| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (単位：秒) |
-| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (単位：秒) |
+| DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト(単位：秒) |
+| DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト(単位：秒) |
 | RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
-| UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
+| UseStreamingAssets | false | Streaming Assetsリソースと比較するかどうかの指定 |
 | PatchCompareFunction | PatchCompareType.INTERGRITY | リソースを検査するオプション |
-| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(현재 CDN에 없는 이전에 다운로드한 리소스 제거) |
+| ClearUnusedResources | false | 使用しないリソース除去<br>(現在CDNにない、以前にダウンロードしたリソースを除去) |
 
 **Example**
 
@@ -140,17 +140,17 @@ config.ClearUnusedResources = false;
 
 ### Use Streaming Assets
 
-Streaming Assets 内部のリソースとアップロードされたリソースのパスを比較して、変更されたリソースをダウンロードします。
+Streaming Assets内部のリソースとアップロードされたリソースのパスを比較して、変更されたリソースをダウンロードします。
 
 **注意**
 
 * Smart Downloaderにアップロードされたデータは常に最新であることを保障しなければなりません。
 * UnityプロジェクトのStreaming Assetsパスを基準にアップロードされたリソースパスを比較します。
-* アップロードされたリソースがStreaming Assets内のファイルと異なるか、新規リソースがある場合は、ダウンロード時に指定したDown Pathに該当するファイルをダウンロードします。<br>ユーザはリソースを使用するときに指定したDownPathにファイルがあるか確認して、ファイルがある場合はDownPathパスのファイルを、ない場合はStreamingAssetsパスのファイルを使用してください。
-* Streaming Assetsがアップデートされ Down Pathのファイルと同じなら Down Pathのファイルは削除されます。
-* Androidの場合 `Split Application Binary` 設定が有効になると、APK拡張ファイルであるOBBファイルにStreaming Assetsが含まれますが、このとき自動的にデバイスでOBBファイルを検索します。
-     デバイスにOBBファイルがない場合は、アップロードされたすべてのリソースをダウンロードします。(参考 : [Unity Manual - APK 拡張ファイル対応](https://docs.unity3d.com/jp/current/Manual/android-OBBsupport.html))
-* PatchCompareFunction 옵션은 PatchCompareType.INTERGRITY 값으로 고정됩니다.
+* アップロードされたリソースがStreaming Assets内のファイルと異なるか、新規リソースがある場合は、ダウンロード時に指定したDown Pathに該当するファイルをダウンロードします。<br>ユーザーはリソースを使用するときに指定したDownPathにファイルがあるか確認して、ファイルがある場合はDownPathパスのファイルを、ない場合はStreamingAssetsパスのファイルを使用してください。
+* Streaming AssetsがアップデートされDown Pathのファイルと同じならDown Pathのファイルは削除されます。
+* Androidの場合`Split Application Binary`設定が有効になると、APK拡張ファイルであるOBBファイルにStreaming Assetsが含まれますが、このとき自動的にデバイスでOBBファイルを検索します。
+   デバイスにOBBファイルがない場合は、アップロードされたすべてのリソースをダウンロードします。(参考：[Unity Manual - APK拡張ファイル対応](https://docs.unity3d.com/jp/current/Manual/android-OBBsupport.html))
+* PatchCompareFunctionオプションはPatchCompareType.INTERGRITY値に固定されます。
 
 
 ### Check Downloadによる検査オプション
@@ -162,7 +162,7 @@ Streaming Assets 内部のリソースとアップロードされたリソース
 **特徴**
 
 * リソース完全性保障
-    * リソースの漏れおよび改変を感知して、アップロードされたリソースをダウンロードします。
+    * リソースの漏れおよび改変を検知して、アップロードされたリソースをダウンロードします。
 
 #### PatchCompareType.SAVED_INFORMATION
 
@@ -174,7 +174,7 @@ Streaming Assets 内部のリソースとアップロードされたリソース
 
 **短所**
 
-* リソースの漏れや改造を感知できません。
+* リソースの漏れや改造を検知できません。
     * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更し、再ダウンロードを行い復旧することができます。
 
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
@@ -211,7 +211,7 @@ delegate void OnComplete(DownloadResult result)
 * downPath
     *ダウンロードするをパスを入力します。別途推奨するパスはありません。
     *プラットフォームで別途にディレクトリを指定したい場合、Unity APIであるApplication.persistentDataPath、Application.temporaryCachePathをご確認ください。
-* config (選択)
+* config (任意)
     *ダウンロード環境設定を変更できます。デフォルト値を使用することを推奨します。
 * callback
     *ダウンロードが完了(成功または失敗)すると、処理するコードを作成します。コールバック関数が呼び出されるとDownloadResultタイプの結果値がパラメータに渡されます。
@@ -410,13 +410,13 @@ void Initialize()
 
 ## API Deprecate Governance
 
-Smart Downloader SDK에서 더 이상 지원하지 않는 API는 Deprecate 처리합니다.
-Deprecated된 API는 다음 조건 충족 시 사전 공지 없이 삭제될 수 있습니다.
+Smart Downloader SDKでサポートしないAPIはDeprecate処理します。
+DeprecatedされたAPIは、次の条件を満たす時、予告なしに削除されることがあります。
 
-* 5회 이상의 마이너 버전 업데이트
+* 5回以上のマイナーバージョンアップデート
     * Smart Downloader Version Format - XX.YY.ZZ
         * XX : Major
         * YY : Minor
         * ZZ : Hotfix
 
-* 최소 5개월 경과
+* 5か月経過
