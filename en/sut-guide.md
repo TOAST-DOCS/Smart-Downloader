@@ -107,7 +107,7 @@ Select service from the list and double-click to show **Service Details**.
     * Last Registrant: User ID uploading resources.
     * Upload Resource Information: Number and total size of uploaded resources.
         * Detail Information: Uploaded resource information.
-    * 빌드 배포 일시: 마지막으로 빌드 배포된 일시입니다. 배포 상태가 **배포 예약 중** 상태인 경우 예약 배포되는 일시입니다.
+    * Build deployment date: The date of the last build deployment, or the date of the scheduled deployment if the deployment status is **Deployment scheduled**.
     * Deployment Status: Check status of deployment. See [Console User Guide](http://docs.toast.com/zh/Game/Smart%20Downloader/zh/console-guide/#4-list-of-services) for deployment status. 
         * Updates: Upload service details.  
         * Build Deployment: To be activated when build is ready to be deployed, with the latest build deployed by CDN. 
@@ -120,29 +120,29 @@ Only when the deployment status is **Ready for Deployment, or Deployment Failed*
 
 ![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
 
-**빌드 배포** 버튼을 누르면 아래와 같은 창이 출력됩니다.
+If you click the **Deploy Build** button, the following popup window will show up.
 
 ![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
 
-* 즉시 배포 : 지금 즉시 배포를 시도합니다.
-* 예약 배포 : 사용자가 지정한 시간에 배포를 시도합니다.
+* Immediate deployment: Attempt deployment immediately.
+* Scheduled deployment: Attempt deployment at the time specified by user.
 
-#### 예약 배포
+#### Scheduled deployment
 
-**예약 배포** 를 선택하면 아래와 같은 화면이 출력됩니다.
+If you select **Scheduled deployment**, and the following screen will show up.
 
 ![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
 
-* 시간대 : 배포할 기준 시간대를 지정합니다.
-* 배포 시간 : 배포 시간을 지정합니다.
+* Time zone: Specify the base time zone for distribution.
+* Deployment time: Specify the time to distribute.
 
 예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
 
 ![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
 
-배포 예약이 완료되면 배포 상태가 **예약 상태 중** 으로 변경되며 빌드 배포 일시가 예약된 시간으로 변경됨을 확인하실 수 있습니다.
-**배포 예약 중** 상태에서는 우측에 **배포 취소** 버튼을 눌러 예약을 취소할 수 있습니다.
-
+If you specify a scheduled deployment time that is before the current time in the specified time zone, deployment is performed immediately. Uploading is limited until the time set for the scheduled deployment.
+Once deployment scheduling is completed, the deployment status changes to **Scheduled** and you can check that the build deployment date/time is changed to the scheduled time.
+When the status is **Deployment scheduled**, you can cancel the schedule by clicking the **Cancel deployment** on the right.
 
 ### Settings 
 
