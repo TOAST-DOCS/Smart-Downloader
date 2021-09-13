@@ -1,24 +1,36 @@
 ## Game > Smart Downloader > Release Notes > Unity Tool
 
+### 1.0.5 (2021.09.14) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.5/SmartDownloaderUnityTool.zip)
+
+```
+Update is required if you are using Unity Tool v1.0.4 or older.
+You cannot use an older version of Unity Tool after October 24, 2021.
+```
+
+#### Feature Updates
+
+* Changed the authentication API Gateway
+
+
 ### 1.0.4 (2021.07.27) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.4/SmartDownloaderUnityTool.zip)
 
 #### Feature Updates
 
-* Unity 최소 지원 버전을 2018.4.0으로 변경
-* Unity 2020.1 이후 버전에서 업로드가 진행되지 않는 문제 수정
-* Unity 2020.2 이후 버전에서 발생하는 Warning 제거
+* Changed the minimum supported version of Unity to 2018.4.0
+* Fixed an issue where upload fails on Unity 2020.1 or later
+* Removed warnings that occur on Unity 2020.2 or later
 
 
 ### 1.0.3 (2020.11.24) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.3/SmartDownloaderUnityTool.zip)
 
 #### Feature Updates
 ```
-Unity Tool v1.0.2 이하 버전을 사용하시는 경우 업데이트가 필요합니다.
-이전 버전의 Unity Tool은 사용하실 수 없습니다.
+Update is required if you are using Unity Tool v1.0.2 or older.
+You cannot use an older version of Unity Tool.
 ```
 
-* 예약 배포 기능 추가
-* Unity 2019.3 에디터 UI 대응
+* Added the scheduled deployment feature
+* Changed to support Unity 2019.3 editor UI
 
 
 ### 1.0.2 (2019.12.24) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.2/SmartDownloaderUnityTool.zip)
