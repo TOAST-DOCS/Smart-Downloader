@@ -1,5 +1,11 @@
 ## Game > Smart Downloader > リリースノート > Unity SDK
 
+### 1.7.0 (2021.09.14) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.7.0.unitypackage)
+
+#### 버그 수정
+* DLL 오류 수정
+
+
 ### 1.6.9 (2021.07.27) [SDKをダウンロード](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.9.unitypackage)
 
 #### 機能改善/変更
