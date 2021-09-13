@@ -9,7 +9,7 @@ Unity Tool v1.0.4 이하 버전을 사용하시는 경우 업데이트가 필요
 
 #### 기능 개선/변경
 
-* 인증 API Gateway 변경 작업
+* 인증 API Gateway 변경
 
 
 ### 1.0.4 (2021.07.27) [다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.4/SmartDownloaderUnityTool.zip)
