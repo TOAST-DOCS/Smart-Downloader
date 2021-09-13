@@ -11,7 +11,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 
 #### Supported Versions
 
-* 2017.4.16 ~ 2020.1.1
+* 2018.4.0 ~ 2021.1.15
 
 #### Supported Platforms
 
@@ -51,7 +51,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 ### Androidネットワークセキュリティ構成
 
 * CDNをHTTPとして使用し、Android 9.0以上でtarget API 28を使用する場合、HTTP許容設定が必要です。
-* 詳細内容は [ネットワークセキュリティ構成]](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
+* 詳細内容は [ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
 
 #### 1. AndroidManifest.xml 設定
 
@@ -80,6 +80,30 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </network-security-config>
 ```
 
+### iOS 네트워크 보안 구성
+
+* CDN을 HTTP로 사용하는 경우 HTTP 허용 설정이 필요합니다.
+
+#### Info.plist 설정
+
+* Info.plist에서 App Transport Security Settings를 추가합니다.
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>toastcdn.net</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+```
+
 
 ### ダウンロード開始
 
@@ -98,7 +122,9 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 | DownloadConnectTimeout | 60 | ダウンロードの接続タイムアウト (単位：秒) |
 | DownloadReadTimeout | 20 | ダウンロードの読み取りタイムアウト (単位：秒) |
 | RetryDownloadCountPerFile | 3 | ダウンロード失敗時に再試行する回数 |
-| CheckOption | PatchCheckOption.NONE | リソースを検査するオプション |
+| UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
+| PatchCompareFunction | PatchCompareType.INTERGRITY | リソースを検査するオプション |
+| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(현재 CDN에 없는 이전에 다운로드한 리소스 제거) |
 
 **Example**
 
@@ -107,57 +133,12 @@ DownloadConfig config = DownloadConfig.Default;
 config.DownloadConnectTimeout = TimeSpan.FromSeconds(60);
 config.DownloadReadTimeout = TimeSpan.FromSeconds(20);
 config.RetryDownloadCountPerFile = 3;
-config.CheckOption = PatchCheckOption.NONE;
+config.UseStreamingAssets = false;
+config.PatchCompareFunction = PatchCompareType.INTERGRITY;
+config.ClearUnusedResources = false;
 ```
 
-### Check Downloadによる検査オプション
-
-#### PatchCheckOption.DEFAULT
-
-デフォルト設定で、リソースチェック時にダウンロードされたすべてのリソースのCRCを計算し、アップロードされたリソースと比較します。
-
-**特徴**
-
-* リソース完全性保障
-    * リソースの漏れおよび改変を感知して、アップロードされたリソースをダウンロードします。
-
-#### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA
-
-このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較します。
-
-**特徴**
-
-* スピードの速いリソーススキャンが行えます。
-
-**短所**
-
-* リソースの漏れや改造を感知できません。
-    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更し、再ダウンロードを行い復旧することができます。
-
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA;
-```
-
-#### PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN
-
-このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較し、デバイスに実際にリソースが存在するのか簡単なスキャンを行います。
-
-**特徴**
-
-* PatchCheckOption.DEFAULTに比べて、処理スピードが速く、<br>PatchCheckOption.CHECK_LIST_WITH_SAVED_DATAオプションより少し遅いですが、検査時にリソースの存在有無とアップロードリソース、ダウンロードされたリソースの大きさを測定し、リソース漏れ防止および簡単なスキャンを行います。
-
-**短所**
-
-* リソースの改造を検知できません。
-    * 解決策としてリソースロード時に正常なデータでなければ、オプションをDEFAULTに変更して再ダウンロードを行い復旧することができます。
-
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCAN;
-```
-
-#### PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS
+### Use Streaming Assets
 
 Streaming Assets 内部のリソースとアップロードされたリソースのパスを比較して、変更されたリソースをダウンロードします。
 
@@ -169,14 +150,46 @@ Streaming Assets 内部のリソースとアップロードされたリソース
 * Streaming Assetsがアップデートされ Down Pathのファイルと同じなら Down Pathのファイルは削除されます。
 * Androidの場合 `Split Application Binary` 設定が有効になると、APK拡張ファイルであるOBBファイルにStreaming Assetsが含まれますが、このとき自動的にデバイスでOBBファイルを検索します。
      デバイスにOBBファイルがない場合は、アップロードされたすべてのリソースをダウンロードします。(参考 : [Unity Manual - APK 拡張ファイル対応](https://docs.unity3d.com/jp/current/Manual/android-OBBsupport.html))
-* PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA, PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA_LOCAL_SCANオプションとの重複適用はできません。
+* PatchCompareFunction 옵션은 PatchCompareType.INTERGRITY 값으로 고정됩니다.
 
-**Example**
 
-```cs
-DownloadConfig config = DownloadConfig.Default;
-config.CheckOption |= PatchCheckOption.COMPARE_WITH_STREAMING_ASSETS;
-```
+### Check Downloadによる検査オプション
+
+#### PatchCompareType.INTERGRITY
+
+デフォルト設定で、リソースチェック時にダウンロードされたすべてのリソースのCRCを計算し、アップロードされたリソースと比較します。
+
+**特徴**
+
+* リソース完全性保障
+    * リソースの漏れおよび改変を感知して、アップロードされたリソースをダウンロードします。
+
+#### PatchCompareType.SAVED_INFORMATION
+
+このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較します。
+
+**特徴**
+
+* スピードの速いリソーススキャンが行えます。
+
+**短所**
+
+* リソースの漏れや改造を感知できません。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更し、再ダウンロードを行い復旧することができます。
+
+#### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
+
+このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較し、デバイスに実際にリソースが存在するのか簡単なスキャンを行います。
+
+**特徴**
+
+* PatchCompareType.INTERGRITYに比べて、処理スピードが速く、<br>PatchCompareType.SAVED_INFORMATIONオプションより少し遅いですが、検査時にリソースの存在有無とアップロードリソース、ダウンロードされたリソースの大きさを測定し、リソース漏れ防止および簡単なスキャンを行います。
+
+**短所**
+
+* リソースの改造を検知できません。
+    * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更して再ダウンロードを行い復旧することができます。
+
 
 ### 全リソースのダウンロード
 
@@ -394,3 +407,16 @@ void Initialize()
     };
 }
 ```
+
+## API Deprecate Governance
+
+Smart Downloader SDK에서 더 이상 지원하지 않는 API는 Deprecate 처리합니다.
+Deprecated된 API는 다음 조건 충족 시 사전 공지 없이 삭제될 수 있습니다.
+
+* 5회 이상의 마이너 버전 업데이트
+    * Smart Downloader Version Format - XX.YY.ZZ
+        * XX : Major
+        * YY : Minor
+        * ZZ : Hotfix
+
+* 최소 5개월 경과
