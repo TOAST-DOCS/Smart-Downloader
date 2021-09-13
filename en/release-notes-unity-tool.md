@@ -1,5 +1,17 @@
 ## Game > Smart Downloader > Release Notes > Unity Tool
 
+### 1.0.5 (2021.09.14) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.5/SmartDownloaderUnityTool.zip)
+
+```
+Update is required if you are using Unity Tool v1.0.4 or older.
+You cannot use an older version of Unity Tool after October 24, 2021.
+```
+
+#### Feature Updates
+
+* Changed the authentication API Gateway
+
+
 ### 1.0.4 (2021.07.27) [Download](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SUT/v1.0.4/SmartDownloaderUnityTool.zip)
 
 #### Feature Updates

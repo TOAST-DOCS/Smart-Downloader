@@ -8,7 +8,7 @@ Smart Downloader Unity Tool, or SUT is a tool to upload and deploy resources for
 
 #### Supported Unity Versions
 
-* 2018.4.0 ~ 2021.1.15
+* 2018.4.0 - 2021.1.20
 
 ### Download
 
