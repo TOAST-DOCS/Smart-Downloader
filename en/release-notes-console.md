@@ -3,32 +3,31 @@
 
 ### 2020. 11. 24.
 #### Feature Updates
-* 일괄, 예약 배포 기능 추가.
-    * Smart Downloader CDN을 사용하는 서비스는 목록 페이지에 일괄, 예약 배포를 진행할 수 있도록 기능 추가.
-    * Smart Downloader CDN을 사용하는 서비스는 개별 배포시에도 예약 배포를 진행할 수 있도록 기능 추가.
-* 서비스 생성 마법사의 파일 업로드 화면에서 파일 업로드 없이 서비스 생성이 가능하도록 수정.
+* Added batch and scheduled deployment features.
+    * Added a feature to manage batch and scheduled deployment on the list page for services using Smart Downloader CDN.
+    * Added a feature to manage scheduled deployment even for individual deployment for services using Smart Downloader CDN.
+* Modified to allow creating services without uploading a file from the file upload screen of the service creation wizard.
 
 
 ### 2020. 07. 14.
 #### Feature Updates
-* 빌드배포 기능 수정.
-    * 빌드배포시 5분간 같은 프로젝트의 Smart Downloader CDN을 사용하는 서비스의 배포가 불가능하도록 수정.
-    * 배포 버튼의 명칭을 서비스의 상태에 맞게 노출하도록 기능 수정.
-
+* Modified the build deployment feature.
+    * Modified the feature to disallow deployment of services using Smart Downloader CDN of the same project for 5 minutes during build deployment.
+    * Modified the feature to expose the name of the deployment button according to the service status.
 
 ### 2020. 06. 11.
 #### Feature Updates
-* 빌드배포 기능 수정.
-    * Smart Downloader CDN을 사용하는 경우, 빌드배포 실행시 원본소스 파일과 CDN에 배포된 파일을 비교한 후에 배포 완료 처리하도록 기능 수정.
-    * 빌드배포 실행시 빌드배포 버튼이 바로 비활성화 되도록 기능 수정.
+* Modified the build deployment feature.
+    * Modified the feature so that if build deployment is executed when Smart Downloader CDN is used, deployment is completed after comparing the original source file and the file deployed to the CDN.
+    * Modified the feature to deactivate the build deployment button when build deployment is executed.
 
 
 ### 2020. 04. 14.
 #### Feature Updates
-* Smart Downloader CDN 수정
-    * CDN 밴더사 변경을 위한 마이그레이션 작업 지원을 위해 CDN 수정이 불가능하게 변경
-* 파일 업로드
-    * 파일 업로드 제한을 전체 5GB 이하에서 단일 파일 5GB 이하로 변경
+* Modified Smart Downloader CDN
+    * Changed to not allow modification of the CDN to support migration work for changing the CDN vendor.
+* Modified the file upload feature
+    * Changed the file upload limit from 5 GB or less for all files to 5 GB or less for a single file
 
 ### March 24, 2020
 #### Feature Updates

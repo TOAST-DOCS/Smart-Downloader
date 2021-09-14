@@ -8,7 +8,7 @@ Smart Downloader Unity Tool(SUT)은 Unity에서 리소스를 업로드하고 배
 
 #### Unity Supported Versions
 
-* 2018.4.0 ~ 2021.1.15
+* 2018.4.0 ~ 2021.1.20
 
 ### Download
 

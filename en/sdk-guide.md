@@ -11,7 +11,7 @@ Smart Downloader SDK supports Unity engines.
 
 #### Supported Versions
 
-* 2018.4.0 ~ 2021.1.15
+* 2018.4.0 - 2021.1.20
 
 #### Supported Platforms
 
@@ -49,14 +49,14 @@ Smart Downloader SDK supports Unity engines.
 * 'SmartDI' class is applied for download API.
 
 
-### Android 네트워크 보안 구성
+### Android Network Security Configuration
 
-* CDN을 HTTP로 사용하고 Android 9.0 이상에서 target API 28을 사용하는 경우, HTTP 허용 설정이 필요합니다.
-* 자세한 내용은 [네트워크 보안 구성](https://developer.android.com/training/articles/security-config?hl=en)을 참고 바랍니다.
+* If you are using CDN as HTTP and target API 28 on Android 9.0 or higher, you need to add a setting to allow HTTP.
+* Refer to [Network Security Configuration](https://developer.android.com/training/articles/security-config?hl=en) for details.
 
-#### 1. AndroidManifest.xml 설정
+#### 1. Set AndroidManifest.xml
 
-* AndroidManifest.xml 내 application에 android:networkSecurityConfig 설정을 추가합니다.
+* Add android:networkSecurityConfig setting to the application in AndroidManifest.xml.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -68,9 +68,9 @@ Smart Downloader SDK supports Unity engines.
 </manifest>
 ```
 
-#### 2. network_security_config.xml 추가
+#### 2. Add network_security_config.xml
 
-* Plugins/Android/res/xml/network_security_config.xml을 추가합니다.
+* Add Plugins/Android/res/xml/network_security_config.xml.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,13 +81,13 @@ Smart Downloader SDK supports Unity engines.
 </network-security-config>
 ```
 
-### iOS 네트워크 보안 구성
+### iOS Network Security Configuration
 
-* CDN을 HTTP로 사용하는 경우 HTTP 허용 설정이 필요합니다.
+* If you are using CDN as HTTP, you need to add a setting to allow HTTP.
 
-#### Info.plist 설정
+#### Set Info.plist
 
-* Info.plist에서 App Transport Security Settings를 추가합니다.
+* Add App Transport Security Settings in Info.plist.
 
 ```
 <key>NSAppTransportSecurity</key>
@@ -123,9 +123,9 @@ Default setting can be imported from `DownloadConfig.Default`.
 | DownloadConnectTimeout | 60 | Timeout for download connection (unit: second) |
 | DownloadReadTimeout | 20 | Timeout for download reading (unit: second) |
 | RetryDownloadCountPerFile | 3 | Number of retries when download fails |
-| UseStreamingAssets | false | Streaming Assets 리소스와 비교 여부 지정 |
-| PatchCompareFunction | PatchCompareType.INTERGRITY | 리소스 검사 옵션 |
-| ClearUnusedResources | false | 사용하지 않는 리소스 제거<br>(현재 CDN에 없는 이전에 다운로드한 리소스 제거) |
+| UseStreamingAssets | false | Specify whether to compare with Streaming Assets resources |
+| PatchCompareFunction | PatchCompareType.INTERGRITY | Resource check option |
+| ClearUnusedResources | false | Remove unused resources (Remove resources downloaded before that are not available in the current CDN) |
 
 **Example**
 
@@ -139,57 +139,58 @@ config.PatchCompareFunction = PatchCompareType.INTERGRITY;
 config.ClearUnusedResources = false;
 ```
 
-### Streaming Assets 리소스와 비교하기
+### Comparing with Streaming Assets resources
 
-UseStreamingAssets의 값을 활성화 하면 Streaming Assets 내부의 리소스와 업로드된 리소스의 경로를 비교하여 변경된 리소스를 다운로드 받습니다.
+It you set UseStreamingAssets to true, Smart Downloader SDK compares the paths of resources inside the Streaming Assets and the uploaded resources, and download the changed resources.
 
-**주의**
+**Caution**
 
-* Smart Downloader에 업로드 된 데이터는 항상 최신임을 보장해야 합니다.
-* 유니티 프로젝트의 Streaming Assets 경로를 기준으로 업로드 된 리소스 경로를 비교합니다.
-* 업로드된 리소스가 Streaming Assets 내의 파일과 다르거나 신규 리소스가 있다면, 다운로드 시 지정한 DownPath에 해당되는 파일을 다운로드 받습니다.<br>사용자는 리소스를 사용할 때 지정한 DownPath에 파일이 있는지 확인하여 파일이 있으면 DownPath 경로의 파일을, 없으면 Streaming Assets 경로의 파일을 사용하면 됩니다.
-* Streaming Assets가 업데이트 되어 DownPath에 파일과 동일하다면 DownPath의 파일은 제거됩니다.
-* Android의 경우 `Split Application Binary` 설정이 활성화 되면 APK 확장 파일인 OBB 파일에 Streaming Assets이 포함되는데, 이 때 자동으로 디바이스에 OBB 파일을 검색하게 됩니다.
-    디바이스에 OBB 파일이 없다면 업로드된 모든 리소스를 다운로드 받습니다. (참고 : [Unity Manual - APK 확장 파일 지원](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
-* PatchCompareFunction 옵션은 PatchCompareType.INTERGRITY 값으로 고정됩니다.
+* You must ensure that the data uploaded to Smart Downloader SDK is always up to date.
+* Smart Downloader SDK compares the path of uploaded resources with the Streaming Assets path of the unity project.
+* If the uploaded resources are different from the files inside the Streaming Assets or there are new resources, Smart Downloader SDK downloads the files that correspond to the DownPath specified while downloading.<br>You should check if the files are in the DownPath specified when using the resources. If the files are available, use the files in the DownPath. Otherwise, use the files in Streaming Assets path.
+* If the Streaming Assets are updated and becomes the same as files in the DownPath, the files in the DownPath are removed.
+* For Android, when `Split Application Binary` setting is activated, Streaming Assets are included in the OBB file, which is an APK expansion file. At this time, the OBB file is searched on the device automatically.
+    If there is no OBB file on the device, all uploaded resources are download. (See [Unity Manual - Support for APK expansion files](https://docs.unity3d.com/kr/current/Manual/android-OBBsupport.html))
+* The value of PatchCompareFunction option is fixed to the PatchCompareType.INTERGRITY.
 
 
-### 리소스 검사 옵션
+### Resource Check Option
 
 #### PatchCompareType.INTERGRITY
 
-기본 옵션으로 리소스 검사 시 다운로드된 모든 리소스의 CRC를 계산하여 업로드된 리소스와 비교합니다.
+The default option. During resource check, Smart Downloader SDK calculates the CRC of all downloaded resources and compare it with the uploaded resources.
 
-**특징**
+**Feature**
 
-* 리소스 무결성 보장
-    * 리소스 누락 및 변조를 감지하여 업로드된 리소스를 다운로드 합니다.
+* Ensures resource integrity
+    * Detects missing or manipulated resources and download the uploaded resources.
 
 #### PatchCompareType.SAVED_INFORMATION
 
-해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교합니다.
+When this option is used, Smart Downloader SDK saves the basic information of the downloaded resources on the device and compares it with the uploaded resources during the next check.
 
-**특징**
+**Feature**
 
-* 리소스 검사 속도가 빠릅니다.
+* Speeds up resource check.
 
-**취약점**
+**Vulnerability**
 
-* 리소스 누락 및 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 INTERGRITY로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+* Cannot detect missing or manipulated resources.
+    * As a solution, if data is abnormal during the resource loading, you can change the option to INTEGRITY and re-download to repair the data.
 
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
-해당 옵션을 사용하면 다운로드된 리소스의 기본 정보를 디바이스에 저장하여 다음 검사 시 업로드된 리소스와 비교하고 디바이스에 실제 리소스가 존재하는지 간단한 검사를 진행합니다.
+When this option is used, Smart Downloader SDK saves the basic information of the downloaded resources on the device, compares it with the uploaded resource during the next check, and performs a simple check to see if the actual resources exist on the device.
 
-**특징**
+**Feature**
 
-* 리소스 검사 속도가 PatchCompareType.INTERGRITY 옵션에 비해 빠르고,<br>PatchCompareType.SAVED_INFORMATION 옵션보다 조금 느리지만 검사 시 리소스 존재 유무와 업로드 리소스와 다운로드된 리소스의 크기를 검사하여 리소스 누락 방지 및 간단한 검사를 진행합니다.
+* Although the speed of resource check is faster than the PatchCompareType.INTERGRITY option
+and slightly slower than the PatchCompareType.SAVED_INFORMATION option, it checks whether the resources exist and the sizes of the uploaded resources and downloaded resources to prevent missing resources and to perform a simple check.
 
-**취약점**
+**Vulnerability**
 
-* 리소스 변조를 감지할 수 없습니다.
-    * 해결책으로 리소스 로드 시 정상적인 데이터가 아니라면 옵션을 INTERGRITY로 변경하여 재다운로드를 진행하여 복구할 수 있습니다.
+* Cannot detect manipulated resources.
+    * As a solution, if data is abnormal during the resource loading, you can change the option to INTEGRITY and re-download to repair the data.
 
 
 ### Download All Resources
@@ -412,13 +413,13 @@ void Initialize()
 
 ## API Deprecate Governance
 
-Smart Downloader SDK에서 더 이상 지원하지 않는 API는 Deprecate 처리합니다.
-Deprecated된 API는 다음 조건 충족 시 사전 공지 없이 삭제될 수 있습니다.
+The APIs that are not supported by Smart Downloader SDK are deprecated.
+Deprecated APIs can be deleted without prior notice when the following conditions are met.
 
-* 5회 이상의 마이너 버전 업데이트
+* Minor version updates for 5 times or more
     * Smart Downloader Version Format - XX.YY.ZZ
         * XX : Major
         * YY : Minor
         * ZZ : Hotfix
 
-* 최소 5개월 경과
+* 5 months or more have passed after deprecation.
