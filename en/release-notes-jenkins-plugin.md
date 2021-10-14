@@ -1,7 +1,7 @@
 ## Game > Smart Downloader > Release Notes > Jenkins Plugin
 
 ### 2021. 08. 24.
-###v1.0.5
+### v1.0.5
 #### 기능 개선/변경
 * 인증 API Gateway 변경
 ```
