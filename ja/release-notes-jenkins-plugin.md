@@ -1,5 +1,13 @@
 ## Game > Smart Downloader > リリースノート > Jenkins Plugin
 
+### v1.0.5 (2021. 08. 24)
+#### 機能改善/変更
+* 認証API Gateway変更
+```
+Jenkins Plugin v1.0.4以下のバージョンを使用する場合はアップデートが必要です。
+以前のバージョンのJenkins Pluginは2021.10.24以降、使用できません。
+```
+
 ### 2018. 02. 22.
 #### 機能改善/変更
 * Smart Downloader内の個別単位<b>サービス</b>を追加

@@ -28,7 +28,7 @@ When it is properly installed, the installation can be found on the tab of **Lis
 
 ##### Prerequisites 
 To use Smart Downloader Jenkins Plugin,  `NHN Cloud API Security Configuration` is required.
-> NHN Cloud API Security Configuration: [https://toast.com/account/api_settings](https://toast.com/account/api_settings)
+> NHN Cloud API Security Configuration: [https://console.toast.com/securitySetting](https://console.toast.com/securitySetting)
 
 <br>
 ##### 1. Set Authentication 
