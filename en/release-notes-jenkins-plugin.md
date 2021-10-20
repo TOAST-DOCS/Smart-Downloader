@@ -1,9 +1,17 @@
 ## Game > Smart Downloader > Release Notes > Jenkins Plugin
 
-### 2018. 02. 22.
+### v1.0.5 (August 24, 2021)
 #### Feature Updates
-* Added **Service** an individual unit under Smart Downloader. 
-* Provides Jenkins Plugin to uploade new builds. 
+* Changed the authentication API Gateway
+```
+Update is required if you are using Jenkins Plugin v1.0.4 or older.
+You cannot use an older version of Jenkins Plugin after October 24, 2021.
+```
+
+### February 22, 2018
+#### Feature Updates
+* Added **Service**, which is an individual unit inside Smart Downloader. 
+* Provides Jenkins Plugin, which can be used to upload new builds. 
 
 ### January 19, 2017
 #### New Releases

@@ -25,7 +25,7 @@ Download : [smartdl-uploader.hpi](https://static.toastoven.net/toastcloud/sdk_do
 
 ##### 사전 준비
 Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `NHN Cloud API 보안설정` 이 필요합니다.
-> NHN Cloud API 보안설정 : [https://toast.com/account/api_settings](https://toast.com/account/api_settings)
+> NHN Cloud API 보안설정 : [https://console.toast.com/securitySetting](https://console.toast.com/securitySetting)
 
 <br>
 ##### 1. 인증 설정
