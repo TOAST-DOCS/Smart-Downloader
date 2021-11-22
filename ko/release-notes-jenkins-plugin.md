@@ -1,5 +1,13 @@
 ## Game > Smart Downloader > 릴리스 노트 > Jenkins Plugin
 
+### v1.0.6 (2021. 12. 07)
+#### 기능 개선/변경
+* Master / Slave 노드 구성시 파일 업로드 이슈 수정
+```
+Jenkins Plugin v1.0.4 이하 버전을 사용하시는 경우 업데이트가 필요합니다.
+이전 버전의 Jenkins Plugin은 2021.10.24 이후 사용하실 수 없습니다.
+```
+
 ### v1.0.5 (2021. 08. 24)
 #### 기능 개선/변경
 * 인증 API Gateway 변경
