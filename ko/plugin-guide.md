@@ -91,7 +91,7 @@ Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin에 등록한 NHN
 Plugin 실행 결과가 실패 일 경우 콘솔 로그의 에러메세지를 참고하신 후 담당자에게 문의해 주시면 됩니다.
 
 ## 참고사항
-Jenkins 에서 Master/Slave node 를 구성하여 사용시 Master node를 사용하는 프로젝트에도 Master 노드로 지정하여 사용 바랍니다. 
-프로젝트 설정 중 Master node의 설정없이 Slave node 프로젝트 빌드후 Master node 프로젝트를 빌드하는 경우 Master 노드가 아닌 이전에 빌드된 Slave node로 빌드되는 현상이 확인되었습니다.
+Jenkins 에서 Master/Slave node 를 구성하여 사용시 Master node를 사용하는 프로젝트에도 Node 정보를 설정하여 사용 바랍니다. 
+프로젝트 설정 중 Master node 설정없이 Slave node 프로젝트 빌드후 Master node 프로젝트를 빌드하는 경우 Master 노드가 아닌 이전에 빌드된 Slave node 로 빌드되는 현상이 확인되었습니다.
 Plugin 문제가 아닌 Jenkins 상의 문제로 Master node 를 사용하는 프로젝트의 설정에 node 정보를 추가하여 해결 가능합니다. 
 
