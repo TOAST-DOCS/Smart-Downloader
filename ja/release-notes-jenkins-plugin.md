@@ -1,5 +1,10 @@
 ## Game > Smart Downloader > リリースノート > Jenkins Plugin
 
+### v1.0.6 (2021. 12. 07)
+#### 기능 개선/변경
+* Master / Slave 노드 구성시 파일 업로드 이슈 수정
+
+
 ### v1.0.5 (2021. 08. 24)
 #### 機能改善/変更
 * 認証API Gateway変更
