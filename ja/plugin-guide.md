@@ -85,14 +85,14 @@ Pluginを通してビルドをアップロードすると、Last UploaderにPlug
 Pluginの実行結果が失敗の場合、コンソールログのエラーメッセージを参照してください。
 
 ## 참고사항
-Jenkins 에서 Master/Slave node 를 구성하여 사용하는 경우 **반드시 Node 정보를 설정**해 주시기 바랍니다.<br>
+Jenkins에서 Master/Slave node를 구성하여 사용하는 경우 **반드시 Node 정보를 설정**해 주시기 바랍니다.
 
 ![그림 8-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1.png)
-<center>[그림 8-1] node 설정 참고 1 </center>
+<center>[그림 8-1] Node 설정 참고 1 </center>
 
 ![그림 8-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_2.png)
-<center>[그림 8-2] node 설정 참고 2 </center>
+<center>[그림 8-2] Node 설정 참고 2 </center>
 
-* Node 설정은 각 프로젝트의 구성에 맞게 설정하여 사용 바랍니다.
+* Node 설정은 각 프로젝트의 구성에 맞게 설정하여 사용하시기 바랍니다.
 
 
