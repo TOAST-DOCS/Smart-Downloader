@@ -86,3 +86,14 @@ When build is uploaded through Plugin, the server IP which executed Plugin to La
 
 When Plugin execution results in failure, see error messages in console logs.  
 
+## 참고사항
+Jenkins에서 Master/Slave node를 구성하여 사용하는 경우 **반드시 Node 정보를 설정**해 주시기 바랍니다.
+
+![그림 8-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1.png)
+<center>[그림 8-1] Node 설정 참고 1 </center>
+
+![그림 8-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_2.png)
+<center>[그림 8-2] Node 설정 참고 2 </center>
+
+* Node 설정은 각 프로젝트의 구성에 맞게 설정하여 사용하시기 바랍니다.
+
