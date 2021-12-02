@@ -27,7 +27,7 @@ When it is properly installed, the installation can be found on the tab of **Lis
 To use Smart Downloader Jenkins Plugin, `NHN Cloud API Security Setting` is required.
 > NHN Cloud API Security Setting: [https://console.toast.com/securitySetting](https://console.toast.com/securitySetting)
 
-<br>
+
 ##### 1. Set Authentication
 
 From **[Jenkins] > [Credentials] > [System]**, select  Global Credentials and go to Add Credentials to add NHN Cloud Credentials.
@@ -45,7 +45,7 @@ Select NHN Cloud Credentials for Kind like [Figure 2] as below, and enter NHN Cl
 
 > Note: Fields marked as [Required] are required input values. If the corresponding value is not entered, the plugin will not run normally.
 
-<br>
+
 ##### 2. Configure Project
 On **[Jenkins]** > Select Projects > **[Configuration] > [Build and Process]**, add `SmartDL Uploader`.
 Enter values as in [Figure 3].
@@ -62,7 +62,7 @@ Enter values as in [Figure 3].
 
 > Note: Fields marked as [Required] are required input values. If the corresponding value is not entered, the plugin will not run normally.
 
-<br>
+
 ![Figure 4](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_04.png)
 <center> [Figure 4] NHN Cloud Project Configuration </center>
 ![Figure 5](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_05.png)
@@ -73,7 +73,7 @@ Enter values as in [Figure 3].
 > - When uploading, the maximum size is limited to 5GB.
 
 
-<br>
+
 ##### 3. Check Result
 After a project build, Plugin execution results can be found through logs.
 In case of success, you can check the details of the files uploaded successfully, the total number of uploaded files, the total size, the completion time, and the consumed time.
