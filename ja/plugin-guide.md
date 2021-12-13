@@ -28,11 +28,11 @@ Download ： [smartdl-uploader.hpi](https://static.toastoven.net/toastcloud/sdk_
 Smart Downloader Jenkins Pluginを使用するためには、「NHN Cloud APIセキュリティー設定」が必要です。
 > NHN Cloud APIセキュリティー設定： [https://console.toast.com/securitySetting](https://console.toast.com/securitySetting)
 
-<br>
+
 ##### 1. 認証設定
 
 **[Jenkins] > [Credentials] > [System]**メニューでGlobal credentials選択し、Add CredentialsメニューからNHN Cloud認証を追加します。
-下の[図2]のように、KindをNHN Cloud Credentiaslsに選択し、NHN Cloud UserID、NHN Cloud AccessKeyID、NHN Cloud SecretKeyを入力します。
+下の[図2]のように、KindをNHN Cloud Credentialsに選択し、NHN Cloud UserID、NHN Cloud AccessKeyID、NHN Cloud SecretKeyを入力します。
 
 ![図2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_02.png)
 <center>[図2]認証設定</center>
@@ -46,7 +46,7 @@ Smart Downloader Jenkins Pluginを使用するためには、「NHN Cloud APIセ
 
 > 参考： [必須]と表示された値は、必須入力値です。この値が未入力の場合は、プラグインが正常に実行されません。
 
-<br>
+
 ##### 2. プロジェクト構成
 **[Jenkins]** > プロジェクト選択 > **[構成] > [ビルド後の措置]**メニューで「SmartDL Uploader」を追加します。
 下の[図3]のように設定値を入力します。
@@ -56,20 +56,20 @@ Smart Downloader Jenkins Pluginを使用するためには、「NHN Cloud APIセ
 
 * NHN Cloud Credentials [必須]： <b>1.認証設定</b>を通して追加したNHN Cloud Credentialを選択します。無効な認証キーが入力された場合、認証に失敗し、プラグインが使用できません。
 * Enable Upload [必須] ：プラグイン動作の有効 / 無効を決定するオプション値です。プラグイン設定が保存された状態を維持しながらプラグインの動作を無効にすることができます。
-* ProjectID [必須] ： Smart Dowonloaderを使用するNHN Cloud Project ID。下の[図4]のようにNHN Cloudコンソールプロジェクト設定メニューで確認できます。
-* Appkey [必須] ： Smart Dowonloader Appkey。下の[図5]のように、NHN Cloud Smart DowonloaderコンソールのURL & Appkey画面で確認できます。
-* Service Name [必須] ：新規ビルドアップロードを処理するSmart Dowonloaderサービス名を入力します。
+* ProjectID [必須] ： Smart Downloaderを使用するNHN Cloud Project ID。下の[図4]のようにNHN Cloudコンソールプロジェクト設定メニューで確認できます。
+* Appkey [必須] ： Smart Downloader Appkey。下の[図5]のように、NHN Cloud Smart DownloaderコンソールのURL & Appkey画面で確認できます。
+* Service Name [必須] ：新規ビルドアップロードを処理するSmart Downloaderサービス名を入力します。
 * Path [必須]  ：アップロードするフォルダのパスを入力します。フォルダアップロードのみサポートし、単一ファイルのアップロードはサポートしません。
 
 > 参考： [必須]と表示された値は、必須入力値です。この値が未入力の場合は、プラグインが正常に実行されません。
 
-<br>
+
 ![図4](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_04.png)
 <center>[図4] NHN Cloudプロジェクト設定</center>
 ![図5](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_05.png)
 <center>[図5] Smart Downloader Appkey確認</center>
 
-<br>
+
 ##### 3. 結果確認
 プロジェクトビルド後のログを通して、Plugin実行結果を確認できます。
 
@@ -84,4 +84,13 @@ Pluginを通してビルドをアップロードすると、Last UploaderにPlug
 
 Pluginの実行結果が失敗の場合、コンソールログのエラーメッセージを参照してください。
 
+## 参考事項
+JenkinsでMaster/Slave nodeを構成して使用する場合は**必ずNode情報を設定**してください。
 
+![図8-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1.png)
+<center>[図8-1] Node設定参考1 </center>
+
+![図8-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_2.png)
+<center>[図8-2] Node設定参考2 </center>
+
+* Node設定は、各プロジェクトの構成に合わせて設定して使用してください。

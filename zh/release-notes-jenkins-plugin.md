@@ -1,5 +1,9 @@
 ## Game > Smart Downloader > Release Notes > Jenkins Plugin
 
+### v1.0.6 (December 14, 2021)
+#### Bug Fixes
+* Fixed a file upload issue that occurred when configuring master/slave nodes
+
 ### v1.0.5 (August 24, 2021)
 #### Feature Updates
 * Changed the authentication API Gateway
