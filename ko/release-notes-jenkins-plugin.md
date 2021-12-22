@@ -1,5 +1,9 @@
 ## Game > Smart Downloader > 릴리스 노트 > Jenkins Plugin
 
+### v1.0.7 (2021. 12. 28.)
+#### 기능 개선/변경
+* Pipeline 환경에서 동작하도록 기능 추가
+
 ### v1.0.6 (2021. 12. 14.)
 #### 버그 수정
 * Master/Slave 노드 구성 시 파일 업로드 이슈 수정

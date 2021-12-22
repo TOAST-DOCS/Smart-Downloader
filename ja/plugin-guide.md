@@ -84,13 +84,40 @@ Pluginを通してビルドをアップロードすると、Last UploaderにPlug
 
 Pluginの実行結果が失敗の場合、コンソールログのエラーメッセージを参照してください。
 
+#### Pipeline 환경설정
+Smart Downloader Plugin의 설치와 설정은 위와 동일하게 진행하되, [2. 프로젝트 구성(그림 3 참고)]의 '빌드 후 조치' 설정 대신 Pipeline 설정을 진행합니다.
+**[Jenkins]** > 프로젝트 선택 > **[구성]** > **[Pipeline]** 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
+
+![그림 8](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1_pipeline.png)
+<center>[그림 8] Pipeline 설정 참고</center>
+
+```shell
+node() {
+    stage ('Smart Downloader'){
+    step([$class:'BuildUploaderPublisher',
+        credentialsId: '<NHN Cloud Credentials>',
+        projectId: '<NHN Cloud Project ID>',
+        appkey: '<Smart Downloader Appkey>',
+        serviceName: '<Smart Downloader 서비스명>',
+        path: '<업로드할 폴더의 경로>',
+        enableUpload: 'enable'
+    ])
+    }
+}
+```
+
+항목의 자세한 설정값은 위의 [2.프로젝트 구성] 항목의 [그림3] 과 설명을 참고 해 주시기 바랍니다.
+
 ## 参考事項
 JenkinsでMaster/Slave nodeを構成して使用する場合は**必ずNode情報を設定**してください。
 
-![図8-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1.png)
-<center>[図8-1] Node設定参考1 </center>
+![図9-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_1.png)
+<center>[図9-1] Node設定参考1 </center>
 
-![図8-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_2.png)
-<center>[図8-2] Node設定参考2 </center>
+![図9-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_2.png)
+<center>[図9-2] Node設定参考2 </center>
+
+![그림9-3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_3.png)
+<center>[그림9-3] Node 설정 참고 3 - Pipeline 설정 </center>
 
 * Node設定は、各プロジェクトの構成に合わせて設定して使用してください。
