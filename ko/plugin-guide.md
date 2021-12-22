@@ -36,9 +36,9 @@ Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `NHN Cloud API 보
 ![그림 2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_02.png)
 <center>[그림 2] 인증 설정</center>
 
-* Socpe [필수] : Global 선택
+* Scope [필수] : Global 선택
 * ID : Jenkins 에서 내부적으로 사용하는 Credential ID 값. 미 입력시 자동으로 유니크한 ID 값이 생성됩니다.
-* Descreption : 해당 NHN Cloud 인증에 대한 설명을 입력할 수 있습니다.
+* Description : 해당 NHN Cloud 인증에 대한 설명을 입력할 수 있습니다.
 * NHN Cloud UserID [필수] : NHN Cloud 접속 계정
 * NHN Cloud AccessKeyID [필수] :  NHN Cloud API 보안설정 메뉴에서 발급받은 AccessKeyID
 * NHN Cloud SecretKey [필수] : NHN Cloud API 보안설정 메뉴에서 발급받은 SecretKey
