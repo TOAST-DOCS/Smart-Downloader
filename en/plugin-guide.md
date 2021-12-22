@@ -91,12 +91,26 @@ When uploading a build through the plugin, the NHN Cloud UserID registered in th
 If the plugin execution result is failure, refer to the error message in the console log and contact the owner.
 
 #### Pipeline 환경설정
-Smart Downloader Plugin 의 설치, 설정은 위와 동일하게 진행합니다.
-[2. 프로젝트 구성 (그림3 참고)] 항목의 빌드 후 조치 설정이 아닌 Pipeline 설정을 진행합니다.
-[Jenkins] > 프로젝트 선택 > [구성] > [Pipeline] 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
+Smart Downloader Plugin의 설치와 설정은 위와 동일하게 진행하되, [2. 프로젝트 구성(그림 3 참고)]의 '빌드 후 조치' 설정 대신 Pipeline 설정을 진행합니다.
+[Jenkins] > [프로젝트 선택] > [구성] > [Pipeline] 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
 
 ![그림 PipeLine 설정](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_pipeline_Config_01.png)
 <center>[그림 PipeLine 설정] Pipeline 설정 참고</center>
+
+```shell
+node() {
+    stage ('Smart Downloader'){
+    step([$class:'BuildUploaderPublisher',
+        credentialsId: '',
+        projectId: '',
+        appkey: '',
+        serviceName: '',
+        path: '',
+        enableUpload: 'enable'
+    ])
+    }
+}
+```
 
 항목의 자세한 설정값은 위의 [2.프로젝트 구성] 항목의 [그림3] 과 설명을 참고 해 주시기 바랍니다.
 
@@ -110,6 +124,6 @@ When configuring and using master/slave nodes in Jenkins, **make sure you set th
 <center>[Figure 8-2] Node Configuration Reference 2 </center>
 
 ![그림 8-3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_3.png)
-<center>[그림 8-3] Node 설정 참고 3 PipeLine 설정 </center>
+<center>[그림 8-3] Node 설정 참고 3 - PipeLine 설정 </center>
 
 * We recommend you set the Node configuration according to the configuration of each project.
