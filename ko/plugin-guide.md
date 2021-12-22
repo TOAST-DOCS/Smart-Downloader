@@ -92,7 +92,7 @@ Plugin 실행 결과가 실패일 경우 콘솔 로그의 에러 메세지를 �
 
 #### Pipeline 환경설정
 Smart Downloader Plugin의 설치와 설정은 위와 동일하게 진행하되, [2. 프로젝트 구성(그림 3 참고)]의 '빌드 후 조치' 설정 대신 Pipeline 설정을 진행합니다.
-[Jenkins] > [프로젝트 선택] > [구성] > [Pipeline] 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
+**[Jenkins]** > 프로젝트 선택 > **[구성]** > **[Pipeline]** 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
 
 ![그림 8](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1_pipeline.png)
 <center>[그림 8] Pipeline 설정 참고</center>
@@ -112,7 +112,7 @@ node() {
 }
 ```
 
-항목의 자세한 설정값은 위의 [2.프로젝트 구성] 항목의 [그림3]과 설명을 참고 해 주시기 바랍니다.
+항목의 자세한 설정값은 위의 [2.프로젝트 구성] 항목의 [그림3]과 설명을 참고해 주시기 바랍니다.
 
 ## 참고사항
 Jenkins에서 Master/Slave node를 구성하여 사용하는 경우 **반드시 Node 정보를 설정**해 주시기 바랍니다.

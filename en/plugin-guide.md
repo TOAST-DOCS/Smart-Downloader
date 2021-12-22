@@ -92,7 +92,7 @@ If the plugin execution result is failure, refer to the error message in the con
 
 #### Pipeline 환경설정
 Smart Downloader Plugin의 설치와 설정은 위와 동일하게 진행하되, [2. 프로젝트 구성(그림 3 참고)]의 '빌드 후 조치' 설정 대신 Pipeline 설정을 진행합니다.
-[Jenkins] > [프로젝트 선택] > [구성] > [Pipeline] 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
+**[Jenkins]** > 프로젝트 선택 > **[구성]** > **[Pipeline]** 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
 
 ![그림 8](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1_pipeline.png)
 <center>[그림 8] Pipeline 설정 참고</center>
