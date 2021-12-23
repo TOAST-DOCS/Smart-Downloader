@@ -37,9 +37,9 @@ Smart Downloader Jenkins Pluginを使用するためには、「NHN Cloud APIセ
 ![図2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_02.png)
 <center>[図2]認証設定</center>
 
-* Socpe [必須] ： Global選択
+* Scope [必須] ： Global選択
 * ID ： Jenkinsで内部的に使用するCredential ID値。未入力の時は、自動的にユニークなID値が作成されます。
-* Descreption ：該当のNHN Cloud認証の説明を入力できます。
+* Description ：該当のNHN Cloud認証の説明を入力できます。
 * NHN Cloud UserID [必須] ： NHN Cloud接続アカウント
 * NHN Cloud AccessKeyID [必須] ： NHN Cloud APIセキュリティー設定メニューで発行されたAccessKeyID
 * NHN Cloud SecretKey [必須] ： NHN Cloud APIセキュリティー設定メニューで発行されたSecretKey
@@ -84,13 +84,40 @@ Pluginを通してビルドをアップロードすると、Last UploaderにPlug
 
 Pluginの実行結果が失敗の場合、コンソールログのエラーメッセージを参照してください。
 
+#### Pipeline環境設定
+Smart Downloader Pluginのインストールと設定は上記と同じように進めますが、[2. プロジェクト構成(図3参考)]の「ビルド後のアクション」設定の代わりにPipeline設定を行います。
+[Jenkins] > [プロジェクト選択] > [構成] > [Pipeline]メニューで以下のスクリプト内容を最後に追加します。
+
+![図8](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1_pipeline.png)
+<center>[図8] Pipeline設定参考</center>
+
+```shell
+node() {
+    stage ('Smart Downloader'){
+    step([$class:'BuildUploaderPublisher',
+        credentialsId: '<NHN Cloud Credentials>',
+        projectId: '<NHN Cloud Project ID>',
+        appkey: '<Smart Downloader Appkey>',
+        serviceName: '<Smart Downloaderサービス名>',
+        path: '<アップロードするフォルダのパス>',
+        enableUpload: 'enable'
+    ])
+    }
+}
+```
+
+項目の詳しい設定値は上の[2.プロジェクト構成]項目の[図3]と説明を参照してください。
+
 ## 参考事項
 JenkinsでMaster/Slave nodeを構成して使用する場合は**必ずNode情報を設定**してください。
 
-![図8-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_1.png)
-<center>[図8-1] Node設定参考1 </center>
+![図9-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_1.png)
+<center>[図9-1] Node設定参考1 </center>
 
-![図8-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_08_2.png)
-<center>[図8-2] Node設定参考2 </center>
+![図9-2](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_2.png)
+<center>[図9-2] Node設定参考2 </center>
+
+![図9-3](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_3.png)
+<center>[図9-3] Node設定参考3 - Pipeline設定 </center>
 
 * Node設定は、各プロジェクトの構成に合わせて設定して使用してください。
