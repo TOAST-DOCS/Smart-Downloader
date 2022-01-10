@@ -34,7 +34,7 @@ The **Authentication** tab shows if it is not yet authenticated.
 
 * User ID: NHN Cloud Cloud ID
 * User Access Key ID, Secret Access Key
-    1. Select **Issue User Access Key ID** from [API Security Setting](https://toast.com/account/api_settings).
+    1. Select **Issue User Access Key ID** from [API Security Setting](https://console.toast.com/securitySetting).
     2. A window shows that Secret Access Key has been issued. 
     3. Check information and status of User Access Key ID that are issued from the API security setting page. 
     ![console_api_security_setting.png](https://static.toastoven.net/prod_smartdownloader/sut/console_api_security_setting.png)
