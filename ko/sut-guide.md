@@ -34,7 +34,7 @@ Unity Tool을 사용하려면 메뉴에서 **Tool > NHN Cloud > Smart Downloader
 
 * User ID: NHN Cloud 클라우드 ID
 * User Access Key ID, Secret Access Key
-    1. [API 보안 설정](https://toast.com/account/api_settings)에서 **User Access Key ID 발급**을 선택합니다.
+    1. [API 보안 설정](https://console.toast.com/securitySetting)에서 **User Access Key ID 발급**을 선택합니다.
     2. Secret Access Key(비밀 키) 발급 완료 창이 나타납니다.
     3. API 보안 설정 페이지에서 발급된 User Access Key ID 정보와 상태 정보를 확인합니다.
     ![console_api_security_setting.png](https://static.toastoven.net/prod_smartdownloader/sut/console_api_security_setting.png)
