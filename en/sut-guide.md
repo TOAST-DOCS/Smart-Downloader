@@ -2,7 +2,7 @@
 
 ## Getting Started 
 
-Smart Downloader Unity Tool, or SUT is a tool to upload and deploy resources for Unity.  
+Smart Downloader Unity Tool (SUT) is a tool to upload and deploy resources for Unity.  
 
 ### Environments
 
@@ -15,43 +15,49 @@ Smart Downloader Unity Tool, or SUT is a tool to upload and deploy resources for
 [Smart Downloader Unity Tool](/Download/#game-smart-downloader)
 
 
-### Install  
+### Install Unity Tool
 
 1. Open a Unity project. 
-2. Go to **Assets > Import Package > Custom Package**.
+2. In Unity, select **Assets > Import Package > Custom Package**.
 3. Select and import 'Smart-downloader-unity-tool-{Version}.unitypackage', which is a downloaded Unity Tool file. 
     ![sut_import.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_import.png)
 
 ## Enabling Unity Tool  
 
-To enable Unity Tool, go to menu and select **Tool > NHN Cloud > Smart Downloader > Unity Tool**. 
+To enable Unity Tool, select **Tool > NHN Cloud > Smart Downloader > Unity Tool** in the menu. 
 
 ### Authenticate 
 
-The **Authentication** tab shows if it is not yet authenticated. 
+If the authentication has not been performed, the **Authentication** tab appears. 
 
 ![sut_credentials_tab.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_credentials_tab.png)
 
-* User ID: NHN Cloud Cloud ID
+* User ID: NHN Cloud ID
 * User Access Key ID, Secret Access Key
-    1. Select **Issue User Access Key ID** from [API Security Setting](https://console.toast.com/securitySetting).
-    2. A window shows that Secret Access Key has been issued. 
-    3. Check information and status of User Access Key ID that are issued from the API security setting page. 
-    ![console_api_security_setting.png](https://static.toastoven.net/prod_smartdownloader/sut/console_api_security_setting.png)
+    1. In [API Security Setting](https://console.toast.com/securitySetting), select **Create User Access Key ID**.
+    2. When the dialog box appears, choose **Create User Access Key ID and Secret Access Key**.
+    3. The dialog box indicating the completion of Secret Access Key issuance appears.
+    4. Check the issued User Access Key ID information and status information on the API Security Setting page.
+
+    > [Caution]
+    > - It is recommended to change the User Access Key ID every 90 days.
+    > - You can create up to 5 User Access Key IDs per NHN Cloud ID and 5 per IAM ID.
+    > - The Secret Access Key cannot be verified again and must be reissued if lost. After creating the key, store the created key securely.
+
 * Project ID
-    * A project ID using Smart Downloader can be found from **Project Setting** on console.  
+    * A project ID using Smart Downloader, which can be found from **Project Setting** on the console.  
     ![console_project_id.png](https://static.toastoven.net/prod_smartdownloader/sut/console_project_id.png)
 
 
 ### Query Services   
 
-When it is authenticated, the **Upload** tab shows. 
-Fill in **Appkey** and click **Query**, and it shows the list of services created on console.  
+When the authentication is complete, the **Upload** tab appears. 
+Enter the appkey in **Appkey** and click **Query**, and the list of services created on the console is displayed.  
 
 ![sut_upload_tab_base.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_tab_base.png)
 
 * Appkey
-    * Click **URL & Appkey** from Smart Downloader of the console and check issued appkey  
+    * Click **URL & Appkey** from Smart Downloader of the console and check the issued appkey.
     ![console_appkey.png](https://static.toastoven.net/prod_smartdownloader/sut/console_appkey.png)
 
 ### Uploading Resources 
@@ -59,16 +65,17 @@ Fill in **Appkey** and click **Query**, and it shows the list of services create
 #### 1. Select Services 
 
 Click a service to upload from the service list and select resource path. 
-If the path is correct, the **Upload** button shall be activated. 
+If the path is correct, the **Upload** button will be activated. 
 
 ![sut_upload_step_1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_1.png)
 
 #### 2. Select Upload Resources 
 
-Compare resources of the selected path with those of the last uploaded, and show changes. Select resources to upload, and then, the **Upload** button shall be activated.  
+Compares resources of the selected path with those of the last uploaded, and shows changes.
+Select resources to upload, and the **Upload** button will be activated.  
 
 > Caution 
-Files that are automatically created from OS (.DS_Store, desktop.ini, thumbs.db) shall be excluded. 
+Files that are automatically created from OS (.DS_Store, desktop.ini, thumbs.db) are excluded. 
 Each resource cannot be larger than 5GB. 
 
 ![sut_upload_step_2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_2.png)
@@ -120,7 +127,7 @@ Only when the deployment status is **Ready for Deployment, or Deployment Failed*
 
 ![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
 
-If you click the **Deploy Build** button, the following popup window will show up.
+If you click the **Deploy Build** button, the following pop-up window will show up.
 
 ![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
 
@@ -133,10 +140,10 @@ If you select **Scheduled deployment**, and the following screen will show up.
 
 ![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
 
-* Time zone: Specify the base time zone for distribution.
-* Deployment time: Specify the time to distribute.
+* Time zone: Specify the base time zone for deployment.
+* Deployment time: Specify the time to deployment.
 
-예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
+If the scheduled deployment time is set to a time before the time of the specified time zone, the deployment is executed immediately, and uploading is restricted until the time set for the scheduled deployment.
 
 ![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
 
@@ -148,5 +155,5 @@ When the status is **Deployment scheduled**, you can cancel the schedule by clic
 
 ![sut_settings.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_settings.png)
 
-* Version Data: Shows the version information of Unity Tool. 
-* Change of Language: Change the language for the tool: Korean, English, and Japanese are supported. 
+* Version information: Shows the version information of Unity Tool. 
+* Change the language: Change the language for the tool: Korean, English, and Japanese are supported. 
