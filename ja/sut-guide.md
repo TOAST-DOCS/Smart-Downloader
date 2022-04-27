@@ -114,7 +114,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
     * 最終登録者：リソースをアップロードしたUser IDです。
     * アップロードリソース情報：アップロードされたリソースの数と総サイズです。
         * 詳細情報：アップロードされたリソース情報です。
-    * 빌드 배포 일시: 마지막으로 빌드 배포된 일시입니다. 배포 상태가 **배포 예약 중** 상태인 경우 예약 배포되는 일시입니다.
+    * ビルド配布日時：最後にビルドが配布された日時です。配布状態が**配布予約中**状態の場合は配布が予約されている日時です。
     * 配布状態：配布状態を確認できます。配布状態は[コンソール使用ガイド](http://docs.toast.com/ja/Game/Smart%20Downloader/ja/console-guide/#4)を参照してください。
         * 更新：サービスの詳細情報を更新します。
         * ビルド配布：ビルドを配布できる状態になると有効になり、最新ビルドをCDNに配布できます。
@@ -126,28 +126,28 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 
 ![sut_service_detail_info_window_deploy1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy1.png)
 
-**빌드 배포** 버튼을 누르면 아래와 같은 창이 출력됩니다.
+**ビルド配布**ボタンを押すと、以下のようなウィンドウが出力されます。
 
 ![sut_service_detail_info_window_deploy2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy2.png)
 
-* 즉시 배포 : 지금 즉시 배포를 시도합니다.
-* 예약 배포 : 사용자가 지정한 시간에 배포를 시도합니다.
+* 即時配布：今すぐ配布を行います。
+* 予約配布：ユーザーが指定した時間に配布を行います。
 
-#### 예약 배포
+#### 予約配布
 
-**예약 배포** 를 선택하면 아래와 같은 화면이 출력됩니다.
+**予約配布**を選択すると、以下のような画面が出力されます。
 
 ![sut_service_detail_info_window_deploy_reservation1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation1.png)
 
-* 시간대 : 배포할 기준 시간대를 지정합니다.
-* 배포 시간 : 배포 시간을 지정합니다.
+* 時間帯：配布する基準時間帯を指定します。
+* 配布時間：配布時間を指定します。
 
-예약 배포 시간을 지정한 시간대 이전의 시간으로 지정한 경우 즉시 배포가 실행되며, 예약 배포로 설정된 시간까지는 업로드가 제한됩니다.
+予約配布時間を指定した時間帯以前の時間に指定した場合、すぐに配布が実行され、予約配布に設定した時間まではアップロードが制限されます。
 
 ![sut_service_detail_info_window_deploy_reservation2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_service_detail_info_window_deploy_reservation2.png)
 
-배포 예약이 완료되면 배포 상태가 **예약 상태 중** 으로 변경되며 빌드 배포 일시가 예약된 시간으로 변경됨을 확인하실 수 있습니다.
-**배포 예약 중** 상태에서는 우측에 **배포 취소** 버튼을 눌러 예약을 취소할 수 있습니다.
+配布予約が完了すると、配布状態が**予約状態中**に変更され、ビルド配布日時が予約した時間に変更されていることを確認できます。
+**配布予約中**状態では、右側の**配布キャンセル** ボタンを押して予約をキャンセルできます。
 
 
 ### 設定
