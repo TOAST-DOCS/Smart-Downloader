@@ -1,34 +1,43 @@
-## Game > Smart Downloader > 개요
+<!-- pre-align:aligned sig=f2991e90e240 -->
+
+<a id="game-smart-downloader-overview"></a>
+## Game > Smart Downloader > 개요 { #game-smart-downloader-overview }
 
 Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 스레드로 다운로드 해 주는 서비스 입니다.
 클라이언트에서 리소스를 다운로드 해주고 여러 통계 데이터를 수집해서 다양한 정보를 제공합니다.
 
 
-## 주요 기능
+<a id="main-features"></a>
+## 주요 기능 { #main-features }
 
 
-### 멀티 스레드 다운로드
+<a id="support-for-multi-threaded-downloads"></a>
+### 멀티 스레드 다운로드 { #support-for-multi-threaded-downloads }
 - 네트워크 대역폭을 최대로 활용하여 다운로드 할 수 있습니다.
 - 파일의 개수가 많고 네트워크 환경이 느린 환경(글로벌 환경) 에서 유용합니다.
 
 
-### 갱신된 파일 리스트만 업데이트
+<a id="update-revised-file-list-only"></a>
+### 갱신된 파일 리스트만 업데이트 { #update-revised-file-list-only }
 - 파일의 사이즈, 체크섬 기반으로 업데이트를 진행합니다.
 	- 종종 이미지나 텍스트 파일과 같이 사이즈는 변하지 않고 내용이 변한 파일에 대해서도 (파일의 체크섬은 바뀌기 때문에) 업데이트가 가능합니다.
 - 최초 풀 다운로드 이후에는 증분만 업데이트를 진행합니다.
 
 
-### 간편한 업로드 및 업로드/배포 파일 생성 자동화
+<a id="allow-simple-uploads-and-automate-uploadingcreating-deployment-files"></a>
+### 간편한 업로드 및 업로드/배포 파일 생성 자동화 { #allow-simple-uploads-and-automate-uploadingcreating-deployment-files }
 - 콘솔 / Jenkins Plugin 을 통해 간편하게 게임 리소스 업로드가 가능합니다.
 	- Jenkins Plugin을 통해서 업로드를 자동화 할 수 있습니다.
 - 게임 리소스를 업로드하면 자동으로 배포 파일을 업데이트 합니다.
 
 
-### 다운로드 및 업데이트 구현 간소화
+<a id="simplify-downloads-and-updates"></a>
+### 다운로드 및 업데이트 구현 간소화 { #simplify-downloads-and-updates }
 - 제공되는 SDK 를 통해 간략하게 다운로드 기능을 구현할 수 있으며 다운로드 진행정보를 상세하게 확인할 수 있습니다.
 
 
-### 게임 다운로드 통계 데이터 제공
+<a id="provide-statistics-on-game-downloads"></a>
+### 게임 다운로드 통계 데이터 제공 { #provide-statistics-on-game-downloads }
 
 - 24시간 내의 실시간 다운로드 현황과 일별 모니터링 지표를 제공합니다.
 - 다운로드 성공 / 실패 통계를 확인할 수 있습니다.
@@ -36,7 +45,8 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 - 검색 기능을 제공 하여 원하는 시간대(게임 배포 전후로)의 다운로드 통계를 확인할 수 있습니다.
 
 
-## 용어
+<a id="glossary"></a>
+## 용어 { #glossary }
 
 | 용어 | 설명 |
 | --- | --- |
@@ -47,7 +57,8 @@ Smart Downloader는 게임 구동 시 게임에 필요한 리소스를 멀티 �
 | 외부 CDN | 내부 CDN 이 아닌 기존에 사용중인 CDN 이 존재 하는 경우. |
 
 
-## 구조
+<a id="structure"></a>
+## 구조 { #structure }
 
 ![그림 1](http://static.toastoven.net/prod_smartdownloader/overview/smartdl_overview_structure.png)
 <center>[그림 1] Smart Downloader 구조 </center>

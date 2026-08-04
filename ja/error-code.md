@@ -1,6 +1,10 @@
-## Game > Smart Downloader > エラーコード
+<!-- pre-align:aligned sig=a5f1800113e0 -->
 
-## Client SDK
+<a id="game-smart-downloader-error-codes"></a>
+## Game > Smart Downloader > エラーコード { #game-smart-downloader-error-codes }
+
+<a id="client-sdk"></a>
+## Client SDK { #client-sdk }
 
 StartDownload APIコールバックで伝達するDownloadResultのCode値です。
 

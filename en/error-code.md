@@ -1,6 +1,10 @@
-## Game > Smart Downloader > Error Codes
+<!-- pre-align:aligned sig=a5f1800113e0 -->
 
-## Client SDK
+<a id="game-smart-downloader-error-codes"></a>
+## Game > Smart Downloader > Error Codes { #game-smart-downloader-error-codes }
+
+<a id="client-sdk"></a>
+## Client SDK { #client-sdk }
 
 Below are the code values of DownloadResult, delivered as StartDownload API callbacks. 
 

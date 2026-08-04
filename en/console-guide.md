@@ -1,24 +1,33 @@
-## Game > Smart Downloader > Console Guide
+<!-- pre-align:aligned sig=645c68313a29 -->
+
+<a id="game-smart-downloader-console-guide"></a>
+## Game > Smart Downloader > Console Guide { #game-smart-downloader-console-guide }
 
 To use Smart Downloader, the service must be enabled before registered.  
 The service registration is configured in the three-stage Wizard format, such as \[Register Service\] > \[Integrate CDN] > \[Upload Resources\]. After the Wizard service is registered, \[Deploy Build] must be completed, so as to download deployment documents via SDK. 
 After service registration, real-time status and indicators of downloads can be provided in various charts of formats, while data download is enabled.  
 <br>
 
-## Configuration
+<a id="configuration"></a>
+## Configuration { #configuration }
 
-### Enable Smart Downloader 
+<a id="enable-smart-downloader"></a>
+### Enable Smart Downloader { #enable-smart-downloader }
 Click **Select Services** on top of the Console page, and select Smart Downloader below Game, to enable the service. 
 
-### Check AppKey and URL 
+<a id="check-appkey-and-url"></a>
+### Check AppKey and URL { #check-appkey-and-url }
 Click URL & Appkey on top of the Console page to check issued Appkey. Enter the Appky for SDK. 
 Take note that when Smart Downloader is disabled, an issued Appkey cannot be restored. 
 
 ![smartdl_01_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_01_201812.png)
 
-## Service Management Tab
+<a id="service-management-tab"></a>
+## Service Management Tab { #service-management-tab }
 
-### 1. Register Services 
+<a id="register-services"></a>
+### 1. Register Services { #register-services }
+<a id="register-services-1-register-services-smartdl02201812png"></a>
 #### 1.1 Register Services ![smartdl_02_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_02_201812.png)
 - Service Name 
     - It is a **Required Entry** as it identifies service.
@@ -32,12 +41,15 @@ Take note that when Smart Downloader is disabled, an issued Appkey cannot be res
 
 - When service registration is completed, go to \[Phase 1. Service Registration Completed\].
 
+<a id="register-services-2-complete-service-registration"></a>
 #### 1.2 Complete Service Registration 
 ![smartdl_03_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_03_201812.png)
 
 - Registered service name and description can be found. Click \[Next\] to go to \[Integrate CDN], which is Phase 2 of the service registration Wizard. 
 
-### 2. Integrate CDN 
+<a id="integrate-cdn"></a>
+### 2. Integrate CDN { #integrate-cdn }
+<a id="integrate-cdn-1-guide-for-cdn-integration"></a>
 #### 2.1 Guide for CDN Integration 
 
 ![smartdl_04_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_04_201812.png)
@@ -64,17 +76,20 @@ Take note that when Smart Downloader is disabled, an issued Appkey cannot be res
     	    - Enter **CDN URL to Use** so as to integrate Smart Downloader with an external CDN. 
 	        - Enter external CDN URL by selecting HTTP/HTTPS protocol. 
 
+<a id="integrate-cdn-2-complete-cdn-integration"></a>
 #### 2.2 Complete CDN Integration 
 
 ![smartdl_07_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_07_201812.png)
 
 - Registered CDN server address and original server URL can be found. Click \[Next\] to go to \[Upload Resources\], which is Phase 3 of the service registration Wizard. 
 
-### 3. Upload Resources 
+<a id="upload-resources"></a>
+### 3. Upload Resources { #upload-resources }
 - Resources are uploaded by folder, on principle. 
   (Click Upload, and the Search Folders window is loaded.)
 - Internet Explorer does not support uploading resources: Chrome is recommended.  
 
+<a id="upload-resources-1-guide-for-resource-uploads"></a>
 #### 3.1 Guide for Resource Uploads 
 
 ![smartdl_08_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_08_201812.png)
@@ -90,6 +105,7 @@ Take note that when Smart Downloader is disabled, an issued Appkey cannot be res
 
   ​    - For more details on NHN Cloud Smart Downloader Plugin, see [User Guide for Plugin](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/).
 
+<a id="upload-resources-2-complete-resource-uploads"></a>
 #### 3.2 Complete Resource Uploads  
 
 ![smartdl_09_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_09_201812.png)
@@ -115,7 +131,8 @@ Take note that when Smart Downloader is disabled, an issued Appkey cannot be res
 - Smart Downloader supports for canceling uploads while they are underway.
 - Take note that, when upload is completely canceled, the deployment status returns to the state before uploaded. (*@업로드 취소 기능이 완료되면* - 업로드 취소가 완료되면??) 
 
-### 4. List of Services 
+<a id="list-of-services"></a>
+### 4. List of Services { #list-of-services }
 Shows the list of services registered by user, by 10. Click each row of service, to go to \[Service Details\]. 
 
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
@@ -149,14 +166,32 @@ Shows the list of services registered by user, by 10. Click each row of service,
       |![배포 실패](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |Failed to deploy with \[Deploy Builds\]. Redeployment is available, with \[Deploy Builds\].<br>If the status continues, contact Customer Center.|
 
 
-### 5. Service Details 
+<a id="service-deployment"></a>
+### 5. Service Deployment { #service-deployment }
+
+<!-- TODO: translate body -->
+
+<a id="service-deployment-1-bulk-deployment"></a>
+#### 5.1. Bulk Deployment
+
+<!-- TODO: translate body -->
+
+<a id="service-deployment-2-deployment"></a>
+#### 5.2. Deployment
+
+<!-- TODO: translate body -->
+
+<a id="service-details"></a>
+### 5. Service Details { #service-details }
 Detail information of registered services can be found. It is comprised of \[Service Information\], \[Guide for CDN Integration\], \[Latest Build Information\], and \[History of Build Deployment\].
 
 ![smartdl_13_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_13_201812.png)
 
+<a id="service-details-1-service-information"></a>
 #### 5.1 Service Information 
 Shows the name and description of service, entered for registration.  
 
+<a id="service-details-2-guide-for-cdn-integration"></a>
 #### 5.2 Guide for CDN Integration 
 Shows CDN information integrated with service, when it is completed. Describes how to integrate CDN, for each case of A to C.   
 
@@ -180,6 +215,7 @@ Shows CDN information integrated with service, when it is completed. Describes h
 
 - Guide for CDN integration shows. Click Modify to configure CDN information. 
 
+<a id="service-details-3-latest-build-information"></a>
 #### 5.3 Latest Build Information 
 Uploaded resource information shows when upload is completed. 
 If the deployment status is **Before Registration**, all information is blank (with detail information for \[Resource Upload Information\] disabled)
@@ -201,6 +237,7 @@ If the deployment status is **Ready for Deployment**, the latest builds can be d
 | Deployment Status | Deployment status of the latest build, and each status value is same as information on List of Service > Latest Builds. |
 | Deploy Builds | If the latest build is **Ready for Deployment**, such build can be deployed via integrated CDN. (Even for the **Deployment Failed** status, \[Deploy Builds\] is enabled for redeployment.)<br>Deployment for Smart Downloader CDN takes 10 minutes to the maximum, while it may vary for external CDNs depending on the environment. |
 
+<a id="service-details-4-build-deployment-history"></a>
 #### 5.4 Build Deployment History 
 
 ![smartdl_15_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_15_201812.png)
@@ -215,6 +252,7 @@ History information for **Deployment Successful**, or **Deployment Failed** is d
 | Last Registrar | NHN Cloud Cloud account information of the user who uploaded resources. |
 | Status | Deployment status of the latest builds, and each status is same as \[Deployment Status\] of \[Latest Build Information\] at the top. |
 
+<a id="service-details-5-deleting-services"></a>
 #### 5.5 Deleting Services 
 - Service can be deleted by using Delete on the right of the \[Service Detail Information\] page.  
 >\[Caution\]
@@ -222,7 +260,8 @@ History information for **Deployment Successful**, or **Deployment Failed** is d
 >Take note that, if a service is deleted, the original files and deployment files are all deleted, while CDN service is also suspended, for integration with Smart Downloader CDN.  
 
 
-### 6. Modify Service 
+<a id="modify-service"></a>
+### 6. Modify Service { #modify-service }
 Click Modify on the right of the \[Service Detail Information\] page, to go to Modify Service. 
 
 > \[Caution\]
@@ -230,9 +269,11 @@ If the deployment status is **Uploading or Deploying**, or if CDN is **Progressi
 
 ![smartdl_16_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_16_201812.png)
 
+<a id="modify-service-1-service-information"></a>
 #### 6.1 Service Information 
 Service name is a fixed value and cannot be modified, while service description is modifiable. 
 
+<a id="modify-service-2-cdn-information"></a>
 #### 6.2 CDN Information
 Modifying CDN information is guided for three types of current CDN integration as below:  
 
@@ -247,10 +288,13 @@ Modifying CDN information is guided for three types of current CDN integration a
 ​	- Select either Smart Downloader CDN or External CDN to integrate with CDN. 
 
 
-## Real-Time Monitoring Tab
+<a id="real-time-monitoring-tab"></a>
+## Real-Time Monitoring Tab { #real-time-monitoring-tab }
 Shows statistical data of user who downloaded service throughout the day, up to now, at every 10 minutes, starting from 00:00:00. 
 
-### 1. Status of Real-Time Downloads  
+<a id="status-of-real-time-downloads"></a>
+### 1. Status of Real-Time Downloads { #status-of-real-time-downloads }
+<a id="status-of-real-time-downloads-1-1-mini-charts"></a>
 #### 1-1 Mini Charts 
 Shows the entire statistical information for selected **search conditions** on a simple chart.  
 Each item is described as below: 
@@ -270,6 +314,7 @@ Each item is described as below:
 | 8 | Success Rate | Success rate of downloads |
 
 
+<a id="status-of-real-time-downloads-1-2-chart-for-each-os"></a>
 #### 1-2 Chart for Each OS 
 Displays the entire statistical data for selected **search conditions** on a simple chart. 
 Each item is described as below: 
@@ -284,7 +329,8 @@ Each item is described as below:
 | 4 | Average Download Time(sec) | - Column Chart.<br> - Shows statistics in every 10 minutes. <br> - Average downloading time. |
 
 
-### 2. Download Status by Country 
+<a id="download-status-by-country"></a>
+### 2. Download Status by Country { #download-status-by-country }
 Displays the statistical data for selected **search conditions** for each country on a table.
 Each item is described as below: 
 
@@ -296,10 +342,12 @@ Each item is described as below:
 | 2 | Table of Download Status by Country | - Shows top 5 downloaded countries only.<br> - Selectively shows downloaded records only, for MacOS. |
 
 
-## Monitoring Indicator Tab 
+<a id="monitoring-indicator-tab"></a>
+## Monitoring Indicator Tab { #monitoring-indicator-tab }
 Enable Smart Downloader to find usage statistical data by day, from when it was downloaded, up to now.  
 
-### 1. Search Conditions 
+<a id="search-conditions"></a>
+### 1. Search Conditions { #search-conditions }
 Regards to selecting conditions to search for downloading indicators. 
 Each item is described as below: 
 
@@ -314,7 +362,9 @@ Each item is described as below:
 | 5 | Search | - Search for statistical data on selected conditions. |
 
 
-### 2. Download Status by Day  
+<a id="download-status-by-day"></a>
+### 2. Download Status by Day { #download-status-by-day }
+<a id="download-status-by-day-2-1-daily-statistical-data"></a>
 #### 2-1 Daily Statistical Data 
 Displays daily statistical data for selected **search conditions** on a table. 
 Each item is described as below: 
@@ -327,6 +377,7 @@ Each item is described as below:
 | 2 | Daily Indicator | - Shows the number of full downloads of each OS and successful/failed downloads and average download time by day. <br> - Selectively shows downloaded records only, for MacOS.<br> - Shows 10-day statistical information on a page. |
 | 3 | Select Page | - Select a page to search. |
 
+<a id="download-status-by-day-2-2-daily-indicator-chart"></a>
 #### 2-2 Daily Indicator Chart 
 
 Displays statistical data for selected **search conditions** on a chart. 
@@ -342,7 +393,8 @@ Each chart type is described as below:
 | 4 | Download Fail Type | - Pie Chart.<br> - Whole search period.<br> - Number and rate of failed downloads for each cause of failure. |
 
 
-### 3. Download Status by Day 
+<a id="monitoring-indicator-tab-download-status-by-day"></a>
+### 3. Download Status by Day { #monitoring-indicator-tab-download-status-by-day }
 Displays statistical data by country for selected **search conditions** on a table. 
 Each item is described as below: 
 

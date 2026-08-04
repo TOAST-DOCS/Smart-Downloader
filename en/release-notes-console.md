@@ -1,7 +1,12 @@
-## Game > Smart Downloader > Release Notes > Console
+<!-- pre-align:aligned sig=7785302b9c5c -->
+
+<a id="game-smart-downloader-release-notes-console"></a>
+## Game > Smart Downloader > Release Notes > Console { #game-smart-downloader-release-notes-console }
 
 
-### 2020. 11. 24.
+<a id="2020-11-24"></a>
+### 2020. 11. 24. { #2020-11-24 }
+<a id="2020-11-24-feature-updates"></a>
 #### Feature Updates
 * Added batch and scheduled deployment features.
     * Added a feature to manage batch and scheduled deployment on the list page for services using Smart Downloader CDN.
@@ -9,57 +14,75 @@
 * Modified to allow creating services without uploading a file from the file upload screen of the service creation wizard.
 
 
-### 2020. 07. 14.
+<a id="2020-07-14"></a>
+### 2020. 07. 14. { #2020-07-14 }
+<a id="2020-07-14-feature-updates"></a>
 #### Feature Updates
 * Modified the build deployment feature.
     * Modified the feature to disallow deployment of services using Smart Downloader CDN of the same project for 5 minutes during build deployment.
     * Modified the feature to expose the name of the deployment button according to the service status.
 
-### 2020. 06. 11.
+<a id="2020-06-11"></a>
+### 2020. 06. 11. { #2020-06-11 }
+<a id="2020-06-11-feature-updates"></a>
 #### Feature Updates
 * Modified the build deployment feature.
     * Modified the feature so that if build deployment is executed when Smart Downloader CDN is used, deployment is completed after comparing the original source file and the file deployed to the CDN.
     * Modified the feature to deactivate the build deployment button when build deployment is executed.
 
 
-### 2020. 04. 14.
+<a id="2020-04-14"></a>
+### 2020. 04. 14. { #2020-04-14 }
+<a id="2020-04-14-feature-updates"></a>
 #### Feature Updates
 * Modified Smart Downloader CDN
     * Changed to not allow modification of the CDN to support migration work for changing the CDN vendor.
 * Modified the file upload feature
     * Changed the file upload limit from 5 GB or less for all files to 5 GB or less for a single file
 
-### March 24, 2020
+<a id="march-24-2020"></a>
+### March 24, 2020 { #march-24-2020 }
+<a id="march-24-2020-feature-updates"></a>
 #### Feature Updates
 * Integrated with Smart Downloader CDN 
     * Removed the feature of selecting CDN service regions.
 
 
-### December 24, 2019 
+<a id="december-24-2019"></a>
+### December 24, 2019 { #december-24-2019 }
+<a id="december-24-2019-feature-updates"></a>
 #### Feature Updates
 * Service Management
     * Added a feature of creating a new CDN, when it fails to create CDN, by deleting failed CDN. 
 
 
-### January 29, 2019
+<a id="january-29-2019"></a>
+### January 29, 2019 { #january-29-2019 }
+<a id="january-29-2019-feature-updates"></a>
 #### Feature Updates
 * Common
     * Supports multiple languages (English and Japanese) throughout the entire page.
 
 
-### December 27, 2018
+<a id="december-27-2018"></a>
+### December 27, 2018 { #december-27-2018 }
+<a id="december-27-2018-feature-updates"></a>
 #### Feature Updates
 * Common
     * Applies inspection results throughout the whole page for standard language. 
 
 
-### October 23, 2018 
+<a id="october-23-2018"></a>
+### October 23, 2018 { #october-23-2018 }
+<a id="october-23-2018-bug-fixes"></a>
 #### Bug Fixes
 * Service Management 
     * Fixed an issue in which resource files cannot be properly uploaded when the number exceeds 10 thousand.
 
 
-### July 5, 2018 
+<a id="july-5-2018"></a>
+### July 5, 2018 { #july-5-2018 }
+<a id="july-5-2018-feature-updates"></a>
 #### Feature Updates
 * Common
     * The [Deploy Builds]  button
@@ -70,7 +93,9 @@
         * Now: Shows deployment date and time, resource upload date and time, and status data.  The [Deploy Builds] button is available from the status area on the service list. 
 
 
-### June 26, 2018
+<a id="june-26-2018"></a>
+### June 26, 2018 { #june-26-2018 }
+<a id="june-26-2018-feature-updates"></a>
 #### Feature Updates
 * Common
     * Added pop-ups to notify users of network disconnection.
@@ -86,6 +111,7 @@
     * Added the feature to disallow changes to service and integration CDN for service deployment. 
     * Changed View Upload History to View Deployment History, within Show Service Details.
 
+<a id="june-26-2018-bug-fixees"></a>
 #### Bug Fixees
 * Service Management 
     * Fixed some errors occurred while uploading resources.
@@ -94,13 +120,16 @@
     * Fixed an issue in which the horizontal and vertical scroll bars move concurrently on Explorer's View Build Details.
 
 
-### April 24, 2018
+<a id="april-24-2018"></a>
+### April 24, 2018 { #april-24-2018 }
+<a id="april-24-2018-feature-updates"></a>
 #### Feature Updates
 * Common
     * Allows to show error pop-ups on the service list page, not the error page, when error occurs within server.
 * Service Management
     * Smart Downloader CDN cannot be created in duplicates at one service. 
 
+<a id="april-24-2018-bug-fixes"></a>
 #### Bug Fixes
 * Service Management.
     * Fixed error in which file uploading fails infrequently on Mac's Chrome.
@@ -109,11 +138,14 @@
     * Fixed error occurred on the monitoring page when service is not registered.
 
 
-### March 22, 2018
+<a id="march-22-2018"></a>
+### March 22, 2018 { #march-22-2018 }
+<a id="march-22-2018-feature-updates"></a>
 #### Feature Updates
 * Service Management
     * Updated to allow many kinds of domain information (including regex) for Referrers for CDN integration.
 
+<a id="march-22-2018-bug-fixes"></a>
 #### Bug Fixes
 * Common
     * Fixed the exposure of an error page when another language is selected, other than Korean.
@@ -128,7 +160,9 @@
     * Fixed UI errors that occur on IE 10/11/Edge. 
 
 
-### February 22, 2018
+<a id="february-22-2018"></a>
+### February 22, 2018 { #february-22-2018 }
+<a id="february-22-2018-feature-updates"></a>
 #### Feature Updates
 * Added **Service** an individual unit under Smart Downloader. 
 * Enhanced user convenience 
@@ -138,13 +172,17 @@
     * Specify status indicators for download errors. 
 
 
-### February 23, 2017
+<a id="february-23-2017"></a>
+### February 23, 2017 { #february-23-2017 }
+<a id="february-23-2017-feature-updates"></a>
 #### Feature Updates
 * Added tabs to access each page. 
 * Modified the feature of resetting search items, when there's too much data to search for download details. 
 * Updated to disallow the selection of 'Download Time/Speed' when download failure only is selected to search for download details. 
 
-### January 19, 2017
+<a id="january-19-2017"></a>
+### January 19, 2017 { #january-19-2017 }
+<a id="january-19-2017-new-releases"></a>
 #### New Releases
 * Released Smart Downloader 
     * Smart Downloader supports efficient downloading of resources that are required for a game.

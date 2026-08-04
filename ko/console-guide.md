@@ -1,26 +1,35 @@
-## Game > Smart Downloader > Console Guide
+<!-- pre-align:aligned sig=645c68313a29 -->
+
+<a id="game-smart-downloader-console-guide"></a>
+## Game > Smart Downloader > Console Guide { #game-smart-downloader-console-guide }
 
 Smart Downloader 사용을 위해서 서비스 활성화 후 서비스를 등록해야 합니다.
 서비스 등록은 \[서비스 등록\] > \[CDN 연동\] > \[리소스 업로드\] 3단계 Wizard 형식으로 구성되어 있습니다. 3단계 서비스 등록 Wizard 후 \[빌드 배포\] 까지 모두 완료되어야 SDK 를 통해 배포본을 다운로드할 수 있습니다.
 서비스 등록 후 해당 서비스에 대한 실시간 다운로드 현황 및 다운로드 지표 데이터를 다양한 형태의 차트로 제공하며 데이터를 다운로드 할 수 있습니다.
 <br>
 
-## Configuration
+<a id="configuration"></a>
+## Configuration { #configuration }
 
-### Smart Downloader 서비스 활성화
+<a id="enable-smart-downloader"></a>
+### Smart Downloader 서비스 활성화 { #enable-smart-downloader }
 Console 페이지 상단의 **서비스 선택** 버튼을 클릭 후, Game 하위 Smart Downloader 서비스를 클릭하여 서비스 활성화 합니다.
 
 ![project_enabeld.png](http://static.toastoven.net/prod_smartdownloader/web_console/project_enabled.png)
 
-### AppKey 와 URL 확인
+<a id="check-appkey-and-url"></a>
+### AppKey 와 URL 확인 { #check-appkey-and-url }
 Console 페이지 상단의 URL & Appkey 를 클릭하여 발급된 Appkey를 확인합니다. 해당 Appkey는 SDK 에 입력하여 사용하게 됩니다.
 Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 않으니 주의하시기 바랍니다.
 
 ![smartdl_01_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_01_201812.png)
 
-## 서비스 관리 Tab
+<a id="service-management-tab"></a>
+## 서비스 관리 Tab { #service-management-tab }
 
-### 1. 서비스 등록
+<a id="register-services"></a>
+### 1. 서비스 등록 { #register-services }
+<a id="register-services-1-register-services-smartdl02201812png"></a>
 #### 1.1 서비스 등록
 ![smartdl_02_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_02_201812.png)
 
@@ -36,12 +45,15 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 - 서비스 등록이 완료되면 \[1단계. 서비스 등록 완료\] 페이지로 이동합니다.
 
+<a id="register-services-2-complete-service-registration"></a>
 #### 1.2 서비스 등록 완료 
 ![smartdl_03_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_03_201812.png)
 
 - 등록된 서비스 이름과 설명을 확인할 수 있습니다. \[다음\] 버튼 클릭 시 서비스 등록 Wizard의 2 단계인 \[CDN 연동\] 단계로 이동합니다.
 
-### 2. CDN 연동
+<a id="integrate-cdn"></a>
+### 2. CDN 연동 { #integrate-cdn }
+<a id="integrate-cdn-1-guide-for-cdn-integration"></a>
 #### 2.1 CDN 연동 안내
 
 ![smartdl_04_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_04_201812.png)
@@ -68,18 +80,21 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
     	    - **사용할 CDN URL** 을 입력하여 Smart Downloader 서비스와 고객사 CDN 이 연동되도록 설정합니다.
 	        - 고객사 CDN URL은 HTTP/HTTPS 프로토콜을 선택해서 입력합니다.
 
+<a id="integrate-cdn-2-complete-cdn-integration"></a>
 #### 2.2 CDN 연동 완료
 
 ![smartdl_07_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_07_201812.png)
 
 - 등록된 CDN 서버 주소 및 원본 서버 URL을 확인할 수 있습니다. \[다음\] 버튼 클릭 시 서비스 등록 Wizard의 3 단계인 \[리소스 업로드\] 단계로 이동합니다.
 
-### 3. 리소스 업로드
+<a id="upload-resources"></a>
+### 3. 리소스 업로드 { #upload-resources }
 - 리소스 업로드는 폴더 업로드를 원칙으로 합니다. (업로드 버튼 클릭 시, 폴더 찾아보기 윈도우가 로딩됩니다)
 - OS 에서 자동으로 생성하는 파일 (.DS_Store, desktop.ini, thumbs.db) 은 업로드 시 제외됩니다. 
 - 리소스 하나의 최대 용량은 5GB 로 제한합니다.
 - Internet Explorer 브라우저는 리소스 업로드 기능을 제공하지 않습니다. 리소스 업로드는 Chrome 브라우저를 사용하시기 바랍니다.
 
+<a id="upload-resources-1-guide-for-resource-uploads"></a>
 #### 3.1 리소스 업로드 안내
 
 ![smartdl_08_202012.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_08_202012.png)
@@ -95,6 +110,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
     - 유니티 에디터로 수정하고 빌드한 리소스 파일을 에디터에 내장된 플러그인을 통해 업로드.
         - 유니티 에디터 플러그인에 대한 자세한 가이드는 [Unity Tool 사용 가이드](https://docs.toast.com/ko/Game/Smart%20Downloader/ko/sut-guide/)로 확인할 수 있습니다.
 
+<a id="upload-resources-2-complete-resource-uploads"></a>
 #### 3.2 리소스 업로드 완료
 
 ![smartdl_09_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_09_201812.png)
@@ -120,7 +136,8 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 - Smart Downloader 는 업로드 진행 중 업로드를 취소하는 기능을 제공합니다.
 - 업로드 취소 기능이 완료되면 배포 상태는 업로드 하기 전 상태로 되돌아 가는 점 유의하시기 바랍니다.
 
-### 4. 서비스 목록
+<a id="list-of-services"></a>
+### 4. 서비스 목록 { #list-of-services }
 사용자가 등록한 서비스의 목록을 한번에 10개씩 보여줍니다. 각 서비스 열 클릭 시, 해당 서비스에 대한 \[서비스 상세 정보\] 페이지로 이동합니다.
 
 ![smartdl_11_202012.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_202012.png)
@@ -166,8 +183,10 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
       | ![배포 불가](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_deploy_disabled.png) | 리소스 배포가 불가능한 상태.<br>서비스 상태가 [배포 대기]와 [배포 실패], [배포 완료] 이외의 상태일 때 활성화 됩니다. |
       | ![배포 완료](http://static.toastoven.net//prod_smartdownloader/web_console/service/deploy_button_complete.png) | 리소스 배포가 불가능한 상태.<br>서비스 상태가 [배포 완료]일 때 활성화 됩니다. |
 
-### 5. 서비스 배포
+<a id="service-deployment"></a>
+### 5. 서비스 배포 { #service-deployment }
 
+<a id="service-deployment-1-bulk-deployment"></a>
 #### 5.1. 일괄 배포
 
 - 서비스 목록의 상단에 있는 [일괄 배포] 버튼을 클릭하면 일괄 배포 팝업창이 열립니다.
@@ -190,6 +209,7 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
     - 선택한 서비스들이 즉시 배포 됩니다.
 
+<a id="service-deployment-2-deployment"></a>
 #### 5.2. 배포
 
 - 서비스 목록의 열에 있는 [배포] [재배포] 버튼을 클릭하거나 혹은 [서비스 상세 정보] 페이지의 [배포] 버튼을 클릭했을 때 배포 팝업창이 열립니다.
@@ -210,15 +230,18 @@ Smart Downloader 서비스 비활성화 시, 발급된 Appkey는 복구되지 �
 
 
 
-### 6. 서비스 상세 정보
+<a id="service-details"></a>
+### 6. 서비스 상세 정보 { #service-details }
 
 등록한 서비스의 상세 정보 페이지 입니다. \[서비스 정보\], \[CDN 연동 안내\], \[최신 빌드 정보\], \[빌드 배포 이력\] 영역으로 구성되어 있습니다.
 
 ![smartdl_13_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_13_201812.png)
 
+<a id="service-details-1-service-information"></a>
 #### 6.1 서비스 정보
 서비스 등록 시 입력한 서비스 이름과 서비스 설명값을 보여줍니다.
 
+<a id="service-details-2-guide-for-cdn-integration"></a>
 #### 6.2 CDN 연동 안내
 CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아래 A ~ C 경우로 나눠서 CDN 연동 안내를 설명합니다.
 
@@ -242,6 +265,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 
 - CDN 연동 안내 가이드 문구가 나타납니다. 수정 버튼을 클릭하여 CDN 정보를 설정할 수 있습니다.
 
+<a id="service-details-3-latest-build-information"></a>
 #### 6.3 최신 빌드 정보
 리소스 업로드 완료 시 리소스 업로드 정보가 나타납니다.
 배포 상태가 **등록 전** 이라면 리소스 업로드 정보는 모두 빈 값이 나타납니다. ( \[리소스 업로드 정보\] 영역에 상세 정보 버튼은 비활성화)
@@ -263,6 +287,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 배포 상태 | 최신 빌드의 배포 상태이며 각 상태값은 서비스 목록 > 최신 빌드 영역 정보와 동일합니다. |
 | 빌드 배포 | 최신 빌드 정보의 배포 상태가 **배포 대기** 상태인 경우 최신 빌드를 연동된 CDN 으로 배포할 수 있습니다.(**배포 실패** 상태인 경우도 재배포를 위해 \[빌드 배포\] 버튼이 활성화됩니다.)<br>배포 시 Smart Downloader CDN 의 경우 최대 60분, 고객사 CDN 의 경우 사용 환경에 따라 배포 시간이 상이할 수 있습니다. |
 
+<a id="service-details-4-build-deployment-history"></a>
 #### 6.4 빌드 배포 이력
 
 ![smartdl_15_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_15_201812.png)
@@ -277,6 +302,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 최종 등록자 | 리소스를 업로드한 유저의 NHN Cloud계정 정보입니다. |
 | 상태 | 최신 빌드의 배포 상태이며 각 상태값은 상단의 \[최신 빌드 정보\] 영역의 \[배포 상태\]와 동일합니다. |
 
+<a id="service-details-5-deleting-services"></a>
 #### 6.5 서비스 삭제
 - \[서비스 상세 정보\] 페이지 우측 상단에 있는 삭제 버튼을 통해 서비스 삭제를 진행할 수 있습니다.
 >\[주의점\]
@@ -284,7 +310,8 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 서비스 삭제 시, 원본 파일과 배포파일은 모두 삭제되며 Smart Downloader CDN 연동의 경우 CDN 사용도 정지되는 점을 주의하시기 바랍니다.
 
 
-### 7. 서비스 수정
+<a id="modify-service"></a>
+### 7. 서비스 수정 { #modify-service }
 \[서비스 상세 정보\] 페이지 우측 상단에 있는 수정 버튼을 통해 서비스 수정 페이지로 이동 할 수 있습니다.
 
 > \[주의점\]
@@ -292,9 +319,11 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 
 ![smartdl_16_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_16_201812.png)
 
+<a id="modify-service-1-service-information"></a>
 #### 7.1 서비스 정보
 서비스 이름은 고정된 값으로 수정할 수 없으며 서비스 설명은 수정할 수 있습니다.
 
+<a id="modify-service-2-cdn-information"></a>
 #### 7.2 CDN 정보
 현재 CDN 연동 상태를 아래 3가지 경우로 나눠서 CDN 정보 수정을 안내하겠습니다.
 
@@ -309,10 +338,13 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 ​	- Smart Downloader CDN 사용 / 고객사 CDN 사용 중 한 가지를 선택하여 CDN 연동할 수 있습니다.
 
 
-## 실시간 모니터링 Tab
+<a id="real-time-monitoring-tab"></a>
+## 실시간 모니터링 Tab { #real-time-monitoring-tab }
 하루동안 서비스를 다운로드한 유저에 대한 통계정보를 00:00:00 부터 현재까지 10분 주기로 보여줍니다.
 
-### 1. 실시간 다운로드 현황
+<a id="status-of-real-time-downloads"></a>
+### 1. 실시간 다운로드 현황 { #status-of-real-time-downloads }
+<a id="status-of-real-time-downloads-1-1-mini-charts"></a>
 #### 1-1 미니 차트
 **조회 조건**에서 선택한 조건에 해당하는 전체 통계정보를 간략한 차트로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
@@ -331,6 +363,7 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 8 | 성공률 | 다운로드 성공률 |
 
 
+<a id="status-of-real-time-downloads-1-2-chart-for-each-os"></a>
 #### 1-2 OS별 차트
 **조회 조건**에서 선택한 조건에 해당하는 전체 통계 정보를 간략한 차트로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
@@ -345,7 +378,8 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 4 | Average Download Time(sec) | - Column Chart.<br> - 10분 단위로 통계 정보 노출. <br> - 평균 다운로드 시간. |
 
 
-### 2. 국가별 다운로드 현황
+<a id="download-status-by-country"></a>
+### 2. 국가별 다운로드 현황 { #download-status-by-country }
 **조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 
@@ -357,10 +391,12 @@ CDN 연동 완료 시 서비스에 연동한 CDN 정보가 나타납니다. 아�
 | 2 | 국가별 다운로드 현황 표 | - 다운로드 총 횟수가 많은 상위 5개국만 표에 노출.<br> - MacOS의 경우 다운로드 받은 기록이 있는 경우에만 선택적으로 노출. |
 
 
-## 모니터링 지표 Tab
+<a id="monitoring-indicator-tab"></a>
+## 모니터링 지표 Tab { #monitoring-indicator-tab }
 Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 현재까지의 사용 통계 정보를 일별로 확인할 수 있습니다.
 
-### 1. 조회 조건
+<a id="search-conditions"></a>
+### 1. 조회 조건 { #search-conditions }
 다운로드 지표를 검색하기 위한 조건을 선택하기 위한 필터입니다.
 각 항목별 설명은 다음과 같습니다.
 
@@ -375,7 +411,9 @@ Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 �
 | 5 | 검색 | - 선택한 조건을 기준으로 통계 정보를 검색하기 위한 버튼. |
 
 
-### 2. 일별 다운로드 현황
+<a id="download-status-by-day"></a>
+### 2. 일별 다운로드 현황 { #download-status-by-day }
+<a id="download-status-by-day-2-1-daily-statistical-data"></a>
 #### 2-1 일별 통계 데이터
 **조회 조건**에서 선택한 조건에 해당하는 일별 통계 데이터를 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
@@ -389,6 +427,7 @@ Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 �
 | 3 | 페이지 선택 | - 조회할 페이지 선택. |
 
 
+<a id="download-status-by-day-2-2-daily-indicator-chart"></a>
 #### 2-2 일별 지표 차트
 **조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 차트로 보여줍니다.
 차트의 종류는 다음과 같습니다.
@@ -403,7 +442,8 @@ Smart Downloader를 활성화하여 다운로드가 이루어진 시점부터 �
 | 4 | Download Fail Type | - Pie Chart.<br> - 조회 기간 전체.<br> - 다운로드 실패 원인 별 횟수 및 비율. |
 
 
-### 3. 일별 다운로드 현황
+<a id="monitoring-indicator-tab-download-status-by-day"></a>
+### 3. 일별 다운로드 현황 { #monitoring-indicator-tab-download-status-by-day }
 **조회 조건**에서 선택한 조건에 해당하는 통계 데이터를 국가별로 구분하여 표로 보여줍니다.
 각 항목별 설명은 다음과 같습니다.
 

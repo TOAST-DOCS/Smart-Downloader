@@ -1,10 +1,16 @@
-## Game > Smart Downloader > 플러그인 가이드
+<!-- pre-align:aligned sig=c2c7ccee3052 -->
 
-## Smart Downloader Jenkins Plugin
+<a id="game-smart-downloader-plugin-guide"></a>
+## Game > Smart Downloader > 플러그인 가이드 { #game-smart-downloader-plugin-guide }
+
+<a id="smart-downloader-jenkins-plugin"></a>
+## Smart Downloader Jenkins Plugin { #smart-downloader-jenkins-plugin }
 Smart Downloader Jenkins Plugin 을 통해 NHN Cloud Smart Downloader의 **신규 빌드 업로드 기능** 을 편리하게 사용할 수 있습니다.
 
-## Plugin 설치
+<a id="installing-the-plugin"></a>
+## Plugin 설치 { #installing-the-plugin }
 
+<a id="installing-the-plugin-minimum-version-requirements-for-jenkins"></a>
 #### Jenkins 최소 요구사항 버전
 
 **Jenkins 2.145.1** 이후 버전을 요구합니다. 이전 버전 Jenkins에서는 Plugin 기능에 대한 지원이 불가능한 상태이므로 사용 전 버전확인이 필요합니다.
@@ -21,7 +27,8 @@ Download : [smartdl-uploader.hpi](https://static.toastoven.net/toastcloud/sdk_do
 ![그림 1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_01.png)
 <center>[그림 1] 설치된 플러그인 목록</center>
 
-## Plugin 사용
+<a id="using-the-plugin"></a>
+## Plugin 사용 { #using-the-plugin }
 
 ##### 사전 준비
 Smart Downloader Jenkins Plugin 을 사용하기 위해서는 `NHN Cloud API 보안설정` 이 필요합니다.
@@ -90,6 +97,7 @@ Plugin 을 통해 빌드 업로드 시 Last Uploader 에 Plugin에 등록한 NHN
 
 Plugin 실행 결과가 실패일 경우 콘솔 로그의 에러 메세지를 참고하신 후 담당자에게 문의해 주시면 됩니다.
 
+<a id="using-the-plugin-pipeline-configuration"></a>
 #### Pipeline 환경설정
 Smart Downloader Plugin의 설치와 설정은 위와 동일하게 진행하되, [2. 프로젝트 구성(그림 3 참고)]의 '빌드 후 조치' 설정 대신 Pipeline 설정을 진행합니다.
 **[Jenkins]** > 프로젝트 선택 > **[구성]** > **[Pipeline]** 메뉴에서 아래의 스크립트 내용을 마지막에 추가합니다.
@@ -114,7 +122,8 @@ node() {
 
 항목의 자세한 설정값은 위의 [2.프로젝트 구성] 항목의 [그림3]과 설명을 참고해 주시기 바랍니다.
 
-## 참고사항
+<a id="note"></a>
+## 참고사항 { #note }
 Jenkins에서 Master/Slave node를 구성하여 사용하는 경우 **반드시 Node 정보를 설정**해 주시기 바랍니다.
 
 ![그림 9-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_1.png)

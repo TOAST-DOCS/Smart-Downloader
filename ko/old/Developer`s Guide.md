@@ -1,12 +1,17 @@
-## Upcoming Products > Smart Downloader > Developer's Guide
+<!-- pre-align:aligned sig=f2962529d802 -->
 
-## Smart Downloader Publisher
+<a id="upcoming-products-smart-downloader-developers-guide"></a>
+## Upcoming Products > Smart Downloader > Developer's Guide { #upcoming-products-smart-downloader-developers-guide }
+
+<a id="smart-downloader-publisher"></a>
+## Smart Downloader Publisher { #smart-downloader-publisher }
 
 우선 Smart Downloader ClientSDK를 사용하기 전에 Smart Downloader ClientSDK가 다운로드를 수행할 원본 서버 및 CDN이 준비되어 있어야 한다. 그리고 해당 CDN에 DLCPublisher를 통해 생성된 게임데이터의 개별압축본과 메타파일이 존재해야 한다.
 DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게임데이터의 폴더 트리 구조 그대로 개별 압축파일을 같은 폴더 트리 구조로 만들어내며, 
 해당 폴더 내에 파일이름, 파일 사이즈, 파일 압축사이즈, 파일 버전(추후 사용 예정), 파일 체크섬을 json 형태로 나열하는 메타파일을 만들어낸다.
 
-## Smart DownloaderPublisher 사용방법
+<a id="smart-downloaderpublisher"></a>
+## Smart DownloaderPublisher 사용방법 { #smart-downloaderpublisher }
 
 아래와 같은 게임 데이터를 다운로드 받을 폴더 구조라고 가정하자.
 
@@ -96,11 +101,13 @@ DLCPublisher는 하나의 실행파일(윈도우즈 용 exe)로 제공되며 게
 
 ```
 
-## Smart Downloader Client SDK
+<a id="smart-downloader-client-sdk"></a>
+## Smart Downloader Client SDK { #smart-downloader-client-sdk }
 
 Smart Downloader ClientSDK는 현재 Unity Version으로 개발이 되어 있으며, iOS / Android / Windows / MacOS 플랫폼을 지원하고 있다.
 
-### **Smart Downloader Client SDK API**
+<a id="smart-downloader-client-sdk-api"></a>
+### **Smart Downloader Client SDK API** { #smart-downloader-client-sdk-api }
 
 Smart Downloader Client SDK API는 모두 static version으로 호출할 수 있다. 그리고 Toast.SmartDL 이하의 namespace를 사용하므로 using으로 미리 선언해두는 것을 권장한다.
 
@@ -194,7 +201,8 @@ SmartDLUnitySkin.StopDownload();
 
 ```
 
-### **Smart Downloader Error Code**
+<a id="smart-downloader-error-code"></a>
+### **Smart Downloader Error Code** { #smart-downloader-error-code }
 
 다음은 Smart Downloader Error Code에 대한 값 및 설명이다.
 

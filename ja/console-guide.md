@@ -1,24 +1,33 @@
-## Game > Smart Downloader > Console Guide
+<!-- pre-align:aligned sig=645c68313a29 -->
+
+<a id="game-smart-downloader-console-guide"></a>
+## Game > Smart Downloader > Console Guide { #game-smart-downloader-console-guide }
 
 Smart Downloaderを使用するために、サービスを有効にした後にサービスを登録する必要があります。
 サービス登録は、\[サービス登録\] > \[CDN連携\] > \[リソースアップロード\] 3ステップのWizard形式で構成されています。3ステップのサービス登録Wizardの後、\[ビルド配布\]まで全て完了すると、SDKを通して配布をダウンロードできます。
 サービス登録後、該当サービスのリアルタイムダウンロード状況およびダウンロード指標データを多様な形のチャートで提供し、データをダウンロードできます。
 <br>
 
-## Configuration
+<a id="configuration"></a>
+## Configuration { #configuration }
 
-### Smart Downloaderサービス有効
+<a id="enable-smart-downloader"></a>
+### Smart Downloaderサービス有効 { #enable-smart-downloader }
 Consoleページ上部の**サービス選択**ボタンをクリック後、Gameの下部Smart Downloaderサービスをクリックしてサービス有効にします。
 
-### AppKeyとURL確認
+<a id="check-appkey-and-url"></a>
+### AppKeyとURL確認 { #check-appkey-and-url }
 Consoleページ上部のURL & Appkeyをクリックして発行されたAppkeyを確認します。該当AppkeyはSDKに入力して使用します。
 Smart Downloaderサービスを無効にすると、発行されたAppkeyは復旧できませんのでご注意ください。
 
 ![smartdl_01_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_01_201812.png)
 
-## サービス管理Tab
+<a id="service-management-tab"></a>
+## サービス管理Tab { #service-management-tab }
 
-### 1. サービス登録
+<a id="register-services"></a>
+### 1. サービス登録 { #register-services }
+<a id="register-services-1-register-services-smartdl02201812png"></a>
 #### 1.1サービス登録
 ![smartdl_02_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_02_201812.png)
 
@@ -34,12 +43,15 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 
 - サービス登録が完了すると、\[ステップ1. サービス登録完了\]ページに移動します。
 
+<a id="register-services-2-complete-service-registration"></a>
 #### 1.2サービス登録完了
 ![smartdl_03_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_03_201812.png)
 
 - 登録されたサービス名と説明を確認できます。\[次へ\]ボタンをクリックすると、サービス登録Wizardのステップ2\[CDN連携\]に移動します。
 
-### 2. CDN連携
+<a id="integrate-cdn"></a>
+### 2. CDN連携 { #integrate-cdn }
+<a id="integrate-cdn-1-guide-for-cdn-integration"></a>
 #### 2.1 CDN連携案内
 
 ![smartdl_04_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_04_201812.png)
@@ -66,16 +78,19 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
     	    - **使用するCDN URL**を入力してSmart Downloaderサービスと顧客社CDNが連携するように設定します。
 	        - 顧客社CDN URLはHTTP/HTTPSプロトコルを選択して入力します。
 
+<a id="integrate-cdn-2-complete-cdn-integration"></a>
 #### 2.2 CDN連携完了
 
 ![smartdl_07_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_07_201812.png)
 
 - 登録されたCDNサーバーアドレスおよびソースサーバーURLを確認できます。 \[次へ\]ボタンをクリックすると、サービス登録Wizardのステップ3\[リソースアップロード\]に移動します。
 
-### 3. リソースアップロード
+<a id="upload-resources"></a>
+### 3. リソースアップロード { #upload-resources }
 - リソースアップロードはフォルダアップロードを原則とします。(アップロードボタンをクリックすると、フォルダ参照ウィンドウがロードされます)
 - Internet Explorerは、リソースアップロード機能を提供しません。リソースアップロードはChromeを使用してください。
 
+<a id="upload-resources-1-guide-for-resource-uploads"></a>
 #### 3.1リソースアップロード案内
 
 ![smartdl_08_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_08_201812.png)
@@ -89,6 +104,7 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 ​    - Smart Downloader Jenkins Plugin(NHN Cloud Smart Downloader Plugin)でリソースをアップロード。
 ​    - NHN Cloud Smart Downloader Pluginの詳細ガイドは、[プラグイン使用ガイド](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/)で確認できます。
 
+<a id="upload-resources-2-complete-resource-uploads"></a>
 #### 3.2リソースアップロード完了
 
 ![smartdl_09_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_09_201812.png)
@@ -114,7 +130,8 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 - Smart Downloaderは、アップロード進行中のアップロードをキャンセルする機能を提供します。
 - アップロードのキャンセルが完了すると、配布状態はアップロードする前の状態に戻る点に注意してください。
 
-### 4. サービスリスト
+<a id="list-of-services"></a>
+### 4. サービスリスト { #list-of-services }
 ユーザーが登録したサービスのリストを一度に10個ずつ表示します。各サービスをクリックすると、該当サービスの\[サービス詳細情報\]ページに移動します。
 
 ![smartdl_11_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_11_201812.png)
@@ -148,14 +165,32 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 		|![配布失敗](http://static.toastoven.net/prod_smartdownloader/web_console/service/service_state/deploy_fail.PNG)   |\[ビルド配布\]ボタンを押して配布が失敗した状態。 \[ビルド配布\]ボタンを押して再配布できます。<br>この状態が続く場合、サポートへお問い合わせください。|
 
 
-### 5. サービス詳細情報
+<a id="service-deployment"></a>
+### 5. サービスのデプロイ { #service-deployment }
+
+<!-- TODO: translate body -->
+
+<a id="service-deployment-1-bulk-deployment"></a>
+#### 5.1. 一括配布
+
+<!-- TODO: translate body -->
+
+<a id="service-deployment-2-deployment"></a>
+#### 5.2. 配布
+
+<!-- TODO: translate body -->
+
+<a id="service-details"></a>
+### 5. サービス詳細情報 { #service-details }
 登録したサービスの詳細情報ページです。 \[サービス情報\]、\[CDN連携案内\]、\[最新ビルド情報\]、\[ビルド配布履歴\]領域で構成されています。
 
 ![smartdl_13_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_13_201812.png)
 
+<a id="service-details-1-service-information"></a>
 #### 5.1サービス情報
 サービス登録時に入力したサービス名とサービス説明を表示します。
 
+<a id="service-details-2-guide-for-cdn-integration"></a>
 #### 5.2 CDN連携案内
 CDN連携完了時、サービスに連携したCDN情報が表示されます。下記のA～Cの場合に分けてCDN連携案内を説明します。
 
@@ -179,6 +214,7 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 
 - CDN連携の案内ガイド文言が表示されます。修正ボタンをクリックしてCDN情報を設定できます。
 
+<a id="service-details-3-latest-build-information"></a>
 #### 5.3最新ビルド情報
 リソースアップロード完了時、リソースアップロード情報が表示されます。
 配布状態が**登録前**の時は、リソースアップロード情報はすべて空の値が表示されます。( \[リソースアップロード情報\]領域に詳細情報ボタンは無効)
@@ -200,6 +236,7 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 | 配布状態 | 最新ビルドの配布状態で、各状態値はサービスリスト > 最新ビルド領域情報と同じです。 |
 | ビルド配布 | 最新ビルド情報の配布状態が**配布待機**状態の場合、最新ビルドを連携したCDNに配布できます。(**配布失敗**状態の場合も再配布のために\[ビルド配布\]ボタンが有効になります。)<br>配布時、Smart Downloader CDNの場合は最大10分、顧客社CDNの場合は使用環境によって配布時間が異なることがあります。  |
 
+<a id="service-details-4-build-deployment-history"></a>
 #### 5.4ビルド配布履歴
 
 ![smartdl_15_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_15_201812.png)
@@ -214,6 +251,7 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 | 最終登録者 | リソースをアップロードしたユーザーのNHN Cloudアカウント情報です。 |
 | 状態 | 最新ビルドの配布状態で、各状態値は上部の\[最新ビルド情報\]領域の\[配布状態\]と同じです。 |
 
+<a id="service-details-5-deleting-services"></a>
 #### 5.5サービス削除
 - \[サービス詳細情報\]ページの右上にある削除ボタンを押してサービスの削除を行えます。
 >\[注意点\]
@@ -221,7 +259,8 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 サービスを削除すると、ソースファイルと配布ファイルはすべて削除され、Smart Downloader CDN連携の場合はCDNの使用も停止する点に注意してください。
 
 
-### 6. サービス修正
+<a id="modify-service"></a>
+### 6. サービス修正 { #modify-service }
 \[サービス詳細情報\]ページの右上にある修正ボタンを押すとサービス修正ページに移動できます。
 
 > \[注意点\]
@@ -229,9 +268,11 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 
 ![smartdl_16_201812.png](https://static.toastoven.net/prod_smartdownloader/web_console/smartdl_16_201812.png)
 
+<a id="modify-service-1-service-information"></a>
 #### 6.1サービス情報
 サービス名は固定された値で、修正できません。サービス説明は修正できます。
 
+<a id="modify-service-2-cdn-information"></a>
 #### 6.2 CDN情報
 現在のCDN連携状態を下記の3つの場合に分けてCDN情報修正を案内します。
 
@@ -246,10 +287,13 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 ​	- Smart Downloader CDN使用 / 顧客社CDN使用のどちらかを選択して、CDN連携できます。
 
 
-## リアルタイムモニタリングTab
+<a id="real-time-monitoring-tab"></a>
+## リアルタイムモニタリングTab { #real-time-monitoring-tab }
 1日の間に、サービスをダウンロードしたユーザーの統計情報を00:00:00から現在まで10分周期で表示します。
 
-### 1. リアルタイムダウンロード状況
+<a id="status-of-real-time-downloads"></a>
+### 1. リアルタイムダウンロード状況 { #status-of-real-time-downloads }
+<a id="status-of-real-time-downloads-1-1-mini-charts"></a>
 #### 1-1ミニチャート
 **照会条件**で選択した条件に該当する全体の統計情報を簡単なチャートで表示します。
 各項目別の説明は次のとおりです。
@@ -268,6 +312,7 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 | 8 | 成功率 | ダウンロード成功率 |
 
 
+<a id="status-of-real-time-downloads-1-2-chart-for-each-os"></a>
 #### 1-2 OS別チャート
 **照会条件**で選択した条件に該当する全体統計情報を簡略化したチャートで表示します。
 各項目別の説明は次のとおりです。
@@ -282,7 +327,8 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 | 4 | Average Download Time(sec) | - Column Chart.<br> - 10分単位で統計情報を表示。 <br> - 平均ダウンロード時間。 |
 
 
-### 2. 国別ダウンロード状況
+<a id="download-status-by-country"></a>
+### 2. 国別ダウンロード状況 { #download-status-by-country }
 **照会条件**で選択した条件に該当する統計データを国別に区分して表で表示します。
 各項目別の説明は次のとおりです。
 
@@ -294,10 +340,12 @@ CDN連携完了時、サービスに連携したCDN情報が表示されます�
 | 2 | 国別ダウンロード状況表 | - ダウンロード総回数が多い上位5か国のみ表で表示。<br> - MacOSの場合、ダウンロードした記録がある場合のみオプションで表示。 |
 
 
-## モニタリング指標Tab
+<a id="monitoring-indicator-tab"></a>
+## モニタリング指標Tab { #monitoring-indicator-tab }
 Smart Downloaderを有効にして、ダウンロードされた時点から現在までの使用統計情報を日別に確認できます。
 
-### 1. 照会条件
+<a id="search-conditions"></a>
+### 1. 照会条件 { #search-conditions }
 ダウンロード指標を検索するための条件を選択するフィルタです。
 各項目別の説明は次のとおりです。
 
@@ -312,7 +360,9 @@ Smart Downloaderを有効にして、ダウンロードされた時点から現�
 | 5 | 検索 | - 選択した条件を元に統計情報を検索するためのボタン。 |
 
 
-### 2. 日別ダウンロード状況
+<a id="download-status-by-day"></a>
+### 2. 日別ダウンロード状況 { #download-status-by-day }
+<a id="download-status-by-day-2-1-daily-statistical-data"></a>
 #### 2-1日別統計データ
 **照会条件**で選択した条件に該当する日別統計データを表で表示します。
 各項目別の説明は次のとおりです。
@@ -326,6 +376,7 @@ Smart Downloaderを有効にして、ダウンロードされた時点から現�
 | 3 | ページ選択 | - 照会するページ選択。 |
 
 
+<a id="download-status-by-day-2-2-daily-indicator-chart"></a>
 #### 2-2日別の指標チャート
 **照会条件**で選択した条件に該当する統計データをチャートで表示します。
 チャートの種類は次のとおりです。
@@ -340,7 +391,8 @@ Smart Downloaderを有効にして、ダウンロードされた時点から現�
 | 4 | Download Fail Type | - Pie Chart.<br> - 照会期間全体。<br> - ダウンロード失敗原因別の回数および比率。|
 
 
-### 3. 日別ダウンロード状況
+<a id="monitoring-indicator-tab-download-status-by-day"></a>
+### 3. 日別ダウンロード状況 { #monitoring-indicator-tab-download-status-by-day }
 **照会条件**で選択した条件に該当する統計データを国別に区分して表で表示します。
 各項目別の説明は次のとおりです。
 
