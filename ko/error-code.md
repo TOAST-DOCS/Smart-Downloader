@@ -1,6 +1,10 @@
-## Game > Smart Downloader > 오류 코드
+<!-- pre-align:aligned sig=a5f1800113e0 -->
 
-## Client SDK
+<a id="game-smart-downloader-error-codes"></a>
+## Game > Smart Downloader > 오류 코드 { #game-smart-downloader-error-codes }
+
+<a id="client-sdk"></a>
+## Client SDK { #client-sdk }
 
 StartDownload API 콜백으로 전달받는 DownloadResult의 Code 값입니다.
 

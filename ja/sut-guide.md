@@ -1,21 +1,29 @@
-## Game > Smart Downloader > Unity Toolガイド
+<!-- pre-align:aligned sig=352c670015b8 -->
 
-## はじめに
+<a id="game-smart-downloader-user-guide-for-unity-tool"></a>
+## Game > Smart Downloader > Unity Toolガイド { #game-smart-downloader-user-guide-for-unity-tool }
+
+<a id="getting-started"></a>
+## はじめに { #getting-started }
 
 Smart Downloader Unity Tool(SUT)は、Unityからリソースをアップロードして配布できるツールです。
 
-### Environments
+<a id="environments"></a>
+### Environments { #environments }
 
+<a id="environments-supported-unity-versions"></a>
 #### Unity Supported Versions
 
 * 2018.4.0 ~ 2021.1.15
 
-### Download
+<a id="download"></a>
+### Download { #download }
 
 [Smart Downloader Unity Tool](/Download/#game-smart-downloader)
 
 
-### Unity Toolのインストール
+<a id="install-unity-tool"></a>
+### Unity Toolのインストール { #install-unity-tool }
 
 1. Unityプロジェクトを開きます。
 2. Unityで**Assets > Import Package > Custom Package**を選択します。
@@ -23,11 +31,13 @@ Smart Downloader Unity Tool(SUT)は、Unityからリソースをアップロー�
     ![sut_import.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_import.png)
 
 
-## Unity Toolの使用
+<a id="enabling-unity-tool"></a>
+## Unity Toolの使用 { #enabling-unity-tool }
 
 Unity Toolを使用するには、メニューから**Tool > NHN Cloud > Smart Downloader > Unity Tool**を選択します。
 
-### 認証
+<a id="authenticate"></a>
+### 認証 { #authenticate }
 
 認証前の場合は、**認証**タブが表示されます。
 
@@ -49,7 +59,8 @@ Unity Toolを使用するには、メニューから**Tool > NHN Cloud > Smart D
     * Smart Downloaderを利用中のプロジェクトIDです。コンソールの**プロジェクト設定**で確認できます。
     ![console_project_id.png](https://static.toastoven.net/prod_smartdownloader/sut/console_project_id.png)
 
-### サービス照会
+<a id="query-services"></a>
+### サービス照会 { #query-services }
 
 認証が完了すると、**アップロード**タブが表示されます。
 **Appkey**欄にアプリケーションキーを入力し、**照会**をクリックすると、コンソールで作成されたサービスリストが表示されます。
@@ -60,8 +71,10 @@ Unity Toolを使用するには、メニューから**Tool > NHN Cloud > Smart D
     * コンソールのSmart Downloaderサービスで**URL & Appkey**をクリックし、発行されたアプリケーションキーを確認します。
     ![console_appkey.png](https://static.toastoven.net/prod_smartdownloader/sut/console_appkey.png)
 
-### リソースのアップロード
+<a id="uploading-resources"></a>
+### リソースのアップロード { #uploading-resources }
 
+<a id="uploading-resources-select-services"></a>
 #### 1. サービス選択
 
 サービスリストからアップロードするサービスをクリックし、リソースパスを選択します。
@@ -69,6 +82,7 @@ Unity Toolを使用するには、メニューから**Tool > NHN Cloud > Smart D
 
 ![sut_upload_step_1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_1.png)
 
+<a id="uploading-resources-select-upload-resources"></a>
 #### 2. アップロードするリソースの選択
 
 最後にアップロードされたリソースと、選択したパスのリソースを比較し、変更されたリソースの情報を表示します。
@@ -81,6 +95,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 ![sut_upload_step_2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_2.png)
 
 
+<a id="uploading-resources-upload-resources"></a>
 #### 3. リソースアップロードの進行
 
 アップロード進行状況を表示します。
@@ -92,6 +107,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 
 ![sut_upload_step_3.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_3.png)
 
+<a id="uploading-resources-complete"></a>
 #### 4. 完了
 
 正常に完了すると、確認ウィンドウが表示されます。
@@ -99,7 +115,8 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 ![sut_upload_step_4.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_4.png)
 
 
-### サービス詳細情報
+<a id="service-details"></a>
+### サービス詳細情報 { #service-details }
 
 サービスリストからサービスを選択してダブルクリックすると、**サービス詳細情報**画面が表示されます。
 
@@ -120,6 +137,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
         * ビルド配布：ビルドを配布できる状態になると有効になり、最新ビルドをCDNに配布できます。
 * ビルド配布履歴：ビルド配布を行った直近10件の履歴が表示されます。
 
+<a id="service-details-build-deployment"></a>
 #### ビルド配布
 
 配布状態が**配布待機**、**配布失敗**状態の場合にのみ、最新アップロードリソースをCDNに配布できます。
@@ -133,6 +151,7 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 * 即時配布：今すぐ配布を行います。
 * 予約配布：ユーザーが指定した時間に配布を行います。
 
+<a id="service-details-scheduled-deployment"></a>
 #### 予約配布
 
 **予約配布**を選択すると、以下のような画面が出力されます。
@@ -150,7 +169,8 @@ OSで自動的に作成するファイル(.DS_Store、desktop.ini、thumbs.db)�
 **配布予約中**状態では、右側の**配布キャンセル** ボタンを押して予約をキャンセルできます。
 
 
-### 設定
+<a id="settings"></a>
+### 設定 { #settings }
 
 ![sut_settings.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_settings.png)
 

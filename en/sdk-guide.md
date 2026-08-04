@@ -1,18 +1,23 @@
-## Game > Smart Downloader > SDK User Guide 
+<a id="game-smart-downloader-sdk-user-guide"></a>
+## Game > Smart Downloader > SDK User Guide { #game-smart-downloader-sdk-user-guide }
 
-## Getting Started
+<a id="getting-started"></a>
+## Getting Started { #getting-started }
 
 To use Smart Downloader SDK, service must be enabled on console and a registered service must be available.
 For more details, see [Console Guide](/Game/Smart%20Downloader/en/console-guide).
 
-### Environments
+<a id="environments"></a>
+### Environments { #environments }
 
 Smart Downloader SDK supports Unity engines. 
 
+<a id="environments-supported-versions"></a>
 #### Supported Versions
 
 * 2018.4.0 - 2021.1.20
 
+<a id="environments-supported-platforms"></a>
 #### Supported Platforms
 
 * iOS
@@ -23,12 +28,15 @@ Smart Downloader SDK supports Unity engines.
 * Editor
 
 
-### SDK 
+<a id="sdk"></a>
+### SDK { #sdk }
 
+<a id="sdk-download"></a>
 #### 1. Download
 
 [Download SDK](/Download/#game-smart-downloader)
 
+<a id="sdk-install-sdk"></a>
 #### 2. Install SDK
 
 1. Open a unity project.
@@ -36,6 +44,7 @@ Smart Downloader SDK supports Unity engines.
 3. Select and import 'Smart-downloader-{Version}.unitypackage', which is a downloaded SDK file.
 ![smartdl_sdk_01.png](https://static.toastoven.net/prod_smartdownloader/sdk/smartdl_sdk_01.png)
 
+<a id="sdk-structure"></a>
 #### 3. SDK Structure
 
 * SDK is installed in the 'Asset/SmartDL' folder.
@@ -43,17 +52,20 @@ Smart Downloader SDK supports Unity engines.
     * Plugins: Includes plugins, including DLL for the use of SDK.
     * Example: Includes sample scenes and scripts to check SDK operations.
 
+<a id="sdk-apply-sdk-api"></a>
 #### 4. Apply SDK API
 
 * API provided by SDK is defined as the `Toast.SmartDownloader` namespace.
 * 'SmartDI' class is applied for download API.
 
 
-### Android Network Security Configuration
+<a id="android-network-security-configuration"></a>
+### Android Network Security Configuration { #android-network-security-configuration }
 
 * If you are using CDN as HTTP and target API 28 on Android 9.0 or higher, you need to add a setting to allow HTTP.
 * Refer to [Network Security Configuration](https://developer.android.com/training/articles/security-config?hl=en) for details.
 
+<a id="android-network-security-configuration-set-androidmanifestxml"></a>
 #### 1. Set AndroidManifest.xml
 
 * Add android:networkSecurityConfig setting to the application in AndroidManifest.xml.
@@ -68,6 +80,7 @@ Smart Downloader SDK supports Unity engines.
 </manifest>
 ```
 
+<a id="android-network-security-configuration-add-networksecurityconfigxml"></a>
 #### 2. Add network_security_config.xml
 
 * Add Plugins/Android/res/xml/network_security_config.xml.
@@ -81,10 +94,12 @@ Smart Downloader SDK supports Unity engines.
 </network-security-config>
 ```
 
-### iOS Network Security Configuration
+<a id="ios-network-security-configuration"></a>
+### iOS Network Security Configuration { #ios-network-security-configuration }
 
 * If you are using CDN as HTTP, you need to add a setting to allow HTTP.
 
+<a id="ios-network-security-configuration-set-infoplist"></a>
 #### Set Info.plist
 
 * Add App Transport Security Settings in Info.plist.
@@ -106,13 +121,8 @@ Smart Downloader SDK supports Unity engines.
 ```
 
 
-## Start Download
-
-Select a service and download. 
-By default, all uploaded resources are downloaded, but only some resources can be selected for a download.
-
-
-### Download Setting
+<a id="download-setting"></a>
+## Download Setting { #download-setting }
 
 Download setting can be modified by using DownloadConfig. 
 Default setting can be imported from `DownloadConfig.Default`. 
@@ -139,7 +149,8 @@ config.PatchCompareFunction = PatchCompareType.INTERGRITY;
 config.ClearUnusedResources = false;
 ```
 
-### Comparing with Streaming Assets resources
+<a id="comparing-with-streaming-assets-resources"></a>
+### Comparing with Streaming Assets resources { #comparing-with-streaming-assets-resources }
 
 It you set UseStreamingAssets to true, Smart Downloader SDK compares the paths of resources inside the Streaming Assets and the uploaded resources, and download the changed resources.
 
@@ -154,8 +165,10 @@ It you set UseStreamingAssets to true, Smart Downloader SDK compares the paths o
 * The value of PatchCompareFunction option is fixed to the PatchCompareType.INTERGRITY.
 
 
-### Resource Check Option
+<a id="resource-check-option"></a>
+### Resource Check Option { #resource-check-option }
 
+<a id="resource-check-option-patchcomparetypeintergrity"></a>
 #### PatchCompareType.INTERGRITY
 
 The default option. During resource check, Smart Downloader SDK calculates the CRC of all downloaded resources and compare it with the uploaded resources.
@@ -165,6 +178,7 @@ The default option. During resource check, Smart Downloader SDK calculates the C
 * Ensures resource integrity
     * Detects missing or manipulated resources and download the uploaded resources.
 
+<a id="resource-check-option-patchcomparetypesavedinformation"></a>
 #### PatchCompareType.SAVED_INFORMATION
 
 When this option is used, Smart Downloader SDK saves the basic information of the downloaded resources on the device and compares it with the uploaded resources during the next check.
@@ -178,6 +192,7 @@ When this option is used, Smart Downloader SDK saves the basic information of th
 * Cannot detect missing or manipulated resources.
     * As a solution, if data is abnormal during the resource loading, you can change the option to INTEGRITY and re-download to repair the data.
 
+<a id="resource-check-option-patchcomparetypesavedinformationandsimplefilescan"></a>
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
 When this option is used, Smart Downloader SDK saves the basic information of the downloaded resources on the device, compares it with the uploaded resource during the next check, and performs a simple check to see if the actual resources exist on the device.
@@ -193,7 +208,8 @@ and slightly slower than the PatchCompareType.SAVED_INFORMATION option, it check
     * As a solution, if data is abnormal during the resource loading, you can change the option to INTEGRITY and re-download to repair the data.
 
 
-### Download All Resources
+<a id="download-all-resources"></a>
+### Download All Resources { #download-all-resources }
 
 If a resource is not selected from download setting, all resources deployed for service are to be downloaded. 
 
@@ -235,7 +251,8 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
     });
 ```
 
-### Download Selected Resources
+<a id="download-selected-resources"></a>
+### Download Selected Resources { #download-selected-resources }
 
 Select a resource to download from [Download Setting] so as to download such resource only. 
 If a file is not found, error is returned (result code: ERROR_EMPTY_FILE_LIST)
@@ -279,7 +296,13 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
     });
 ```
 
-### Download Result
+<a id="verify-download-information-and-download"></a>
+### Verify Download Information and Download { #verify-download-information-and-download }
+
+<!-- TODO: translate body -->
+
+<a id="download-result"></a>
+### Download Result { #download-result }
 
 Delivered to download result callbacks.
 
@@ -291,7 +314,8 @@ Delivered to download result callbacks.
 | IsSuccessful | If download is successful or not |
 
 
-## Cancel Download
+<a id="cancel-download"></a>
+## Cancel Download { #cancel-download }
 
 Cancel downloads under progress. 
 StartDownload callback is returned as failure. (Result Code : USER_CANCEL)
@@ -312,7 +336,8 @@ void StopDownload()
 ```
 
 
-## Download Progress Information 
+<a id="download-progress-information"></a>
+## Download Progress Information { #download-progress-information }
 
 Information of progressing download can be imported in the ProgressInfo type. 
 
@@ -368,7 +393,8 @@ IEnumerator UpdateProgress()
 
 
 
-## Setting Log Level 
+<a id="setting-log-level"></a>
+## Setting Log Level { #setting-log-level }
 
 SmartDILogger type is provided for log outputs on internal SDK activities. 
 Default log level is Error, and unless a log event is registered, no activities can be found.  
@@ -411,7 +437,8 @@ void Initialize()
 ```
 
 
-## API Deprecate Governance
+<a id="api-deprecate-governance"></a>
+## API Deprecate Governance { #api-deprecate-governance }
 
 The APIs that are not supported by Smart Downloader SDK are deprecated.
 Deprecated APIs can be deleted without prior notice when the following conditions are met.

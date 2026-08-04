@@ -1,18 +1,23 @@
-## Game > Smart Downloader > SDK使用ガイド
+<a id="game-smart-downloader-sdk-user-guide"></a>
+## Game > Smart Downloader > SDK使用ガイド { #game-smart-downloader-sdk-user-guide }
 
-## 開始する
+<a id="getting-started"></a>
+## 開始する { #getting-started }
 
 Smart Downloader SDKを使用するには、コンソールでサービスが有効になっていて、登録されたサービスが存在している必要があります。
 詳細は、[コンソール使用ガイド](/Game/Smart%20Downloader/jp/console-guide)を参照してください。
 
-### Environments
+<a id="environments"></a>
+### Environments { #environments }
 
 Smart Downloader SDKはUnityエンジンをサポートします。
 
+<a id="environments-supported-versions"></a>
 #### Supported Versions
 
 * 2018.4.0 ~ 2021.1.15
 
+<a id="environments-supported-platforms"></a>
 #### Supported Platforms
 
 * iOS
@@ -23,12 +28,15 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 * Editor
 
 
-### SDK 
+<a id="sdk"></a>
+### SDK { #sdk }
 
+<a id="sdk-download"></a>
 #### 1. ダウンロード
 
 [Download SDK](/Download/#game-smart-downloader)
 
+<a id="sdk-install-sdk"></a>
 #### 2. SDKのインストール
 
 1. Unityプロジェクトを開きます。
@@ -36,6 +44,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 3. ダウンロードしたSDKファイル'Smart-downloader-{Version}.unitypackage'を選択し、インポートします。
 ![smartdl_sdk_01.png](https://static.toastoven.net/prod_smartdownloader/sdk/smartdl_sdk_01.png)
 
+<a id="sdk-structure"></a>
 #### 3. SDKの構造
 
 * SDKは`Assets/SmartDL`フォルダにインストールされます。
@@ -43,16 +52,19 @@ Smart Downloader SDKはUnityエンジンをサポートします。
     * Plugins：SDKを使用するためのDLLをはじめとするプラグインが含まれています。
     * Example：SDKの動作を確認できるようにサンプルシーン(scene)とスクリプトが含まれています。
 
+<a id="sdk-apply-sdk-api"></a>
 #### 4. SDK APIの使用
 
 * SDKで提供するAPIは、名前空間`Toast.SmartDownloader`に定義されています。
 * SDKで提供するAPIはSmartDlタイプの下に静的メソッドとして定義されています。
 
-### Androidネットワークセキュリティ構成
+<a id="android-network-security-configuration"></a>
+### Androidネットワークセキュリティ構成 { #android-network-security-configuration }
 
 * CDNをHTTPとして使用し、Android 9.0以上でtarget API 28を使用する場合、HTTP許容設定が必要です。
 * 詳細内容は[ネットワークセキュリティ構成](https://developer.android.com/training/articles/security-config?hl=ja)を参照してください。
 
+<a id="android-network-security-configuration-set-androidmanifestxml"></a>
 #### 1. AndroidManifest.xml設定
 
 * AndroidManifest.xml内のapplicationでandroid:networkSecurityConfig設定を追加します。
@@ -67,6 +79,7 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </manifest>
 ```
 
+<a id="android-network-security-configuration-add-networksecurityconfigxml"></a>
 #### 2. network_security_config.xml追加
 
 * Plugins/Android/res/xml/network_security_config.xmlを追加します。
@@ -80,10 +93,12 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 </network-security-config>
 ```
 
-### iOSネットワークセキュリティ構成
+<a id="ios-network-security-configuration"></a>
+### iOSネットワークセキュリティ構成 { #ios-network-security-configuration }
 
 * CDNをHTTPで使用する場合、HTTP許可設定が必要です。
 
+<a id="ios-network-security-configuration-set-infoplist"></a>
 #### Info.plist設定
 
 * Info.plistでApp Transport Security Settingsを追加します。
@@ -105,13 +120,8 @@ Smart Downloader SDKはUnityエンジンをサポートします。
 ```
 
 
-### ダウンロード開始
-
-サービスを選択し、ダウンロードします。
-基本的にはアップロードしたリソース全体をダウンロードしますが、一部のリソースのみ選択してダウンロードすることもできます。
-
-
-#### ダウンロード設定
+<a id="download-setting"></a>
+## ダウンロード設定 { #download-setting }
 
 ダウンロードに必要な設定を変更でき、指定されたパスやファイルのみダウンロードできます。
 `DownloadConfig.Default`からデフォルト値の設定を取得できます。
@@ -138,7 +148,8 @@ config.PatchCompareFunction = PatchCompareType.INTERGRITY;
 config.ClearUnusedResources = false;
 ```
 
-### Use Streaming Assets
+<a id="comparing-with-streaming-assets-resources"></a>
+### Use Streaming Assets { #comparing-with-streaming-assets-resources }
 
 Streaming Assets内部のリソースとアップロードされたリソースのパスを比較して、変更されたリソースをダウンロードします。
 
@@ -153,8 +164,10 @@ Streaming Assets内部のリソースとアップロードされたリソース�
 * PatchCompareFunctionオプションはPatchCompareType.INTERGRITY値に固定されます。
 
 
-### Check Downloadによる検査オプション
+<a id="resource-check-option"></a>
+### Check Downloadによる検査オプション { #resource-check-option }
 
+<a id="resource-check-option-patchcomparetypeintergrity"></a>
 #### PatchCompareType.INTERGRITY
 
 デフォルト設定で、リソースチェック時にダウンロードされたすべてのリソースのCRCを計算し、アップロードされたリソースと比較します。
@@ -164,6 +177,7 @@ Streaming Assets内部のリソースとアップロードされたリソース�
 * リソース完全性保障
     * リソースの漏れおよび改変を検知して、アップロードされたリソースをダウンロードします。
 
+<a id="resource-check-option-patchcomparetypesavedinformation"></a>
 #### PatchCompareType.SAVED_INFORMATION
 
 このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較します。
@@ -177,6 +191,7 @@ Streaming Assets内部のリソースとアップロードされたリソース�
 * リソースの漏れや改造を検知できません。
     * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更し、再ダウンロードを行い復旧することができます。
 
+<a id="resource-check-option-patchcomparetypesavedinformationandsimplefilescan"></a>
 #### PatchCompareType.SAVED_INFORMATION_AND_SIMPLE_FILE_SCAN
 
 このオプションを使用すると、ダウンロードされたリソースの基本情報をデバイスに保存して、次のスキャン時にアップロードされたリソースと比較し、デバイスに実際にリソースが存在するのか簡単なスキャンを行います。
@@ -191,7 +206,13 @@ Streaming Assets内部のリソースとアップロードされたリソース�
     * 解決策としてリソースロード時に正常なデータでなければ、オプションをINTERGRITYに変更して再ダウンロードを行い復旧することができます。
 
 
-### 全リソースのダウンロード
+<a id="start-download"></a>
+## ダウンロード { #start-download }
+
+<!-- TODO: translate body -->
+
+<a id="download-all-resources"></a>
+### 全リソースのダウンロード { #download-all-resources }
 
 ダウンロード設定で、ダウンロードするリソースを選択しなかった場合、サービスに配布されたすべてのリソースをダウンロードします。
 
@@ -233,7 +254,8 @@ SmartDl.StartDownload("Appkey", "ServiceName", "DownloadPath",
     });
 ```
 
-### 選択したリソースのダウンロード
+<a id="download-selected-resources"></a>
+### 選択したリソースのダウンロード { #download-selected-resources }
 
 [ダウンロード設定]でダウンロードするリソースを選択し、該当リソースのみをダウンロードできます。
 ファイルが見つからなかった場合、エラーを返します(結果コード：ERROR_EMPTY_FILE_LIST)。
@@ -277,7 +299,13 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
     });
 ```
 
-### ダウンロード結果
+<a id="verify-download-information-and-download"></a>
+### ダウンロード情報確認後にダウンロード { #verify-download-information-and-download }
+
+<!-- TODO: translate body -->
+
+<a id="download-result"></a>
+### ダウンロード結果 { #download-result }
 
 ダウンロード結果コールバックに渡されるタイプです。
 
@@ -289,7 +317,8 @@ SmartDl.StartDownload(Appkey, ServiceName, DownloadPath, downloadConfig,
 | IsSuccessful | ダウンロード成功可否 |
 
 
-## ダウンロードをキャンセル
+<a id="cancel-download"></a>
+## ダウンロードをキャンセル { #cancel-download }
 
 進行中のダウンロードをキャンセルします。
 StartDownloadコールバックが失敗を返します。(Result Code : USER_CANCEL)
@@ -310,7 +339,8 @@ void StopDownload()
 ```
 
 
-## ダウンロード進行情報の取得
+<a id="download-progress-information"></a>
+## ダウンロード進行情報の取得 { #download-progress-information }
 
 進行中のダウンロード情報はProgressInfoタイプで取得できます。
 
@@ -366,7 +396,8 @@ IEnumerator UpdateProgress()
 
 
 
-## ログレベルの設定
+<a id="setting-log-level"></a>
+## ログレベルの設定 { #setting-log-level }
 
 SDK内部動作のログを出力するためにSmartDlLoggerタイプを提供します。
 ログレベルのデフォルト値はErrorで、ログイベントを登録しなければ何も動作をしません。
@@ -408,7 +439,8 @@ void Initialize()
 }
 ```
 
-## API Deprecate Governance
+<a id="api-deprecate-governance"></a>
+## API Deprecate Governance { #api-deprecate-governance }
 
 Smart Downloader SDKでサポートしないAPIはDeprecate処理します。
 DeprecatedされたAPIは、次の条件を満たす時、予告なしに削除されることがあります。

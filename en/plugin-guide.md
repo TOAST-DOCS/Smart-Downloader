@@ -1,10 +1,16 @@
-## Game > Smart Downloader > Plugin Guide
+<!-- pre-align:aligned sig=c2c7ccee3052 -->
 
-## Smart Downloader Jenkins Plugin
+<a id="game-smart-downloader-plugin-guide"></a>
+## Game > Smart Downloader > Plugin Guide { #game-smart-downloader-plugin-guide }
+
+<a id="smart-downloader-jenkins-plugin"></a>
+## Smart Downloader Jenkins Plugin { #smart-downloader-jenkins-plugin }
 You can conveniently use the **new build upload feature** of NHN Cloud Smart Downloader through the Smart Downloader Jenkins Plugin.
 
-## Installing the Plugin
+<a id="installing-the-plugin"></a>
+## Installing the Plugin { #installing-the-plugin }
 
+<a id="installing-the-plugin-minimum-version-requirements-for-jenkins"></a>
 #### Minimum Version Requirements for Jenkins
 
 **Jenkins 2.145.1** or later version is required. The plugin function is not supported in the previous version of Jenkins, so you need to check the version before using the plugin.
@@ -21,7 +27,8 @@ When it is properly installed, the installation can be found on the **List of In
 ![Figure 1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_01.png)
 <center>[Figure 1] List of Installed Plugins</center>
 
-## Using the Plugin
+<a id="using-the-plugin"></a>
+## Using the Plugin { #using-the-plugin }
 
 ##### Prerequisites
 To use Smart Downloader Jenkins Plugin, `NHN Cloud API Security Setting` is required.
@@ -90,6 +97,7 @@ When uploading a build through the plugin, the NHN Cloud UserID registered in th
 
 If the plugin execution result is failure, refer to the error message in the console log and contact the owner.
 
+<a id="using-the-plugin-pipeline-configuration"></a>
 #### Pipeline Configuration
 Perform installation and configuration of Smart Downloader Plugin in the same way as above, but proceed with the Pipeline configuration instead of 'Post-build Actions' configuration described in [2. Configure the Project (see Figure 3)].
 Go to **[Jenkins]** > Select a project > **[Configuration]** > **[Pipeline]**, and add the script below at the end.
@@ -114,7 +122,8 @@ node() {
 
 For detailed setting values of items, refer to [Figure 3] and description of [2. Configure the Project] above.
 
-## Note
+<a id="note"></a>
+## Note { #note }
 When configuring and using master/slave nodes in Jenkins, **make sure you set the node information**.
 
 ![Figure 9-1](http://static.toastoven.net/prod_smartdownloader/jenkins_plugin/jenkinsplugin_img_09_1.png)

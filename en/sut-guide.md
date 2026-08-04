@@ -1,32 +1,42 @@
-## Game > Smart Downloader > User Guide for Unity Tool 
+<!-- pre-align:aligned sig=352c670015b8 -->
 
-## Getting Started 
+<a id="game-smart-downloader-user-guide-for-unity-tool"></a>
+## Game > Smart Downloader > User Guide for Unity Tool { #game-smart-downloader-user-guide-for-unity-tool }
+
+<a id="getting-started"></a>
+## Getting Started { #getting-started }
 
 Smart Downloader Unity Tool (SUT) is a tool to upload and deploy resources for Unity.  
 
-### Environments
+<a id="environments"></a>
+### Environments { #environments }
 
+<a id="environments-supported-unity-versions"></a>
 #### Supported Unity Versions
 
 * 2018.4.0 - 2021.1.20
 
-### Download
+<a id="download"></a>
+### Download { #download }
 
 [Smart Downloader Unity Tool](/Download/#game-smart-downloader)
 
 
-### Install Unity Tool
+<a id="install-unity-tool"></a>
+### Install Unity Tool { #install-unity-tool }
 
 1. Open a Unity project. 
 2. In Unity, select **Assets > Import Package > Custom Package**.
 3. Select and import 'Smart-downloader-unity-tool-{Version}.unitypackage', which is a downloaded Unity Tool file. 
     ![sut_import.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_import.png)
 
-## Enabling Unity Tool  
+<a id="enabling-unity-tool"></a>
+## Enabling Unity Tool { #enabling-unity-tool }
 
 To enable Unity Tool, select **Tool > NHN Cloud > Smart Downloader > Unity Tool** in the menu. 
 
-### Authenticate 
+<a id="authenticate"></a>
+### Authenticate { #authenticate }
 
 If the authentication has not been performed, the **Authentication** tab appears. 
 
@@ -49,7 +59,8 @@ If the authentication has not been performed, the **Authentication** tab appears
     ![console_project_id.png](https://static.toastoven.net/prod_smartdownloader/sut/console_project_id.png)
 
 
-### Query Services   
+<a id="query-services"></a>
+### Query Services { #query-services }
 
 When the authentication is complete, the **Upload** tab appears. 
 Enter the appkey in **Appkey** and click **Query**, and the list of services created on the console is displayed.  
@@ -60,8 +71,10 @@ Enter the appkey in **Appkey** and click **Query**, and the list of services cre
     * Click **URL & Appkey** from Smart Downloader of the console and check the issued appkey.
     ![console_appkey.png](https://static.toastoven.net/prod_smartdownloader/sut/console_appkey.png)
 
-### Uploading Resources 
+<a id="uploading-resources"></a>
+### Uploading Resources { #uploading-resources }
 
+<a id="uploading-resources-select-services"></a>
 #### 1. Select Services 
 
 Click a service to upload from the service list and select resource path. 
@@ -69,6 +82,7 @@ If the path is correct, the **Upload** button will be activated.
 
 ![sut_upload_step_1.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_1.png)
 
+<a id="uploading-resources-select-upload-resources"></a>
 #### 2. Select Upload Resources 
 
 Compares resources of the selected path with those of the last uploaded, and shows changes.
@@ -80,6 +94,7 @@ Each resource cannot be larger than 5GB.
 
 ![sut_upload_step_2.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_2.png)
 
+<a id="uploading-resources-upload-resources"></a>
 #### 3. Upload Resources 
 
 Shows uploading progress. 
@@ -92,6 +107,7 @@ If it is forced to close, the status remains to be uploading, and will be change
 ![sut_upload_step_3.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_3.png)
 
 
+<a id="uploading-resources-complete"></a>
 #### 4. Complete
 
 When it is normally completed, a windows pops up to confirm. 
@@ -99,7 +115,8 @@ When it is normally completed, a windows pops up to confirm.
 ![sut_upload_step_4.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_upload_step_4.png)
 
 
-### Service Details 
+<a id="service-details"></a>
+### Service Details { #service-details }
 
 Select service from the list and double-click to show **Service Details**. 
 
@@ -121,6 +138,7 @@ Select service from the list and double-click to show **Service Details**.
 * Build Deployment History: Shows the history of the most recent 10 build deployment cases.
 
 
+<a id="service-details-build-deployment"></a>
 #### Build Deployment 
 
 Only when the deployment status is **Ready for Deployment, or Deployment Failed**, the most updated upload resources can be deployed to CDN.  
@@ -134,6 +152,7 @@ If you click the **Deploy Build** button, the following pop-up window will show 
 * Immediate deployment: Attempt deployment immediately.
 * Scheduled deployment: Attempt deployment at the time specified by user.
 
+<a id="service-details-scheduled-deployment"></a>
 #### Scheduled deployment
 
 If you select **Scheduled deployment**, and the following screen will show up.
@@ -151,7 +170,8 @@ If you specify a scheduled deployment time that is before the current time in th
 Once deployment scheduling is completed, the deployment status changes to **Scheduled** and you can check that the build deployment date/time is changed to the scheduled time.
 When the status is **Deployment scheduled**, you can cancel the schedule by clicking the **Cancel deployment** on the right.
 
-### Settings 
+<a id="settings"></a>
+### Settings { #settings }
 
 ![sut_settings.png](https://static.toastoven.net/prod_smartdownloader/sut/sut_settings.png)
 

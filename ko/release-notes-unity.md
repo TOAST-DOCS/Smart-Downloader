@@ -1,19 +1,28 @@
-## Game > Smart Downloader > 릴리스 노트 > Unity SDK
+<!-- pre-align:aligned sig=5855a25dd24f -->
 
-### 1.7.0 (2021.09.14) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.7.0.unitypackage)
+<a id="game-smart-downloader-release-notes-unity-sdk"></a>
+## Game > Smart Downloader > 릴리스 노트 > Unity SDK { #game-smart-downloader-release-notes-unity-sdk }
 
+<a id="70-20210914-download-sdk"></a>
+### 1.7.0 (2021.09.14) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.7.0.unitypackage) { #70-20210914-download-sdk }
+
+<a id="70-20210914-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * DLL 오류 수정
 
-### 1.6.9 (2021.07.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.9.unitypackage)
+<a id="69-20210727-download-sdk"></a>
+### 1.6.9 (2021.07.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.9.unitypackage) { #69-20210727-download-sdk }
 
+<a id="69-20210727-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Unity 최소 지원 버전을 2018.4.0으로 변경
 * Unity 2020.2 이후 버전에서 발생하는 Warning 제거
 
 
-### 1.6.8 (2021.04.13) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.8.unitypackage)
+<a id="68-20210413-download-sdk"></a>
+### 1.6.8 (2021.04.13) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.8.unitypackage) { #68-20210413-download-sdk }
 
+<a id="68-20210413-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 제외된 리소스 제거 옵션 추가
     * API 추가
@@ -24,8 +33,10 @@
 * 실패율 정보를 확인을 위한 로그 개선
 
 
-### 1.6.7 (2020.08.11) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.7.unitypackage)
+<a id="67-20200811-download-sdk"></a>
+### 1.6.7 (2020.08.11) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.7.unitypackage) { #67-20200811-download-sdk }
 
+<a id="67-20200811-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 리소스 검사 로직 개선
 * 리소스 검사 옵션 추가
@@ -36,27 +47,35 @@
         * ResultCode.ERROR_UNZIP (Obsolete)
 
 
-### 1.6.6 (2020.07.14) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.6.unitypackage)
+<a id="66-20200714-download-sdk"></a>
+### 1.6.6 (2020.07.14) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.6.unitypackage) { #66-20200714-download-sdk }
 
+<a id="66-20200714-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 디스크 여유 공간 확인 방법 개선
 
 
-### 1.6.5 (2020.06.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.5.unitypackage)
+<a id="65-20200623-download-sdk"></a>
+### 1.6.5 (2020.06.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.5.unitypackage) { #65-20200623-download-sdk }
 
+<a id="65-20200623-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * 실행환경에 따라 OverflowException이 발생하는 오류 수정
 
 
-### 1.6.4 (2020.05.12) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.4.unitypackage)
+<a id="64-20200512-download-sdk"></a>
+### 1.6.4 (2020.05.12) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.4.unitypackage) { #64-20200512-download-sdk }
 
+<a id="64-20200512-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 리소스 검사 옵션 추가
     * API 변경
         * PatchCheckOption.CHECK_LIST_WITH_SAVED_DATA 추가
 
-### 1.6.3 (2020.04.28) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.3.unitypackage)
+<a id="63-20200428-download-sdk"></a>
+### 1.6.3 (2020.04.28) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.3.unitypackage) { #63-20200428-download-sdk }
 
+<a id="63-20200428-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Streaming Assets 지원
     * Streaming Assets 리소스와 업로드 된 리소스를 비교 다운로드 기능 추가
@@ -64,22 +83,28 @@
         * DownloadConfig.CheckAndroidObb (Obsolete) → DownloadConfig.CheckOption
 
 
-### 1.6.2 (2020.03.10) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.2.unitypackage)
+<a id="62-20200310-download-sdk"></a>
+### 1.6.2 (2020.03.10) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.2.unitypackage) { #62-20200310-download-sdk }
 
+<a id="62-20200310-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Android - Split Application Binary(OBB) 지원
     * OBB에 포함된 Streaming Assets 리소스와 업로드된 리소스를 비교 다운로드 기능 추가
     * API 추가
         * DownloadConfig.CheckAndroidObb
 
-### 1.6.1 (2020.01.21) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.1.unitypackage)
+<a id="61-20200121-download-sdk"></a>
+### 1.6.1 (2020.01.21) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.1.unitypackage) { #61-20200121-download-sdk }
 
+<a id="61-20200121-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * 다운로드 검사할 파일이 없는 경우 발생하던 예외 수정
 
 
-### 1.6.0 (2019.12.24) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.0.unitypackage)
+<a id="60-20191224-download-sdk"></a>
+### 1.6.0 (2019.12.24) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.6.0.unitypackage) { #60-20191224-download-sdk }
 
+<a id="60-20191224-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 사전 다운로드 용량을 확인하기 위해 API 추가(CheckDownload)
 * API 변경
@@ -88,19 +113,25 @@
     * ProgressInfo.TotalReceivedBytes (Obsolete) → ProgressInfo.DownloadedBytes
 
 
-### 1.5.9 (2019.10.29) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.9.unitypackage)
+<a id="59-20191029-download-sdk"></a>
+### 1.5.9 (2019.10.29) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.9.unitypackage) { #59-20191029-download-sdk }
 
+<a id="59-20191029-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 통계 지표 개선
 
-### 1.5.8 (2019.07.29) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.8.unitypackage)
+<a id="58-20190729-download-sdk"></a>
+### 1.5.8 (2019.07.29) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.8.unitypackage) { #58-20190729-download-sdk }
 
+<a id="58-20190729-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * 특정 Android에서 다운로드 완료 처리 중 크래시가 발생하던 현상 수정
 
 
-### 1.5.7 (2019.06.25) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.7.unitypackage)
+<a id="57-20190625-download-sdk"></a>
+### 1.5.7 (2019.06.25) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.7.unitypackage) { #57-20190625-download-sdk }
 
+<a id="57-20190625-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * About 메뉴 추가
 * 전체 리소스 다운로드 시 다운로드할 리소스가 하나도 없는 경우 결과 코드를 성공(SUCCESS_NO_DIFFERENCE)으로 전달
@@ -108,11 +139,14 @@
     * Assets/SmartDL/ → Assets/TOAST/SmartDL
     * `기존에 설치된 SmartDL 폴더를 삭제한 후 가져와야(import) 합니다.`
 
-### 1.5.6 (2018.12.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.6.unitypackage)
+<a id="56-20181227-download-sdk"></a>
+### 1.5.6 (2018.12.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.6.unitypackage) { #56-20181227-download-sdk }
 
+<a id="56-20181227-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * 다운로드 취소 시 결과 콜백이 호출되지 않는 문제 수정
 
+<a id="56-20181227-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Common
     * [ResultCode 리뉴얼](/Game/Smart%20Downloader/ko/error-code)
@@ -125,42 +159,53 @@
         * smartnative_x64.dll → x86_64/smartnative.dll
 
 
-### 1.5.5 (2018.11.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.5.unitypackage)
+<a id="55-20181127-download-sdk"></a>
+### 1.5.5 (2018.11.27) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.5.unitypackage) { #55-20181127-download-sdk }
 
+<a id="55-20181127-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * IL2CPP 빌드 지원
 * 간헐적으로 macOS에서 IP 주소를 얻지 못하는 문제 수정
 
 
-### 1.5.4 (2018.10.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.4.unitypackage)
+<a id="54-20181023-download-sdk"></a>
+### 1.5.4 (2018.10.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.4.unitypackage) { #54-20181023-download-sdk }
 
+<a id="54-20181023-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Unity 2018.2 지원
 * 경로 및 파일을 선택해서 다운로드하는 기능 제공
 * 다운로드 파일 크기 계산 개선
 * 예제 코드 네임스페이스 추가
 
+<a id="54-20181023-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * iOS에서 파일명에 한글 포함 시 다운로드되지 않는 문제 수정
 * 파일명과 디렉터리명에 일부 특수문자 포함 시 다운로드 되지 않는 문제 수정
 
 
 
-### 1.5.3 (2018.06.05) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.3.unitypackage)
+<a id="53-20180605-download-sdk"></a>
+### 1.5.3 (2018.06.05) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.3.unitypackage) { #53-20180605-download-sdk }
 
+<a id="53-20180605-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 재시도 로직 추가
 * 연결 타임아웃 / 읽기 타임아웃 분리
 
 
-### 1.5.1 (2018.04.18) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.1.unitypackage)
+<a id="51-20180418-download-sdk"></a>
+### 1.5.1 (2018.04.18) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.1.unitypackage) { #51-20180418-download-sdk }
 
+<a id="51-20180418-download-sdk-bug-fixes"></a>
 #### 버그 수정
 * Unity 최적화 옵션 설정으로 발생하는 링크 오류 수정
 
 
-### 1.5.0 (2018.02.22) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.0.unitypackage)
+<a id="50-20180222-download-sdk"></a>
+### 1.5.0 (2018.02.22) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.5.0.unitypackage) { #50-20180222-download-sdk }
 
+<a id="50-20180222-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * Smart Downloader 내 개별 단위인 <b>서비스</b> 추가
 * Core 라이브러리의 의존도 제거
@@ -168,15 +213,19 @@
     * 사용성 개선을 위한 API 변경
 
 
-### 1.2.0 (2017.10.26) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.2.0.unitypackage)
+<a id="20-20171026-download-sdk"></a>
+### 1.2.0 (2017.10.26) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/Smart-downloader-1.2.0.unitypackage) { #20-20171026-download-sdk }
 
+<a id="20-20171026-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * 안정성 강화
     * 내부 Core SDK 의존도 제거
     * Native 라이브러리 의존도 감소
 
-### 1.1.0 (2017.02.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SmartDownloaderSDK_v1.1.0.unitypackage)
+<a id="10-20170223-download-sdk"></a>
+### 1.1.0 (2017.02.23) [SDK 다운로드](https://static.toastoven.net/toastcloud/sdk_download/Smart%20Downloader/SmartDownloaderSDK_v1.1.0.unitypackage) { #10-20170223-download-sdk }
 
+<a id="10-20170223-download-sdk-feature-updates"></a>
 #### 기능 개선/변경
 * class Name 변경(DLCSkin -> SmartDLUnitySkin).
 * 정적 API만 제공

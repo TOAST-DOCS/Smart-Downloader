@@ -1,34 +1,43 @@
-## Game > Smart Downloader > 概要
+<!-- pre-align:aligned sig=f2991e90e240 -->
+
+<a id="game-smart-downloader-overview"></a>
+## Game > Smart Downloader > 概要 { #game-smart-downloader-overview }
 
 Smart Downloaderは、ゲーム起動時にゲームに必要なリソースをマルチスレッドでダウンロードするサービスです。
 クライアントでリソースをダウンロードして、さまざまな統計データを収集して多様な情報を提供します。
 
 
-## 主な機能
+<a id="main-features"></a>
+## 主な機能 { #main-features }
 
 
-### マルチスレッドダウンロード
+<a id="support-for-multi-threaded-downloads"></a>
+### マルチスレッドダウンロード { #support-for-multi-threaded-downloads }
 - ネットワーク帯域幅を最大限活用してダウンロードできます。
 - ファイルの個数が多く、ネットワーク環境が遅い環境(グローバル環境)で役立ちます。
 
 
-### 更新されたファイルリストのみアップデート
+<a id="update-revised-file-list-only"></a>
+### 更新されたファイルリストのみアップデート { #update-revised-file-list-only }
 - ファイルのサイズ、チェックサムに基づいてアップデートを行います。
 	- 画像やテキストファイルのように、サイズは変わらず内容が変わったファイルについても(ファイルのチェックサムは変わるため)アップデートが可能です。
 - 最初のフルダウンロード以降は増分のみアップデートを行います。
 
 
-### 簡単なアップロードおよびアップロード/配布ファイルの作成を自動化
+<a id="allow-simple-uploads-and-automate-uploadingcreating-deployment-files"></a>
+### 簡単なアップロードおよびアップロード/配布ファイルの作成を自動化 { #allow-simple-uploads-and-automate-uploadingcreating-deployment-files }
 - コンソール / Jenkins Pluginを通して、簡単にゲームリソースアップロードが可能です。
 	- Jenkins Pluginを通して、アップロードを自動化できます。
 - ゲームリソースをアップロードすると、自動で配布ファイルをアップデートします。
 
 
-### ダウンロードおよびアップデート実装の簡素化
+<a id="simplify-downloads-and-updates"></a>
+### ダウンロードおよびアップデート実装の簡素化 { #simplify-downloads-and-updates }
 - 提供されるSDKを通して簡単にダウンロード機能を実装でき、ダウンロード進行情報を詳細に確認できます。
 
 
-### ゲームダウンロード統計データ提供
+<a id="provide-statistics-on-game-downloads"></a>
+### ゲームダウンロード統計データ提供 { #provide-statistics-on-game-downloads }
 
 - 24時間以内のリアルタイムダウンロード状況と日別モニタリング指標を提供します。
 - ダウンロード成功 / 失敗統計を確認できます。
@@ -36,7 +45,8 @@ Smart Downloaderは、ゲーム起動時にゲームに必要なリソースを�
 - 検索機能を提供し、希望する時間帯(ゲーム配布前後)のダウンロード統計を確認できます。
 
 
-## 用語
+<a id="glossary"></a>
+## 用語 { #glossary }
 
 | 用語 | 説明 |
 | --- | --- |
@@ -47,7 +57,8 @@ Smart Downloaderは、ゲーム起動時にゲームに必要なリソースを�
 | 外部CDN | 内部CDNではなく、既に使用中のCDNが存在する場合。 |
 
 
-## 構造
+<a id="structure"></a>
+## 構造 { #structure }
 
 ![図1](http://static.toastoven.net/prod_smartdownloader/overview/smartdl_overview_structure_en.png)
 <center>[図1] Smart Downloader構造 </center>
