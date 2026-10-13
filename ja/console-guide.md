@@ -87,7 +87,7 @@ Smart Downloaderサービスを無効にすると、発行されたAppkeyは復�
 
 - B.  Build Server(遠隔)アップロード
 ​    - Smart Downloader Jenkins Plugin(NHN Cloud Smart Downloader Plugin)でリソースをアップロード。
-​    - NHN Cloud Smart Downloader Pluginの詳細ガイドは、[プラグイン使用ガイド](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/)で確認できます。
+​    - NHN Cloud Smart Downloader Pluginの詳細ガイドは、[プラグイン使用ガイド](https://docs.nhncloud.com/ko/Game/Smart%20Downloader/ko/plugin-guide/)で確認できます。
 
 #### 3.2リソースアップロード完了
 

@@ -115,7 +115,7 @@ Select service from the list and double-click to show **Service Details**.
     * Upload Resource Information: Number and total size of uploaded resources.
         * Detail Information: Uploaded resource information.
     * Build deployment date: The date of the last build deployment, or the date of the scheduled deployment if the deployment status is **Deployment scheduled**.
-    * Deployment Status: Check status of deployment. See [Console User Guide](http://docs.toast.com/zh/Game/Smart%20Downloader/zh/console-guide/#4-list-of-services) for deployment status. 
+    * Deployment Status: Check status of deployment. See [Console User Guide](https://docs.nhncloud.com/zh/Game/Smart%20Downloader/zh/console-guide/#4-list-of-services) for deployment status. 
         * Updates: Upload service details.  
         * Build Deployment: To be activated when build is ready to be deployed, with the latest build deployed by CDN. 
 * Build Deployment History: Shows the history of the most recent 10 build deployment cases.

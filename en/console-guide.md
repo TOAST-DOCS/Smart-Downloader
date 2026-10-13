@@ -88,7 +88,7 @@ Take note that when Smart Downloader is disabled, an issued Appkey cannot be res
 
   - Upload resources via Smart Downloader Jenkins Plugin (NHN Cloud Smart Downloader Plugin).
 
-  ​    - For more details on NHN Cloud Smart Downloader Plugin, see [User Guide for Plugin](http://docs.toast.com/ko/Game/Smart%20Downloader/ko/plugin-guide/).
+  ​    - For more details on NHN Cloud Smart Downloader Plugin, see [User Guide for Plugin](https://docs.nhncloud.com/ko/Game/Smart%20Downloader/ko/plugin-guide/).
 
 #### 3.2 Complete Resource Uploads  
 
